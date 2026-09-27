@@ -1,0 +1,1 @@
+Consignes : ce fichier sert de brouillon pour les formules LateX des théorèmes afin de me les faire valider visuellement.consigne de rédaction LaTeX : toutes les variables, ensembles etc. considérés seront clairement définis pour chaque théorème afin qu'il n'y ait pas d'ambiguité.

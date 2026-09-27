@@ -1,14 +1,19 @@
 liste théorèmes :
 
-Probas : TODO
+à ajouter à la main :
+- Probas
+- autre théorème de fubini
+- Chapitre analyse réelle
+- Chapitre analyse complète
+- Chapitre Fonctions vectorielles
+- Topologie
+- Chapitre Groupes
 
 Théorèmes d'intégration :
 Théorème de Fubini-Tonelli
-autre théorème de fubini TODO
 Théorème de sommation L1
 Théorème de continuité d'une intégrale à paramètre
 Théorème de dérivation d'une intégrale à paramètre
-
 Théorème de convergence dominée
 
 Analyse réelle :
@@ -23,7 +28,6 @@ Formule de Taylor-Young
 Formule de Taylor-Lagrange
 Formule de Taylor avec reste intégral
 Règle de l'Hôpital
-TODO
 
 Analyse complexe :
 Sinus de la somme
@@ -33,7 +37,6 @@ Règle de Cauchy
 Théorème de Cauchy
 Théorème de Liouville
 Théorème des résidus
-TODO
 
 Fonctions vectorielles :
 Convergence simple
@@ -50,7 +53,6 @@ Théorème de dérivation terme à terme
 Théorème d'intégration terme à terme
 Théorème de la double limite terme à terme
 Critère de cauchy uniforme
-TODO
 
 Topologie :
 Distance
@@ -62,7 +64,6 @@ Homéomorphisme
 Théorème de Heine-Borel
 Adhérence d'un connexe
 Théorème de Baire
-TODO
 
 Algèbre linéaire :
 Endomorphismes qui commutent, sous-espaces stables
@@ -84,7 +85,6 @@ Générateurs de Sn et An
 Simplicité de An (pour n >= 5)
 Produit semi-direct
 Produit semi-direct par conjugaison
-TODO
 
-Autre :
+Aucun :
 Factorisation de a^n - b^n
