@@ -1,0 +1,14 @@
+Guidelines rédaction fichier de révision agreg maths
+L'objectif est de créer un fichier de révision efficace pour l'agrégation de mathématiques. Voici quelques directives pour la rédaction de ce fichier :
+
+- le fichier espacement.txt contiendra les temps d'espacement entre chaque révision, en fonction de si j'ai réussi ou pas.
+
+- le fichier en .md revisions sera constitué :
+1. d'un enchainement de nom de théorèmes.
+2. pour chaque théorème : seul le nom sera visible initialement,
+il y aura un premier texte déroulant caché contenant le chapitre du théorème
+un deuxième, avec le contenu du théorème mis en forme en latex.
+Toutes les variables, ensembles etc. considérés seront clairement définis pour chaque théorème afin qu'il n'y ait pas d'ambiguité.
+
+Notes :
+deux théorèmes peuvent avoir le même nom dans deux chapitre différents, ils sont considérés comme des théorèmes différents, même s'ils peuvent être proches.
