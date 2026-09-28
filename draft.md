@@ -1,64 +1,3 @@
-# Théorèmes d'intégration
-
-## Théorème de Fubini-Tonelli pour les suites
-
-Soit $(a_{n,p})_{(n,p) \in \mathbb{N}^2}$ une famille de réels positifs ou nuls.
-Alors on a toujours l'égalité suivante dans $[0, +\infty]$ :
-$$\sum_{n=0}^{\infty} \sum_{p=0}^{\infty} a_{n,p} = \sum_{p=0}^{\infty} \sum_{n=0}^{\infty} a_{n,p}$$
-
-## Théorème de Fubini-Lebesgue pour les suites
-
-Soit $(a_{n,p})_{(n,p) \in \mathbb{N}^2}$ une famille de nombres complexes.
-On suppose que la famille est sommable, c'est-à-dire que l'une des sommes itérées des modules converge :
-$$\sum_{n=0}^{\infty} \sum_{p=0}^{\infty} |a_{n,p}| < +\infty$$
-Alors les sommes itérées convergent absolument et on a l'égalité :
-$$\sum_{n=0}^{\infty} \sum_{p=0}^{\infty} a_{n,p} = \sum_{p=0}^{\infty} \sum_{n=0}^{\infty} a_{n,p}$$
-
-## Théorème de sommation $\mathcal{L}^1$
-
-Soit $\sum f_n$ une série de fonctions de $\mathcal{C}_{m}(I, \mathbb{C})$.
-Supposons que :
-
-1. $\sum f_n$ converge simplement vers $S \in \mathcal{C}_{m}(I, \mathbb{C})$.
-2. Chaque $f_n$ est intégrable sur $I$.
-3. $\sum \int_I |f_n| < +\infty$.
-   Alors $S$ est intégrable sur $I$ et :
-   $$\int_I \left( \sum_{n=0}^{\infty} f_n(t) \right) dt = \sum_{n=0}^{\infty} \int_I f_n(t) dt$$
-
-## Théorème de continuité d'une intégrale à paramètre
-
-Soit $X\subset E$ un espace vectoriel normé de dimension finie et $I$ un intervalle de $\mathbb{R}$. Soit $f : X \times I \to \mathbb{C}$ telle que :
-
-1. Pour tout $x \in X$, la fonction $t \mapsto f(x, t)$ est continue par morceaux sur $I$.
-2. Pour tout $t \in I$, la fonction $x \mapsto f(x, t)$ est continue sur $X$.
-3. Il existe $\varphi \in \mathcal{C}_{m}(I, \mathbb{R}^+)$ intégrable sur $I$ telle que pour tout $(x, t) \in X \times I$, $|f(x, t)| \le \varphi(t)$ (hypothèse de domination).
-
-Alors la fonction $F : x \mapsto \int_I f(x, t) dt$ est définie et continue sur $X$.
-
-## Théorème de dérivation d'une intégrale à paramètre
-
-Soit $X$ un ouvert d'un espace vectoriel normé de dimension finie et $I$ un intervalle de $\mathbb{R}$. Soit $f : X \times I \to \mathbb{C}$ telle que :
-
-1. Pour tout $x \in X$, la fonction $t \mapsto f(x, t)$ est continue par morceaux sur $I$.
-2. La fonction $f$ admet une dérivée partielle selon $x$, notée $\frac{\partial f}{\partial x}$, telle que :
-   - Pour tout $x \in X$, $t \mapsto \frac{\partial f}{\partial x}(x, t)$ est continue par morceaux sur $I$.
-   - Pour tout $t \in I$, $x \mapsto \frac{\partial f}{\partial x}(x, t)$ est continue sur $X$.
-3. Il existe $\varphi \in \mathcal{C}_{m}(I, \mathbb{R}^+)$ intégrable sur $I$ telle que pour tout $(x, t) \in X \times I$, $|\frac{\partial f}{\partial x}(x, t)| \le \varphi(t)$ (hypothèse de domination).
-
-Alors $F : x \mapsto \int_I f(x, t) dt$ est de classe $\mathcal{C}^1$ sur $X$ et :
-$$F'(x) = \int_I \frac{\partial f}{\partial x}(x, t) dt$$
-
-## Théorème de convergence dominée
-
-Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions $\mathcal{C}_{m}(I, \mathbb{C})$ où $I$ est un intervalle de $\mathbb{R}$.
-Supposons que :
-
-1. La suite $(f_n)$ converge simplement sur $I$ vers une fonction $f$ continue par morceaux sur $I$.
-2. Il existe $\varphi \in \mathcal{C}_{m}(I, \mathbb{R}^+)$ intégrable sur $I$ telle que pour tout $n \in \mathbb{N}$ et tout $x \in I$, $|f_n(x)| \le \varphi(x)$.
-
-Alors $f$ et les $f_n$ sont intégrables sur $I$ et :
-$$\lim_{n \to \infty} \int_I f_n(t) dt = \int_I f(t) dt$$
-
 # Analyse réelle
 
 ## Suite de Cauchy
@@ -144,14 +83,16 @@ $$\cos(a+b) = \cos(a)\cos(b) - \sin(a)\sin(b)$$
 ## Règle de D'Alembert
 
 Soit $\sum a_n z^n$ une série entière avec $a_n \neq 0$ pour $n$ assez grand.
-Si $\lim_{n \to \infty} |\frac{a_{n+1}}{a_n}| = \ell \in [0, +\infty]$, alors le rayon de convergence $R$ de la série est :
-$$R = \frac{1}{\ell}$$ (avec la convention $1/0 = +\infty$ et $1/\infty = 0$).
+Si $\lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right| = \ell \in [0, +\infty]$, alors le rayon de convergence $R$ de la série est :
+$$R = \frac{1}{\ell}$$
+(avec la convention $1/0 = +\infty$ et $1/\infty = 0$).
 
 ## Règle de Cauchy
 
 Soit $\sum a_n z^n$ une série entière.
 Si $\lim_{n \to \infty} |a_n|^{1/n} = \ell \in [0, +\infty]$, alors le rayon de convergence $R$ de la série est :
-$$R = \frac{1}{\ell}$$ (avec la convention $1/0 = +\infty$ et $1/\infty = 0$).
+$$R = \frac{1}{\ell}$$
+(avec la convention $1/0 = +\infty$ et $1/\infty = 0$).
 
 ## Théorème de Cauchy
 
@@ -168,6 +109,7 @@ Toute fonction entière (holomorphe sur $\mathbb{C}$) et bornée est constante.
 Soit $U$ un ouvert simplement connexe de $\mathbb{C}$ et $S$ un ensemble de points isolés dans $U$. Soit $f : U \setminus S \to \mathbb{C}$ une fonction holomorphe. Soit $\gamma$ un lacet rectifiable dans $U \setminus S$.
 Alors :
 $$\int_{\gamma} f(z) dz = 2i\pi \sum_{a \in S} \text{Ind}_{\gamma}(a) \text{Res}(f, a)$$
+où $\text{Ind}_{\gamma}(a)$ est l'indice du lacet $\gamma$ par rapport au point $a$ et $\text{Res}(f, a)$ est le résidu de $f$ en $a$.
 
 # Fonctions vectorielles
 
@@ -389,5 +331,3 @@ Si $N$ est un sous-groupe distingué de $G$ and $H$ un sous-groupe de $G$ tels q
 
 Soient $a, b \in \mathbb{C}$ and $n \in \mathbb{N}^*$. On a :
 $$a^n - b^n = (a-b) \sum_{k=0}^{n-1} a^{n-1-k} b^k$$
-
-où $\text{Ind}_{\gamma}(a)$ est l'indice du lacet $\gamma$ par rapport au point $a$ et $\text{Res}(f, a)$ est le résidu de $f$ en $a$.
