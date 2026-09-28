@@ -1,0 +1,240 @@
+![Progression Globale](img/progression_globale.png)
+
+![Progression Chapitres](img/progression_chapitres.png)
+
+**9** Théorèmes à réviser sur **9**
+
+# 📚 28/09/2026
+
+**3** Théorèmes
+
+## 1. Théorème du rang
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Algèbre Linéaire
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soient $E$ et $F$ deux espaces vectoriels de dimension finie sur un corps $\mathbb{K}$. Soit $u \in \mathcal{L}(E, F)$ une application linéaire de $E$ dans $F$.
+Alors :
+$$\dim(E) = \dim(\ker(u)) + \text{rg}(u)$$
+où $\ker(u)$ est le noyau de $u$ et $\text{rg}(u) = \dim(\text{im}(u))$ est le rang de $u$.
+
+---
+
+</details>
+
+## 2. Théorème des valeurs intermédiaires
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse Réelle
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soient $a, b \in \mathbb{R}$ tels que $a < b$. Soit $f : [a, b] \to \mathbb{R}$ une fonction continue sur le segment $[a, b]$.
+Pour tout réel $y$ compris entre $f(a)$ et $f(b)$, il existe au moins un réel $c \in [a, b]$ tel que :
+$$f(c) = y$$
+Autrement dit, l'image d'un intervalle par une fonction continue est un intervalle.
+
+---
+
+</details>
+
+## 3. Lemme des noyaux
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Algèbre Linéaire
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soient $E$ un espace vectoriel sur un corps $\mathbb{K}$ et $u \in \mathcal{L}(E)$ un endomorphisme de $E$. Soient $P_1, \dots, P_n \in \mathbb{K}[X]$ des polynômes deux à deux premiers entre eux. On note $P = \prod_{i=1}^n P_i$.
+Alors :
+$$\ker(P(u)) = \bigoplus_{i=1}^n \ker(P_i(u))$$
+De plus, la projection sur $\ker(P_i(u))$ parallèlement à $\bigoplus_{j \neq i} \ker(P_j(u))$ est donnée par la restriction à $\ker(P(u))$ d'un polynôme en $u$.
+
+---
+
+</details>
+
+<br>
+
+# 📚 29/09/2026
+
+**6** Théorèmes
+
+## 1. Théorème de continuité d'une intégrale à paramètre
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Intégration sur un intervalle quelconque
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $X\subset E$ un espace vectoriel normé de dimension finie et $I$ un intervalle de $\mathbb{R}$. Soit $f : X \times I \to \mathbb{C}$ telle que :
+
+1. Pour tout $x \in X$, la fonction $t \mapsto f(x, t)$ est continue par morceaux sur $I$.
+2. Pour tout $t \in I$, la fonction $x \mapsto f(x, t)$ est continue sur $X$.
+3. Il existe $\varphi \in \mathcal{C}_{m}(I, \mathbb{R}^+)$ intégrable sur $I$ telle que pour tout $(x, t) \in X \times I$, $|f(x, t)| \le \varphi(t)$ (hypothèse de domination).
+
+Alors la fonction $F : x \mapsto \int_I f(x, t) dt$ est définie et continue sur $X$.
+
+---
+
+</details>
+
+## 2. Théorème de Fubini-Lebesgue pour les suites
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Intégration sur un intervalle quelconque
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(a_{n,p})_{(n,p) \in \mathbb{N}^2}$ une famille de nombres complexes.
+On suppose que la famille est sommable, c'est-à-dire que l'une des sommes itérées des modules converge :
+$$\sum_{n=0}^{\infty} \sum_{p=0}^{\infty} |a_{n,p}| < +\infty$$
+Alors les sommes itérées convergent absolument et on a l'égalité :
+$$\sum_{n=0}^{\infty} \sum_{p=0}^{\infty} a_{n,p} = \sum_{p=0}^{\infty} \sum_{n=0}^{\infty} a_{n,p}$$
+
+---
+
+</details>
+
+## 3. Théorème de convergence dominée
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Intégration sur un intervalle quelconque
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions $\mathcal{C}_{m}(I, \mathbb{C})$ où $I$ est un intervalle de $\mathbb{R}$.
+Supposons que :
+
+1. La suite $(f_n)$ converge simplement sur $I$ vers une fonction $f$ continue par morceaux sur $I$.
+2. Il existe $\varphi \in \mathcal{C}_{m}(I, \mathbb{R}^+)$ intégrable sur $I$ telle que pour tout $n \in \mathbb{N}$ et tout $x \in I$, $|f_n(x)| \le \varphi(x)$.
+
+Alors $f$ et les $f_n$ sont intégrables sur $I$ et :
+$$\lim_{n \to \infty} \int_I f_n(t) dt = \int_I f(t) dt$$
+
+---
+
+</details>
+
+## 4. Théorème de sommation $\mathcal{L}^1$
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Intégration sur un intervalle quelconque
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $\sum f_n$ une série de fonctions de $\mathcal{C}_{m}(I, \mathbb{C})$.
+Supposons que :
+
+1. $\sum f_n$ converge simplement vers $S \in \mathcal{C}_{m}(I, \mathbb{C})$.
+2. Chaque $f_n$ est intégrable sur $I$.
+3. $\sum \int_I |f_n| < +\infty$.
+   Alors $S$ est intégrable sur $I$ et :
+   $$\int_I \left( \sum_{n=0}^{\infty} f_n(t) \right) dt = \sum_{n=0}^{\infty} \int_I f_n(t) dt$$
+
+---
+
+</details>
+
+## 5. Théorème de Fubini-Tonelli pour les suites
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Intégration sur un intervalle quelconque
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(a_{n,p})_{(n,p) \in \mathbb{N}^2}$ une famille de réels positifs ou nuls.
+Alors on a toujours l'égalité suivante dans $[0, +\infty]$ :
+$$\sum_{n=0}^{\infty} \sum_{p=0}^{\infty} a_{n,p} = \sum_{p=0}^{\infty} \sum_{n=0}^{\infty} a_{n,p}$$
+
+---
+
+</details>
+
+## 6. Théorème de dérivation d'une intégrale à paramètre
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Intégration sur un intervalle quelconque
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $X$ un ouvert d'un espace vectoriel normé de dimension finie et $I$ un intervalle de $\mathbb{R}$. Soit $f : X \times I \to \mathbb{C}$ telle que :
+
+1. Pour tout $x \in X$, la fonction $t \mapsto f(x, t)$ est continue par morceaux sur $I$.
+2. La fonction $f$ admet une dérivée partielle selon $x$, notée $\frac{\partial f}{\partial x}$, telle que :
+   - Pour tout $x \in X$, $t \mapsto \frac{\partial f}{\partial x}(x, t)$ est continue par morceaux sur $I$.
+   - Pour tout $t \in I$, $x \mapsto \frac{\partial f}{\partial x}(x, t)$ est continue sur $X$.
+3. Il existe $\varphi \in \mathcal{C}_{m}(I, \mathbb{R}^+)$ intégrable sur $I$ telle que pour tout $(x, t) \in X \times I$, $|\frac{\partial f}{\partial x}(x, t)| \le \varphi(t)$ (hypothèse de domination).
+
+Alors $F : x \mapsto \int_I f(x, t) dt$ est de classe $\mathcal{C}^1$ sur $X$ et :
+$$F'(x) = \int_I \frac{\partial f}{\partial x}(x, t) dt$$
+
+---
+
+</details>
+

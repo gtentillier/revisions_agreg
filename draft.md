@@ -1,55 +1,393 @@
-![Progression Globale](img/progression_globale.png)
+# Théorèmes d'intégration
 
-![Progression Chapitres](img/progression_chapitres.png)
+## Théorème de Fubini-Tonelli pour les suites
 
-**2** Théorèmes à réviser au total
+Soit $(a_{n,p})_{(n,p) \in \mathbb{N}^2}$ une famille de réels positifs ou nuls.
+Alors on a toujours l'égalité suivante dans $[0, +\infty]$ :
+$$\sum_{n=0}^{\infty} \sum_{p=0}^{\infty} a_{n,p} = \sum_{p=0}^{\infty} \sum_{n=0}^{\infty} a_{n,p}$$
 
-# 📚 27/09/2026
+## Théorème de Fubini-Lebesgue pour les suites
 
-**2** Théorèmes
+Soit $(a_{n,p})_{(n,p) \in \mathbb{N}^2}$ une famille de nombres complexes.
+On suppose que la famille est sommable, c'est-à-dire que l'une des sommes itérées des modules converge :
+$$\sum_{n=0}^{\infty} \sum_{p=0}^{\infty} |a_{n,p}| < +\infty$$
+Alors les sommes itérées convergent absolument et on a l'égalité :
+$$\sum_{n=0}^{\infty} \sum_{p=0}^{\infty} a_{n,p} = \sum_{p=0}^{\infty} \sum_{n=0}^{\infty} a_{n,p}$$
 
-## 1. Théorème du rang
+## Théorème de sommation $\mathcal{L}^1$
 
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Algèbre Linéaire
-</blockquote>
-</details>
+Soit $\sum f_n$ une série de fonctions de $\mathcal{C}_{m}(I, \mathbb{C})$.
+Supposons que :
 
-<details>
-<summary><b>Énoncé</b></summary>
+1. $\sum f_n$ converge simplement vers $S \in \mathcal{C}_{m}(I, \mathbb{C})$.
+2. Chaque $f_n$ est intégrable sur $I$.
+3. $\sum \int_I |f_n| < +\infty$.
+   Alors $S$ est intégrable sur $I$ et :
+   $$\int_I \left( \sum_{n=0}^{\infty} f_n(t) \right) dt = \sum_{n=0}^{\infty} \int_I f_n(t) dt$$
 
----
+## Théorème de continuité d'une intégrale à paramètre
 
-Soient $E$ et $F$ deux espaces vectoriels de dimension finie sur un corps $\mathbb{K}$. Soit $u \in \mathcal{L}(E, F)$ une application linéaire de $E$ dans $F$.
+Soit $X\subset E$ un espace vectoriel normé de dimension finie et $I$ un intervalle de $\mathbb{R}$. Soit $f : X \times I \to \mathbb{C}$ telle que :
+
+1. Pour tout $x \in X$, la fonction $t \mapsto f(x, t)$ est continue par morceaux sur $I$.
+2. Pour tout $t \in I$, la fonction $x \mapsto f(x, t)$ est continue sur $X$.
+3. Il existe $\varphi \in \mathcal{C}_{m}(I, \mathbb{R}^+)$ intégrable sur $I$ telle que pour tout $(x, t) \in X \times I$, $|f(x, t)| \le \varphi(t)$ (hypothèse de domination).
+
+Alors la fonction $F : x \mapsto \int_I f(x, t) dt$ est définie et continue sur $X$.
+
+## Théorème de dérivation d'une intégrale à paramètre
+
+Soit $X$ un ouvert d'un espace vectoriel normé de dimension finie et $I$ un intervalle de $\mathbb{R}$. Soit $f : X \times I \to \mathbb{C}$ telle que :
+
+1. Pour tout $x \in X$, la fonction $t \mapsto f(x, t)$ est continue par morceaux sur $I$.
+2. La fonction $f$ admet une dérivée partielle selon $x$, notée $\frac{\partial f}{\partial x}$, telle que :
+   - Pour tout $x \in X$, $t \mapsto \frac{\partial f}{\partial x}(x, t)$ est continue par morceaux sur $I$.
+   - Pour tout $t \in I$, $x \mapsto \frac{\partial f}{\partial x}(x, t)$ est continue sur $X$.
+3. Il existe $\varphi \in \mathcal{C}_{m}(I, \mathbb{R}^+)$ intégrable sur $I$ telle que pour tout $(x, t) \in X \times I$, $|\frac{\partial f}{\partial x}(x, t)| \le \varphi(t)$ (hypothèse de domination).
+
+Alors $F : x \mapsto \int_I f(x, t) dt$ est de classe $\mathcal{C}^1$ sur $X$ et :
+$$F'(x) = \int_I \frac{\partial f}{\partial x}(x, t) dt$$
+
+## Théorème de convergence dominée
+
+Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions $\mathcal{C}_{m}(I, \mathbb{C})$ où $I$ est un intervalle de $\mathbb{R}$.
+Supposons que :
+
+1. La suite $(f_n)$ converge simplement sur $I$ vers une fonction $f$ continue par morceaux sur $I$.
+2. Il existe $\varphi \in \mathcal{C}_{m}(I, \mathbb{R}^+)$ intégrable sur $I$ telle que pour tout $n \in \mathbb{N}$ et tout $x \in I$, $|f_n(x)| \le \varphi(x)$.
+
+Alors $f$ et les $f_n$ sont intégrables sur $I$ et :
+$$\lim_{n \to \infty} \int_I f_n(t) dt = \int_I f(t) dt$$
+
+# Analyse réelle
+
+## Suite de Cauchy
+
+Soit $(E, d)$ un espace métrique. Une suite $(u_n)_{n \in \mathbb{N}}$ d'éléments de $E$ est dite de Cauchy si :
+$$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall p, q \ge N, d(u_p, u_q) < \varepsilon$$
+
+## Composition de fonctions convexes
+
+Soient $I$ et $J$ deux intervalles de $\mathbb{R}$. Soit $f : I \to J$ et $g : J \to \mathbb{R}$ deux fonctions.
+Si $f$ est convexe, $g$ est convexe et $g$ est croissante, alors $g \circ f$ est convexe sur $I$.
+
+## Inégalité des pentes
+
+Soit $I$ un intervalle de $\mathbb{R}$ et $f : I \to \mathbb{R}$ une fonction convexe. Soient $a, b, c \in I$ tels que $a < b < c$.
 Alors :
-$$\dim(E) = \dim(\ker(u)) + \text{rg}(u)$$
-où $\ker(u)$ est le noyau de $u$ et $\text{rg}(u) = \dim(\text{im}(u))$ est le rang de $u$.
+$$\frac{f(b)-f(a)}{b-a} \le \frac{f(c)-f(a)}{c-a} \le \frac{f(c)-f(b)}{c-b}$$
 
----
+## Théorème de Bolzano-Weierstrass
 
-</details>
+Toute suite bornée de réels (ou d'éléments de $\mathbb{R}^n$) admet au moins une valeur d'adhérence. Autrement dit, on peut en extraire une sous-suite convergente.
 
-## 2. Théorème des valeurs intermédiaires
+## Théorème de la limite monotone
 
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse Réelle
-</blockquote>
-</details>
+Soit $f : ]a, b[ \to \mathbb{R}$ une fonction croissante.
 
-<details>
-<summary><b>Énoncé</b></summary>
+1. Si $f$ est majorée, alors $f$ admet une limite finie en $b^-$.
+2. Sinon, $\lim_{x \to b^-} f(x) = +\infty$.
+   De même pour la limite en $a^+$.
 
----
+## Théorème du point fixe
 
-Soient $a, b \in \mathbb{R}$ tels que $a < b$. Soit $f : [a, b] \to \mathbb{R}$ une fonction continue sur le segment $[a, b]$.
-Pour tout réel $y$ compris entre $f(a)$ et $f(b)$, il existe au moins un réel $c \in [a, b]$ tel que :
-$$f(c) = y$$
-Autrement dit, l'image d'un intervalle par une fonction continue est un intervalle.
+Soit $(E, d)$ un espace métrique complet non vide. Soit $f : E \to E$ une application contractante, c'est-à-dire qu'il existe $k \in [0, 1[$ tel que :
+$$\forall x, y \in E, d(f(x), f(y)) \le k d(x, y)$$
+Alors :
 
----
+1. $f$ admet un unique point fixe $x^* \in E$ (tel que $f(x^*) = x^*$).
+2. Pour tout point de départ $u_0 \in E$, la suite $(u_n)_{n \in \mathbb{N}}$ définie par $u_{n+1} = f(u_n)$ converge vers $x^*$.
+3. On a l'estimation de la vitesse de convergence suivante : $d(u_n, x^*) \le \frac{k^n}{1-k} d(u_1, u_0)$.
 
-</details>
+## Dérivée de la fonction réciproque
+
+Soit $f : I \to J$ une bijection continue d'un intervalle $I$ sur un intervalle $J$. Soit $a \in I$ tel que $f$ soit dérivable en $a$ et $f'(a) \neq 0$.
+Alors $f^{-1}$ est dérivable en $b = f(a)$ et :
+$$(f^{-1})'(b) = \frac{1}{f'(a)} = \frac{1}{f'(f^{-1}(b))}$$
+
+## Formule de Taylor-Young
+
+Soit $f : I \to \mathbb{R}$ une fonction de classe $\mathcal{C}^n$ au voisinage de $a \in I$.
+Alors, au voisinage de $h=0$ :
+$$f(a+h) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} h^k + o(h^n)$$
+
+## Formule de Taylor-Lagrange
+
+Soit $f : [a, b] \to \mathbb{R}$ une fonction de classe $\mathcal{C}^n$ sur $[a, b]$ et $n+1$ fois dérivable sur $]a, b[$.
+Alors il existe $c \in ]a, b[$ tel que :
+$$f(b) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (b-a)^k + \frac{f^{(n+1)}(c)}{(n+1)!} (b-a)^{n+1}$$
+
+## Formule de Taylor avec reste intégral
+
+Soit $f : [a, b] \to \mathbb{R}$ une fonction de classe $\mathcal{C}^{n+1}$ sur $[a, b]$.
+Alors :
+$$f(b) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (b-a)^k + \int_a^b \frac{(b-t)^n}{n!} f^{(n+1)}(t) dt$$
+
+## Règle de l'Hôpital
+
+Soient $f, g$ deux fonctions dérivables sur $]a, b[$ telles que $g'$ ne s'annule pas. Supposons que $\lim_{x \to a} f(x) = \lim_{x \to a} g(x) = 0$ (ou $\pm \infty$).
+Si $\lim_{x \to a} \frac{f'(x)}{g'(x)} = L \in \bar{\mathbb{R}}$, alors :
+$$\lim_{x \to a} \frac{f(x)}{g(x)} = L$$
+
+# Analyse complexe
+
+## Sinus de la somme
+
+Soient $a, b \in \mathbb{C}$. On a :
+$$\sin(a+b) = \sin(a)\cos(b) + \cos(a)\sin(b)$$
+
+## Cosinus de la somme
+
+Soient $a, b \in \mathbb{C}$. On a :
+$$\cos(a+b) = \cos(a)\cos(b) - \sin(a)\sin(b)$$
+
+## Règle de D'Alembert
+
+Soit $\sum a_n z^n$ une série entière avec $a_n \neq 0$ pour $n$ assez grand.
+Si $\lim_{n \to \infty} |\frac{a_{n+1}}{a_n}| = \ell \in [0, +\infty]$, alors le rayon de convergence $R$ de la série est :
+$$R = \frac{1}{\ell}$$ (avec la convention $1/0 = +\infty$ et $1/\infty = 0$).
+
+## Règle de Cauchy
+
+Soit $\sum a_n z^n$ une série entière.
+Si $\lim_{n \to \infty} |a_n|^{1/n} = \ell \in [0, +\infty]$, alors le rayon de convergence $R$ de la série est :
+$$R = \frac{1}{\ell}$$ (avec la convention $1/0 = +\infty$ et $1/\infty = 0$).
+
+## Théorème de Cauchy
+
+Soit $U$ un ouvert simplement connexe de $\mathbb{C}$ et $f : U \to \mathbb{C}$ une fonction holomorphe. Soit $\gamma$ un lacet (chemin fermé) rectifiable dans $U$.
+Alors :
+$$\int_{\gamma} f(z) dz = 0$$
+
+## Théorème de Liouville
+
+Toute fonction entière (holomorphe sur $\mathbb{C}$) et bornée est constante.
+
+## Théorème des résidus
+
+Soit $U$ un ouvert simplement connexe de $\mathbb{C}$ et $S$ un ensemble de points isolés dans $U$. Soit $f : U \setminus S \to \mathbb{C}$ une fonction holomorphe. Soit $\gamma$ un lacet rectifiable dans $U \setminus S$.
+Alors :
+$$\int_{\gamma} f(z) dz = 2i\pi \sum_{a \in S} \text{Ind}_{\gamma}(a) \text{Res}(f, a)$$
+
+# Fonctions vectorielles
+
+## Convergence simple
+
+Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions d'un ensemble $X$ vers un espace vectoriel normé $F$. La suite $(f_n)$ converge simplement vers $f : X \to F$ si :
+$$\forall x \in X, \lim_{n \to \infty} f_n(x) = f(x)$$
+
+## Convergence uniforme d'une suite de fonctions
+
+Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de $X$ vers $(F, \|\cdot\|)$. La suite $(f_n)$ converge uniformément vers $f : X \to F$ si :
+$$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall n \ge N, \forall x \in X, \|f_n(x) - f(x)\| < \varepsilon$$
+ou encore $\lim_{n \to \infty} \sup_{x \in X} \|f_n(x) - f(x)\| = 0$.
+
+## Convergence uniforme d'une série de fonctions
+
+Soit $\sum u_n$ une série de fonctions de $X$ vers $F$. On dit qu'elle converge uniformément si la suite de ses sommes partielles $S_n = \sum_{k=0}^n u_k$ converge uniformément sur $X$.
+
+## Convergence absolue d'une série de fonctions
+
+Soit $\sum u_n$ une série de fonctions de $X$ vers $F$. On dit qu'elle converge absolument en $x \in X$ si la série numérique $\sum \|u_n(x)\|$ converge.
+
+## Convergence normale d'une série de fonctions
+
+Soit $\sum u_n$ une série de fonctions de $X$ vers $(F, \|\cdot\|)$. On dit qu'elle converge normalement sur $X$ si la série numérique $\sum \sup_{x \in X} \|u_n(x)\|$ converge.
+
+## Limite uniforme de fonctions bornées
+
+Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions bornées de $X$ vers $F$. Si $(f_n)$ converge uniformément vers $f$, alors $f$ est bornée sur $X$.
+
+## Limite uniforme de fonctions continues
+
+Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions d'un espace topologique $X$ vers un espace vectoriel normé $F$. Si les $f_n$ sont continues et si $(f_n)$ converge uniformément vers $f$, alors $f$ est continue sur $X$.
+
+## Théorème de la double limite
+
+Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de $X$ vers un espace de Banach $F$. Soit $a$ un point adhérent à $X$.
+Supposons que :
+
+1. Pour tout $n$, $\lim_{x \to a} f_n(x) = L_n$ existe.
+2. $(f_n)$ converge uniformément vers $f$ sur $X$.
+   Alors la suite $(L_n)$ converge vers une limite $L$, et $\lim_{x \to a} f(x) = L$.
+   On a ainsi : $\lim_{n \to \infty} \lim_{x \to a} f_n(x) = \lim_{x \to a} \lim_{n \to \infty} f_n(x)$.
+
+## Théorème d'intégration d'une suite de fonctions
+
+Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions continues de $[a, b]$ vers $F$. Si $(f_n)$ converge uniformément vers $f$ sur $[a, b]$, alors :
+$$\lim_{n \to \infty} \int_a^b f_n(t) dt = \int_a^b \left( \lim_{n \to \infty} f_n(t) \right) dt = \int_a^b f(t) dt$$
+
+## Théorème de dérivation d'une suite de fonctions
+
+Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de classe $\mathcal{C}^1$ de $[a, b]$ vers $F$. Supposons que :
+
+1. Il existe $x_0 \in [a, b]$ tel que $(f_n(x_0))$ converge.
+2. La suite des dérivées $(f_n')$ converge uniformément vers une fonction $g$ sur $[a, b]$.
+   Alors $(f_n)$ converge uniformément vers une fonction $f$ de classe $\mathcal{C}^1$ et $f' = g$.
+
+## Théorème de dérivation terme à terme
+
+C'est l'application du théorème précédent aux sommes partielles d'une série de fonctions $\sum u_n$. Si chaque $u_n$ est $\mathcal{C}^1$, si $\sum u_n(x_0)$ converge et $\sum u_n'$ converge uniformément, alors $S = \sum u_n$ est $\mathcal{C}^1$ et $S' = \sum u_n'$.
+
+## Théorème d'intégration terme à terme
+
+Application du théorème d'intégration des suites aux séries de fonctions : si $\sum u_n$ converge uniformément et que les $u_n$ sont continues, alors $\int \sum u_n = \sum \int u_n$.
+
+## Théorème de la double limite terme à terme
+
+Application du théorème de la double limite aux séries de fonctions $\sum u_n$.
+
+## Critère de cauchy uniforme
+
+Une suite de fonctions $(f_n)$ de $X$ vers un espace de Banach $F$ converge uniformément sur $X$ si et seulement si :
+$$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall p, q \ge N, \forall x \in X, \|f_p(x) - f_q(x)\| < \varepsilon$$
+
+# Topologie
+
+## Distance
+
+Soit $E$ un ensemble. Une distance sur $E$ est une application $d : E \times E \to \mathbb{R}_+$ vérifiant :
+
+1. Séparation : $d(x, y) = 0 \iff x = y$
+2. Symétrie : $d(x, y) = d(y, x)$
+3. Inégalité triangulaire : $d(x, z) \le d(x, y) + d(y, z)$
+
+## Norme
+
+Soit $E$ un espace vectoriel sur $\mathbb{K}$. Une norme sur $E$ est une application $\|\cdot\| : E \to \mathbb{R}_+$ vérifiant :
+
+1. Séparation : $\|x\| = 0 \iff x = 0$
+2. Homogénéité : $\|\lambda x\| = |\lambda| \|x\|$
+3. Inégalité triangulaire : $\|x+y\| \le \|x\| + \|y\|$
+
+## Image continue d'un compact
+
+Soit $f : E \to F$ une application continue d'un espace topologique $E$ dans un espace topologique $F$.
+Si $K$ est un sous-ensemble compact de $E$, alors son image $f(K)$ est un sous-ensemble compact de $F$.
+
+## Théorème de Heine
+
+Soit $f : E \to F$ une application continue d'un espace métrique compact $E$ dans un espace métrique $F$.
+Alors $f$ est uniformément continue sur $E$, c'est-à-dire :
+$$\forall \varepsilon > 0, \exists \delta > 0, \forall x, y \in E, d_E(x, y) < \delta \implies d_F(f(x), f(y)) < \varepsilon$$
+
+## Connexité
+
+Un espace topologique $E$ est connexe s'il n'est pas la réunion de deux ouverts non vides et disjoints.
+De manière équivalente, les seules parties de $E$ à la fois ouvertes et fermées sont $\emptyset$ et $E$.
+
+## Homéomorphisme
+
+Une application $f : E \to F$ entre deux espaces topologiques est un homéomorphisme si $f$ est bijective, continue, et si sa réciproque $f^{-1}$ est continue.
+
+## Théorème de Heine-Borel
+
+Dans un espace vectoriel normé de dimension finie, les parties compactes sont exactement les parties fermées et bornées.
+
+## Adhérence d'un connexe
+
+Soit $E$ un espace topologique et $A$ une partie connexe de $E$.
+Si $B$ est une partie telle que $A \subseteq B \subseteq \bar{A}$, alors $B$ est connexe. En particulier, l'adhérence $\bar{A}$ d'un connexe est connexe.
+
+## Théorème de Baire
+
+Dans un espace métrique complet (ou un espace localement compact), toute intersection dénombrable d'ouverts denses est dense.
+Équivalemment, un tel espace n'est pas la réunion dénombrable de fermés d'intérieur vide.
+
+# Algèbre linéaire
+
+## Endomorphismes qui commutent, sous-espaces stables
+
+Soient $u, v \in \mathcal{L}(E)$ deux endomorphismes d'un espace vectoriel $E$ tels que $u \circ v = v \circ u$.
+Alors les sous-espaces propres de $u$ (respectivement $\ker(u)$ and $\text{im}(u)$) sont stables par $v$.
+
+## Décomposition de Dunford
+
+Soit $E$ un espace vectoriel de dimension finie sur $\mathbb{K}$. Soit $u \in \mathcal{L}(E)$ un endomorphisme dont le polynôme caractéristique est scindé sur $\mathbb{K}$.
+Alors il existe un unique couple $(d, n) \in \mathcal{L}(E)^2$ tel que :
+
+1. $u = d + n$
+2. $d$ est diagonalisable et $n$ est nilpotent
+3. $d$ and $n$ commutent ($d \circ n = n \circ d$)
+   De plus, $d$ and $n$ sont des polynômes en $u$.
+
+## Théorème de Cayley-Hamilton
+
+Soit $E$ un espace vectoriel de dimension finie $n$. Pour tout endomorphisme $u \in \mathcal{L}(E)$, son polynôme caractéristique $\chi_u$ est un polynôme annulateur de $u$ :
+$$\chi_u(u) = 0_{\mathcal{L}(E)}$$
+
+## Théorème spectral
+
+Soit $E$ un espace euclidien (espace vectoriel réel muni d'un produit scalaire). Soit $u \in \mathcal{L}(E)$ un endomorphisme symétrique.
+Alors il existe une base orthonormée de $E$ composée de vecteurs propres de $u$. En particulier, $u$ est diagonalisable.
+
+## Caractérisation des matrices trigonalisables
+
+Une matrice $A \in \mathcal{M}_n(\mathbb{K})$ est trigonalisable sur $\mathbb{K}$ si et seulement si son polynôme caractéristique $\chi_A$ est scindé sur $\mathbb{K}$.
+
+## Caractérisation des matrices diagonalisables
+
+Une matrice $A \in \mathcal{M}_n(\mathbb{K})$ est diagonalisable sur $\mathbb{K}$ si et seulement si l'une des conditions suivantes est vérifiée :
+
+1. Son polynôme caractéristique $\chi_A$ est scindé sur $\mathbb{K}$ and la dimension de chaque sous-espace propre est égale à la multiplicité de la valeur propre correspondante.
+2. Elle admet un polynôme annulateur scindé à racines simples sur $\mathbb{K}$.
+3. Son polynôme minimal $m_A$ est scindé à racines simples sur $\mathbb{K}$.
+
+## Commutant d'un endomorphisme
+
+Soit $u \in \mathcal{L}(E)$. Le commutant de $u$ est l'ensemble $C(u) = \{v \in \mathcal{L}(E) : u \circ v = v \circ u\}$. C'est une sous-algèbre de $\mathcal{L}(E)$.
+Si $u$ est diagonalisable à valeurs propres simples, alors $\dim(C(u)) = n$ and $C(u) = \mathbb{K}[u]$.
+
+# Groupes
+
+## Action de groupe
+
+Une action d'un groupe $G$ sur un ensemble $X$ est une application $\cdot : G \times X \to X$ telle que :
+
+1. $\forall x \in X, e_G \cdot x = x$
+2. $\forall g, g' \in G, \forall x \in X, (gg') \cdot x = g \cdot (g' \cdot x)$
+
+## Théorème de Lagrange
+
+Soit $G$ un groupe fini et $H$ un sous-groupe de $G$.
+Alors l'ordre de $H$ divise l'ordre de $G$ :
+$$|G| = |H| \times [G:H]$$
+où $[G:H]$ est l'indice de $H$ dans $G$ (le nombre de classes à gauche).
+
+## Théorème de Cauchy
+
+Soit $G$ un groupe fini et $p$ un nombre premier divisant l'ordre de $G$.
+Alors il existe un élément de $G$ d'ordre $p$.
+
+## Théorème de décomposition des groupes abéliens finis
+
+Tout groupe abélien fini $G$ est isomorphe à un produit direct de groupes cycliques :
+$$G \cong \mathbb{Z}/n_1\mathbb{Z} \times \mathbb{Z}/n_2\mathbb{Z} \times \dots \times \mathbb{Z}/n_k\mathbb{Z}$$
+où $n_1 | n_2 | \dots | n_k$ sont les facteurs invariants de $G$.
+
+## Générateurs de Sn et An
+
+1. Le groupe symétrique $\mathfrak{S}_n$ est engendré par les transpositions $(i, j)$. Il est aussi engendré par les transpositions élémentaires $(i, i+1)$.
+2. Le groupe alterné $\mathfrak{A}_n$ est engendré par les 3-cycles $(i, j, k)$.
+
+## Simplicité de An (pour n >= 5)
+
+Le groupe alterné $\mathfrak{A}_n$ est un groupe simple (il n'admet aucun sous-groupe distingué propre non trivial) si et seulement si $n \ge 5$.
+
+## Produit semi-direct
+
+Soient $N$ and $H$ deux groupes and $\phi : H \to \text{Aut}(N)$ un morphisme de groupes. Le produit semi-direct $N \rtimes_\phi H$ est le groupe dont l'ensemble sous-jacent est $N \times H$ muni de la loi :
+$$(n, h) \cdot (n', h') = (n \phi(h)(n'), hh')$$
+
+## Produit semi-direct par conjugaison
+
+Si $N$ est un sous-groupe distingué de $G$ and $H$ un sous-groupe de $G$ tels que $N \cap H = \{e\}$ and $G = NH$, alors $G$ est isomorphe au produit semi-direct de $N$ par $H$ pour l'action de conjugaison de $H$ sur $N$ : $\phi(h)(n) = hnh^{-1}$.
+
+# Aucun
+
+## Factorisation de a^n - b^n
+
+Soient $a, b \in \mathbb{C}$ and $n \in \mathbb{N}^*$. On a :
+$$a^n - b^n = (a-b) \sum_{k=0}^{n-1} a^{n-1-k} b^k$$
+
+où $\text{Ind}_{\gamma}(a)$ est l'indice du lacet $\gamma$ par rapport au point $a$ et $\text{Res}(f, a)$ est le résidu de $f$ en $a$.

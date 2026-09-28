@@ -1,0 +1,10 @@
+id,nom_théorème,chapitre,niveau_acquisition,date_revision,succès
+2,Théorème des valeurs intermédiaires,Analyse Réelle,1,28/09/2026,
+3,Lemme des noyaux,Algèbre Linéaire,1,28/09/2026,
+1,Théorème du rang,Algèbre Linéaire,1,28/09/2026,
+9,Théorème de convergence dominée,Intégration sur un intervalle quelconque,1,29/09/2026,
+5,Théorème de Fubini-Lebesgue pour les suites,Intégration sur un intervalle quelconque,1,29/09/2026,
+8,Théorème de dérivation d'une intégrale à paramètre,Intégration sur un intervalle quelconque,1,29/09/2026,
+6,Théorème de sommation $\mathcal{L}^1$,Intégration sur un intervalle quelconque,1,29/09/2026,
+7,Théorème de continuité d'une intégrale à paramètre,Intégration sur un intervalle quelconque,1,29/09/2026,
+4,Théorème de Fubini-Tonelli pour les suites,Intégration sur un intervalle quelconque,1,29/09/2026,

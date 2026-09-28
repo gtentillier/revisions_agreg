@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Mise à jour Révisions",
+			"type": "shell",
+			"command": "/usr/local/bin/python3",
+			"args": [
+				"mise_a_jour.py"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}

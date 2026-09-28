@@ -2,7 +2,6 @@ liste théorèmes :
 
 à ajouter à la main :
 - Probas
-- autre théorème de fubini
 - Chapitre analyse réelle
 - Chapitre analyse complète
 - Chapitre Fonctions vectorielles
@@ -10,13 +9,14 @@ liste théorèmes :
 - Chapitre Groupes
 
 Théorèmes d'intégration :
-Théorème de Fubini-Tonelli
 Théorème de sommation L1
 Théorème de continuité d'une intégrale à paramètre
 Théorème de dérivation d'une intégrale à paramètre
 Théorème de convergence dominée
 
 Analyse réelle :
+Théorème de Fubini-Tonelli
+Théorème de Fubini-Lebesgue
 Suite de Cauchy
 Composition de fonctions convexes
 Inégalité des pentes
@@ -68,8 +68,6 @@ Théorème de Baire
 Algèbre linéaire :
 Endomorphismes qui commutent, sous-espaces stables
 Décomposition de Dunford
-Théorème du rang
-Lemme des noyaux
 Théorème de Cayley-Hamilton
 Théorème spectral
 Caractérisation des matrices trigonalisables
