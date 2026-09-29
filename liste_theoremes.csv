@@ -78,6 +78,7 @@ Alors :
 Si $f'(a) \neq 0$ et si $f^{-1}$ est continue en $b = f(a)$, alors $f^{-1}$ est dérivable en $b$ et :
 $$(f^{-1})'(b) = \frac{1}{f'(a)} = \frac{1}{f'(f^{-1}(b))}$$"
 17,Formule de Taylor-Young,Analyse réelle,"Soit $f \in \mathcal{C}^n(I, E)$ où $E$ est un espace vectoriel normé de dimension finie. Soit $a \in I$.
+
 Alors, au voisinage de $h=0$ tel que $a+h \in I$ :
 $$f(a+h) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} h^k + o(h^n)$$"
 18,Inégalité de Taylor-Lagrange,Analyse réelle,"Soit $f \in \mathcal{C}^n([a, b], E)$ telle que $f^{(n)}$ soit dérivable sur $]a, b[$.
@@ -94,7 +95,7 @@ $$\sin(2a) = 2\sin(a)\cos(a)$$"
 $$\cos(a+b) = \cos(a)\cos(b) - \sin(a)\sin(b)$$
 En particulier, pour $b=a$ :
 $$\cos(2a) = \cos^2(a) - \sin^2(a)$$"
-22,Règle de D'Alembert,Analyse complexe,"Soit $\sum a_n z^n$ une série entière avec $a_n \neq 0$ pour $n$ assez grand.
+22,Règle de D'Alembert,Analyse complexe,"Soit $\sum a_n z^n$ une série entière with $a_n \neq 0$ pour $n$ assez grand.
 Si $\lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right| = \ell \in [0, +\infty]$, alors le rayon de convergence $R$ de la série est :
 $$R = \frac{1}{\ell}$$
 (avec la convention $1/0 = +\infty$ et $1/\infty = 0$)."
@@ -108,3 +109,48 @@ $$R = \frac{1}{\ell}$$
 - si de plus $z \in U \setminus \text{Im}(\gamma)$, alors $f(z) \text{Ind}_{\gamma}(z) = \frac{1}{2i\pi} \int_{\gamma} \frac{f(w)}{w-z} dw$."
 25,Théorème de Liouville,Analyse complexe,"Toute fonction holomorphe sur $\mathbb{C}$ bornée est constante."
 26,Théorème fondamental de l'algèbre (D'Alembert-Gauss),Analyse complexe,"Toute fonction polynomiale non constante à coefficients complexes admet au moins une racine complexe."
+27,Factorisation de $a^n - b^n$,Analyse réelle,"Soient $a, b \in \mathbb{C}$ et $n \in \mathbb{N}^*$. On a :
+$$a^n - b^n = (a-b) \sum_{k=0}^{n-1} a^{n-1-k} b^k$$"
+28,Caractérisation de l'égalité des idéaux engendrés par deux éléments,Anneaux,"Soit $A$ un anneau commutatif intègre, $a, b \in A$.
+$(a) = (b)$ $\iff$ $a$ et $b$ sont **associés** (i.e. $\exists u \in A^\times, a = ub$)."
+29,Théorème de factorisation dans un anneau,Anneaux,"Soit $f : A \to B$ un morphisme d'anneaux et $I$ un idéal de $A$.
+$I \subseteq \ker f$ $\iff$ $\exists!$ morphisme d'anneaux $\bar{f} : A/I \to B$ tel que $f = \bar{f} \circ \pi$, où $\pi : A \to A/I$ est la projection canonique, c'est-à-dire tel que le diagramme suivant commute :
+<p align="center">
+  <img src="img/dessins théorèmes/anneaux_1.png" width="300">
+</p>"
+30,"Anneau, unitaire, commutatif, intègre, réduit",Anneaux,"Un **anneau** $(A, +, \times)$ est un ensemble muni de deux lois de composition interne telles que $(A, +)$ est un groupe abélien, $\times$ est associative et distributive par rapport à $+$.
+
+- **Unitaire** : s'il possède un élément neutre pour $\times$ (noté $1_A$), tous les anneaux sont supposés unitaires pour le cours.
+- **Commutatif** : si la loi $\times$ est commutative.
+- **Intègre** : non réduit au singleton $\{0\}$ et $\forall x, y \in A, xy = 0 \implies x = 0 \text{ ou } y = 0$.
+- **Réduit** : son seul élément nilpotent est 0 (i.e. $x^n = 0 \implies x = 0$)."
+31,Sous-anneau,Anneaux,"Une partie $S$ d'un anneau $A$ est un **sous-anneau** ssi :
+
+- $(i)$ $(S, +)$ est un sous-groupe de $(A, +)$
+- $(ii)$ $S$ est stable par $\times$
+- $(iii)$ $1_A \in S$"
+32,"Éléments associés, irréductibles, nilpotents d'un anneau",Anneaux,"- **Élément associé** : $a, b \in A$ sont associés s'il existe $u \in A^\times$ tel que $a = ub$.
+- **Élément irréductible** : $p \in A \setminus A^\times$ est irréductible si ses seuls diviseurs sont les éléments inversibles et les associés de $p$ (i.e. $p=ab \implies a \in A^\times$ ou $b \in A^\times$).
+- **Élément nilpotent** : $x \in A$ est nilpotent s'il existe $n \in \mathbb{N}^*$ tel que $x^n = 0$.
+
+Un anneau est dit **réduit** si seul $0$ est nilpotent."
+33,Diviseurs de zéro dans un anneau,Anneaux,"Un élément $x \in A \setminus \{0\}$ est un **diviseur de zéro** s'il existe $y \in A \setminus \{0\}$ tel que $xy = 0$ ou $yx = 0$."
+34,Éléments inversibles d'un anneau,Anneaux,"Un élément $x \in A$ est **inversible** s'il existe $y \in A$ tel que $xy = yx = 1_A$. L'ensemble des éléments inversibles est noté $A^\times$ ou $U(A)$."
+35,"Morphismes d'anneaux, isomorphismes, endomorphismes, automorphismes",Anneaux,"Une application $\varphi : A \to B$ est un **morphisme d'anneaux** si :
+
+- $\forall x, y \in A, \varphi(x+y) = \varphi(x) + \varphi(y)$
+- $\forall x, y \in A, \varphi(xy) = \varphi(x)\varphi(y)$
+- $\varphi(1_A) = 1_B$
+
+$\ker \varphi = \{x \in A, \varphi(x) = 0_B\}$ est un **idéal** de $A$.
+
+On parle d'**isomorphisme**, **endomorphisme** ou **automorphisme** selon les propriétés usuelles."
+36,Algèbre,Anneaux,"Soit $R$ un anneau commutatif. Une $R$-**algèbre** est un anneau $A$ muni d'un morphisme d'anneaux $f : R \to A$ tel que $f(R) \subseteq Z(A)$, où $Z(A)$ désigne le centre de l'anneau $A$."
+37,Idéal,Anneaux,"Soit $A$ un anneau commutatif. Une partie $I$ est un **idéal** de $A$ si :
+
+$(i)$ $(I, +)$ est un sous-groupe de $(A, +)$
+
+$(ii)$ $\forall a \in A, \forall x \in I, ax \in I$."
+38,Caractéristique,Anneaux,"La **caractéristique** d'un anneau unitaire $A$ est l'unique $n \in \mathbb{N}$ tel que $\ker \varphi = n\mathbb{Z}$, où $\varphi : \mathbb{Z} \to A, k \mapsto k \cdot 1_A$ est le morphisme canonique.
+
+C'est donc le plus petit entier $n > 0$ tel que $n \cdot 1_A = 0$ s'il existe, et $0$ sinon."

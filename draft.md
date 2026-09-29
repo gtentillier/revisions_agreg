@@ -1,4 +1,90 @@
+# Anneaux à supprimer après les avoir fait et validé
+
+## Anneau, unitaire, commutatif, intègre, réduit
+
+Un **anneau** $(A, +, \times)$ est un ensemble muni de deux lois de composition interne telles que $(A, +)$ est un groupe abélien, $\times$ est associative et distributive par rapport à $+$.
+
+- **Unitaire** : s'il possède un élément neutre pour $\times$ (noté $1_A$), tous les anneaux sont supposés unitaires pour le cours.
+- **Commutatif** : si la loi $\times$ est commutative.
+- **Intègre** : non réduit au singleton $\{0\}$ et $\forall x, y \in A, xy = 0 \implies x = 0 \text{ ou } y = 0$.
+- **Réduit** : son seul élément nilpotent est 0 (i.e. $x^n = 0 \implies x = 0$).
+
+## Sous-anneau
+
+Une partie $S$ d'un anneau $A$ est un **sous-anneau** ssi :
+
+- $(i)$ $(S, +)$ est un sous-groupe de $(A, +)$
+- $(ii)$ $S$ est stable par $\times$
+- $(iii)$ $1_A \in S$
+
+## Éléments associés, irréductibles, nilpotents d'un anneau
+
+- **Élément associé** : $a, b \in A$ sont associés s'il existe $u \in A^\times$ tel que $a = ub$.
+- **Élément irréductible** : $p \in A \setminus A^\times$ est irréductible si ses seuls diviseurs sont les éléments inversibles et les associés de $p$ (i.e. $p=ab \implies a \in A^\times$ ou $b \in A^\times$).
+- **Élément nilpotent** : $x \in A$ est nilpotent s'il existe $n \in \mathbb{N}^*$ tel que $x^n = 0$.
+
+Un anneau est dit **réduit** si seul $0$ est nilpotent.
+
+## Diviseurs de zéro
+
+Un élément $x \in A \setminus \{0\}$ est un **diviseur de zéro** s'il existe $y \in A \setminus \{0\}$ tel que $xy = 0$ ou $yx = 0$.
+
+## Éléments inversibles d'un anneau
+
+Un élément $x \in A$ est **inversible** s'il existe $y \in A$ tel que $xy = yx = 1_A$. L'ensemble des éléments inversibles est noté $A^\times$ ou $U(A)$.
+
+## Morphismes d'anneaux, isomorphismes, endomorphismes, automorphismes
+
+Une application $\varphi : A \to B$ est un **morphisme d'anneaux** si :
+
+- $\forall x, y \in A, \varphi(x+y) = \varphi(x) + \varphi(y)$
+- $\forall x, y \in A, \varphi(xy) = \varphi(x)\varphi(y)$
+- $\varphi(1_A) = 1_B$
+
+$\ker \varphi = \{x \in A, \varphi(x) = 0_B\}$ est un **idéal** de $A$.
+
+On parle d'**isomorphisme**, **endomorphisme** ou **automorphisme** selon les propriétés usuelles.
+
+## Algèbre
+
+Soit $R$ un anneau commutatif. Une $R$-**algèbre** est un anneau $A$ muni d'un morphisme d'anneaux $f : R \to A$ tel que $f(R) \subseteq Z(A)$, où $Z(A)$ désigne le centre de l'anneau $A$.
+
+## Idéal
+
+Soit $A$ un anneau commutatif. Une partie $I$ est un **idéal** de $A$ si :
+
+$(i)$ $(I, +)$ est un sous-groupe de $(A, +)$
+
+$(ii)$ $\forall a \in A, \forall x \in I, ax \in I$.
+
+## Caractérisation de l'égalité des idéaux engendrés par deux éléments
+
+Soit $A$ un anneau commutatif intègre, $a, b \in A$.
+
+$(a) = (b)$ $\iff$ $a$ et $b$ sont **associés** (i.e. $\exists u \in A^\times, a = ub$).
+
+## Caractéristique
+
+La **caractéristique** d'un anneau unitaire $A$ est l'unique $n \in \mathbb{N}$ tel que $\ker \varphi = n\mathbb{Z}$, où $\varphi : \mathbb{Z} \to A, k \mapsto k \cdot 1_A$ est le morphisme canonique.
+
+C'est donc le plus petit entier $n > 0$ tel que $n \cdot 1_A = 0$ s'il existe, et $0$ sinon.
+
+## Théorème de factorisation dans un anneau
+
+Soit $f : A \to B$ un morphisme d'anneaux et $I$ un idéal de $A$.
+
+$I \subseteq \ker f$ $\iff$ $\exists!$ morphisme d'anneaux $\bar{f} : A/I \to B$ tel que $f = \bar{f} \circ \pi$, où $\pi : A \to A/I$ est la projection canonique, c'est-à-dire tel que le diagramme suivant commute :
+
+<p align="center">
+  <img src="img/dessins théorèmes/anneaux_1.png" width="300">
+</p>
+
 # Analyse réelle à supprimer quand je les aurai révisé et vérifié
+
+## Factorisation de $a^n - b^n$
+
+Soient $a, b \in \mathbb{C}$ et $n \in \mathbb{N}^*$. On a :
+$$a^n - b^n = (a-b) \sum_{k=0}^{n-1} a^{n-1-k} b^k$$
 
 ## Suite de Cauchy
 
@@ -189,7 +275,8 @@ $$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall p, q \ge N, \forall
 ## Endomorphismes qui commutent, sous-espaces stables
 
 Soient $u, v \in \mathcal{L}(E)$ deux endomorphismes d'un espace vectoriel $E$ tels que $u \circ v = v \circ u$.
-Alors les sous-espaces propres de $u$ (respectivement $\ker(u)$ and $\text{im}(u)$) sont stables par $v$.
+
+Alors les sous-espaces propres de $u$ (respectivement $\ker(u)$ et $\text{im}(u)$) sont stables par $v$.
 
 ## Décomposition de Dunford
 
@@ -198,8 +285,8 @@ Alors il existe un unique couple $(d, n) \in \mathcal{L}(E)^2$ tel que :
 
 1. $u = d + n$
 2. $d$ est diagonalisable et $n$ est nilpotent
-3. $d$ and $n$ commutent ($d \circ n = n \circ d$)
-   De plus, $d$ and $n$ sont des polynômes en $u$.
+3. $d$ et $n$ commutent ($d \circ n = n \circ d$)
+   De plus, $d$ et $n$ sont des polynômes en $u$.
 
 ## Théorème de Cayley-Hamilton
 
@@ -209,6 +296,7 @@ $$\chi_u(u) = 0_{\mathcal{L}(E)}$$
 ## Théorème spectral
 
 Soit $E$ un espace euclidien (espace vectoriel réel muni d'un produit scalaire). Soit $u \in \mathcal{L}(E)$ un endomorphisme symétrique.
+
 Alors il existe une base orthonormée de $E$ composée de vecteurs propres de $u$. En particulier, $u$ est diagonalisable.
 
 ## Caractérisation des matrices trigonalisables
@@ -219,14 +307,14 @@ Une matrice $A \in \mathcal{M}_n(\mathbb{K})$ est trigonalisable sur $\mathbb{K}
 
 Une matrice $A \in \mathcal{M}_n(\mathbb{K})$ est diagonalisable sur $\mathbb{K}$ si et seulement si l'une des conditions suivantes est vérifiée :
 
-1. Son polynôme caractéristique $\chi_A$ est scindé sur $\mathbb{K}$ and la dimension de chaque sous-espace propre est égale à la multiplicité de la valeur propre correspondante.
+1. Son polynôme caractéristique $\chi_A$ est scindé sur $\mathbb{K}$ et la dimension de chaque sous-espace propre est égale à la multiplicité de la valeur propre correspondante.
 2. Elle admet un polynôme annulateur scindé à racines simples sur $\mathbb{K}$.
 3. Son polynôme minimal $m_A$ est scindé à racines simples sur $\mathbb{K}$.
 
 ## Commutant d'un endomorphisme
 
 Soit $u \in \mathcal{L}(E)$. Le commutant de $u$ est l'ensemble $C(u) = \{v \in \mathcal{L}(E) : u \circ v = v \circ u\}$. C'est une sous-algèbre de $\mathcal{L}(E)$.
-Si $u$ est diagonalisable à valeurs propres simples, alors $\dim(C(u)) = n$ and $C(u) = \mathbb{K}[u]$.
+Si $u$ est diagonalisable à valeurs propres simples, alors $\dim(C(u)) = n$ et $C(u) = \mathbb{K}[u]$.
 
 # Groupes
 
@@ -266,16 +354,9 @@ Le groupe alterné $\mathfrak{A}_n$ est un groupe simple (il n'admet aucun sous-
 
 ## Produit semi-direct
 
-Soient $N$ and $H$ deux groupes and $\phi : H \to \text{Aut}(N)$ un morphisme de groupes. Le produit semi-direct $N \rtimes_\phi H$ est le groupe dont l'ensemble sous-jacent est $N \times H$ muni de la loi :
+Soient $N$ et $H$ deux groupes et $\phi : H \to \text{Aut}(N)$ un morphisme de groupes. Le produit semi-direct $N \rtimes_\phi H$ est le groupe dont l'ensemble sous-jacent est $N \times H$ muni de la loi :
 $$(n, h) \cdot (n', h') = (n \phi(h)(n'), hh')$$
 
 ## Produit semi-direct par conjugaison
 
-Si $N$ est un sous-groupe distingué de $G$ and $H$ un sous-groupe de $G$ tels que $N \cap H = \{e\}$ and $G = NH$, alors $G$ est isomorphe au produit semi-direct de $N$ par $H$ pour l'action de conjugaison de $H$ sur $N$ : $\phi(h)(n) = hnh^{-1}$.
-
-# Aucun
-
-## Factorisation de a^n - b^n
-
-Soient $a, b \in \mathbb{C}$ and $n \in \mathbb{N}^*$. On a :
-$$a^n - b^n = (a-b) \sum_{k=0}^{n-1} a^{n-1-k} b^k$$
+Si $N$ est un sous-groupe distingué de $G$ et $H$ un sous-groupe de $G$ tels que $N \cap H = \{e\}$ et $G = NH$, alors $G$ est isomorphe au produit semi-direct de $N$ par $H$ pour l'action de conjugaison de $H$ sur $N$ : $\phi(h)(n) = hnh^{-1}$.

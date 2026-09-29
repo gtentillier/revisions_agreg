@@ -30,6 +30,9 @@ Alors :
 $$\int_{\gamma} f(z) dz = 2i\pi \sum_{a \in S} \text{Ind}_{\gamma}(a) \text{Res}(f, a)$$
 où $\text{Ind}_{\gamma}(a)$ est l'indice du lacet $\gamma$ par rapport au point $a$ et $\text{Res}(f, a)$ est le résidu de $f$ en $a$.
 
+Anneaux :
+autre définition d'une algèbre avec l'espace vectoriel
+
 topologie :
 - Théorème de Baire
 Dans un espace métrique complet (ou un espace localement compact), toute intersection dénombrable d'ouverts denses est dense.
