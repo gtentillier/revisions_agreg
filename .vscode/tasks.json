@@ -11,6 +11,13 @@
 			"isBackground": false,
 			"problemMatcher": [],
 			"group": "build"
-		}
+		},
+		{
+			"label": "Auto-Commit",
+			"type": "shell",
+			"command": "git add -A && git commit -m 'auto-commit' && git push",
+			"problemMatcher": []
+		},
+
 	]
 }

@@ -1,155 +1,3 @@
-# Anneaux à supprimer après les avoir fait et validé
-
-## Anneau, unitaire, commutatif, intègre, réduit
-
-Un **anneau** $(A, +, \times)$ est un ensemble muni de deux lois de composition interne telles que $(A, +)$ est un groupe abélien, $\times$ est associative et distributive par rapport à $+$.
-
-- **Unitaire** : s'il possède un élément neutre pour $\times$ (noté $1_A$), tous les anneaux sont supposés unitaires pour le cours.
-- **Commutatif** : si la loi $\times$ est commutative.
-- **Intègre** : non réduit au singleton $\{0\}$ et $\forall x, y \in A, xy = 0 \implies x = 0 \text{ ou } y = 0$.
-- **Réduit** : son seul élément nilpotent est 0 (i.e. $x^n = 0 \implies x = 0$).
-
-## Sous-anneau
-
-Une partie $S$ d'un anneau $A$ est un **sous-anneau** ssi :
-
-- $(i)$ $(S, +)$ est un sous-groupe de $(A, +)$
-- $(ii)$ $S$ est stable par $\times$
-- $(iii)$ $1_A \in S$
-
-## Éléments associés, irréductibles, nilpotents d'un anneau
-
-- **Élément associé** : $a, b \in A$ sont associés s'il existe $u \in A^\times$ tel que $a = ub$.
-- **Élément irréductible** : $p \in A \setminus A^\times$ est irréductible si ses seuls diviseurs sont les éléments inversibles et les associés de $p$ (i.e. $p=ab \implies a \in A^\times$ ou $b \in A^\times$).
-- **Élément nilpotent** : $x \in A$ est nilpotent s'il existe $n \in \mathbb{N}^*$ tel que $x^n = 0$.
-
-Un anneau est dit **réduit** si seul $0$ est nilpotent.
-
-## Diviseurs de zéro
-
-Un élément $x \in A \setminus \{0\}$ est un **diviseur de zéro** s'il existe $y \in A \setminus \{0\}$ tel que $xy = 0$ ou $yx = 0$.
-
-## Éléments inversibles d'un anneau
-
-Un élément $x \in A$ est **inversible** s'il existe $y \in A$ tel que $xy = yx = 1_A$. L'ensemble des éléments inversibles est noté $A^\times$ ou $U(A)$.
-
-## Morphismes d'anneaux, isomorphismes, endomorphismes, automorphismes
-
-Une application $\varphi : A \to B$ est un **morphisme d'anneaux** si :
-
-- $\forall x, y \in A, \varphi(x+y) = \varphi(x) + \varphi(y)$
-- $\forall x, y \in A, \varphi(xy) = \varphi(x)\varphi(y)$
-- $\varphi(1_A) = 1_B$
-
-$\ker \varphi = \{x \in A, \varphi(x) = 0_B\}$ est un **idéal** de $A$.
-
-On parle d'**isomorphisme**, **endomorphisme** ou **automorphisme** selon les propriétés usuelles.
-
-## Algèbre
-
-Soit $R$ un anneau commutatif. Une $R$-**algèbre** est un anneau $A$ muni d'un morphisme d'anneaux $f : R \to A$ tel que $f(R) \subseteq Z(A)$, où $Z(A)$ désigne le centre de l'anneau $A$.
-
-## Idéal
-
-Soit $A$ un anneau commutatif. Une partie $I$ est un **idéal** de $A$ si :
-
-$(i)$ $(I, +)$ est un sous-groupe de $(A, +)$
-
-$(ii)$ $\forall a \in A, \forall x \in I, ax \in I$.
-
-## Caractérisation de l'égalité des idéaux engendrés par deux éléments
-
-Soit $A$ un anneau commutatif intègre, $a, b \in A$.
-
-$(a) = (b)$ $\iff$ $a$ et $b$ sont **associés** (i.e. $\exists u \in A^\times, a = ub$).
-
-## Caractéristique
-
-La **caractéristique** d'un anneau unitaire $A$ est l'unique $n \in \mathbb{N}$ tel que $\ker \varphi = n\mathbb{Z}$, où $\varphi : \mathbb{Z} \to A, k \mapsto k \cdot 1_A$ est le morphisme canonique.
-
-C'est donc le plus petit entier $n > 0$ tel que $n \cdot 1_A = 0$ s'il existe, et $0$ sinon.
-
-## Théorème de factorisation dans un anneau
-
-Soit $f : A \to B$ un morphisme d'anneaux et $I$ un idéal de $A$.
-
-$I \subseteq \ker f$ $\iff$ $\exists!$ morphisme d'anneaux $\bar{f} : A/I \to B$ tel que $f = \bar{f} \circ \pi$, où $\pi : A \to A/I$ est la projection canonique, c'est-à-dire tel que le diagramme suivant commute :
-
-<p align="center">
-  <img src="img/dessins théorèmes/anneaux_1.png" width="300">
-</p>
-
-# Analyse réelle à supprimer quand je les aurai révisé et vérifié
-
-## Factorisation de $a^n - b^n$
-
-Soient $a, b \in \mathbb{C}$ et $n \in \mathbb{N}^*$. On a :
-$$a^n - b^n = (a-b) \sum_{k=0}^{n-1} a^{n-1-k} b^k$$
-
-## Suite de Cauchy
-
-Soit $(E, d)$ un espace métrique. Une suite $(u_n)_{n \in \mathbb{N}}$ d'éléments de $E$ est dite de Cauchy si :
-$$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall p, q \ge N, d(u_p, u_q) < \varepsilon$$
-
-## Composition de fonctions convexes
-
-Soient $I$ et $J$ deux intervalles de $\mathbb{R}$. Soit $f : I \to J$ et $g : J \to \mathbb{R}$ deux fonctions.
-Si $f$ est convexe, $g$ est convexe et $g$ est croissante, alors $g \circ f$ est convexe sur $I$.
-
-## Inégalité des pentes
-
-Soit $I$ un intervalle de $\mathbb{R}$ et $f : I \to \mathbb{R}$ une fonction convexe. Soient $a, b, c \in I$ tels que $a < b < c$.
-Alors :
-$$\frac{f(b)-f(a)}{b-a} \le \frac{f(c)-f(a)}{c-a} \le \frac{f(c)-f(b)}{c-b}$$
-Autrement dit, la fonction taux d'accroissement $T_f : (x, y) \mapsto \frac{f(y)-f(x)}{y-x}$ définie sur $\{(x, y) \in I^2, x \neq y\}$ est croissante par rapport à chacune de ses variables.
-
-## Théorème de Bolzano-Weierstrass
-
-Toute suite bornée de réels (ou d'éléments de $\mathbb{R}^n$) admet au moins une valeur d'adhérence. Autrement dit, on peut en extraire une sous-suite convergente.
-
-## Théorème de la limite monotone
-
-Soit $f : ]a, b[ \to \mathbb{R}$ une fonction croissante.
-
-1. Si $f$ est majorée, alors $f$ admet une limite finie en $b^-$.
-2. Sinon, $\lim_{x \to b^-} f(x) = +\infty$.
-
-De même pour la limite en $a^+$.
-
-## Théorème du point fixe de Banach
-
-Soit $(E, d)$ un espace métrique complet non vide. Soit $f : E \to E$ une application contractante, c'est-à-dire qu'il existe $k \in [0, 1[$ tel que :
-$$\forall x, y \in E, d(f(x), f(y)) \le k d(x, y)$$
-Alors :
-
-1. $f$ admet un unique point fixe $x^* \in E$ (tel que $f(x^*) = x^*$).
-2. Pour tout point de départ $u_0 \in E$, la suite $(u_n)_{n \in \mathbb{N}}$ définie par $u_{n+1} = f(u_n)$ converge vers $x^*$.
-3. On a l'estimation de la vitesse de convergence suivante : $d(u_n, x^*) \le \frac{k^n}{1-k} d(u_1, u_0)$.
-
-## Dérivée de la fonction réciproque
-
-Soit $f : A \to B$ une bijection dérivable sur $A$. Soit $a \in A$.
-Si $f'(a) \neq 0$ et si $f^{-1}$ est continue en $b = f(a)$, alors $f^{-1}$ est dérivable en $b$ et :
-$$(f^{-1})'(b) = \frac{1}{f'(a)} = \frac{1}{f'(f^{-1}(b))}$$
-
-## Formule de Taylor-Young
-
-Soit $f \in \mathcal{C}^n(I, E)$ où $E$ est un espace vectoriel normé de dimension finie. Soit $a \in I$.
-Alors, au voisinage de $h=0$ tel que $a+h \in I$ :
-$$f(a+h) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} h^k + o(h^n)$$
-
-## Inégalité de Taylor-Lagrange
-
-Soit $f \in \mathcal{C}^n([a, b], E)$ telle que $f^{(n)}$ soit dérivable sur $]a, b[$.
-Alors :
-$$\left\| f(b) - \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (b-a)^k \right\| \le \frac{(b-a)^{n+1}}{(n+1)!} \sup_{t \in ]a, b[} \|f^{(n+1)}(t)\|$$
-
-## Formule de Taylor avec reste intégral
-
-Soit $f \in \mathcal{C}^{n+1}(I, E)$. Soient $a, b \in I$.
-Alors :
-$$f(b) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (b-a)^k + \int_a^b \frac{(b-t)^n}{n!} f^{(n+1)}(t) dt$$
-
 # Topologie
 
 ## Distance
@@ -360,3 +208,155 @@ $$(n, h) \cdot (n', h') = (n \phi(h)(n'), hh')$$
 ## Produit semi-direct par conjugaison
 
 Si $N$ est un sous-groupe distingué de $G$ et $H$ un sous-groupe de $G$ tels que $N \cap H = \{e\}$ et $G = NH$, alors $G$ est isomorphe au produit semi-direct de $N$ par $H$ pour l'action de conjugaison de $H$ sur $N$ : $\phi(h)(n) = hnh^{-1}$.
+
+# Anneaux à supprimer après les avoir fait et validé
+
+## Anneau, unitaire, commutatif, intègre, réduit
+
+Un **anneau** $(A, +, \times)$ est un ensemble muni de deux lois de composition interne telles que $(A, +)$ est un groupe abélien, $\times$ est associative et distributive par rapport à $+$.
+
+- **Unitaire** : s'il possède un élément neutre pour $\times$ (noté $1_A$), tous les anneaux sont supposés unitaires pour le cours.
+- **Commutatif** : si la loi $\times$ est commutative.
+- **Intègre** : non réduit au singleton $\{0\}$ et $\forall x, y \in A, xy = 0 \implies x = 0 \text{ ou } y = 0$.
+- **Réduit** : son seul élément nilpotent est 0 (i.e. $x^n = 0 \implies x = 0$).
+
+## Sous-anneau
+
+Une partie $S$ d'un anneau $A$ est un **sous-anneau** ssi :
+
+- $(i)$ $(S, +)$ est un sous-groupe de $(A, +)$
+- $(ii)$ $S$ est stable par $\times$
+- $(iii)$ $1_A \in S$
+
+## Éléments associés, irréductibles, nilpotents d'un anneau
+
+- **Élément associé** : $a, b \in A$ sont associés s'il existe $u \in A^\times$ tel que $a = ub$.
+- **Élément irréductible** : $p \in A \setminus A^\times$ est irréductible si ses seuls diviseurs sont les éléments inversibles et les associés de $p$ (i.e. $p=ab \implies a \in A^\times$ ou $b \in A^\times$).
+- **Élément nilpotent** : $x \in A$ est nilpotent s'il existe $n \in \mathbb{N}^*$ tel que $x^n = 0$.
+
+Un anneau est dit **réduit** si seul $0$ est nilpotent.
+
+## Diviseurs de zéro
+
+Un élément $x \in A \setminus \{0\}$ est un **diviseur de zéro** s'il existe $y \in A \setminus \{0\}$ tel que $xy = 0$ ou $yx = 0$.
+
+## Éléments inversibles d'un anneau
+
+Un élément $x \in A$ est **inversible** s'il existe $y \in A$ tel que $xy = yx = 1_A$. L'ensemble des éléments inversibles est noté $A^\times$ ou $U(A)$.
+
+## Morphismes d'anneaux, isomorphismes, endomorphismes, automorphismes
+
+Une application $\varphi : A \to B$ est un **morphisme d'anneaux** si :
+
+- $\forall x, y \in A, \varphi(x+y) = \varphi(x) + \varphi(y)$
+- $\forall x, y \in A, \varphi(xy) = \varphi(x)\varphi(y)$
+- $\varphi(1_A) = 1_B$
+
+$\ker \varphi = \{x \in A, \varphi(x) = 0_B\}$ est un **idéal** de $A$.
+
+On parle d'**isomorphisme**, **endomorphisme** ou **automorphisme** selon les propriétés usuelles.
+
+## Algèbre
+
+Soit $R$ un anneau commutatif. Une $R$-**algèbre** est un anneau $A$ muni d'un morphisme d'anneaux $f : R \to A$ tel que $f(R) \subseteq Z(A)$, où $Z(A)$ désigne le centre de l'anneau $A$.
+
+## Idéal
+
+Soit $A$ un anneau commutatif. Une partie $I$ est un **idéal** de $A$ si :
+
+$(i)$ $(I, +)$ est un sous-groupe de $(A, +)$
+
+$(ii)$ $\forall a \in A, \forall x \in I, ax \in I$.
+
+## Caractérisation de l'égalité des idéaux engendrés par deux éléments
+
+Soit $A$ un anneau commutatif intègre, $a, b \in A$.
+
+$(a) = (b)$ $\iff$ $a$ et $b$ sont **associés** (i.e. $\exists u \in A^\times, a = ub$).
+
+## Caractéristique
+
+La **caractéristique** d'un anneau unitaire $A$ est l'unique $n \in \mathbb{N}$ tel que $\ker \varphi = n\mathbb{Z}$, où $\varphi : \mathbb{Z} \to A, k \mapsto k \cdot 1_A$ est le morphisme canonique.
+
+C'est donc le plus petit entier $n > 0$ tel que $n \cdot 1_A = 0$ s'il existe, et $0$ sinon.
+
+## Théorème de factorisation dans un anneau
+
+Soit $f : A \to B$ un morphisme d'anneaux et $I$ un idéal de $A$.
+
+$I \subseteq \ker f$ $\iff$ $\exists!$ morphisme d'anneaux $\bar{f} : A/I \to B$ tel que $f = \bar{f} \circ \pi$, où $\pi : A \to A/I$ est la projection canonique, c'est-à-dire tel que le diagramme suivant commute :
+
+<p align="center">
+  <img src="img/dessins théorèmes/anneaux_1.png" width="300">
+</p>
+
+# Analyse réelle à supprimer quand je les aurai révisé et vérifié
+
+## Factorisation de $a^n - b^n$
+
+Soient $a, b \in \mathbb{C}$ et $n \in \mathbb{N}^*$. On a :
+$$a^n - b^n = (a-b) \sum_{k=0}^{n-1} a^{n-1-k} b^k$$
+
+## Suite de Cauchy
+
+Soit $(E, d)$ un espace métrique. Une suite $(u_n)_{n \in \mathbb{N}}$ d'éléments de $E$ est dite de Cauchy si :
+$$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall p, q \ge N, d(u_p, u_q) < \varepsilon$$
+
+## Composition de fonctions convexes
+
+Soient $I$ et $J$ deux intervalles de $\mathbb{R}$. Soit $f : I \to J$ et $g : J \to \mathbb{R}$ deux fonctions.
+Si $f$ est convexe, $g$ est convexe et $g$ est croissante, alors $g \circ f$ est convexe sur $I$.
+
+## Inégalité des pentes
+
+Soit $I$ un intervalle de $\mathbb{R}$ et $f : I \to \mathbb{R}$ une fonction convexe. Soient $a, b, c \in I$ tels que $a < b < c$.
+Alors :
+$$\frac{f(b)-f(a)}{b-a} \le \frac{f(c)-f(a)}{c-a} \le \frac{f(c)-f(b)}{c-b}$$
+Autrement dit, la fonction taux d'accroissement $T_f : (x, y) \mapsto \frac{f(y)-f(x)}{y-x}$ définie sur $\{(x, y) \in I^2, x \neq y\}$ est croissante par rapport à chacune de ses variables.
+
+## Théorème de Bolzano-Weierstrass
+
+Toute suite bornée de réels (ou d'éléments de $\mathbb{R}^n$) admet au moins une valeur d'adhérence. Autrement dit, on peut en extraire une sous-suite convergente.
+
+## Théorème de la limite monotone
+
+Soit $f : ]a, b[ \to \mathbb{R}$ une fonction croissante.
+
+1. Si $f$ est majorée, alors $f$ admet une limite finie en $b^-$.
+2. Sinon, $\lim_{x \to b^-} f(x) = +\infty$.
+
+De même pour la limite en $a^+$.
+
+## Théorème du point fixe de Banach
+
+Soit $(E, d)$ un espace métrique complet non vide. Soit $f : E \to E$ une application contractante, c'est-à-dire qu'il existe $k \in [0, 1[$ tel que :
+$$\forall x, y \in E, d(f(x), f(y)) \le k d(x, y)$$
+Alors :
+
+1. $f$ admet un unique point fixe $x^* \in E$ (tel que $f(x^*) = x^*$).
+2. Pour tout point de départ $u_0 \in E$, la suite $(u_n)_{n \in \mathbb{N}}$ définie par $u_{n+1} = f(u_n)$ converge vers $x^*$.
+3. On a l'estimation de la vitesse de convergence suivante : $d(u_n, x^*) \le \frac{k^n}{1-k} d(u_1, u_0)$.
+
+## Dérivée de la fonction réciproque
+
+Soit $f : A \to B$ une bijection dérivable sur $A$. Soit $a \in A$.
+Si $f'(a) \neq 0$ et si $f^{-1}$ est continue en $b = f(a)$, alors $f^{-1}$ est dérivable en $b$ et :
+$$(f^{-1})'(b) = \frac{1}{f'(a)} = \frac{1}{f'(f^{-1}(b))}$$
+
+## Formule de Taylor-Young
+
+Soit $f \in \mathcal{C}^n(I, E)$ où $E$ est un espace vectoriel normé de dimension finie. Soit $a \in I$.
+Alors, au voisinage de $h=0$ tel que $a+h \in I$ :
+$$f(a+h) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} h^k + o(h^n)$$
+
+## Inégalité de Taylor-Lagrange
+
+Soit $f \in \mathcal{C}^n([a, b], E)$ telle que $f^{(n)}$ soit dérivable sur $]a, b[$.
+Alors :
+$$\left\| f(b) - \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (b-a)^k \right\| \le \frac{(b-a)^{n+1}}{(n+1)!} \sup_{t \in ]a, b[} \|f^{(n+1)}(t)\|$$
+
+## Formule de Taylor avec reste intégral
+
+Soit $f \in \mathcal{C}^{n+1}(I, E)$. Soient $a, b \in I$.
+Alors :
+$$f(b) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (b-a)^k + \int_a^b \frac{(b-t)^n}{n!} f^{(n+1)}(t) dt$$
