@@ -1,4 +1,4 @@
-# Analyse réelle
+# Analyse réelle à supprimer quand je les aurai révisé et vérifié
 
 ## Suite de Cauchy
 
@@ -64,48 +64,52 @@ Soit $f \in \mathcal{C}^{n+1}(I, E)$. Soient $a, b \in I$.
 Alors :
 $$f(b) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (b-a)^k + \int_a^b \frac{(b-t)^n}{n!} f^{(n+1)}(t) dt$$
 
-# Analyse complexe
+# Topologie
 
-## Sinus de la somme
+## Distance
 
-Soient $a, b \in \mathbb{C}$. On a :
-$$\sin(a+b) = \sin(a)\cos(b) + \cos(a)\sin(b)$$
+Soit $E$ un ensemble. Une distance sur $E$ est une application $d : E \times E \to \mathbb{R}_+$ vérifiant :
 
-## Cosinus de la somme
+1. Séparation : $d(x, y) = 0 \iff x = y$
+2. Symétrie : $d(x, y) = d(y, x)$
+3. Inégalité triangulaire : $d(x, z) \le d(x, y) + d(y, z)$
 
-Soient $a, b \in \mathbb{C}$. On a :
-$$\cos(a+b) = \cos(a)\cos(b) - \sin(a)\sin(b)$$
+## Norme
 
-## Règle de D'Alembert
+Soit $E$ un espace vectoriel sur $\mathbb{K}$. Une norme sur $E$ est une application $\|\cdot\| : E \to \mathbb{R}_+$ vérifiant :
 
-Soit $\sum a_n z^n$ une série entière avec $a_n \neq 0$ pour $n$ assez grand.
-Si $\lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right| = \ell \in [0, +\infty]$, alors le rayon de convergence $R$ de la série est :
-$$R = \frac{1}{\ell}$$
-(avec la convention $1/0 = +\infty$ et $1/\infty = 0$).
+1. Séparation : $\|x\| = 0 \iff x = 0$
+2. Homogénéité : $\|\lambda x\| = |\lambda| \|x\|$
+3. Inégalité triangulaire : $\|x+y\| \le \|x\| + \|y\|$
 
-## Règle de Cauchy
+## Image continue d'un compact
 
-Soit $\sum a_n z^n$ une série entière.
-Si $\lim_{n \to \infty} |a_n|^{1/n} = \ell \in [0, +\infty]$, alors le rayon de convergence $R$ de la série est :
-$$R = \frac{1}{\ell}$$
-(avec la convention $1/0 = +\infty$ et $1/\infty = 0$).
+Soit $f : E \to F$ une application continue d'un espace topologique $E$ dans un espace topologique $F$.
+Si $K$ est un sous-ensemble compact de $E$, alors son image $f(K)$ est un sous-ensemble compact de $F$.
 
-## Théorème de Cauchy
+## Théorème de Heine
 
-Soit $U$ un ouvert simplement connexe de $\mathbb{C}$ et $f : U \to \mathbb{C}$ une fonction holomorphe. Soit $\gamma$ un lacet (chemin fermé) rectifiable dans $U$.
-Alors :
-$$\int_{\gamma} f(z) dz = 0$$
+Soit $f : E \to F$ une application continue d'un espace métrique compact $E$ dans un espace métrique $F$.
+Alors $f$ est uniformément continue sur $E$, c'est-à-dire :
+$$\forall \varepsilon > 0, \exists \delta > 0, \forall x, y \in E, d_E(x, y) < \delta \implies d_F(f(x), f(y)) < \varepsilon$$
 
-## Théorème de Liouville
+## Connexité
 
-Toute fonction entière (holomorphe sur $\mathbb{C}$) et bornée est constante.
+Un espace topologique $E$ est connexe s'il n'est pas la réunion de deux ouverts non vides et disjoints.
+De manière équivalente, les seules parties de $E$ à la fois ouvertes et fermées sont $\emptyset$ et $E$.
 
-## Théorème des résidus
+## Homéomorphisme
 
-Soit $U$ un ouvert simplement connexe de $\mathbb{C}$ et $S$ un ensemble de points isolés dans $U$. Soit $f : U \setminus S \to \mathbb{C}$ une fonction holomorphe. Soit $\gamma$ un lacet rectifiable dans $U \setminus S$.
-Alors :
-$$\int_{\gamma} f(z) dz = 2i\pi \sum_{a \in S} \text{Ind}_{\gamma}(a) \text{Res}(f, a)$$
-où $\text{Ind}_{\gamma}(a)$ est l'indice du lacet $\gamma$ par rapport au point $a$ et $\text{Res}(f, a)$ est le résidu de $f$ en $a$.
+Une application $f : E \to F$ entre deux espaces topologiques est un homéomorphisme si $f$ est bijective, continue, et si sa réciproque $f^{-1}$ est continue.
+
+## Théorème de Heine-Borel
+
+Dans un espace vectoriel normé de dimension finie, les parties compactes sont exactement les parties fermées et bornées.
+
+## Adhérence d'un connexe
+
+Soit $E$ un espace topologique et $A$ une partie connexe de $E$.
+Si $B$ est une partie telle que $A \subseteq B \subseteq \bar{A}$, alors $B$ est connexe. En particulier, l'adhérence $\bar{A}$ d'un connexe est connexe.
 
 # Fonctions vectorielles
 
@@ -179,58 +183,6 @@ Application du théorème de la double limite aux séries de fonctions $\sum u_n
 
 Une suite de fonctions $(f_n)$ de $X$ vers un espace de Banach $F$ converge uniformément sur $X$ si et seulement si :
 $$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall p, q \ge N, \forall x \in X, \|f_p(x) - f_q(x)\| < \varepsilon$$
-
-# Topologie
-
-## Distance
-
-Soit $E$ un ensemble. Une distance sur $E$ est une application $d : E \times E \to \mathbb{R}_+$ vérifiant :
-
-1. Séparation : $d(x, y) = 0 \iff x = y$
-2. Symétrie : $d(x, y) = d(y, x)$
-3. Inégalité triangulaire : $d(x, z) \le d(x, y) + d(y, z)$
-
-## Norme
-
-Soit $E$ un espace vectoriel sur $\mathbb{K}$. Une norme sur $E$ est une application $\|\cdot\| : E \to \mathbb{R}_+$ vérifiant :
-
-1. Séparation : $\|x\| = 0 \iff x = 0$
-2. Homogénéité : $\|\lambda x\| = |\lambda| \|x\|$
-3. Inégalité triangulaire : $\|x+y\| \le \|x\| + \|y\|$
-
-## Image continue d'un compact
-
-Soit $f : E \to F$ une application continue d'un espace topologique $E$ dans un espace topologique $F$.
-Si $K$ est un sous-ensemble compact de $E$, alors son image $f(K)$ est un sous-ensemble compact de $F$.
-
-## Théorème de Heine
-
-Soit $f : E \to F$ une application continue d'un espace métrique compact $E$ dans un espace métrique $F$.
-Alors $f$ est uniformément continue sur $E$, c'est-à-dire :
-$$\forall \varepsilon > 0, \exists \delta > 0, \forall x, y \in E, d_E(x, y) < \delta \implies d_F(f(x), f(y)) < \varepsilon$$
-
-## Connexité
-
-Un espace topologique $E$ est connexe s'il n'est pas la réunion de deux ouverts non vides et disjoints.
-De manière équivalente, les seules parties de $E$ à la fois ouvertes et fermées sont $\emptyset$ et $E$.
-
-## Homéomorphisme
-
-Une application $f : E \to F$ entre deux espaces topologiques est un homéomorphisme si $f$ est bijective, continue, et si sa réciproque $f^{-1}$ est continue.
-
-## Théorème de Heine-Borel
-
-Dans un espace vectoriel normé de dimension finie, les parties compactes sont exactement les parties fermées et bornées.
-
-## Adhérence d'un connexe
-
-Soit $E$ un espace topologique et $A$ une partie connexe de $E$.
-Si $B$ est une partie telle que $A \subseteq B \subseteq \bar{A}$, alors $B$ est connexe. En particulier, l'adhérence $\bar{A}$ d'un connexe est connexe.
-
-## Théorème de Baire
-
-Dans un espace métrique complet (ou un espace localement compact), toute intersection dénombrable d'ouverts denses est dense.
-Équivalemment, un tel espace n'est pas la réunion dénombrable de fermés d'intérieur vide.
 
 # Algèbre linéaire
 

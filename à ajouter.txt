@@ -1,24 +1,44 @@
-théorie des groupes orbite stabilisateurs etc.
-
 à ajouter à la main :
 
-- Probas
-- Chapitre analyse réelle
-- Chapitre analyse complète
-- Chapitre Fonctions vectorielles
-- Topologie
+Chapitre Topologie (déjà une partie dans draft.md), plus le reste de ce qu'on a fait en cours
+
+Chapitre analyse réelle
+
+Chapitre analyse complexe
+
+Chapitre Fonctions vectorielles
+
+Chapitre anneaux
 
 Chapitre Groupes
-
 - définition p-groupe
 - p-sous-groupe
 - orbite stabilisateurs etc. fait que stab est distingué
 - sous groupes normaux ou distingués
+- matrices de rotation d'angle theta et de symétrie par rapport à une droite d'angle theta
+- orbite stabilisateurs etc.
+- autre en lisant le cours de groupes
 
 analyse réelle :
 critère d'abel
 
-à voir :
+analyse complexe: 
+## Théorème des résidus
+
+Soit $U$ un ouvert simplement connexe de $\mathbb{C}$ et $S$ un ensemble de points isolés dans $U$. Soit $f : U \setminus S \to \mathbb{C}$ une fonction holomorphe. Soit $\gamma$ un lacet rectifiable dans $U \setminus S$.
+Alors :
+$$\int_{\gamma} f(z) dz = 2i\pi \sum_{a \in S} \text{Ind}_{\gamma}(a) \text{Res}(f, a)$$
+où $\text{Ind}_{\gamma}(a)$ est l'indice du lacet $\gamma$ par rapport au point $a$ et $\text{Res}(f, a)$ est le résidu de $f$ en $a$.
+
+topologie :
+- Théorème de Baire
+Dans un espace métrique complet (ou un espace localement compact), toute intersection dénombrable d'ouverts denses est dense.
+Équivalemment, un tel espace n'est pas la réunion dénombrable de fermés d'intérieur vide.
+
+
+- Probas
+
+peut-être un jour :
 
 - Règle de l'Hôpital :
   Soient $f, g$ deux fonctions dérivables sur $]a, b[$ telles que $g'$ ne s'annule pas. Supposons que $\lim_{x \to a} f(x) = \lim_{x \to a} g(x) = 0$ (ou $\pm \infty$).
