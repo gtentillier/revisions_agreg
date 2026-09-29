@@ -36,7 +36,7 @@ Supposons que :
 Alors la fonction $F : x \mapsto \int_I f(x, t) dt$ est définie et continue sur $X$."
 8,Théorème de dérivation d'une intégrale à paramètre,Intégration sur un intervalle quelconque,"Soit $X$ un ouvert d'un espace vectoriel normé de dimension finie et $I$ un intervalle de $\mathbb{R}$. Soit $f : X \times I \to \mathbb{C}$ telle que :
 
-1. Pour tout $x \in X$, la fonction $t \mapsto f(x, t)$ est continue par morceaux sur $I$.
+1. Pour tout $x \in X$, la fonction $t \mapsto f(x, t)$ est continue par morceaux et intégrable sur $I$.
 2. La fonction $f$ admet une dérivée partielle selon $x$, notée $\frac{\partial f}{\partial x}$, telle que :
    - Pour tout $x \in X$, $t \mapsto \frac{\partial f}{\partial x}(x, t)$ est continue par morceaux sur $I$.
    - Pour tout $t \in I$, $x \mapsto \frac{\partial f}{\partial x}(x, t)$ est continue sur $X$.
@@ -52,3 +52,37 @@ Supposons que :
 
 Alors $f$ et les $f_n$ sont intégrables sur $I$ et :
 $$\lim_{n \to \infty} \int_I f_n(t) dt = \int_I f(t) dt$$"
+10,Suite de Cauchy,Analyse réelle,"Soit $(E, d)$ un espace métrique. Une suite $(u_n)_{n \in \mathbb{N}}$ d'éléments de $E$ est dite de Cauchy si :
+$$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall p, q \ge N, d(u_p, u_q) < \varepsilon$$"
+11,Composition de fonctions convexes,Analyse réelle,"Soient $I$ et $J$ deux intervalles de $\mathbb{R}$. Soit $f : I \to J$ et $g : J \to \mathbb{R}$ deux fonctions.
+Si $f$ est convexe, $g$ est convexe et $g$ est croissante, alors $g \circ f$ est convexe sur $I$."
+12,Inégalité des pentes,Analyse réelle,"Soit $I$ un intervalle de $\mathbb{R}$ et $f : I \to \mathbb{R}$ une fonction convexe. Soient $a, b, c \in I$ tels que $a < b < c$.
+Alors :
+$$\frac{f(b)-f(a)}{b-a} \le \frac{f(c)-f(a)}{c-a} \le \frac{f(c)-f(b)}{c-b}$$
+Autrement dit, la fonction taux d'accroissement $T_f : (x, y) \mapsto \frac{f(y)-f(x)}{y-x}$ définie sur $\{(x, y) \in I^2, x \neq y\}$ est croissante par rapport à chacune de ses variables."
+13,Théorème de Bolzano-Weierstrass,Analyse réelle,"Toute suite bornée de réels (ou d'éléments de $\mathbb{R}^n$) admet au moins une valeur d'adhérence. Autrement dit, on peut en extraire une sous-suite convergente."
+14,Théorème de la limite monotone,Analyse réelle,"Soit $f : ]a, b[ \to \mathbb{R}$ une fonction croissante.
+
+1. Si $f$ est majorée, alors $f$ admet une limite finie en $b^-$.
+2. Sinon, $\lim_{x \to b^-} f(x) = +\infty$.
+
+De même pour la limite en $a^+$."
+15,Théorème du point fixe de Banach,Analyse réelle,"Soit $(E, d)$ un espace métrique complet non vide. Soit $f : E \to E$ une application contractante, c'est-à-dire qu'il existe $k \in [0, 1[$ tel que :
+$$\forall x, y \in E, d(f(x), f(y)) \le k d(x, y)$$
+Alors :
+
+1. $f$ admet un unique point fixe $x^* \in E$ (tel que $f(x^*) = x^*$).
+2. Pour tout point de départ $u_0 \in E$, la suite $(u_n)_{n \in \mathbb{N}}$ définie par $u_{n+1} = f(u_n)$ converge vers $x^*$.
+3. On a l'estimation de la vitesse de convergence suivante : $d(u_n, x^*) \le \frac{k^n}{1-k} d(u_1, u_0)$."
+16,Dérivée de la fonction réciproque,Analyse réelle,"Soit $f : A \to B$ une bijection dérivable sur $A$. Soit $a \in A$.
+Si $f'(a) \neq 0$ et si $f^{-1}$ est continue en $b = f(a)$, alors $f^{-1}$ est dérivable en $b$ et :
+$$(f^{-1})'(b) = \frac{1}{f'(a)} = \frac{1}{f'(f^{-1}(b))}$"
+17,Formule de Taylor-Young,Analyse réelle,"Soit $f \in \mathcal{C}^n(I, E)$ où $E$ est un espace vectoriel normé de dimension finie. Soit $a \in I$.
+Alors, au voisinage de $h=0$ tel que $a+h \in I$ :
+$$f(a+h) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} h^k + o(h^n)$"
+18,Inégalité de Taylor-Lagrange,Analyse réelle,"Soit $f \in \mathcal{C}^n([a, b], E)$ telle que $f^{(n)}$ soit dérivable sur $]a, b[$.
+Alors :
+$$\left\| f(b) - \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (b-a)^k \right\| \le \frac{(b-a)^{n+1}}{(n+1)!} \sup_{t \in ]a, b[} \|f^{(n+1)}(t)\|$$"
+19,Formule de Taylor avec reste intégral,Analyse réelle,"Soit $f \in \mathcal{C}^{n+1}(I, E)$. Soient $a, b \in I$.
+Alors :
+$$f(b) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (b-a)^k + \int_a^b \frac{(b-t)^n}{n!} f^{(n+1)}(t) dt$$"

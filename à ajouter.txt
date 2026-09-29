@@ -1,0 +1,26 @@
+théorie des groupes orbite stabilisateurs etc.
+
+à ajouter à la main :
+
+- Probas
+- Chapitre analyse réelle
+- Chapitre analyse complète
+- Chapitre Fonctions vectorielles
+- Topologie
+
+Chapitre Groupes
+
+- définition p-groupe
+- p-sous-groupe
+- orbite stabilisateurs etc. fait que stab est distingué
+- sous groupes normaux ou distingués
+
+analyse réelle :
+critère d'abel
+
+à voir :
+
+- Règle de l'Hôpital :
+  Soient $f, g$ deux fonctions dérivables sur $]a, b[$ telles que $g'$ ne s'annule pas. Supposons que $\lim_{x \to a} f(x) = \lim_{x \to a} g(x) = 0$ (ou $\pm \infty$).
+  Si $\lim_{x \to a} \frac{f'(x)}{g'(x)} = L \in \bar{\mathbb{R}}$, alors :
+  $$\lim_{x \to a} \frac{f(x)}{g(x)} = L$$

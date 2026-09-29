@@ -1,34 +1,5 @@
 liste théorèmes :
 
-à ajouter à la main :
-- Probas
-- Chapitre analyse réelle
-- Chapitre analyse complète
-- Chapitre Fonctions vectorielles
-- Topologie
-- Chapitre Groupes
-
-Théorèmes d'intégration :
-Théorème de sommation L1
-Théorème de continuité d'une intégrale à paramètre
-Théorème de dérivation d'une intégrale à paramètre
-Théorème de convergence dominée
-
-Analyse réelle :
-Théorème de Fubini-Tonelli
-Théorème de Fubini-Lebesgue
-Suite de Cauchy
-Composition de fonctions convexes
-Inégalité des pentes
-Théorème de Bolzano-Weierstrass
-Théorème de la limite monotone
-Théorème du point fixe
-Dérivée de la fonction réciproque
-Formule de Taylor-Young
-Formule de Taylor-Lagrange
-Formule de Taylor avec reste intégral
-Règle de l'Hôpital
-
 Analyse complexe :
 Sinus de la somme
 Cosinus de la somme

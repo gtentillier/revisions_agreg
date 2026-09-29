@@ -162,8 +162,10 @@ def write_revisions_md(suivi_revisions, liste_theoremes):
     latex_map = {row['id']: row['expression_LaTeX'] for row in liste_theoremes}
 
     with open(REVISIONS_MD, 'w', encoding='utf-8') as f:
+        f.write("<div align=\"center\">\n\n")
         f.write(f"![Progression Globale](img/progression_globale.png)\n\n")
         f.write(f"![Progression Chapitres](img/progression_chapitres.png)\n\n")
+        f.write("</div>\n\n")
         f.write(f"**{len(to_revise)}** Théorèmes à réviser sur **{total_theoremes}**\n\n")
 
         # Group by date
@@ -174,8 +176,6 @@ def write_revisions_md(suivi_revisions, liste_theoremes):
                 f.write("<br>\n\n")
             f.write(f"# 📚 {d_str}\n\n")
             current_date_theorems = [row for row in to_revise if row['date_revision'] == d_str]
-            # They are already shuffled in suivi_revisions, but let's be safe
-            random.shuffle(current_date_theorems)
 
             f.write(f"**{len(current_date_theorems)}** Théorèmes\n\n")
 

@@ -15,6 +15,7 @@ Si $f$ est convexe, $g$ est convexe et $g$ est croissante, alors $g \circ f$ est
 Soit $I$ un intervalle de $\mathbb{R}$ et $f : I \to \mathbb{R}$ une fonction convexe. Soient $a, b, c \in I$ tels que $a < b < c$.
 Alors :
 $$\frac{f(b)-f(a)}{b-a} \le \frac{f(c)-f(a)}{c-a} \le \frac{f(c)-f(b)}{c-b}$$
+Autrement dit, la fonction taux d'accroissement $T_f : (x, y) \mapsto \frac{f(y)-f(x)}{y-x}$ définie sur $\{(x, y) \in I^2, x \neq y\}$ est croissante par rapport à chacune de ses variables.
 
 ## Théorème de Bolzano-Weierstrass
 
@@ -26,9 +27,10 @@ Soit $f : ]a, b[ \to \mathbb{R}$ une fonction croissante.
 
 1. Si $f$ est majorée, alors $f$ admet une limite finie en $b^-$.
 2. Sinon, $\lim_{x \to b^-} f(x) = +\infty$.
-   De même pour la limite en $a^+$.
 
-## Théorème du point fixe
+De même pour la limite en $a^+$.
+
+## Théorème du point fixe de Banach
 
 Soit $(E, d)$ un espace métrique complet non vide. Soit $f : E \to E$ une application contractante, c'est-à-dire qu'il existe $k \in [0, 1[$ tel que :
 $$\forall x, y \in E, d(f(x), f(y)) \le k d(x, y)$$
@@ -40,33 +42,27 @@ Alors :
 
 ## Dérivée de la fonction réciproque
 
-Soit $f : I \to J$ une bijection continue d'un intervalle $I$ sur un intervalle $J$. Soit $a \in I$ tel que $f$ soit dérivable en $a$ et $f'(a) \neq 0$.
-Alors $f^{-1}$ est dérivable en $b = f(a)$ et :
+Soit $f : A \to B$ une bijection dérivable sur $A$. Soit $a \in A$.
+Si $f'(a) \neq 0$ et si $f^{-1}$ est continue en $b = f(a)$, alors $f^{-1}$ est dérivable en $b$ et :
 $$(f^{-1})'(b) = \frac{1}{f'(a)} = \frac{1}{f'(f^{-1}(b))}$$
 
 ## Formule de Taylor-Young
 
-Soit $f : I \to \mathbb{R}$ une fonction de classe $\mathcal{C}^n$ au voisinage de $a \in I$.
-Alors, au voisinage de $h=0$ :
+Soit $f \in \mathcal{C}^n(I, E)$ où $E$ est un espace vectoriel normé de dimension finie. Soit $a \in I$.
+Alors, au voisinage de $h=0$ tel que $a+h \in I$ :
 $$f(a+h) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} h^k + o(h^n)$$
 
-## Formule de Taylor-Lagrange
+## Inégalité de Taylor-Lagrange
 
-Soit $f : [a, b] \to \mathbb{R}$ une fonction de classe $\mathcal{C}^n$ sur $[a, b]$ et $n+1$ fois dérivable sur $]a, b[$.
-Alors il existe $c \in ]a, b[$ tel que :
-$$f(b) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (b-a)^k + \frac{f^{(n+1)}(c)}{(n+1)!} (b-a)^{n+1}$$
+Soit $f \in \mathcal{C}^n([a, b], E)$ telle que $f^{(n)}$ soit dérivable sur $]a, b[$.
+Alors :
+$$\left\| f(b) - \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (b-a)^k \right\| \le \frac{(b-a)^{n+1}}{(n+1)!} \sup_{t \in ]a, b[} \|f^{(n+1)}(t)\|$$
 
 ## Formule de Taylor avec reste intégral
 
-Soit $f : [a, b] \to \mathbb{R}$ une fonction de classe $\mathcal{C}^{n+1}$ sur $[a, b]$.
+Soit $f \in \mathcal{C}^{n+1}(I, E)$. Soient $a, b \in I$.
 Alors :
 $$f(b) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (b-a)^k + \int_a^b \frac{(b-t)^n}{n!} f^{(n+1)}(t) dt$$
-
-## Règle de l'Hôpital
-
-Soient $f, g$ deux fonctions dérivables sur $]a, b[$ telles que $g'$ ne s'annule pas. Supposons que $\lim_{x \to a} f(x) = \lim_{x \to a} g(x) = 0$ (ou $\pm \infty$).
-Si $\lim_{x \to a} \frac{f'(x)}{g'(x)} = L \in \bar{\mathbb{R}}$, alors :
-$$\lim_{x \to a} \frac{f(x)}{g(x)} = L$$
 
 # Analyse complexe
 
