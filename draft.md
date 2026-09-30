@@ -1,89 +1,10 @@
-# Fonctions vectorielles
-
-## Théorème de limite de la dérivée
-
-Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie. Soit $f : I \to E$ une fonction continue sur $I$ et dérivable sur $I \setminus \{a\}$.
-Si $\lim_{x \to a} f'(x) = L$ existe (avec $L \in E$), alors $f$ est dérivable en $a$ et $f'(a) = L$.
-La fonction $f'$ est alors continue en $a$.
-
-## Convergence simple
-
-Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions d'un ensemble $X$ vers un espace vectoriel normé $E$. La suite $(f_n)$ converge simplement vers $f : X \to E$ si :
-$$\forall x \in X, \lim_{n \to \infty} f_n(x) = f(x)$$
-
-## Convergence uniforme d'une suite de fonctions
-
-Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de $X$ vers $(E, \|\cdot\|)$. La suite $(f_n)$ converge uniformément vers $f : X \to E$ si :
-$$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall n \ge N, \forall x \in X, \|f_n(x) - f(x)\| < \varepsilon$$
-ou encore $\lim_{n \to \infty} \sup_{x \in X} \|f_n(x) - f(x)\| = 0$.
-
-## Convergence uniforme d'une série de fonctions
-
-Soit $\sum u_n$ une série de fonctions de $X$ vers $E$. On dit qu'elle converge uniformément si la suite de ses sommes partielles $S_n = \sum_{k=0}^n u_k$ converge uniformément sur $X$.
-
-## Convergence absolue d'une série de fonctions
-
-Soit $\sum u_n$ une série de fonctions de $X$ vers $E$. On dit qu'elle converge absolument en $x \in X$ si la série numérique $\sum \|u_n(x)\|$ converge.
-
-## Convergence normale d'une série de fonctions
-
-Soit $\sum u_n$ une série de fonctions de $X$ vers $(E, \|\cdot\|)$. On dit qu'elle converge normalement sur $X$ si la série numérique $\sum \sup_{x \in X} \|u_n(x)\|$ converge.
-
-## Limite uniforme de fonctions bornées
-
-Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions bornées de $X$ vers $E$. Si $(f_n)$ converge uniformément vers $f$, alors $f$ est bornée sur $X$.
-
-## Limite uniforme de fonctions continues
-
-Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions d'un espace topologique $X$ vers un espace vectoriel normé $E$. Si les $f_n$ sont continues et si $(f_n)$ converge uniformément vers $f$, alors $f$ est continue sur $X$.
-
-## Théorème de la double limite
-
-Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de $X$ vers un espace de Banach $E$. Soit $a$ un point adhérent à $X$.
-Supposons que :
-
-1. Pour tout $n$, $\lim_{x \to a} f_n(x) = L_n$ existe.
-2. $(f_n)$ converge uniformément vers $f$ sur $X$.
-   Alors la suite $(L_n)$ converge vers une limite $L$, et $\lim_{x \to a} f(x) = L$.
-   On a ainsi : $\lim_{n \to \infty} \lim_{x \to a} f_n(x) = \lim_{x \to a} \lim_{n \to \infty} f_n(x)$.
-
-## Théorème d'intégration d'une suite de fonctions
-
-Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions continues de $[a, b]$ vers $E$. Si $(f_n)$ converge uniformément vers $f$ sur $[a, b]$, alors :
-$$\lim_{n \to \infty} \int_a^b f_n(t) dt = \int_a^b \left( \lim_{n \to \infty} f_n(t) \right) dt = \int_a^b f(t) dt$$
-
-## Théorème de dérivation d'une suite de fonctions
-
-Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de classe $\mathcal{C}^1$ de $[a, b]$ vers $E$. Supposons que :
-
-1. Il existe $x_0 \in [a, b]$ tel que $(f_n(x_0))$ converge.
-2. La suite des dérivées $(f_n')$ converge uniformément vers une fonction $g$ sur $[a, b]$.
-   Alors $(f_n)$ converge uniformément vers une fonction $f$ de classe $\mathcal{C}^1$ et $f' = g$.
-
-## Théorème de dérivation terme à terme
-
-C'est l'application du théorème précédent aux sommes partielles d'une série de fonctions $\sum u_n$. Si chaque $u_n$ est $\mathcal{C}^1$, si $\sum u_n(x_0)$ converge et $\sum u_n'$ converge uniformément, alors $S = \sum u_n$ est $\mathcal{C}^1$ et $S' = \sum u_n'$.
-
-## Théorème d'intégration terme à terme
-
-Application du théorème d'intégration des suites aux séries de fonctions : si $\sum u_n$ converge uniformément et que les $u_n$ sont continues, alors $\int \sum u_n = \sum \int u_n$.
-
-## Théorème de la double limite terme à terme
-
-Application du théorème de la double limite aux séries de fonctions $\sum u_n$.
-
-## Critère de cauchy uniforme
-
-Une suite de fonctions $(f_n)$ de $X$ vers un espace de Banach $E$ converge uniformément sur $X$ si et seulement si :
-$$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall p, q \ge N, \forall x \in X, \|f_p(x) - f_q(x)\| < \varepsilon$$
-
 # Algèbre linéaire
 
 ## Endomorphismes qui commutent, sous-espaces stables
 
 Soient $u, v \in \mathcal{L}(E)$ deux endomorphismes d'un espace vectoriel $E$ tels que $u \circ v = v \circ u$.
 
-Alors les sous-espaces propres de $u$ (respectivement $\ker(u)$ et $\text{im}(u)$) sont stables par $v$.
+Alors les sous-espaces propres de $u$ (respectivement $\text{Ker}(u)$ et $\text{Im}(u)$) sont stables par $v$.
 
 ## Décomposition de Dunford
 
@@ -168,157 +89,123 @@ $$(n, h) \cdot (n', h') = (n \phi(h)(n'), hh')$$
 
 Si $N$ est un sous-groupe distingué de $G$ et $H$ un sous-groupe de $G$ tels que $N \cap H = \{e\}$ et $G = NH$, alors $G$ est isomorphe au produit semi-direct de $N$ par $H$ pour l'action de conjugaison de $H$ sur $N$ : $\phi(h)(n) = hnh^{-1}$.
 
-# Anneaux à supprimer après les avoir fait et validé
+# Fonctions vectorielles à suppr après les avoir faites et validées
 
-## Anneau, unitaire, commutatif, intègre, réduit
+## Théorème de limite de la dérivée
 
-Un **anneau** $(A, +, \times)$ est un ensemble muni de deux lois de composition interne telles que $(A, +)$ est un groupe abélien, $\times$ est associative et distributive par rapport à $+$.
+Soit $(E, \|\cdot\|)$ un $\mathbb{K}$-espace vectoriel de dimension finie. Soit $I$ un intervalle de $\mathbb{R}$ et $a \in I$. Soit $f : I \to E$ une fonction continue sur $I$ et dérivable sur $I \setminus \{a\}$.
+Si $f'(x) \xrightarrow[x \to a]{} l$ existe (avec $l \in E$), alors $f$ est dérivable en $a$ et $f'(a) = l$.
+La fonction $f'$ est alors continue en $a$.
 
-- **Unitaire** : s'il possède un élément neutre pour $\times$ (noté $1_A$), tous les anneaux sont supposés unitaires pour le cours.
-- **Commutatif** : si la loi $\times$ est commutative.
-- **Intègre** : non réduit au singleton $\{0\}$ et $\forall x, y \in A, xy = 0 \implies x = 0 \text{ ou } y = 0$.
-- **Réduit** : son seul élément nilpotent est 0 (i.e. $x^n = 0 \implies x = 0$).
+## Convergence simple d'une suite de fonctions
 
-## Sous-anneau
+Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de $X$ vers $E$. On dit que la suite $(f_n)$ converge simplement vers une fonction $f : X \to E$ si :
+$$\forall x \in X, f_n(x) \xrightarrow[n \to \infty]{} f(x)$$
 
-Une partie $S$ d'un anneau $A$ est un **sous-anneau** ssi :
+## Convergence uniforme d'une suite de fonctions
 
-- $(i)$ $(S, +)$ est un sous-groupe de $(A, +)$
-- $(ii)$ $S$ est stable par $\times$
-- $(iii)$ $1_A \in S$
+Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de $X$ vers $E$. On dit que la suite $(f_n)$ converge uniformément vers une fonction $f : X \to E$ si :
+$$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall n \ge N, \forall x \in X, \|f_n(x) - f(x)\| < \varepsilon$$
+Ceci est équivalent à dire que $\sup_{x \in X} \|f_n(x) - f(x)\| \xrightarrow[n \to \infty]{} 0$.
 
-## Éléments associés, irréductibles, nilpotents d'un anneau
+## Convergence uniforme d'une série de fonctions
 
-- **Élément associé** : $a, b \in A$ sont associés s'il existe $u \in A^\times$ tel que $a = ub$.
-- **Élément irréductible** : $p \in A \setminus A^\times$ est irréductible si ses seuls diviseurs sont les éléments inversibles et les associés de $p$ (i.e. $p=ab \implies a \in A^\times$ ou $b \in A^\times$).
-- **Élément nilpotent** : $x \in A$ est nilpotent s'il existe $n \in \mathbb{N}^*$ tel que $x^n = 0$.
+Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $\sum f_n$ une série de fonctions de $X$ vers $E$. On dit que la série $\sum f_n$ converge uniformément sur $X$ si la suite de ses sommes partielles $(S_n)_{n \in \mathbb{N}}$ converge uniformément sur $X$ vers une fonction $S : X \to E$.
 
-Un anneau est dit **réduit** si seul $0$ est nilpotent.
+## Convergence absolue d'une série de fonctions
 
-## Diviseurs de zéro
+Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $\sum f_n$ une série de fonctions de $X$ vers $E$. On dit que la série $\sum f_n$ converge absolument si pour tout $x \in X$, la série numérique $\sum\limits_{n=0}^{\infty} \|f_n(x)\|$ converge.
 
-Un élément $x \in A \setminus \{0\}$ est un **diviseur de zéro** s'il existe $y \in A \setminus \{0\}$ tel que $xy = 0$ ou $yx = 0$.
+## Convergence normale d'une série de fonctions
 
-## Éléments inversibles d'un anneau
+Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $\sum f_n$ une série de fonctions de $X$ vers $E$. On dit que la série $\sum f_n$ converge normalement sur $X$ si chaque fonction $f_n$ est bornée sur $X$ et si la série numérique $\sum\limits_{n=0}^{\infty} \sup_{x \in X} \|f_n(x)\|$ converge.
 
-Un élément $x \in A$ est **inversible** s'il existe $y \in A$ tel que $xy = yx = 1_A$. L'ensemble des éléments inversibles est noté $A^\times$ ou $U(A)$.
+## Limite uniforme de fonctions bornées
 
-## Morphismes d'anneaux, isomorphismes, endomorphismes, automorphismes
+Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions bornées de $X$ vers $E$. Si la suite $(f_n)$ converge uniformément vers une fonction $f : X \to E$, alors $f$ est bornée sur $X$.
 
-Une application $\varphi : A \to B$ est un **morphisme d'anneaux** si :
+## Limite uniforme de fonctions continues
 
-- $\forall x, y \in A, \varphi(x+y) = \varphi(x) + \varphi(y)$
-- $\forall x, y \in A, \varphi(xy) = \varphi(x)\varphi(y)$
-- $\varphi(1_A) = 1_B$
+Soit $X$ un espace topologique et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de $X$ vers $E$. Si chaque fonction $f_n$ est continue sur $X$ et si la suite $(f_n)$ converge uniformément vers une fonction $f : X \to E$, alors $f$ est continue sur $X$.
 
-$\ker \varphi = \{x \in A, \varphi(x) = 0_B\}$ est un **idéal** de $A$.
+## Théorème de la double limite
 
-On parle d'**isomorphisme**, **endomorphisme** ou **automorphisme** selon les propriétés usuelles.
+Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace de Banach (espace vectoriel normé complet). Soit $a \in \overline{X}$ (avec $a \in \overline{\mathbb{R}}$ si $E = \mathbb{R}$). Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de $X$ vers $E$.
+Supposons que :
 
-## Algèbre
+1. Pour tout $n \in \mathbb{N}$, $\lim_{x \to a} f_n(x) = \lambda_n$ existe dans $E$.
+2. La suite $(f_n)$ converge uniformément vers une fonction $f : X \to E$.
 
-Soit $R$ un anneau commutatif. Une $R$-**algèbre** est un anneau $A$ muni d'un morphisme d'anneaux $f : R \to A$ tel que $f(R) \subseteq Z(A)$, où $Z(A)$ désigne le centre de l'anneau $A$.
-
-## Idéal
-
-Soit $A$ un anneau commutatif. Une partie $I$ est un **idéal** de $A$ si :
-
-$(i)$ $(I, +)$ est un sous-groupe de $(A, +)$
-
-$(ii)$ $\forall a \in A, \forall x \in I, ax \in I$.
-
-## Caractérisation de l'égalité des idéaux engendrés par deux éléments
-
-Soit $A$ un anneau commutatif intègre, $a, b \in A$.
-
-$(a) = (b)$ $\iff$ $a$ et $b$ sont **associés** (i.e. $\exists u \in A^\times, a = ub$).
-
-## Caractéristique
-
-La **caractéristique** d'un anneau unitaire $A$ est l'unique $n \in \mathbb{N}$ tel que $\ker \varphi = n\mathbb{Z}$, où $\varphi : \mathbb{Z} \to A, k \mapsto k \cdot 1_A$ est le morphisme canonique.
-
-C'est donc le plus petit entier $n > 0$ tel que $n \cdot 1_A = 0$ s'il existe, et $0$ sinon.
-
-## Théorème de factorisation dans un anneau
-
-Soit $f : A \to B$ un morphisme d'anneaux et $I$ un idéal de $A$.
-
-$I \subseteq \ker f$ $\iff$ $\exists!$ morphisme d'anneaux $\bar{f} : A/I \to B$ tel que $f = \bar{f} \circ \pi$, où $\pi : A \to A/I$ est la projection canonique, c'est-à-dire tel que le diagramme suivant commute :
-
-<p align="center">
-  <img src="img/dessins théorèmes/anneaux_1.png" width="300">
-</p>
-
-# Analyse réelle à supprimer quand je les aurai révisé et vérifié
-
-## Factorisation de $a^n - b^n$
-
-Soient $a, b \in \mathbb{C}$ et $n \in \mathbb{N}^*$. On a :
-$$a^n - b^n = (a-b) \sum_{k=0}^{n-1} a^{n-1-k} b^k$$
-
-## Suite de Cauchy
-
-Soit $(E, d)$ un espace métrique. Une suite $(u_n)_{n \in \mathbb{N}}$ d'éléments de $E$ est dite de Cauchy si :
-$$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall p, q \ge N, d(u_p, u_q) < \varepsilon$$
-
-## Composition de fonctions convexes
-
-Soient $I$ et $J$ deux intervalles de $\mathbb{R}$. Soit $f : I \to J$ et $g : J \to \mathbb{R}$ deux fonctions.
-Si $f$ est convexe, $g$ est convexe et $g$ est croissante, alors $g \circ f$ est convexe sur $I$.
-
-## Inégalité des pentes
-
-Soit $I$ un intervalle de $\mathbb{R}$ et $f : I \to \mathbb{R}$ une fonction convexe. Soient $a, b, c \in I$ tels que $a < b < c$.
-Alors :
-$$\frac{f(b)-f(a)}{b-a} \le \frac{f(c)-f(a)}{c-a} \le \frac{f(c)-f(b)}{c-b}$$
-Autrement dit, la fonction taux d'accroissement $T_f : (x, y) \mapsto \frac{f(y)-f(x)}{y-x}$ définie sur $\{(x, y) \in I^2, x \neq y\}$ est croissante par rapport à chacune de ses variables.
-
-## Théorème de Bolzano-Weierstrass
-
-Toute suite bornée de réels (ou d'éléments de $\mathbb{R}^n$) admet au moins une valeur d'adhérence. Autrement dit, on peut en extraire une sous-suite convergente.
-
-## Théorème de la limite monotone
-
-Soit $f : ]a, b[ \to \mathbb{R}$ une fonction croissante.
-
-1. Si $f$ est majorée, alors $f$ admet une limite finie en $b^-$.
-2. Sinon, $\lim_{x \to b^-} f(x) = +\infty$.
-
-De même pour la limite en $a^+$.
-
-## Théorème du point fixe de Banach
-
-Soit $(E, d)$ un espace métrique complet non vide. Soit $f : E \to E$ une application contractante, c'est-à-dire qu'il existe $k \in [0, 1[$ tel que :
-$$\forall x, y \in E, d(f(x), f(y)) \le k d(x, y)$$
 Alors :
 
-1. $f$ admet un unique point fixe $x^* \in E$ (tel que $f(x^*) = x^*$).
-2. Pour tout point de départ $u_0 \in E$, la suite $(u_n)_{n \in \mathbb{N}}$ définie par $u_{n+1} = f(u_n)$ converge vers $x^*$.
-3. On a l'estimation de la vitesse de convergence suivante : $d(u_n, x^*) \le \frac{k^n}{1-k} d(u_1, u_0)$.
+- La suite $(\lambda_n)_{n \in \mathbb{N}}$ converge vers une limite $\lambda \in E$.
+- La fonction $f$ admet une limite en $a$ qui est égale à $\lambda$.
 
-## Dérivée de la fonction réciproque
+On a alors l'égalité : $\lim_{n \to \infty} \lim_{x \to a} f_n(x) = \lim_{x \to a} \lim_{n \to \infty} f_n(x)$.
 
-Soit $f : A \to B$ une bijection dérivable sur $A$. Soit $a \in A$.
-Si $f'(a) \neq 0$ et si $f^{-1}$ est continue en $b = f(a)$, alors $f^{-1}$ est dérivable en $b$ et :
-$$(f^{-1})'(b) = \frac{1}{f'(a)} = \frac{1}{f'(f^{-1}(b))}$$
+## Théorème d'intégration d'une suite de fonctions
 
-## Formule de Taylor-Young
+Soit $I$ un intervalle de $\mathbb{R}$ et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions continues de $I$ vers $E$. Si la suite $(f_n)$ converge uniformément sur tout segment de $I$ vers une fonction $f$ :
 
-Soit $f \in \mathcal{C}^n(I, E)$ où $E$ est un espace vectoriel normé de dimension finie. Soit $a \in I$.
-Alors, au voisinage de $h=0$ tel que $a+h \in I$ :
-$$f(a+h) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} h^k + o(h^n)$$
-
-## Inégalité de Taylor-Lagrange
-
-Soit $f \in \mathcal{C}^n([a, b], E)$ telle que $f^{(n)}$ soit dérivable sur $]a, b[$.
 Alors :
-$$\left\| f(b) - \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (b-a)^k \right\| \le \frac{(b-a)^{n+1}}{(n+1)!} \sup_{t \in ]a, b[} \|f^{(n+1)}(t)\|$$
 
-## Formule de Taylor avec reste intégral
+1. $f$ est continue
+2. $\forall x_0 \in I$, la suite des primitives $(F_n)$ définies par $F_n(x) = \int_{x_0}^x f_n(t) dt$ converge simplement et uniformément sur tout segment de $I$ vers la fonction $F : x \mapsto \int_{x_0}^x f(t) dt$.
 
-Soit $f \in \mathcal{C}^{n+1}(I, E)$. Soient $a, b \in I$.
+On a notamment pour tout $[a, b] \subseteq I$ :
+$$\int_a^b f_n(t) dt \xrightarrow[n \to \infty]{} \int_a^b f(t) dt$$
+
+## Théorème de dérivation d'une suite de fonctions
+
+Soit $I$ un intervalle de $\mathbb{R}$ et $(E, \|\cdot\|)$ un espace de Banach (espace vectoriel normé complet). Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de classe $\mathcal{C}^1$ de $I$ vers $E$. Supposons que :
+
+1. Il existe un point $x_0 \in I$ tel que la suite $(f_n(x_0))_{n \in \mathbb{N}}$ converge dans $E$.
+2. La suite des dérivées $(f_n')_{n \in \mathbb{N}}$ converge uniformément sur tout segment de $I$ vers une fonction $g : I \to E$.
+
 Alors :
-$$f(b) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (b-a)^k + \int_a^b \frac{(b-t)^n}{n!} f^{(n+1)}(t) dt$$
+
+- La suite $(f_n)_{n \in \mathbb{N}}$ converge uniformément sur tout segment de $I$ vers une fonction $f : I \to E$.
+- La fonction $f$ est de classe $\mathcal{C}^1$ sur $I$ et sa dérivée est $f' = g$.
+
+## Théorème de dérivation terme à terme d'une série de fonctions
+
+Soit $I$ un intervalle de $\mathbb{R}$ et $(E, \|\cdot\|)$ un espace de Banach (espace vectoriel normé complet). Soit $\sum f_n$ une série de fonctions de classe $\mathcal{C}^1$ de $I$ vers $E$. Supposons que :
+
+1. Il existe un point $x_0 \in I$ tel que la série numérique $\sum\limits_{n=0}^{\infty} f_n(x_0)$ converge dans $E$.
+2. La série des dérivées $\sum f_n'$ converge uniformément sur tout segment de $I$ vers une fonction $g : I \to E$.
+
+Alors :
+
+- La série $\sum f_n$ converge uniformément sur tout segment de $I$ vers une fonction $S : I \to E$.
+- La fonction $S$ est de classe $\mathcal{C}^1$ sur $I$ et sa dérivée est $S' = \sum\limits_{n=0}^\infty f_n' = g$.
+
+## Théorème d'intégration terme à terme d'une série de fonctions
+
+Soit $I$ un intervalle de $\mathbb{R}$ et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $\sum f_n$ une série de fonctions continues de $I$ vers $E$. Si la série $\sum f_n$ converge uniformément sur tout segment de $I$ vers une fonction $S : I \to E$, alors pour tout $x_0 \in I$, la suite des sommes partielles des primitives $(\sum\limits_{k=0}^n \int_{x_0}^x f_k(t) dt)_{n \in \mathbb{N}}$ converge simplement et uniformément sur tout segment de $I$ vers la fonction $x \mapsto \int_{x_0}^x S(t) dt$.
+
+On a notamment pour tout $[a, b] \subseteq I$ :
+$$\int_a^b \left( \sum\limits_{n=0}^\infty f_n(t) \right) dt = \sum\limits_{n=0}^\infty \int_a^b f_n(t) dt$$
+
+## Théorème de la double limite pour les séries de fonctions
+
+Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace de Banach (espace vectoriel normé complet). Soit $a$ un point adhérent à $X$ (avec $a \in \overline{\mathbb{R}}$ si $E = \mathbb{R}$). Soit $\sum f_n$ une série de fonctions de $X$ vers $E$.
+Supposons que :
+
+1. Pour tout $n \in \mathbb{N}$, $f_n(x) \xrightarrow[x \to a]{} \lambda_n$ existe dans $E$.
+2. La série de fonctions $\sum f_n$ converge uniformément sur $X$ vers une fonction $S : X \to E$.
+
+Alors :
+
+- La série numérique $\sum\limits_{n \in \mathbb{N}} \lambda_n$ converge vers une limite $\lambda \in E$.
+- La fonction $S$ admet une limite en $a$ qui est égale à $\lambda$.
+
+On a alors l'égalité : $\sum\limits_{n=0}^\infty f_n(x) \xrightarrow[x \to a]{} \sum\limits_{n=0}^\infty \lambda_n$.
+
+## Critère de Cauchy uniforme
+
+Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace de Banach (espace vectoriel normé complet). On dit qu'une suite de fonctions $(f_n)_{n \in \mathbb{N}}$ de $X$ vers $E$ vérifie le critère de Cauchy uniforme sur $X$ si :
+$$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall p, q \ge N, \forall x \in X, \|f_p(x) - f_q(x)\| < \varepsilon$$
+Une suite de fonctions $(f_n)_{n \in \mathbb{N}}$ converge uniformément sur $X$ vers une fonction $f : X \to E$ si et seulement si elle vérifie le critère de Cauchy uniforme sur $X$.
 
 # Topologie à suppr quand je les aurai révisé et vérifié
 
