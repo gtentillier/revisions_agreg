@@ -1,39 +1,45 @@
 # Fonctions vectorielles
 
+## Théorème de limite de la dérivée
+
+Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie. Soit $f : I \to E$ une fonction continue sur $I$ et dérivable sur $I \setminus \{a\}$.
+Si $\lim_{x \to a} f'(x) = L$ existe (avec $L \in E$), alors $f$ est dérivable en $a$ et $f'(a) = L$.
+La fonction $f'$ est alors continue en $a$.
+
 ## Convergence simple
 
-Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions d'un ensemble $X$ vers un espace vectoriel normé $F$. La suite $(f_n)$ converge simplement vers $f : X \to F$ si :
+Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions d'un ensemble $X$ vers un espace vectoriel normé $E$. La suite $(f_n)$ converge simplement vers $f : X \to E$ si :
 $$\forall x \in X, \lim_{n \to \infty} f_n(x) = f(x)$$
 
 ## Convergence uniforme d'une suite de fonctions
 
-Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de $X$ vers $(F, \|\cdot\|)$. La suite $(f_n)$ converge uniformément vers $f : X \to F$ si :
+Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de $X$ vers $(E, \|\cdot\|)$. La suite $(f_n)$ converge uniformément vers $f : X \to E$ si :
 $$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall n \ge N, \forall x \in X, \|f_n(x) - f(x)\| < \varepsilon$$
 ou encore $\lim_{n \to \infty} \sup_{x \in X} \|f_n(x) - f(x)\| = 0$.
 
 ## Convergence uniforme d'une série de fonctions
 
-Soit $\sum u_n$ une série de fonctions de $X$ vers $F$. On dit qu'elle converge uniformément si la suite de ses sommes partielles $S_n = \sum_{k=0}^n u_k$ converge uniformément sur $X$.
+Soit $\sum u_n$ une série de fonctions de $X$ vers $E$. On dit qu'elle converge uniformément si la suite de ses sommes partielles $S_n = \sum_{k=0}^n u_k$ converge uniformément sur $X$.
 
 ## Convergence absolue d'une série de fonctions
 
-Soit $\sum u_n$ une série de fonctions de $X$ vers $F$. On dit qu'elle converge absolument en $x \in X$ si la série numérique $\sum \|u_n(x)\|$ converge.
+Soit $\sum u_n$ une série de fonctions de $X$ vers $E$. On dit qu'elle converge absolument en $x \in X$ si la série numérique $\sum \|u_n(x)\|$ converge.
 
 ## Convergence normale d'une série de fonctions
 
-Soit $\sum u_n$ une série de fonctions de $X$ vers $(F, \|\cdot\|)$. On dit qu'elle converge normalement sur $X$ si la série numérique $\sum \sup_{x \in X} \|u_n(x)\|$ converge.
+Soit $\sum u_n$ une série de fonctions de $X$ vers $(E, \|\cdot\|)$. On dit qu'elle converge normalement sur $X$ si la série numérique $\sum \sup_{x \in X} \|u_n(x)\|$ converge.
 
 ## Limite uniforme de fonctions bornées
 
-Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions bornées de $X$ vers $F$. Si $(f_n)$ converge uniformément vers $f$, alors $f$ est bornée sur $X$.
+Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions bornées de $X$ vers $E$. Si $(f_n)$ converge uniformément vers $f$, alors $f$ est bornée sur $X$.
 
 ## Limite uniforme de fonctions continues
 
-Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions d'un espace topologique $X$ vers un espace vectoriel normé $F$. Si les $f_n$ sont continues et si $(f_n)$ converge uniformément vers $f$, alors $f$ est continue sur $X$.
+Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions d'un espace topologique $X$ vers un espace vectoriel normé $E$. Si les $f_n$ sont continues et si $(f_n)$ converge uniformément vers $f$, alors $f$ est continue sur $X$.
 
 ## Théorème de la double limite
 
-Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de $X$ vers un espace de Banach $F$. Soit $a$ un point adhérent à $X$.
+Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de $X$ vers un espace de Banach $E$. Soit $a$ un point adhérent à $X$.
 Supposons que :
 
 1. Pour tout $n$, $\lim_{x \to a} f_n(x) = L_n$ existe.
@@ -43,12 +49,12 @@ Supposons que :
 
 ## Théorème d'intégration d'une suite de fonctions
 
-Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions continues de $[a, b]$ vers $F$. Si $(f_n)$ converge uniformément vers $f$ sur $[a, b]$, alors :
+Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions continues de $[a, b]$ vers $E$. Si $(f_n)$ converge uniformément vers $f$ sur $[a, b]$, alors :
 $$\lim_{n \to \infty} \int_a^b f_n(t) dt = \int_a^b \left( \lim_{n \to \infty} f_n(t) \right) dt = \int_a^b f(t) dt$$
 
 ## Théorème de dérivation d'une suite de fonctions
 
-Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de classe $\mathcal{C}^1$ de $[a, b]$ vers $F$. Supposons que :
+Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de classe $\mathcal{C}^1$ de $[a, b]$ vers $E$. Supposons que :
 
 1. Il existe $x_0 \in [a, b]$ tel que $(f_n(x_0))$ converge.
 2. La suite des dérivées $(f_n')$ converge uniformément vers une fonction $g$ sur $[a, b]$.
@@ -68,7 +74,7 @@ Application du théorème de la double limite aux séries de fonctions $\sum u_n
 
 ## Critère de cauchy uniforme
 
-Une suite de fonctions $(f_n)$ de $X$ vers un espace de Banach $F$ converge uniformément sur $X$ si et seulement si :
+Une suite de fonctions $(f_n)$ de $X$ vers un espace de Banach $E$ converge uniformément sur $X$ si et seulement si :
 $$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall p, q \ge N, \forall x \in X, \|f_p(x) - f_q(x)\| < \varepsilon$$
 
 # Algèbre linéaire

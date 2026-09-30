@@ -34,7 +34,7 @@ Supposons que :
 3. Il existe $\varphi \in \mathcal{C}_{m}(I, \mathbb{R}^+)$ intégrable sur $I$ telle que pour tout $(x, t) \in X \times I$, $|f(x, t)| \le \varphi(t)$ (hypothèse de domination).
 
 Alors la fonction $F : x \mapsto \int_I f(x, t) dt$ est définie et continue sur $X$."
-8,Théorème de dérivation d'une intégrale à paramètre,Intégration sur un intervalle quelconque,"Soit $X$ un ouvert d'un espace vectoriel normé de dimension finie et $I$ un intervalle de $\mathbb{R}$. Soit $f : X \times I \to \mathbb{C}$ telle que :
+8,Théorème de dérivation d'une intégrale à paramètre,Intégration sur un intervalle quelconque,"Soit $X$ et $I$ deux intervalles de $\mathbb{R}$. Soit $f : X \times I \to \mathbb{C}$ telle que :
 
 1. Pour tout $x \in X$, la fonction $t \mapsto f(x, t)$ est continue par morceaux et intégrable sur $I$.
 2. La fonction $f$ admet une dérivée partielle selon $x$, notée $\frac{\partial f}{\partial x}$, telle que :
@@ -43,7 +43,8 @@ Alors la fonction $F : x \mapsto \int_I f(x, t) dt$ est définie et continue sur
 3. Il existe $\varphi \in \mathcal{C}_{m}(I, \mathbb{R}^+)$ intégrable sur $I$ telle que pour tout $(x, t) \in X \times I$, $|\frac{\partial f}{\partial x}(x, t)| \le \varphi(t)$ (hypothèse de domination).
 
 Alors $F : x \mapsto \int_I f(x, t) dt$ est de classe $\mathcal{C}^1$ sur $X$ et :
-$$F'(x) = \int_I \frac{\partial f}{\partial x}(x, t) dt$$"
+$$F'(x) = \int_I \frac{\partial f}{\partial x}(x, t) dt$$
+"
 9,Théorème de convergence dominée,Intégration sur un intervalle quelconque,"Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions $\mathcal{C}_{m}(I, \mathbb{C})$ où $I$ est un intervalle de $\mathbb{R}$.
 Supposons que :
 
@@ -88,10 +89,14 @@ $$\left\| f(b) - \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (b-a)^k \right\| \le \frac{(
 Alors :
 $$f(b) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (b-a)^k + \int_a^b \frac{(b-t)^n}{n!} f^{(n+1)}(t) dt$$"
 20,Sinus de la somme,Analyse complexe,"Soient $a, b \in \mathbb{C}$. On a :
+Moyen mnémotechnique : "sico cosi coco moins sisi"
 $$\sin(a+b) = \sin(a)\cos(b) + \cos(a)\sin(b)$$
+
 En particulier, pour $b=a$ :
 $$\sin(2a) = 2\sin(a)\cos(a)$$"
 21,Cosinus de la somme,Analyse complexe,"Soient $a, b \in \mathbb{C}$. On a :
+Moyen mnémotechnique : "sico cosi coco moins sisi"
+
 $$\cos(a+b) = \cos(a)\cos(b) - \sin(a)\sin(b)$$
 En particulier, pour $b=a$ :
 $$\cos(2a) = \cos^2(a) - \sin^2(a)$$"

@@ -26,7 +26,7 @@ Intégration sur un intervalle quelconque
 
 ---
 
-Soit $X$ un ouvert d'un espace vectoriel normé de dimension finie et $I$ un intervalle de $\mathbb{R}$. Soit $f : X \times I \to \mathbb{C}$ telle que :
+Soit $X$ et $I$ deux intervalles de $\mathbb{R}$. Soit $f : X \times I \to \mathbb{C}$ telle que :
 
 1. Pour tout $x \in X$, la fonction $t \mapsto f(x, t)$ est continue par morceaux et intégrable sur $I$.
 2. La fonction $f$ admet une dérivée partielle selon $x$, notée $\frac{\partial f}{\partial x}$, telle que :
@@ -40,4 +40,3 @@ $$F'(x) = \int_I \frac{\partial f}{\partial x}(x, t) dt$$
 ---
 
 </details>
-
