@@ -1,75 +1,3 @@
-### Exercice
-
-Soit $A$ la matrice définie par
-
-$$
-A = \begin{pmatrix}
-1 & 10 & 3 & 1 \\
-2 & 5 & 1 & -3 \\
--1 & -1 & 0 & 2
-\end{pmatrix}.
-$$
-
-Calculer le rang de $A$, déterminer une base de son image et une base de son noyau.
-
-<details>
-<summary>Solution</summary>
-
----
-
-- $\operatorname{rg}(A)=2$ ;
-- une base de $\operatorname{Im}(A)$ est formée par les deux premières colonnes :
-  $$\big((1,2,-1),(10,5,-1)\big)$$
-- une base de $\ker(A)$ est :
-  $$\big((1,-1,3,0),(7,-1,0,3)\big).$$
-
-</details>
-
-## Distance
-
-Soit $E$ un ensemble. Une distance sur $E$ est une application $d : E \times E \to \mathbb{R}_+$ vérifiant :
-
-1. Séparation : $d(x, y) = 0 \iff x = y$
-2. Symétrie : $d(x, y) = d(y, x)$
-3. Inégalité triangulaire : $d(x, z) \le d(x, y) + d(y, z)$
-
-## Norme
-
-Soit $E$ un espace vectoriel sur $\mathbb{K}$. Une norme sur $E$ est une application $\|\cdot\| : E \to \mathbb{R}_+$ vérifiant :
-
-1. Séparation : $\|x\| = 0 \iff x = 0$
-2. Homogénéité : $\|\lambda x\| = |\lambda| \|x\|$
-3. Inégalité triangulaire : $\|x+y\| \le \|x\| + \|y\|$
-
-## Image continue d'un compact
-
-Soit $f : E \to F$ une application continue d'un espace topologique $E$ dans un espace topologique $F$.
-Si $K$ est un sous-ensemble compact de $E$, alors son image $f(K)$ est un sous-ensemble compact de $F$.
-
-## Théorème de Heine
-
-Soit $f : E \to F$ une application continue d'un espace métrique compact $E$ dans un espace métrique $F$.
-Alors $f$ est uniformément continue sur $E$, c'est-à-dire :
-$$\forall \varepsilon > 0, \exists \delta > 0, \forall x, y \in E, d_E(x, y) < \delta \implies d_F(f(x), f(y)) < \varepsilon$$
-
-## Connexité
-
-Un espace topologique $E$ est connexe s'il n'est pas la réunion de deux ouverts non vides et disjoints.
-De manière équivalente, les seules parties de $E$ à la fois ouvertes et fermées sont $\emptyset$ et $E$.
-
-## Homéomorphisme
-
-Une application $f : E \to F$ entre deux espaces topologiques est un homéomorphisme si $f$ est bijective, continue, et si sa réciproque $f^{-1}$ est continue.
-
-## Théorème de Heine-Borel
-
-Dans un espace vectoriel normé de dimension finie, les parties compactes sont exactement les parties fermées et bornées.
-
-## Adhérence d'un connexe
-
-Soit $E$ un espace topologique et $A$ une partie connexe de $E$.
-Si $B$ est une partie telle que $A \subseteq B \subseteq \bar{A}$, alors $B$ est connexe. En particulier, l'adhérence $\bar{A}$ d'un connexe est connexe.
-
 # Fonctions vectorielles
 
 ## Convergence simple
@@ -385,3 +313,135 @@ $$\left\| f(b) - \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (b-a)^k \right\| \le \frac{(
 Soit $f \in \mathcal{C}^{n+1}(I, E)$. Soient $a, b \in I$.
 Alors :
 $$f(b) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (b-a)^k + \int_a^b \frac{(b-t)^n}{n!} f^{(n+1)}(t) dt$$
+
+# Topologie à suppr quand je les aurai révisé et vérifié
+
+## Distance
+
+Soit $E$ un ensemble. Une distance sur $E$ est une application $d : E \times E \to \mathbb{R}_+$ vérifiant :
+
+1. Séparation : $d(x, y) = 0 \iff x = y$
+2. Symétrie : $d(x, y) = d(y, x)$
+3. Inégalité triangulaire : $d(x, z) \le d(x, y) + d(y, z)$
+
+<details>
+<summary>quatre exemples usuels</summary>
+
+---
+
+- Si $(E, \|\cdot\|)$ est un espace vectoriel normé, alors $d(x, y) = \|x-y\|$ est une distance sur $E$.
+- Sur $\overline{\mathbb{R}} = \mathbb{R} \cup \{-\infty, +\infty\}$, on pose $\arctan(-\infty) = -\frac{\pi}{2}$ et $\arctan(+\infty) = \frac{\pi}{2}$. Alors
+  $$d(x, y) = |\arctan(x) - \arctan(y)|$$
+  est une distance sur $\overline{\mathbb{R}}$.
+- La distance discrète sur un ensemble $E$ est définie par
+  $$d(x, y) = \mathbf{1}_{x \neq y}.$$
+- Soit $E^{\mathbb{N}}$ l'ensemble des suites à valeurs dans un ensemble $E$. La formule
+  $$d(U, V) = 2^{-\inf\{k \in \mathbb{N} : U_k \neq V_k\}}$$
+  (avec la convention que l'infimum vaut $+\infty$ si $U = V$)
+  définit une distance ultra-métrique sur $E^{\mathbb{N}}$, c'est-à-dire qu'elle vérifie
+  $$d(U, W) \le \max(d(U, V), d(V, W)).$$
+
+</details>
+
+## Applications lipschitziennes et isométries
+
+Soient $(E, d_E)$ et $(F, d_F)$ deux espaces métriques. Une application $f : E \to F$ est dite $L$-lipschitzienne, où $L \ge 0$, si
+$$\forall x, y \in E, \quad d_F(f(x), f(y)) \le L d_E(x, y).$$
+
+Une application $f : E \to F$ est une isométrie si elle préserve les distances, c'est-à-dire si
+$$\forall x, y \in E, \quad d_F(f(x), f(y)) = d_E(x, y).$$
+Toute isométrie est injective et $1$-lipschitzienne. Si elle est bijective, on parle d'une isométrie de $E$ sur $F$.
+
+## Boules ouvertes, fermées, intérieur et adhérence
+
+Soit $(E, d)$ un espace métrique, $x \in E$ et $r > 0$. La boule ouverte de centre $x$ et de rayon $r$ est
+$$B(x,r) = \{y \in E : d(x,y) < r\},$$
+et la boule fermée est notée
+$$B^f(x,r) = \{y \in E : d(x,y) \le r\}.$$
+On a
+$$B(x,r) \subseteq B^f(x,r), \qquad \overline{B(x,r)} \subseteq B^f(x,r), \qquad B(x,r) \subseteq \mathring{B^f(x,r)}.$$
+Dans un espace métrique quelconque, ces inclusions peuvent être strictes. Par exemple, soit $E = \{a,b\}$ muni de la distance discrète $d(a,b)=1$, et prenons $r=1$. Alors
+$$B(a,1)=\{a\}, \qquad B^f(a,1)=E.$$
+Comme toute partie d'un espace métrique fini est ouverte et fermée, on obtient
+$$\overline{B(a,1)}=\{a\} \subsetneq E=B^f(a,1),$$
+et
+$$B(a,1)=\{a\} \subsetneq E=\mathring{B^f(a,1)}.$$
+Dans un espace vectoriel normé, les deux dernières inclusions sont des égalités : l'adhérence de la boule ouverte est la boule fermée et l'intérieur de la boule fermée est la boule ouverte.
+
+## Diamètre
+
+Soit $(E, d)$ un espace métrique et $A \subseteq E$. Le diamètre de $A$ est défini par :
+$$\text{diam}(A) = \sup\{d(x, y) : x, y \in A\}$$
+
+A est borné ssi $\text{diam}(A) < +\infty$
+$$\iff \exists x_0 \in E, r > 0, \text{ tel que } A \subseteq B(x_0, r)$$
+$$\iff \forall x_0 \in E, \exists r > 0, \text{ tel que } A \subseteq B(x_0, r)$$
+
+## Points intérieurs, adhérents, isolés et d'accumulation
+
+Soit $(E, d)$ un espace métrique et $A \subseteq E$.
+
+Un point $x \in E$ est **intérieur** à $A$ s'il existe $r > 0$ tel que
+$B(x, r) \subseteq A.$
+
+Un point $x \in E$ est **adhérent** à $A$ si
+$\forall r > 0, \quad B(x, r) \cap A \neq \emptyset.$
+
+Un point $x \in A$ est **isolé** dans $A$ s'il existe $r > 0$ tel que
+$B(x, r) \cap A = \{x\}.$
+A est dit **discret** si tous ses points sont isolés.
+
+Un point $x \in E$ est un **point d'accumulation** de $A$ si
+$\forall r > 0, \quad B(x, r) \cap (A \setminus \{x\}) \neq \emptyset.$
+
+## Intérieur et adhérence des opérations ensemblistes
+
+Pour toutes parties $A, B \subseteq E$ :
+$$\mathring{E \setminus A} = E \setminus \overline{A}, \qquad \overline{E \setminus A} = E \setminus \mathring{A}.$$
+$$\mathring{A} \cup \mathring{B} \subseteq \mathring{A \cup B}, \qquad \overline{A \cup B} = \overline{A} \cup \overline{B}.$$
+$$\mathring{A \cap B} = \mathring{A} \cap \mathring{B}, \qquad \overline{A \cap B} \subseteq \overline{A} \cap \overline{B}.$$
+
+## Norme
+
+Soit $E$ un espace vectoriel sur $\mathbb{K}$. Une norme sur $E$ est une application $\|\cdot\| : E \to \mathbb{R}_+$ vérifiant :
+
+1. Séparation : $\|x\| = 0 \iff x = 0$
+2. Homogénéité : $\|\lambda x\| = |\lambda| \|x\|$
+3. Inégalité triangulaire : $\|x+y\| \le \|x\| + \|y\|$
+
+## Image continue d'un compact
+
+Soit $f : E \to F$ une application continue d'un espace topologique $E$ dans un espace topologique $F$.
+Si $K$ est un sous-ensemble compact de $E$, alors son image $f(K)$ est un sous-ensemble compact de $F$.
+
+## Théorème de Heine
+
+Soit $f : E \to F$ une application continue d'un espace métrique compact $E$ dans un espace métrique $F$.
+Alors $f$ est uniformément continue sur $E$, c'est-à-dire :
+$$\forall \varepsilon > 0, \exists \delta > 0, \forall x, y \in E, d_E(x, y) < \delta \implies d_F(f(x), f(y)) < \varepsilon$$
+
+## Ensemble connexe
+
+Un espace topologique $E$ est connexe si
+$$\nexists U, V \in \mathcal{P}(E), \quad U \text{ et } V \text{ ouverts non-vides}, \quad E = U \sqcup V.$$
+De manière équivalente :
+$$\forall A \subseteq E, \quad \left(A \text{ ouvert et fermé}\right) \implies A \in \{\emptyset, E\}.$$
+
+## Homéomorphisme
+
+Une application $f : E \to F$ entre deux espaces topologiques est un homéomorphisme si :
+
+$(i)$ $f$ est bijective
+
+$(ii)$ $f$ est continue
+
+$(iii)$ $f^{-1}$ est continue
+
+## Théorème de Borel-Lebesgue / Heine-Borel
+
+Dans un espace vectoriel normé de dimension finie, les fermés bornés sont compacts.
+
+## Adhérence d'un connexe
+
+Soit $E$ un espace topologique et $A$ une partie connexe de $E$.
+Si $B$ est une partie telle que $A \subseteq B \subseteq \bar{A}$, alors $B$ est connexe. En particulier, l'adhérence $\bar{A}$ d'un connexe est connexe.

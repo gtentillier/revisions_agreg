@@ -6,7 +6,7 @@
 
 </div>
 
-**1** Théorèmes à réviser sur **41**
+**1** Théorèmes à réviser sur **54**
 
 # 📚 30/09/2026
 
