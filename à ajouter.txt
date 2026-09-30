@@ -22,6 +22,8 @@ Chapitre Groupes
 analyse réelle :
 critère d'abel
 
+cauchy schwartz avec 3 preuves : preuves avec la normalisation, preuve avec le discriminant, preuve avec la récurrence. cf livre
+
 analyse complexe: 
 ## Théorème des résidus
 

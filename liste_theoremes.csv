@@ -52,7 +52,7 @@ Supposons que :
 
 Alors $f$ et les $f_n$ sont intégrables sur $I$ et :
 $$\lim_{n \to \infty} \int_I f_n(t) dt = \int_I f(t) dt$$"
-10,Suite de Cauchy,Analyse réelle,"Soit $(E, d)$ un espace métrique. Une suite $(u_n)_{n \in \mathbb{N}}$ d'éléments de $E$ est dite de Cauchy si :
+10,Suite de Cauchy,Topologie,"Soit $(E, d)$ un espace métrique. Une suite $(u_n)_{n \in \mathbb{N}}$ d'éléments de $E$ est dite de Cauchy si :
 $$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall p, q \ge N, d(u_p, u_q) < \varepsilon$$"
 11,Composition de fonctions convexes,Analyse réelle,"Soient $I$ et $J$ deux intervalles de $\mathbb{R}$. Soit $f : I \to J$ et $g : J \to \mathbb{R}$ deux fonctions.
 Si $f$ est convexe, $g$ est convexe et $g$ est croissante, alors $g \circ f$ est convexe sur $I$."
@@ -99,7 +99,7 @@ $$\cos(2a) = \cos^2(a) - \sin^2(a)$$"
 Si $\lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right| = \ell \in [0, +\infty]$, alors le rayon de convergence $R$ de la série est :
 $$R = \frac{1}{\ell}$$
 (avec la convention $1/0 = +\infty$ et $1/\infty = 0$)."
-23,Règle de Cauchy,Analyse complexe,"Soit $\sum a_n z^n$ une série entière.
+23,Règle de Cauchy,Analyse complexe,"Soit $\sum a_n z^n$ une série entière with $a_n \neq 0$ pour $n$ assez grand.
 Si $\lim_{n \to \infty} |a_n|^{1/n} = \ell \in [0, +\infty]$, alors le rayon de convergence $R$ de la série est :
 $$R = \frac{1}{\ell}$$
 (avec la convention $1/0 = +\infty$ et $1/\infty = 0$)."
@@ -154,3 +154,175 @@ $(ii)$ $\forall a \in A, \forall x \in I, ax \in I$."
 38,Caractéristique,Anneaux,"La **caractéristique** d'un anneau unitaire $A$ est l'unique $n \in \mathbb{N}$ tel que $\ker \varphi = n\mathbb{Z}$, où $\varphi : \mathbb{Z} \to A, k \mapsto k \cdot 1_A$ est le morphisme canonique.
 
 C'est donc le plus petit entier $n > 0$ tel que $n \cdot 1_A = 0$ s'il existe, et $0$ sinon."
+39,Pivot de Gauss,Algèbre Linéaire,"Le pivot de Gauss consiste à transformer une matrice par opérations élémentaires sur les lignes : échanger deux lignes, multiplier une ligne par un scalaire non nul ou ajouter à une ligne un multiple d'une autre.
+
+---
+
+### Calcul du rang
+
+On choisit un pivot non nul et on annule les coefficients situés en dessous. Si le pivot est nul, on échange la ligne avec une ligne située plus bas. Le rang est alors le nombre de lignes non nulles de la forme échelonnée.
+
+Par exemple, pour le système
+
+$$
+\begin{cases}
+x+y+z=6,\\
+2x-y+z=3,\\
+x+2y-z=2,
+\end{cases}
+$$
+
+la matrice augmentée, dont la dernière colonne contient le second membre, se réduit ainsi :
+
+$$
+\left(\begin{array}{ccc|c}
+1 & 1 & 1 & 6\\
+2 & -1 & 1 & 3\\
+1 & 2 & -1 & 2
+\end{array}\right)
+\xrightarrow{\substack{L_2\leftarrow L_2-2L_1\\L_3\leftarrow L_3-L_1}}
+\left(\begin{array}{ccc|c}
+1 & 1 & 1 & 6\\
+0 & -3 & -1 & -9\\
+0 & 1 & -2 & -4
+\end{array}\right)
+\xrightarrow{L_3\leftarrow 3L_3+L_2}
+\left(\begin{array}{ccc|c}
+1 & 1 & 1 & 6\\
+0 & -3 & -1 & -9\\
+0 & 0 & -7 & -21
+\end{array}\right).
+$$
+
+---
+
+### Bases du noyau et de l'image
+
+Considérons la matrice $3\times3$
+
+$$
+A=\begin{pmatrix} 1 & 2 & 3 \\ 2 & 4 & 6 \\ 3 & 6 & 9 \end{pmatrix}
+\quad\text{et l'application } f(X)=AX.
+$$
+
+La réduction donne
+
+$$
+\begin{pmatrix} 1 & 2 & 3 \\ 2 & 4 & 6 \\ 3 & 6 & 9 \end{pmatrix}
+\xrightarrow{\substack{L_2\leftarrow L_2-2L_1\\L_3\leftarrow L_3-3L_1}}
+\begin{pmatrix} 1 & 2 & 3 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}.
+$$
+
+Pour trouver le noyau, on résout $AX=0$ avec $X=(x,y,z)$. Il reste l'équation
+
+$$
+x+2y+3z=0.
+$$
+
+Les variables $y$ et $z$ sont libres. En posant $y=s$ et $z=t$, on obtient $x=-2s-3t$, donc
+
+$$
+X=\begin{pmatrix}x\\y\\z\end{pmatrix}
+ =s\begin{pmatrix}-2\\1\\0\end{pmatrix}
+ +t\begin{pmatrix}-3\\0\\1\end{pmatrix},
+\quad\text{donc}\quad
+\ker(f)=\operatorname{Vect}\left\{\begin{pmatrix}-2\\1\\0\end{pmatrix},\begin{pmatrix}-3\\0\\1\end{pmatrix}\right\}.
+$$
+
+La seule colonne pivot est la première. Une base de l'image est donc donnée par la première colonne de la matrice initiale :
+
+$$
+\operatorname{Im}(f)=\operatorname{Vect}\left\{\begin{pmatrix}1\\2\\3\end{pmatrix}\right\}.
+$$
+
+---
+
+### Calcul d'un inverse
+
+Chaque opération élémentaire revient à multiplier à gauche par une matrice élémentaire inversible. Ainsi, en partant de $(A\mid I_n)$, une suite d'opérations donne
+
+$$
+(A\mid I_n)\longmapsto(PA\mid P),
+$$
+
+Si la partie gauche devient $I_n$, alors $P=A^{-1}$ : on lit l'inverse à droite.
+
+Par exemple, $L_2\leftarrow L_2-3L_1$ correspond à la matrice élémentaire inversible
+
+$$
+E=\begin{pmatrix} 1 & 0 & 0 \\ -3 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix},
+\qquad
+E^{-1}=\begin{pmatrix} 1 & 0 & 0 \\ 3 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}.
+$$
+
+L'inverse correspond à l'opération réciproque $L_2\leftarrow L_2+3L_1$.
+
+Exemple en dimension $3$ : considérons
+
+$$
+B=\begin{pmatrix} 1 & 1 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{pmatrix}.
+$$
+
+La méthode de Gauss-Jordan donne :
+
+$$
+\left(\begin{array}{ccc|ccc}
+1 & 1 & 0 & 1 & 0 & 0\\
+0 & 1 & 1 & 0 & 1 & 0\\
+0 & 0 & 1 & 0 & 0 & 1
+\end{array}\right)
+\xrightarrow{L_2\leftarrow L_2-L_3}
+\left(\begin{array}{ccc|ccc}
+1 & 1 & 0 & 1 & 0 & 0\\
+0 & 1 & 0 & 0 & 1 & -1\\
+0 & 0 & 1 & 0 & 0 & 1
+\end{array}\right)
+\xrightarrow{L_1\leftarrow L_1-L_2}
+\left(\begin{array}{ccc|ccc}
+1 & 0 & 0 & 1 & -1 & 1\\
+0 & 1 & 0 & 0 & 1 & -1\\
+0 & 0 & 1 & 0 & 0 & 1
+\end{array}\right).
+$$
+
+Ainsi,
+
+$$
+B^{-1}=\begin{pmatrix} 1 & -1 & 1 \\ 0 & 1 & -1 \\ 0 & 0 & 1 \end{pmatrix}.
+$$
+
+---
+
+### Exercice
+
+Soit $A$ la matrice définie par
+
+$$
+A = \begin{pmatrix}
+1 & 10 & 3 & 1 \\
+2 & 5 & 1 & -3 \\
+-1 & -1 & 0 & 2
+\end{pmatrix}.
+$$
+
+Calculer le rang de $A$, déterminer une base de son image et une base de son noyau.
+
+<details>
+<summary>Solution</summary>
+
+---
+
+- $\operatorname{rg}(A)=2$ ;
+- une base de $\operatorname{Im}(A)$ est formée par les deux premières colonnes :
+  $$\big((1,2,-1),(10,5,-1)\big)$$
+- une base de $\ker(A)$ est :
+  $$\big((1,-1,3,0),(7,-1,0,3)\big).$$
+
+</details>"
+40,Lemme de Gauss,Groupes,"Soient $a, b, c \\in \\mathbb{Z}$. Si $a \\mid bc$ et si $a$ est premier avec $b$, c'est-à-dire si $\\operatorname{pgcd}(a,b)=1$, alors :
+$$a \\mid c.$$"
+41,Caractérisation du rang d'une matrice,Algèbre Linéaire,"Soit $A \in \mathcal{M}_{m,n}(\mathbb{K})$. Le rang de $A$, noté $\operatorname{rg}(A)$, est caractérisé par les propriétés équivalentes suivantes :
+
+1. $\operatorname{rg}(A)$ est la dimension de l'espace engendré par les colonnes de $A$ ; c'est aussi la dimension de l'espace engendré par ses lignes.
+2. $\operatorname{rg}(A)$ est le nombre maximal de colonnes linéairement indépendantes de $A$ ; c'est aussi le nombre maximal de lignes linéairement indépendantes de $A$.
+3. $\operatorname{rg}(A)$ est le plus grand entier $r$ tel que $A$ possède une sous-matrice carrée inversible de taille $r \times r$."

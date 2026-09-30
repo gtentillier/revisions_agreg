@@ -1,4 +1,29 @@
-# Topologie
+### Exercice
+
+Soit $A$ la matrice définie par
+
+$$
+A = \begin{pmatrix}
+1 & 10 & 3 & 1 \\
+2 & 5 & 1 & -3 \\
+-1 & -1 & 0 & 2
+\end{pmatrix}.
+$$
+
+Calculer le rang de $A$, déterminer une base de son image et une base de son noyau.
+
+<details>
+<summary>Solution</summary>
+
+---
+
+- $\operatorname{rg}(A)=2$ ;
+- une base de $\operatorname{Im}(A)$ est formée par les deux premières colonnes :
+  $$\big((1,2,-1),(10,5,-1)\big)$$
+- une base de $\ker(A)$ est :
+  $$\big((1,-1,3,0),(7,-1,0,3)\big).$$
+
+</details>
 
 ## Distance
 
