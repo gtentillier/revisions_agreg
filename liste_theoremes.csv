@@ -112,13 +112,23 @@ $$R = \frac{1}{\ell}$$
 27,Factorisation de $a^n - b^n$,Analyse réelle,"Soient $a, b \in \mathbb{C}$ et $n \in \mathbb{N}^*$. On a :
 $$a^n - b^n = (a-b) \sum_{k=0}^{n-1} a^{n-1-k} b^k$$"
 28,Caractérisation de l'égalité des idéaux engendrés par deux éléments,Anneaux,"Soit $A$ un anneau commutatif intègre, $a, b \in A$.
-$(a) = (b)$ $\iff$ $a$ et $b$ sont **associés** (i.e. $\exists u \in A^\times, a = ub$)."
+$$(a) = (b) \iff a \text{ et } b \text{ sont associés (i.e. } \exists u \in A^\times, a = ub)$$ "
 29,Théorème de factorisation dans un anneau,Anneaux,"Soit $f : A \to B$ un morphisme d'anneaux et $I$ un idéal de $A$.
+
 $I \subseteq \ker f$ $\iff$ $\exists!$ morphisme d'anneaux $\bar{f} : A/I \to B$ tel que $f = \bar{f} \circ \pi$, où $\pi : A \to A/I$ est la projection canonique, c'est-à-dire tel que le diagramme suivant commute :
-<p align="center">
-  <img src="img/dessins théorèmes/anneaux_1.png" width="300">
-</p>"
-30,"Anneau, unitaire, commutatif, intègre, réduit",Anneaux,"Un **anneau** $(A, +, \times)$ est un ensemble muni de deux lois de composition interne telles que $(A, +)$ est un groupe abélien, $\times$ est associative et distributive par rapport à $+$.
+<p align=""center"">
+  <img src=""img/dessins théorèmes/anneaux_1.png"" width=""300"">
+</p>
+
+En particulier, si $I = \ker f$, alors $\bar{f}$ induit un **isomorphisme** :
+$$A/\ker f \simeq f(A)$$"
+30,"Anneau, unitaire, commutatif, intègre, réduit",Anneaux,"Un **anneau** $(A, +, \times)$ est un ensemble muni de deux lois de composition interne telles que :
+
+$(i)$ $(A, +)$ est un groupe abélien
+
+$(ii)$ $\times$ est associative
+
+$(iii)$ $\times$ est distributive à gauche et à droite par rapport à $+$
 
 - **Unitaire** : s'il possède un élément neutre pour $\times$ (noté $1_A$), tous les anneaux sont supposés unitaires pour le cours.
 - **Commutatif** : si la loi $\times$ est commutative.
@@ -153,7 +163,7 @@ $(i)$ $(I, +)$ est un sous-groupe de $(A, +)$
 $(ii)$ $\forall a \in A, \forall x \in I, ax \in I$."
 38,Caractéristique,Anneaux,"La **caractéristique** d'un anneau unitaire $A$ est l'unique $n \in \mathbb{N}$ tel que $\ker \varphi = n\mathbb{Z}$, où $\varphi : \mathbb{Z} \to A, k \mapsto k \cdot 1_A$ est le morphisme canonique.
 
-C'est donc le plus petit entier $n > 0$ tel que $n \cdot 1_A = 0$ s'il existe, et $0$ sinon."
+C'est donc le plus petit entier $n > 0$ tel que $n \cdot 1_A = 0_A$ s'il existe, et $0$ sinon."
 39,Pivot de Gauss,Algèbre Linéaire,"Le pivot de Gauss consiste à transformer une matrice par opérations élémentaires sur les lignes : échanger deux lignes, multiplier une ligne par un scalaire non nul ou ajouter à une ligne un multiple d'une autre.
 
 ---

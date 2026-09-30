@@ -24,7 +24,8 @@ def load_csv(file_path):
     if not os.path.exists(file_path):
         return []
     with open(file_path, 'r', encoding='utf-8') as f:
-        return list(csv.DictReader(f))
+        # csv.DictReader gère nativement les sauts de ligne s'ils sont entre guillemets
+        return list(csv.DictReader(f, quoting=csv.QUOTE_MINIMAL))
 
 
 def save_suivi(data):
@@ -45,10 +46,6 @@ def mise_a_jour():
 
     # Etape 1: Ajouter nouveaux théorèmes
     for row in liste_theoremes:
-        # Filtrer les lignes corrompues qui n'ont pas un ID numérique
-        if not row.get('id', '').isdigit():
-            continue
-
         if row['id'] not in suivi_ids:
             days = espacement.get("days_knowledge_1/10", 1)
             next_date = today + timedelta(days=days)
