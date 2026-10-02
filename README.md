@@ -5,7 +5,7 @@ Outil de révision par répétition espacée (SRS) pour l'agrégation de mathém
 ## 🚀 Workflow de Révision
 
 1. **Mettre à jour** :
-   - Lancez la tâche VS Code **"Mise à jour Révisions"** (ou `python3 mise_a_jour.py`).
+   - Lancez le script de **"Mise à jour Révisions"** : `python3 mise_a_jour.py`.
    - Le script va, pour chaque théorème :
      - Incrémenter le niveau d'acquisition de 1 si succès est à `oui` ou le réinitialiser à 1 si `non`.
      - Calculer la prochaine date de révision pour chaque théorème.
@@ -26,5 +26,5 @@ Outil de révision par répétition espacée (SRS) pour l'agrégation de mathém
 - **`suivi_revisions.csv`** : Suivi généré automatiquement. Contient le `niveau_acquisition` (1 à 10), la `date_revision`, et la colonne `succès` ("oui"/"non").
 - **`espacement.json`** : Paramètres d'espacement (en jours) selon le niveau d'acquisition.
 - **`mise_a_jour.py`** : Script principal qui traite les résultats du jour et génère le fichier de révision.
-- **`revisions.md`** : Fichier d'étude généré quotidiennement contenant les théorèmes à réviser.
-- **`img/`** : Graphiques de progression générés (`progression_globale.png` et `progression_chapitres.png`).
+- **`revisions.md`** : Fichier d'étude généré automatiquement contenant les théorèmes à réviser.
+- **`img/`** : Graphiques de progression générés automatiquement (`progression_globale.png` et `progression_chapitres.png`) et autre fichiers utiles.

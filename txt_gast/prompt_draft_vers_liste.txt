@@ -1,1 +1,0 @@
-ajoute tous les théorèmes de draft.md dans liste_theoremes.csv, en respectant le format de ce dernier. tu recopieras exactement chaque contenu dans la colonne expression_LaTeX, sans rien modifier, idem pour le titre. les théorèmes sont déjà par chapitre dans draft.md.
