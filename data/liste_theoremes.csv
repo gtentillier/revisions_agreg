@@ -107,8 +107,8 @@ $$R = \frac{1}{\ell}$$
 Si $\lim_{n \to \infty} |a_n|^{1/n} = \ell \in [0, +\infty]$, alors le rayon de convergence $R$ de la série est :
 $$R = \frac{1}{\ell}$$
 (avec la convention $1/0 = +\infty$ et $1/\infty = 0$)."
-24,Formule de Cauchy,Analyse complexe,"Soit $U$ un ouvert étoilé de $\mathbb{C}$ et $f : U \to \mathbb{C}$ holomorphe. Alors :
-- $f$ admet une primitive sur $U$ ;
+24,Formule de Cauchy,Analyse complexe,"Soit $U$ un ouvert étoilé de $\mathbb{C}$ de centre $z_0$ et $f : U \to \mathbb{C}$ holomorphe. Alors :
+- $f$ admet une primitive sur $U$ donnée par $F(z) = \int_{[z_0, z]} f(w) dw$. Cette intégrale ne dépend pas du chemin dans $U$ ;
 - si $\gamma$ est un lacet $\mathcal{C}^1$ par morceaux et à valeurs dans $U$, alors $\int_{\gamma} f(z) dz = 0$ ;
 - si de plus $z \in U \setminus \text{Im}(\gamma)$, alors $f(z) \text{Ind}_{\gamma}(z) = \frac{1}{2i\pi} \int_{\gamma} \frac{f(w)}{w-z} dw$."
 25,Théorème de Liouville,Analyse complexe,"Toute fonction holomorphe sur $\mathbb{C}$ bornée est constante."
@@ -344,8 +344,8 @@ Calculer le rang de $A$, déterminer une base de son image et une base de son no
   $$\big((1,-1,3,0),(7,-1,0,3)\big).$$
 
 </details>"
-40,Lemme de Gauss,Groupes,"Soient $a, b, c \\in \\mathbb{Z}$. Si $a \\mid bc$ et si $a$ est premier avec $b$, c'est-à-dire si $\\operatorname{pgcd}(a,b)=1$, alors :
-$$a \\mid c.$$"
+40,Lemme de Gauss,Groupes,"Soient $a, b, c \in \mathbb{Z}$. Si $a \mid bc$ et si $a$ est premier avec $b$, c'est-à-dire si $\operatorname{pgcd}(a,b)=1$, alors :
+$$a \mid c.$$"
 41,Caractérisation du rang d'une matrice,Algèbre Linéaire,"Soit $A \in \mathcal{M}_{m,n}(\mathbb{K})$. Le rang de $A$, noté $\operatorname{rg}(A)$, est caractérisé par les propriétés équivalentes suivantes :
 
 1. $\operatorname{rg}(A)$ est la dimension de l'espace engendré par les colonnes de $A$ ; c'est aussi la dimension de l'espace engendré par ses lignes.
@@ -415,21 +415,24 @@ A est dit **discret** si tous ses points sont isolés.
 Un point $x \in E$ est un **point d'accumulation** de $A$ si
 $\forall r > 0, \quad B(x, r) \cap (A \setminus \{x\}) \neq \emptyset.$
 $$\overline{A} = \text{Acc}(A) \sqcup \text{Isol}(A)$$"
-47,Intérieur et adhérence des opérations ensemblistes,Topologie,"Pour toutes parties $A, B \subseteq E$ :
-$$\mathring{E \setminus A} = E \setminus \overline{A}, \qquad \overline{E \setminus A} = E \setminus \mathring{A}.$$
-$$\mathring{A} \cup \mathring{B} \subseteq \mathring{A \cup B}, \qquad \overline{A \cup B} = \overline{A} \cup \overline{B}.$$
-$$\mathring{A \cap B} = \mathring{A} \cap \mathring{B}, \qquad \overline{A \cap B} \subseteq \overline{A} \cap \overline{B}.$$"
+47,Intérieur et adhérence des opérations ensemblistes,Topologie,"Soit $(E, d)$ un espace métrique. Pour toutes parties $A, B \subseteq E$ :
+$$\mathring{E \setminus A} = E \setminus \overline{A}, \qquad \overline{E \setminus A} = E \setminus \mathring{A}$$
+$$\mathring{A \setminus B} = \mathring{A} \setminus \overline{B}, \qquad \overline{A \setminus B} \subseteq \overline{A} \setminus \mathring{B}$$
+
+De plus :
+$$\mathring{A} \cup \mathring{B} \subseteq \mathring{A \cup B}, \qquad \overline{A \cup B} = \overline{A} \cup \overline{B}$$
+$$\mathring{A \cap B} = \mathring{A} \cap \mathring{B}, \qquad \overline{A \cap B} \subseteq \overline{A} \cap \overline{B}$$"
 48,Norme,Topologie,"Soit $E$ un espace vectoriel sur $\mathbb{K}$. Une norme sur $E$ est une application $\|\cdot\| : E \to \mathbb{R}_+$ vérifiant :
 
 1. Séparation : $\|x\| = 0 \iff x = 0$
 2. Homogénéité : $\|\lambda x\| = |\lambda| \|x\|$
 3. Inégalité triangulaire : $\|x+y\| \le \|x\| + \|y\|$"
-49,Image continue d'un compact,Topologie,"Soit $f : E \to F$ une application continue d'un espace topologique $E$ dans un espace topologique $F$.
+49,Image continue d'un compact,Topologie,"Soit $f : E \to F$ une application continue d'un espace métrique $E$ dans un espace métrique $F$.
 Si $K$ est un sous-ensemble compact de $E$, alors son image $f(K)$ est un sous-ensemble compact de $F$."
 50,Théorème de Heine,Topologie,"Soit $f : E \to F$ une application continue d'un espace métrique compact $E$ dans un espace métrique $F$.
 Alors $f$ est uniformément continue sur $E$, c'est-à-dire :
 $$\forall \varepsilon > 0, \exists \delta > 0, \forall x, y \in E, d_E(x, y) < \delta \implies d_F(f(x), f(y)) < \varepsilon$$"
-51,Ensemble connexe,Topologie,"Un espace topologique $E$ est connexe si
+51,Ensemble connexe,Topologie,"Un espace métrique $E$ est connexe si
 $$\nexists U, V \in \mathcal{P}(E), \quad U \text{ et } V \text{ ouverts non-vides}, \quad E = U \sqcup V.$$
 De manière équivalente :
 $$\forall A \subseteq E, \quad \left(A \text{ ouvert et fermé}\right) \implies A \in \{\emptyset, E\}.$$"
@@ -441,7 +444,7 @@ $(ii)$ $f$ est continue
 
 $(iii)$ $f^{-1}$ est continue"
 53,Théorème de Borel-Lebesgue / Heine-Borel,Topologie,"Dans un espace vectoriel normé de dimension finie, les fermés bornés sont compacts."
-54,Adhérence d'un connexe,Topologie,"Soit $E$ un espace topologique et $A$ une partie connexe de $E$.
+54,Adhérence d'un connexe,Topologie,"Soit $E$ un espace métrique et $A$ une partie connexe de $E$.
 Si $B$ est une partie telle que $A \subseteq B \subseteq \bar{A}$, alors $B$ est connexe. En particulier, l'adhérence $\bar{A}$ d'un connexe est connexe."
 55,Théorème de limite de la dérivée,Fonctions vectorielles,"Soit $(E, \|\cdot\|)$ un $\mathbb{K}$-espace vectoriel de dimension finie. Soit $I$ un intervalle de $\mathbb{R}$ et $a \in I$. Soit $f : I \to E$ une fonction continue sur $I$ et dérivable sur $I \setminus \{a\}$.
 Si $f'(x) \xrightarrow[x \to a]{} l$ existe (avec $l \in E$), alors $f$ est dérivable en $a$ et $f'(a) = l$.
@@ -455,7 +458,7 @@ Ceci est équivalent à dire que $\sup_{x \in X} \|f_n(x) - f(x)\| \xrightarrow[
 59,Convergence absolue d'une série de fonctions,Fonctions vectorielles,"Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $\sum f_n$ une série de fonctions de $X$ vers $E$. On dit que la série $\sum f_n$ converge absolument si pour tout $x \in X$, la série numérique $\sum\limits_{n=0}^{\infty} \|f_n(x)\|$ converge."
 60,Convergence normale d'une série de fonctions,Fonctions vectorielles,"Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $\sum f_n$ une série de fonctions de $X$ vers $E$. On dit que la série $\sum f_n$ converge normalement sur $X$ si chaque fonction $f_n$ est bornée sur $X$ et si la série numérique $\sum\limits_{n=0}^{\infty} \sup_{x \in X} \|f_n(x)\|$ converge."
 61,Limite uniforme de fonctions bornées,Fonctions vectorielles,"Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions bornées de $X$ vers $E$. Si la suite $(f_n)$ converge uniformément vers une fonction $f : X \to E$, alors $f$ est bornée sur $X$."
-62,Limite uniforme de fonctions continues,Fonctions vectorielles,"Soit $X$ un espace topologique et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de $X$ vers $E$. Si chaque fonction $f_n$ est continue sur $X$ et si la suite $(f_n)$ converge uniformément vers une fonction $f : X \to E$, alors $f$ est continue sur $X$."
+62,Limite uniforme de fonctions continues,Fonctions vectorielles,"Soit $X$ un espace métrique et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de $X$ vers $E$. Si chaque fonction $f_n$ est continue sur $X$ et si la suite $(f_n)$ converge uniformément vers une fonction $f : X \to E$, alors $f$ est continue sur $X$."
 63,Théorème de la double limite,Fonctions vectorielles,"Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace de Banach (espace vectoriel normé complet). Soit $a \in \overline{X}$ (avec $a \in \overline{\mathbb{R}}$ si $E = \mathbb{R}$). Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de $X$ vers $E$.
 Supposons que :
 

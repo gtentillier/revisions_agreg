@@ -1,11 +1,11 @@
 id,nom_théorème,chapitre,niveau_acquisition,date_revision,succès
-51,Ensemble connexe,Topologie,1,01/10/2026,
-2,Théorème des valeurs intermédiaires,Analyse réelle,2,01/10/2026,
-40,Lemme de Gauss,Groupes,1,01/10/2026,
-44,"Boules ouvertes, fermées, intérieur et adhérence",Topologie,1,01/10/2026,
-27,Factorisation de $a^n - b^n$,Analyse réelle,1,01/10/2026,
-4,Théorème de Fubini-Tonelli pour les suites,Analyse réelle,2,01/10/2026,
-47,Intérieur et adhérence des opérations ensemblistes,Topologie,1,01/10/2026,
+51,Ensemble connexe,Topologie,1,01/10/2026,oui
+2,Théorème des valeurs intermédiaires,Analyse réelle,2,01/10/2026,oui
+40,Lemme de Gauss,Groupes,1,01/10/2026,non
+44,"Boules ouvertes, fermées, intérieur et adhérence",Topologie,1,01/10/2026,oui
+27,Factorisation de $a^n - b^n$,Analyse réelle,1,01/10/2026,oui
+4,Théorème de Fubini-Tonelli pour les suites,Analyse réelle,2,01/10/2026,oui
+47,Intérieur et adhérence des opérations ensemblistes,Topologie,1,01/10/2026,oui
 24,Formule de Cauchy,Analyse complexe,1,01/10/2026,
 45,Diamètre,Topologie,1,01/10/2026,
 49,Image continue d'un compact,Topologie,1,01/10/2026,

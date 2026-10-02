@@ -72,8 +72,8 @@ Groupes
 
 ---
 
-Soient $a, b, c \\in \\mathbb{Z}$. Si $a \\mid bc$ et si $a$ est premier avec $b$, c'est-à-dire si $\\operatorname{pgcd}(a,b)=1$, alors :
-$$a \\mid c.$$
+Soient $a, b, c \in \mathbb{Z}$. Si $a \mid bc$ et si $a$ est premier avec $b$, c'est-à-dire si $\operatorname{pgcd}(a,b)=1$, alors :
+$$a \mid c.$$
 
 ---
 
@@ -168,8 +168,11 @@ Topologie
 
 ---
 
-Pour toutes parties $A, B \subseteq E$ :
-$$\mathring{E \setminus A} = E \setminus \overline{A}, \qquad \overline{E \setminus A} = E \setminus \mathring{A}.$$
+Soit $(E, d)$ un espace métrique. Pour toutes parties $A, B \subseteq E$ :
+$$\mathring{E \setminus A} = E \setminus \overline{A}, \qquad \overline{E \setminus A} = E \setminus \mathring{A}$$
+$$\mathring{A \setminus B} = \mathring{A} \setminus \overline{B}, \qquad \overline{A \setminus B} \subseteq \overline{A} \setminus \mathring{B}$$
+
+De plus :
 $$\mathring{A} \cup \mathring{B} \subseteq \mathring{A \cup B}, \qquad \overline{A \cup B} = \overline{A} \cup \overline{B}.$$
 $$\mathring{A \cap B} = \mathring{A} \cap \mathring{B}, \qquad \overline{A \cap B} \subseteq \overline{A} \cap \overline{B}.$$
 
@@ -191,8 +194,9 @@ Analyse complexe
 
 ---
 
-Soit $U$ un ouvert étoilé de $\mathbb{C}$ et $f : U \to \mathbb{C}$ holomorphe. Alors :
-- $f$ admet une primitive sur $U$ ;
+Soit $U$ un ouvert étoilé de $\mathbb{C}$ de centre $z_0$ et $f : U \to \mathbb{C}$ holomorphe. Alors :
+
+- $f$ admet une primitive sur $U$ donnée par $F(z) = \int_{[z_0, z]} f(w) dw$. Cette intégrale ne dépend pas du chemin dans $U$ ;
 - si $\gamma$ est un lacet $\mathcal{C}^1$ par morceaux et à valeurs dans $U$, alors $\int_{\gamma} f(z) dz = 0$ ;
 - si de plus $z \in U \setminus \text{Im}(\gamma)$, alors $f(z) \text{Ind}_{\gamma}(z) = \frac{1}{2i\pi} \int_{\gamma} \frac{f(w)}{w-z} dw$.
 
@@ -993,6 +997,7 @@ Anneaux
 Soit $f : A \to B$ un morphisme d'anneaux et $I$ un idéal de $A$.
 
 $I \subseteq \ker f$ $\iff$ $\exists!$ morphisme d'anneaux $\bar{f} : A/I \to B$ tel que $f = \bar{f} \circ \pi$, où $\pi : A \to A/I$ est la projection canonique, c'est-à-dire tel que le diagramme suivant commute :
+
 <p align="center">
   <img src="img/dessins théorèmes/anneaux_1.png" width="300">
 </p>
@@ -1098,7 +1103,7 @@ Anneaux
 ---
 
 Soit $A$ un anneau commutatif intègre, $a, b \in A$.
-$$(a) = (b) \iff a \text{ et } b \text{ sont associés (i.e. } \exists u \in A^\times, a = ub)$$ 
+$$(a) = (b) \iff a \text{ et } b \text{ sont associés (i.e. } \exists u \in A^\times, a = ub)$$
 
 ---
 
@@ -1611,7 +1616,7 @@ $(ii)$ $\forall a \in A, \forall x \in I, ax \in I$.
 
 - **Idéal premier** : Un idéal $I$ de $A$ est **premier** si $A/I$ est un anneau **intègre**.
   C'est équivalent à dire que $I \neq A$ et : $\forall a, b \in A, ab \in I \implies a \in I \text{ ou } b \in I$.
-  *Propriété* : Si $A$ est intègre, pour $p \in A \setminus \{0\}$, si $(p)$ est premier, alors $p$ est irréductible.
+  _Propriété_ : Si $A$ est intègre, pour $p \in A \setminus \{0\}$, si $(p)$ est premier, alors $p$ est irréductible.
 
 - **Idéal maximal** : Un idéal $I$ de $A$ est **maximal** si $A/I$ est un **corps**.
   C'est équivalent à dire que $I \neq A$ et les seuls idéaux contenant $I$ sont $I$ et $A$.
@@ -1670,4 +1675,3 @@ $$\int_a^b f_n(t) dt \xrightarrow[n \to \infty]{} \int_a^b f(t) dt$$
 ---
 
 </details>
-
