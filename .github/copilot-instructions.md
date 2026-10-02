@@ -3,12 +3,12 @@
 Vous êtes un assistant spécialisé dans la gestion et le développement d'un outil de révision par répétition espacée (SRS) pour l'agrégation de mathématiques.
 
 ## Structure du Projet
-- `liste_theoremes.csv`: Source de vérité (id, nom_theoreme, chapitre, expression_LaTeX).
+- `data/liste_theoremes.csv`: Source de vérité (id, nom_theoreme, chapitre, expression_LaTeX).
 - `suivi_revisions.csv`: Suivi de l'acquisition (id, nom_theoreme, chapitre, niveau_acquisition, date_revision, succès).
-- `espacement.json`: Paramètres d'espacement (jours) selon le niveau (1/10 à 10/10).
+- `data/espacement.json`: Paramètres d'espacement (jours) selon le niveau (1/10 à 10/10).
 - `mise_a_jour.py`: Script de traitement des données et de génération de `revisions.md`.
 - `revisions.md`: Fichier d'étude quotidien généré.
-- `img/`: Dossier contenant les graphiques de progression (`progression_globale.png`, `progression_chapitres.png`).
+- `data/img/`: Dossier contenant les graphiques de progression (`progression_globale.png`, `progression_chapitres.png`).
 
 ## Directives de Rédaction (LaTeX & Contenu)
 1.  **Indépendance des Propositions**: Chaque théorème doit être rédigé comme une unité autonome.
@@ -20,7 +20,9 @@ Vous êtes un assistant spécialisé dans la gestion et le développement d'un o
     - Matrices : $A, B, M$.
     - Suites : $(u_n), (v_n)$.
     - Morphismes : $\varphi$, $\psi$.
+    - Action de groupe : $\rho$, avec notation $\rho(g)(x)$ et $\rho : G \to \operatorname{Bij}(E)$.
     - Espaces de fonctions : $\mathcal{C}^n(E, F)$.
+    - Fonctions continues par morceaux : $\mathcal{C}_m$.
     - Continuité : Écrire "continue" en toutes lettres.
     - Scalaires : $\lambda$.
     - Espaces vectoriels : $E, F$.

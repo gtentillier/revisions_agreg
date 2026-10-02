@@ -23,7 +23,7 @@ Chapitre Groupes
 - autre en lisant le cours de groupes
 
 Chapitre analyse complexe: 
-- tout le chapitre
+- tout le chapitre sauf ceux déjà présents
 - ## Théorème des résidus
   "
   Soit $U$ un ouvert simplement connexe de $\mathbb{C}$ et $S$ un ensemble de points isolés dans $U$. Soit $f : U \setminus S \to \mathbb{C}$ une fonction holomorphe. Soit $\gamma$ un lacet rectifiable dans $U \setminus S$.

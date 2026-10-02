@@ -8,11 +8,11 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Files configuration
-LISTE_THEOREMES = "liste_theoremes.csv"
+LISTE_THEOREMES = os.path.join("data", "liste_theoremes.csv")
 SUIVI_REVISIONS = "suivi_revisions.csv"
-ESPACEMENT_JSON = "espacement.json"
+ESPACEMENT_JSON = os.path.join("data", "espacement.json")
 REVISIONS_MD = "revisions.md"
-IMG_DIR = "img"
+IMG_DIR = os.path.join("data", "img")
 
 
 def load_espacement():
@@ -153,21 +153,15 @@ def write_revisions_md(suivi_revisions, liste_theoremes):
     to_revise = [row for row in suivi_revisions if parse_date(row['date_revision']) <= today]
     total_theoremes = len(suivi_revisions)
 
-    df = pd.DataFrame(suivi_revisions)
-    df['niveau_acquisition'] = df['niveau_acquisition'].astype(int)
-    total_acquisition = df['niveau_acquisition'].sum()
-    max_possible = total_theoremes * 10
-    global_progress = (total_acquisition / max_possible) * 100 if max_possible > 0 else 0
-
     # Map id to LaTeX
     latex_map = {row['id']: row['expression_LaTeX'] for row in liste_theoremes}
 
     with open(REVISIONS_MD, 'w', encoding='utf-8') as f:
         f.write("<div align=\"center\">\n\n")
-        f.write(f"![Progression Globale](img/progression_globale.png)\n\n")
-        f.write(f"![Progression Chapitres](img/progression_chapitres.png)\n\n")
+        f.write(f"![Progression Globale]({os.path.join(IMG_DIR, 'progression_globale.png')})\n\n")
+        f.write(f"![Progression Chapitres]({os.path.join(IMG_DIR, 'progression_chapitres.png')})\n\n")
         f.write("</div>\n\n")
-        f.write(f"**{len(to_revise)}** Théorèmes à réviser sur **{total_theoremes}**\n\n")
+        f.write(f"**{len(to_revise)}** Théorèmes à réviser sur **{total_theoremes}** au total\n\n")
 
         # Group by date
         dates = sorted(list({row['date_revision'] for row in to_revise}), key=parse_date)
@@ -175,7 +169,7 @@ def write_revisions_md(suivi_revisions, liste_theoremes):
         for i, d_str in enumerate(dates):
             if i > 0:
                 f.write("<br>\n\n")
-            f.write(f"# 📚 {d_str}\n\n")
+            f.write(f"# 📚 Révisions pour le {d_str}\n\n")
             current_date_theorems = [row for row in to_revise if row['date_revision'] == d_str]
 
             f.write(f"**{len(current_date_theorems)}** Théorèmes\n\n")
