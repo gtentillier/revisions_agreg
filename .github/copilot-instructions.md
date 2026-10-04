@@ -15,6 +15,7 @@ Vous êtes un assistant spécialisé dans la gestion et le développement d'un o
     - Toujours introduire les objets (Soit $X$ un ensemble, $(E, \|\cdot\|)$ un evn...).
     - Ne jamais faire de références implicites ("Comme vu précédemment").
 2.  **Préférences de Notation**:
+    - Fidélité au texte : Lors de l'ajout de nouveaux théorèmes depuis un fichier source (ex: draft.md), recopier l'intégralité du texte sans résumer ni omettre de détails tout en appliquant les règles de notation ci-dessous.
     - Fonctions : $f, g$.
     - Endomorphismes : $u, v$.
     - Matrices : $A, B, M$.
@@ -34,6 +35,7 @@ Vous êtes un assistant spécialisé dans la gestion et le développement d'un o
     - Convergence : Préférer la flèche $\xrightarrow[n \to \infty]{}$ à $\lim$.
     - Sommes : Toujours indicées. Pour les sommes infinies, utiliser $\sum\limits_{n=0}^{\infty}$ (sauf si on parle de l'objet "série" $\sum f_n$ sans sommation explicite). Les indices doivent être au-dessus et en-dessous ($\sum\limits$).
     - Noyau et Image : $\text{Ker}(u)$ et $\text{Im}(u)$ (avec majuscules).
+    - Espaces propres : $E_{\lambda}$ ou $E_{\lambda_i}$.
     - **Espaces Métriques** : Ne jamais utiliser la notion d'espace topologique. Toujours privilégier la notion d'espace métrique ou d'espace vectoriel normé (evn).
 3.  **Formatage LaTeX & CSV**: 
     - Utiliser `$ ... $` pour l'inline et `$$ ... $$` pour les blocs.
@@ -53,8 +55,10 @@ Vous êtes un assistant spécialisé dans la gestion et le développement d'un o
     - Formatage avec `<details>` et `<summary>` pour masquer le chapitre et le contenu LaTeX.
 
 ## Commandes & Workflow
+Attention : les tâches suivantes ne doivent être exécutées que par l'utilisateur, jamais par l'assistant.
 - Utiliser la tâche VS Code "Mise à jour Révisions" pour lancer le script.
 - Utiliser la tâche "Auto-Commit" pour sauvegarder la progression sur Git.
+Attention, ces tâches ne doivent pas être exécutées par l'assistant, mais uniquement par l'utilisateur.
 
 ## Ton et Interaction
 - Soyez précis, rigoureux sur les termes mathématiques.

@@ -612,3 +612,45 @@ $$\dim(F + G) = \dim(F) + \dim(G) - \dim(F \cap G)$$"
 84,"Endomorphismes qui commutent, sous-espaces stables",Algèbre linéaire,"Soient $u, v \in \mathcal{L}(E)$ deux endomorphismes d'un espace vectoriel $E$ tels que $u \circ v = v \circ u$.
 
 Alors les sous-espaces propres de $u$, $\text{Ker}(u)$ et $\text{Im}(u)$ sont stables par $v$."
+85,Décomposition de Dunford,Algèbre linéaire,"Soit $E$ un espace vectoriel de dimension finie sur $\mathbb{K}$. Soit $u \in \mathcal{L}(E)$ un endomorphisme dont le polynôme caractéristique est scindé sur $\mathbb{K}$.
+Alors il existe un unique couple $(d, n) \in \mathcal{L}(E)^2$ tel que :
+
+1. $u = d + n$
+2. $d$ est diagonalisable et $n$ est nilpotent
+3. $d$ et $n$ commutent ($d \circ n = n \circ d$)
+
+De plus, $d$ et $n$ sont des polynômes en $u$."
+86,Théorème de Cayley-Hamilton,Algèbre linéaire,"Soit $E$ un espace vectoriel de dimension finie $n$. Pour tout endomorphisme $u \in \mathcal{L}(E)$, son polynôme caractéristique $\chi_u$ est un polynôme annulateur de $u$ :
+$$\chi_u(u) = 0_{\mathcal{L}(E)}$$"
+87,Théorème spectral,Algèbre linéaire,"Soit $E$ un espace euclidien (espace vectoriel réel muni d'un produit scalaire). Soit $u \in \mathcal{L}(E)$ un endomorphisme symétrique.
+
+Alors il existe une base orthonormée de $E$ composée de vecteurs propres de $u$. En particulier, $u$ est diagonalisable.
+
+Version matricielle :
+Soit $A \in \mathcal{M}_n(\mathbb{R})$ une matrice symétrique. Alors il existe $P \in \mathcal{O}_n(\mathbb{R}), D \in \mathcal{D}_n(\mathbb{R})$ telles que :
+$$ A = P^T D P$$"
+88,Caractérisation des matrices trigonalisables,Algèbre linéaire,"Une matrice $A \in \mathcal{M}_n(\mathbb{K})$ est trigonalisable sur $\mathbb{K}$ si et seulement si son polynôme caractéristique $\chi_A$ est scindé sur $\mathbb{K}$."
+89,Caractérisation des matrices diagonalisables,Algèbre linéaire,"Une matrice $A \in \mathcal{M}_n(\mathbb{K})$ est diagonalisable sur $\mathbb{K}$ si et seulement si l'une des conditions suivantes est vérifiée :
+
+1. Son polynôme caractéristique $\chi_A$ est scindé (ie. u est scindé) sur $\mathbb{K}$ et la dimension de chaque sous-espace propre est égale à la multiplicité de la valeur propre correspondante.
+2. Son polynôme minimal $m_A$ est scindé à racines simples sur $\mathbb{K}$."
+90,Commutant d'un endomorphisme,Algèbre linéaire,"Soit $u \in \mathcal{L}(E)$. Le commutant de $u$ est l'ensemble $C(u) = \{v \in \mathcal{L}(E) : u \circ v = v \circ u\}$. C'est une sous-algèbre de $\mathcal{L}(E)$.
+
+Si $u$ est diagonalisable de valeurs propres $\lambda_1, \dots, \lambda_p$ et d'espaces propres associés $E_{\lambda_1}, \dots, E_{\lambda_p}$, alors l'application suivante est un isomorphisme d'algèbres :
+$$\varphi : \begin{cases} C(u) \to \mathcal{L}(E_{\lambda_1}) \times \dots \times \mathcal{L}(E_{\lambda_p}) \\ v \mapsto (v_{|E_{\lambda_1}}, \dots, v_{|E_{\lambda_p}}) \end{cases}$$
+En particulier, $\dim(C(u)) = \sum\limits_{i=1}^p \dim(E_{\lambda_i})^2$.
+
+Si $u$ est diagonalisable, on a l'équivalence :
+$$C(u) = \mathbb{K}[u] \iff u \text{ est à valeurs propres simples}$$
+Dans ce cas, $\dim(C(u)) = n$.
+
+Le **bicommutant** de $u$ est $C_2(u) = \{w \in \mathcal{L}(E) : \forall v \in C(u), v \circ w = w \circ v\}$.
+On a toujours l'égalité :
+$$C_2(u) = \mathbb{K}[u]$$"
+91,Endomorphismes cycliques,Algèbre linéaire,"Un endomorphisme $u \in \mathcal{L}(E)$ est dit **cyclique** ssi $\exists x \in E$ tel que $(x, u(x), u^2(x), \dots, u^{n-1}(x))$ forme une base de $E$.
+
+$$u \text{ est cyclique }$$
+$$\iff m_u = \chi_u$$
+$$\iff C(u) = \mathbb{K}[u]$$
+
+Si $u$ est diagonalisable, alors $u$ est cyclique $\iff u$ est à valeurs propres simples."

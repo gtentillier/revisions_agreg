@@ -1,42 +1,4 @@
-# Algèbre linéaire
-
-## Décomposition de Dunford
-
-Soit $E$ un espace vectoriel de dimension finie sur $\mathbb{K}$. Soit $u \in \mathcal{L}(E)$ un endomorphisme dont le polynôme caractéristique est scindé sur $\mathbb{K}$.
-Alors il existe un unique couple $(d, n) \in \mathcal{L}(E)^2$ tel que :
-
-1. $u = d + n$
-2. $d$ est diagonalisable et $n$ est nilpotent
-3. $d$ et $n$ commutent ($d \circ n = n \circ d$)
-
-De plus, $d$ et $n$ sont des polynômes en $u$.
-
-## Théorème de Cayley-Hamilton
-
-Soit $E$ un espace vectoriel de dimension finie $n$. Pour tout endomorphisme $u \in \mathcal{L}(E)$, son polynôme caractéristique $\chi_u$ est un polynôme annulateur de $u$ :
-$$\chi_u(u) = 0_{\mathcal{L}(E)}$$
-
-## Théorème spectral
-
-Soit $E$ un espace euclidien (espace vectoriel réel muni d'un produit scalaire). Soit $u \in \mathcal{L}(E)$ un endomorphisme symétrique.
-
-Alors il existe une base orthonormée de $E$ composée de vecteurs propres de $u$. En particulier, $u$ est diagonalisable.
-
-## Caractérisation des matrices trigonalisables
-
-Une matrice $A \in \mathcal{M}_n(\mathbb{K})$ est trigonalisable sur $\mathbb{K}$ si et seulement si son polynôme caractéristique $\chi_A$ est scindé sur $\mathbb{K}$.
-
-## Caractérisation des matrices diagonalisables
-
-Une matrice $A \in \mathcal{M}_n(\mathbb{K})$ est diagonalisable sur $\mathbb{K}$ si et seulement si l'une des conditions suivantes est vérifiée :
-
-1. Son polynôme caractéristique $\chi_A$ est scindé sur $\mathbb{K}$ et la dimension de chaque sous-espace propre est égale à la multiplicité de la valeur propre correspondante.
-2. Son polynôme minimal $m_A$ est scindé à racines simples sur $\mathbb{K}$.
-
-## Commutant d'un endomorphisme
-
-Soit $u \in \mathcal{L}(E)$. Le commutant de $u$ est l'ensemble $C(u) = \{v \in \mathcal{L}(E) : u \circ v = v \circ u\}$. C'est une sous-algèbre de $\mathcal{L}(E)$.
-Si $u$ est diagonalisable à valeurs propres simples, alors $\dim(C(u)) = n$ et $C(u) = \mathbb{K}[u]$.
+# Topologie
 
 # Groupes
 
