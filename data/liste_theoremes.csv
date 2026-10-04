@@ -107,9 +107,10 @@ $$R = \frac{1}{\ell}$$
 Si $\lim_{n \to \infty} |a_n|^{1/n} = \ell \in [0, +\infty]$, alors le rayon de convergence $R$ de la série est :
 $$R = \frac{1}{\ell}$$
 (avec la convention $1/0 = +\infty$ et $1/\infty = 0$)."
-24,Formule de Cauchy,Analyse complexe,"Soit $U$ un ouvert étoilé de $\mathbb{C}$ de centre $z_0$ et $f : U \to \mathbb{C}$ holomorphe. Alors :
-- $f$ admet une primitive sur $U$ donnée par $F(z) = \int_{[z_0, z]} f(w) dw$. Cette intégrale ne dépend pas du chemin dans $U$ ;
-- si $\gamma$ est un lacet $\mathcal{C}^1$ par morceaux et à valeurs dans $U$, alors $\int_{\gamma} f(z) dz = 0$ ;
+24,Formule de Cauchy,Analyse complexe,"Soit $U$ un ouvert étoilé autour de $z_0$ dans $\mathbb{C}$ et $f : U \to \mathbb{C}$ holomorphe. Alors :
+
+- $f$ admet une primitive sur $U$ (donnée par $F(z) = \int_{[z_0, z]} f(w) dw$. Celle-ci s'annule en $z_0$. Cette intégrale ne dépend pas du chemin $C^1_{pm}$ entre $z_0$ et $z$ dans $U$)
+- si $\gamma$ est un lacet $\mathcal{C}^1$ par morceaux et à valeurs dans $U$, alors $\int_{\gamma} f(z) dz = 0$
 - si de plus $z \in U \setminus \text{Im}(\gamma)$, alors $f(z) \text{Ind}_{\gamma}(z) = \frac{1}{2i\pi} \int_{\gamma} \frac{f(w)}{w-z} dw$."
 25,Théorème de Liouville,Analyse complexe,"Toute fonction holomorphe sur $\mathbb{C}$ bornée est constante."
 26,Théorème fondamental de l'algèbre (D'Alembert-Gauss),Analyse complexe,"Toute fonction polynomiale non constante à coefficients complexes admet au moins une racine complexe."
@@ -121,11 +122,11 @@ $$(a) = (b) \iff a \text{ et } b \text{ sont associés (i.e. } \exists u \in A^\
 
 $I \subseteq \ker f$ $\iff$ $\exists!$ morphisme d'anneaux $\bar{f} : A/I \to B$ tel que $f = \bar{f} \circ \pi$, où $\pi : A \to A/I$ est la projection canonique, c'est-à-dire tel que le diagramme suivant commute :
 <p align=""center"">
-  <img src=""img/dessins théorèmes/anneaux_1.png"" width=""300"">
+  <img src=""data/img/dessins théorèmes/anneaux_1.png"" width=""300"">
 </p>
 
 En particulier, si $I = \ker f$, alors $\bar{f}$ induit un **isomorphisme** :
-$$A/\ker f \simeq f(A)$$"
+$$A/\ker f \simeq \text{Im } f$$"
 30,"Anneau, unitaire, commutatif, intègre, réduit",Anneaux,"Un **anneau** $(A, +, \times)$ est un ensemble muni de deux lois de composition interne telles que :
 
 $(i)$ $(A, +)$ est un groupe abélien
@@ -160,7 +161,7 @@ $\ker \varphi = \{x \in A, \varphi(x) = 0_B\}$ est un **idéal** de $A$.
 
 On parle d'**isomorphisme**, **endomorphisme** ou **automorphisme** selon les propriétés usuelles."
 36,Algèbre,Anneaux,"Soit $R$ un anneau commutatif. Une $R$-**algèbre** est un anneau $A$ muni d'un morphisme d'anneaux $f : R \to A$ tel que $f(R) \subseteq Z(A)$."
-37,"Idéal, premier, maximal et caractérisations",Anneaux,"Soit $A$ un anneau commutatif. Une partie $I$ est un **idéal** de $A$ si :
+37,"Idéal, premier, maximal, caractérisations et propriétés",Anneaux,"Soit $A$ un anneau commutatif. Une partie $I$ est un **idéal** de $A$ si :
 
 $(i)$ $(I, +)$ est un sous-groupe de $(A, +)$
 
@@ -168,14 +169,18 @@ $(ii)$ $\forall a \in A, \forall x \in I, ax \in I$.
 
 ---
 
-- **Idéal premier** : Un idéal $I$ de $A$ est **premier** si $A/I$ est un anneau **intègre**.
-  C'est équivalent à dire que $I \neq A$ et : $\forall a, b \in A, ab \in I \implies a \in I \text{ ou } b \in I$.
-  *Propriété* : Si $A$ est intègre, pour $p \in A \setminus \{0\}$, si $(p)$ est premier, alors $p$ est irréductible.
+**Idéal premier** : Un idéal $I$ de $A$ est **premier** ssi $A/I$ est un anneau **intègre**
 
-- **Idéal maximal** : Un idéal $I$ de $A$ est **maximal** si $A/I$ est un **corps**.
-  C'est équivalent à dire que $I \neq A$ et les seuls idéaux contenant $I$ sont $I$ et $A$.
+$\iff I \neq A$ et : $\forall a, b \in A, ab \in I \implies a \in I \text{ ou } b \in I$.
 
-En particulier, tout idéal maximal est premier."
+**Idéal maximal** : Un idéal $I$ de $A$ est **maximal** si $A/I$ est un **corps**
+
+$\iff I \neq A$ et les seuls idéaux contenant $I$ sont $I$ et $A$.
+
+_Propriétés_ :
+
+- Si $A$ est intègre, pour $p \in A \setminus \{0\}$, si $(p)$ est premier, alors $p$ est irréductible.
+- Tout idéal maximal est premier."
 38,Caractéristique,Anneaux,"La **caractéristique** d'un anneau unitaire $A$ est l'unique $n \in \mathbb{N}$ tel que $\ker \varphi = n\mathbb{Z}$, où $\varphi : \mathbb{Z} \to A, k \mapsto k \cdot 1_A$ est le morphisme canonique.
 
 C'est donc le plus petit entier $n > 0$ tel que $n \cdot 1_A = 0_A$ s'il existe, et $0$ sinon."
@@ -219,6 +224,8 @@ $$
 \end{array}\right).
 $$
 
+La solution est donc $(1, 2, 3)$.
+
 ---
 
 ### Bases du noyau et de l'image
@@ -259,6 +266,10 @@ La seule colonne pivot est la première. Une base de l'image est donc donnée pa
 $$
 \operatorname{Im}(f)=\operatorname{Vect}\left\{\begin{pmatrix}1\\2\\3\end{pmatrix}\right\}.
 $$
+
+> **Principe général** : Les opérations sur les lignes conservent les relations de dépendance linéaire entre les colonnes. Pour obtenir une base de $\text{Im}(A)$, on peut choisir n'importe quelle famille d'indices de colonnes qui forment une base de l'image de la matrice **échelonnée**, et extraire les colonnes correspondantes dans la matrice **initiale**.
+>
+> *Exemple* : Si la forme échelonnée est $U = \begin{pmatrix} 1 & 2 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{pmatrix}$, les colonnes 1 et 3 sont les colonnes pivots (base évidente), mais les colonnes 2 et 3 sont également libres dans $U$. On peut donc aussi former une base de $\text{Im}(A)$ en prenant les colonnes 2 et 3 de la matrice $A$ d'origine.
 
 ---
 
@@ -432,10 +443,11 @@ Si $K$ est un sous-ensemble compact de $E$, alors son image $f(K)$ est un sous-e
 50,Théorème de Heine,Topologie,"Soit $f : E \to F$ une application continue d'un espace métrique compact $E$ dans un espace métrique $F$.
 Alors $f$ est uniformément continue sur $E$, c'est-à-dire :
 $$\forall \varepsilon > 0, \exists \delta > 0, \forall x, y \in E, d_E(x, y) < \delta \implies d_F(f(x), f(y)) < \varepsilon$$"
-51,Ensemble connexe,Topologie,"Un espace métrique $E$ est connexe si
-$$\nexists U, V \in \mathcal{P}(E), \quad U \text{ et } V \text{ ouverts non-vides}, \quad E = U \sqcup V.$$
-De manière équivalente :
-$$\forall A \subseteq E, \quad \left(A \text{ ouvert et fermé}\right) \implies A \in \{\emptyset, E\}.$$"
+51,Ensemble connexe,Topologie,"Un espace métrique $E$ est connexe ssi :
+
+- $\nexists (U, V) \in \mathcal{P}(E)^2, \quad U, V \text{ ouverts non-vides}, \quad E = U \sqcup V$
+- $\forall A \subseteq E, \quad (A \text{ ouvert et fermé}) \implies A \in \{\emptyset, E\}$
+- $f \in \mathcal{C}(E, \{0, 1\}) \implies f \text{ est constante}$"
 52,Homéomorphisme,Topologie,"Une application $f : E \to F$ entre deux espaces topologiques est un homéomorphisme si :
 
 $(i)$ $f$ est bijective
@@ -498,11 +510,13 @@ Alors :
 
 - La série $\sum f_n$ converge uniformément sur tout segment de $I$ vers une fonction $S : I \to E$.
 - La fonction $S$ est de classe $\mathcal{C}^1$ sur $I$ et sa dérivée est $S' = \sum\limits_{n=0}^\infty f_n' = g$."
-67,Théorème d'intégration terme à terme d'une série de fonctions,Fonctions vectorielles,"Soit $I$ un intervalle de $\mathbb{R}$ et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $\sum f_n$ une série de fonctions continues de $I$ vers $E$. Si la série $\sum f_n$ converge uniformément sur tout segment de $I$ vers une fonction $S : I \to E$, alors pour tout $x_0 \in I$, la suite des sommes partielles des primitives $(\sum\limits_{k=0}^n \int_{x_0}^x f_k(t) dt)_{n \in \mathbb{N}}$ converge simplement et uniformément sur tout segment de $I$ vers la fonction $x \mapsto \int_{x_0}^x S(t) dt$.
+67,Théorème d'intégration terme à terme d'une série de fonctions,Fonctions vectorielles,"Soit $I$ un intervalle de $\mathbb{R}$ et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $\sum f_n$ une série de fonctions continues de $I$ vers $E$. On suppose que la série $\sum f_n$ converge uniformément sur tout segment de $I$ vers une fonction $S : I \to E$.
+
+Alors $S$ est continue sur $I$, et pour tout $x_0 \in I$, la suite des sommes partielles des primitives $(\sum\limits_{k=0}^n \int_{x_0}^x f_k(t) dt)_{n \in \mathbb{N}}$ converge simplement et uniformément sur tout segment de $I$ vers la fonction $x \mapsto \int_{x_0}^x S(t) dt$.
 
 On a notamment pour tout $[a, b] \subseteq I$ :
 $$\int_a^b \left( \sum\limits_{n=0}^\infty f_n(t) \right) dt = \sum\limits_{n=0}^\infty \int_a^b f_n(t) dt$$"
-68,Théorème de la double limite pour les séries de fonctions,Fonctions vectorielles,"Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace de Banach (espace vectoriel normé complet). Soit $a$ un point adhérent à $X$ (avec $a \in \overline{\mathbb{R}}$ si $E = \mathbb{R}$). Soit $\sum f_n$ une série de fonctions de $X$ vers $E$.
+68,Théorème de la double limite pour les séries de fonctions,Fonctions vectorielles,"Soit $X$ un espace métrique et $(E, \|\cdot\|)$ un espace de Banach (espace vectoriel normé complet). Soit $a$ un point adhérent à $X$ (avec $a \in \overline{\mathbb{R}}$ si $E = \mathbb{R}$). Soit $\sum f_n$ une série de fonctions de $X$ vers $E$.
 Supposons que :
 
 1. Pour tout $n \in \mathbb{N}$, $f_n(x) \xrightarrow[x \to a]{} \lambda_n$ existe dans $E$.
@@ -523,7 +537,11 @@ Une suite de fonctions $(f_n)_{n \in \mathbb{N}}$ converge uniformément sur $X$
 $$A[X] = \left\{ \sum_{i=0}^n a_i X^i : n \in \mathbb{N}, a_i \in A \right\}$$"
 73,"Caractérisation racine d'un polynôme, lien nombre de racines / degré, degré d'un produit de polynômes",Anneaux,"Soit $A$ un anneau commutatif et $P \in A[X]$. Alors $a \in A$ est racine de $P$ si et seulement si $(X - a) \mid P$ dans $A[X]$.
 
-Si de plus $A$ est intègre, alors le nombre de racines distinctes de $P$ dans $A$ est inférieur ou égal au degré de $P$."
+Si $A$ est intègre, alors le nombre de racines distinctes de $P$ dans $A$ est inférieur ou égal au degré de $P$.
+
+$\forall P, Q \in A[X]$, $\deg(PQ) \le \deg(P) + \deg(Q)$.
+
+Si $A$ est intègre, alors $\deg(PQ) = \deg(P) + \deg(Q)$."
 74,Lemme d'Euclide,Anneaux,"Soit $A$ un anneau principal. Soit $p \in A$ un élément irréductible. Soient $a, b \in A$.
 Si $p | ab$, alors $p | a$ ou $p | b$."
 75,Anneau euclidien,Anneaux,"Un anneau commutatif intègre $A$ est dit **euclidien** s'il existe une application $\varphi : A \setminus \{0\} \to \mathbb{N}$, appelée stathme, telle que :
@@ -549,9 +567,9 @@ Les assertions suivantes sont équivalentes :
 1. $p$ est irréductible.
 2. L'idéal $(p)$ est premier.
 3. L'idéal $(p)$ est maximal."
-77,Idéaux et Anneaux principaux,Anneaux,"Un idéal $I$ d'un anneau $A$ est dit **principal** s'il existe un élément $a \in A$ tel que $I = (a) = \{ax : x \in A\}$.
+77,Idéal principal / Anneau principal,Anneaux,"Un idéal $I$ d'un anneau $A$ est dit **principal** s'il existe un élément $a \in A$ tel que $I = (a) = \{ax : x \in A\}$.
 
-Un anneau $A$ est dit **principal** si tout idéal de $A$ est principal."
+Un anneau unitaire commutatif intègre $A$ est dit **principal** si tout idéal de $A$ est principal."
 78,$1^{\text{er}}$ théorème d'isomorphisme pour les anneaux,Anneaux,"Soient $A, B$ deux anneaux et $\varphi : A \to B$ un morphisme d'anneaux.
 Alors $\text{Ker}(\varphi)$ est un idéal de $A$, $\text{Im}(\varphi)$ est un sous-anneau de $B$, et $\varphi$ induit un isomorphisme d'anneaux :
 $$\bar{\varphi} : A/\text{Ker}(\varphi) \xrightarrow{\sim} \text{Im}(\varphi)$$"
@@ -570,3 +588,27 @@ $$x \mapsto (x \pmod{I_1}, \dots, x \pmod{I_n})$$
      En particulier, on a l'isomorphisme d'anneaux :
      $$A / \left( \bigcap\limits_{i=1}^n I_i \right) \cong \prod\limits_{i=1}^n A/I_i$$"
 80,Caractérisation d'un corps avec les idéaux,Anneaux,"Soit $A$ un anneau commutatif. Alors $A$ est un corps ssi les seuls idéaux de $A$ sont $\{0\}$ et $A$."
+81,Continuité et caractérisations,Topologie,"Soient $(E, d_E)$ et $(F, d_F)$ deux espaces métriques. Soit $f : E \to F$ une application, $x \in E$. Alors les assertions suivantes sont équivalentes :
+
+1. $f$ est continue en $x$.
+2. Pour tout $\varepsilon > 0$, il existe $\delta > 0$ tel que $f(B(x, \delta)) \subseteq B(f(x), \varepsilon)$.
+3. Pour toute suite $(x_n)_{n \in \mathbb{N}}$ de $E$ convergeant vers $x$, la suite $(f(x_n))_{n \in \mathbb{N}}$ converge vers $f(x)$.
+
+On dit que $f$ est continue sur $E$ ssi :
+
+1. $f$ est continue en tout point de $E$.
+2. Pour tout ouvert $O$ de $F$, $f^{-1}(O)$ est un ouvert de $E$.
+3. Pour tout fermé $C$ de $F$, $f^{-1}(C)$ est un fermé de $E$."
+82,Valeurs d'adhérence et caractérisations,Topologie,"Soit $(x_n)_{n \in \mathbb{N}}$ une suite d'éléments d'un espace métrique $(E, d)$. Un point $l \in E$ est une valeur d'adhérence de la suite $(x_n)$ si :
+$$\forall \varepsilon > 0, \quad \{n \in \mathbb{N} : x_n \in B(l, \varepsilon)\} \text{ est infini}$$
+
+**Caractérisation par les ensembles de restes** :
+$$\text{Adh}(x_n) = \bigcap\limits_{n \in \mathbb{N}} \overline{\{x_m : m \ge n\}} \text{ est donc fermé}$$
+
+**Caractérisation séquentielle** :
+$$l \in \text{Adh}(x_n) \iff \exists \varphi \text{ extractrice telle que } x_{\varphi(n)} \to l$$"
+83,Formule de Grassmann,Algèbre linéaire,"Soient $E$ un espace vectoriel et $F, G$ deux sous-espaces vectoriels de $E$. Alors :
+$$\dim(F + G) = \dim(F) + \dim(G) - \dim(F \cap G)$$"
+84,"Endomorphismes qui commutent, sous-espaces stables",Algèbre linéaire,"Soient $u, v \in \mathcal{L}(E)$ deux endomorphismes d'un espace vectoriel $E$ tels que $u \circ v = v \circ u$.
+
+Alors les sous-espaces propres de $u$, $\text{Ker}(u)$ et $\text{Im}(u)$ sont stables par $v$."
