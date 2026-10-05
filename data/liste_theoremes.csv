@@ -672,3 +672,45 @@ admet un point d'accumulation dans $U$, alors $f$ est identiquement nulle sur $U
 97,Théorème du prolongement analytique,Analyse complexe,"Soit $U$ un ouvert connexe de $\mathbb{C}$, $z_0 \in U$ et $f : U \to \mathbb{C}$ une fonction analytique.
 
 $$\left[\forall n \in \mathbb{N},\ f^{(n)}(z_0)=0\right] \Longleftrightarrow f \equiv 0.$$"
+98,Propriétés de l'exponentielle complexe,Analyse complexe,"Soit $\exp : \mathbb{C} \to \mathbb{C}$ la fonction exponentielle complexe définie par $\exp(z) = \sum\limits_{n=0}^{\infty} \frac{z^n}{n!}$.
+Cette fonction vérifie les propriétés suivantes :
+
+1. Morphisme de groupes : $\exp$ est un morphisme du groupe additif $(\mathbb{C}, +)$ vers le groupe multiplicatif $(\mathbb{C}^*, \times)$. Autrement dit, pour tous $z, w \in \mathbb{C}$ :
+$$\exp(z+w) = \exp(z)\exp(w)$$
+
+2. Continuité : La fonction $\exp$ est continue sur $\mathbb{C}$.
+
+3. Surjectivité : L'application $\exp : \mathbb{C} \to \mathbb{C}^*$ est surjective.
+
+4. Non-injectivité : La fonction $\exp$ n'est pas injective. Elle est périodique de période $2i\pi$. Son noyau est :
+$$\text{Ker}(\exp) = \{z \in \mathbb{C} \mid \exp(z) = 1\} = 2i\pi\mathbb{Z}$$"
+99,Développement limité de l'exponentielle,Analyse Réelle,"Soit $n \in \mathbb{N}$. Au voisinage de $0$, on a :
+$$ e^x = \sum\limits_{k=0}^{n} \frac{x^k}{k!} + O(x^{n+1}) $$"
+100,Développement limité du logarithme,Analyse Réelle,"Soit $n \in \mathbb{N}^*$. Au voisinage de $0$, on a :
+$$ \ln(1+x) = \sum\limits_{k=1}^{n} (-1)^{k-1} \frac{x^k}{k} + O(x^{n+1}) $$"
+101,Développement limité du sinus,Analyse Réelle,"Soit $n \in \mathbb{N}$. Au voisinage de $0$, on a :
+$$ \sin(x) = \sum\limits_{k=0}^{n} (-1)^k \frac{x^{2k+1}}{(2k+1)!} + O(x^{2n+3}) $$"
+102,Développement limité du cosinus,Analyse Réelle,"Soit $n \in \mathbb{N}$. Au voisinage de $0$, on a :
+$$ \cos(x) = \sum\limits_{k=0}^{n} (-1)^k \frac{x^{2k}}{(2k)!} + O(x^{2n+2}) $$"
+103,Fonctions holomorphes et équations de Cauchy-Riemann,Analyse complexe,"Soit $U$ un ouvert de $\mathbb{C}$. On dit qu'une fonction $f : U \to \mathbb{C}$ est holomorphe sur $U$ si elle est $\mathbb{C}$-dérivable en tout point de $U$.
+
+Soit $f : U \to \mathbb{C}$ une fonction. On écrit $f = P + iQ$ où $P, Q : U \to \mathbb{R}$ sont les parties réelle et imaginaire de $f$. On identifie $U$ à un ouvert de $\mathbb{R}^2$.
+La fonction $f$ est holomorphe sur $U$ si et seulement si $P$ et $Q$ sont différentiables sur $U$ et vérifient les équations de Cauchy-Riemann :
+$$ \frac{\partial P}{\partial x} = \frac{\partial Q}{\partial y} \quad \text{et} \quad \frac{\partial P}{\partial y} = -\frac{\partial Q}{\partial x} $$"
+104,Intégrale d'une fonction continue selon un chemin $C^1_pm$,Analyse complexe,"Soit $U$ un ouvert de $\mathbb{C}$ et $\gamma : [a,b] \to U$ un chemin de classe $C^1$ par morceaux. Soit $f : U \to \mathbb{C}$ une fonction continue. On définit l'intégrale de $f$ selon $\gamma$ par :
+$$ \int_{\gamma} f(z) \, dz = \int_a^b f(\gamma(t)) \cdot \gamma'(t) \, dt $$"
+105,Chemin opposé,Analyse complexe,"Soit $U$ un ouvert de $\mathbb{C}$ et $\gamma : [a,b] \to U$ un chemin. On définit le chemin opposé $\tilde{\gamma} : [-b,-a] \to U$ par :
+$$ \tilde{\gamma}(t) = \gamma(-t) $$
+Alors $\int_{\tilde{\gamma}} f(z) \, dz = -\int_\gamma f(z) \, dz$."
+106,Longueur d'un chemin,Analyse complexe,"Soit $U$ un ouvert de $\mathbb{C}$ et $\gamma : [a,b] \to U$ un chemin de classe $C^1$. La longueur du chemin $\gamma$ est définie par :
+$$ Long(\gamma) = \int_a^b |\gamma'(t)| \, dt $$"
+107,Indice d'un lacet,Analyse complexe,"Soit $\gamma : [a,b] \to \mathbb{C}$ un lacet de classe $C^1_pm$. Pour tout point $z \in \mathbb{C} \setminus \text{Im}(\gamma)$, on définit l'indice de $\gamma$ par rapport à $z$ par :
+$$ \text{ind}_{\gamma}(z) = \frac{1}{2i\pi} \int_{\gamma} \frac{dw}{w-z} $$
+L'application $\text{ind}_{\gamma} : \mathbb{C} \setminus \text{Im}(\gamma) \to \mathbb{C}$ est continue et à valeurs dans $\mathbb{Z}$."
+108,Caractérisation de l'existance d'une primitive d'une fonction complexe continue,Analyse complexe,"Soit $U$ un ouvert de $\mathbb{C}$ et $f : U \to \mathbb{C}$ une fonction continue. Alors $f$ admet une primitive sur $U$ si et seulement si pour tout lacet $\gamma : [a,b] \to U$ de classe $C^1$ par morceaux, on a :
+$$ \int_{\gamma} f(z) \, dz = 0 $$"
+109,Théorème de prolongement holomorphe,Analyse complexe,"Soit $U$ un ouvert de $\mathbb{C}$, $z_0 \in U$ et $f : U \setminus \{z_0\} \to \mathbb{C}$ une fonction holomorphe.
+
+Si $f$ est bornée au voisinage de $z_0$, alors $f$ admet un prolongement holomorphe sur $U$."
+110,Inégalité de Cauchy,Analyse complexe,"Soit $U$ un ouvert de $\mathbb{C}$, $z_0 \in U$, $r > 0$ tel que $\overline{D(z_0, r)} \subseteq U$. Soit $f : U \to \mathbb{C}$ une fonction holomorphe. Alors
+$$\forall n \in \mathbb{N} , |f^{(n)}(z)| \le \frac{n!}{r^n} \sup_{C(z_0, r)} |f|$$"

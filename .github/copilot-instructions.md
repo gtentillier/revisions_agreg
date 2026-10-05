@@ -11,10 +11,12 @@ Vous êtes un assistant spécialisé dans la gestion et le développement d'un o
 - `data/img/`: Dossier contenant les graphiques de progression (`progression_globale.png`, `progression_chapitres.png`).
 
 ## Directives de Rédaction (LaTeX & Contenu)
-1.  **Indépendance des Propositions**: Chaque théorème doit être rédigé comme une unité autonome.
+1. Les théorèmes seront rédigés une première fois dans le fichier `txt_gast/draft.md`, afin que l'utilisateur valide le rendu du LaTeX.
+2. Ce n'est qu'à la demande explicite de l'utilisateur que l'assistant recopiera les théorèmes du fichier `draft.md` vers le fichier source `data/liste_theoremes.csv`, en recopiant les titres et contenu à l'identique.
+3.  **Indépendance des Propositions**: Chaque théorème doit être rédigé comme une unité autonome.
     - Toujours introduire les objets (Soit $X$ un ensemble, $(E, \|\cdot\|)$ un evn...).
     - Ne jamais faire de références implicites ("Comme vu précédemment").
-2.  **Préférences de Notation**:
+4.  **Préférences de Notation**:
     - Fidélité au texte : Lors de l'ajout de nouveaux théorèmes depuis un fichier source (ex: draft.md), recopier l'intégralité du texte sans résumer ni omettre de détails tout en appliquant les règles de notation ci-dessous.
     - Fonctions : $f, g$.
     - Endomorphismes : $u, v$.
@@ -38,7 +40,8 @@ Vous êtes un assistant spécialisé dans la gestion et le développement d'un o
     - Noyau et Image : $\text{Ker}(u)$ et $\text{Im}(u)$ (avec majuscules).
     - Espaces propres : $E_{\lambda}$ ou $E_{\lambda_i}$.
     - **Espaces Métriques** : Ne jamais utiliser la notion d'espace topologique. Toujours privilégier la notion d'espace métrique ou d'espace vectoriel normé (evn).
-3.  **Formatage LaTeX & CSV**: 
+    - **Développements limités** : Toujours utiliser la notation grand $O$ (ex: $O(x^n)$) plutôt que petit $o$ pour plus de précision.
+5.  **Formatage LaTeX & CSV**: 
     - Utiliser `$ ... $` pour l'inline et `$$ ... $$` pour les blocs.
     - Dans `liste_theoremes.csv`, les expressions LaTeX peuvent contenir de vrais sauts de ligne (gérés par des guillemets doubles `"..."`).
     - **Règle CSV**: Toujours entourer de guillemets doubles `"..."` toute valeur (nom de théorème, chapitre, expression) contenant une virgule ou un saut de ligne. Si la valeur contient elle-même des guillemets doubles, ils doivent être doublés (par exemple `""` pour un guillemet unique à l'intérieur d'un champ).
