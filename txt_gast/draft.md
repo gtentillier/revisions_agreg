@@ -1,5 +1,3 @@
-# Topologie
-
 # Groupes
 
 ## Action de groupe

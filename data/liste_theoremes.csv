@@ -99,11 +99,11 @@ Moyen mnémotechnique : ""sico cosi coco moins sisi""
 $$\cos(a+b) = \cos(a)\cos(b) - \sin(a)\sin(b)$$
 En particulier, pour $b=a$ :
 $$\cos(2a) = \cos^2(a) - \sin^2(a)$$"
-22,Règle de D'Alembert,Analyse complexe,"Soit $\sum a_n z^n$ une série entière with $a_n \neq 0$ pour $n$ assez grand.
+22,Règle de D'Alembert,Analyse complexe,"Soit $\sum a_n z^n$ une série entière avec $a_n \neq 0$ pour $n$ assez grand.
 Si $\lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right| = \ell \in [0, +\infty]$, alors le rayon de convergence $R$ de la série est :
 $$R = \frac{1}{\ell}$$
 (avec la convention $1/0 = +\infty$ et $1/\infty = 0$)."
-23,Règle de Cauchy,Analyse complexe,"Soit $\sum a_n z^n$ une série entière with $a_n \neq 0$ pour $n$ assez grand.
+23,Règle de Cauchy,Analyse complexe,"Soit $\sum a_n z^n$ une série entière avec $a_n \neq 0$ pour $n$ assez grand.
 Si $\lim_{n \to \infty} |a_n|^{1/n} = \ell \in [0, +\infty]$, alors le rayon de convergence $R$ de la série est :
 $$R = \frac{1}{\ell}$$
 (avec la convention $1/0 = +\infty$ et $1/\infty = 0$)."
@@ -455,7 +455,7 @@ $(i)$ $f$ est bijective
 $(ii)$ $f$ est continue
 
 $(iii)$ $f^{-1}$ est continue"
-53,Théorème de Borel-Lebesgue / Heine-Borel,Topologie,"Dans un espace vectoriel normé de dimension finie, les fermés bornés sont compacts."
+53,Théorème de Borel-Lebesgue,Topologie,"Dans un espace vectoriel normé de dimension finie, les fermés bornés sont compacts."
 54,Adhérence d'un connexe,Topologie,"Soit $E$ un espace métrique et $A$ une partie connexe de $E$.
 Si $B$ est une partie telle que $A \subseteq B \subseteq \bar{A}$, alors $B$ est connexe. En particulier, l'adhérence $\bar{A}$ d'un connexe est connexe."
 55,Théorème de limite de la dérivée,Fonctions vectorielles,"Soit $(E, \|\cdot\|)$ un $\mathbb{K}$-espace vectoriel de dimension finie. Soit $I$ un intervalle de $\mathbb{R}$ et $a \in I$. Soit $f : I \to E$ une fonction continue sur $I$ et dérivable sur $I \setminus \{a\}$.
@@ -471,15 +471,15 @@ Ceci est équivalent à dire que $\sup_{x \in X} \|f_n(x) - f(x)\| \xrightarrow[
 60,Convergence normale d'une série de fonctions,Fonctions vectorielles,"Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $\sum f_n$ une série de fonctions de $X$ vers $E$. On dit que la série $\sum f_n$ converge normalement sur $X$ si chaque fonction $f_n$ est bornée sur $X$ et si la série numérique $\sum\limits_{n=0}^{\infty} \sup_{x \in X} \|f_n(x)\|$ converge."
 61,Limite uniforme de fonctions bornées,Fonctions vectorielles,"Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions bornées de $X$ vers $E$. Si la suite $(f_n)$ converge uniformément vers une fonction $f : X \to E$, alors $f$ est bornée sur $X$."
 62,Limite uniforme de fonctions continues,Fonctions vectorielles,"Soit $X$ un espace métrique et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de $X$ vers $E$. Si chaque fonction $f_n$ est continue sur $X$ et si la suite $(f_n)$ converge uniformément vers une fonction $f : X \to E$, alors $f$ est continue sur $X$."
-63,Théorème de la double limite,Fonctions vectorielles,"Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace de Banach (espace vectoriel normé complet). Soit $a \in \overline{X}$ (avec $a \in \overline{\mathbb{R}}$ si $E = \mathbb{R}$). Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de $X$ vers $E$.
+63,Théorème de la double limite,Fonctions vectorielles,"Soit $(E,d)$ un espace métrique et $(F,\delta)$ un espace métrique complet. Soit $a \in \overline{E}$ (avec $a \in \overline{\mathbb{R}}$ si $E = \mathbb{R}$). Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de $E$ vers $F$.
 Supposons que :
 
-1. Pour tout $n \in \mathbb{N}$, $\lim_{x \to a} f_n(x) = \lambda_n$ existe dans $E$.
-2. La suite $(f_n)$ converge uniformément vers une fonction $f : X \to E$.
+1. Pour tout $n \in \mathbb{N}$, $\lim_{x \to a} f_n(x) = \lambda_n$ existe dans $F$.
+2. La suite $(f_n)$ converge uniformément vers une fonction $f : E \to F$.
 
 Alors :
 
-- La suite $(\lambda_n)_{n \in \mathbb{N}}$ converge vers une limite $\lambda \in E$.
+- La suite $(\lambda_n)_{n \in \mathbb{N}}$ converge vers une limite $\lambda \in F$.
 - La fonction $f$ admet une limite en $a$ qui est égale à $\lambda$.
 
 On a alors l'égalité : $\lim_{n \to \infty} \lim_{x \to a} f_n(x) = \lim_{x \to a} \lim_{n \to \infty} f_n(x)$."
@@ -516,15 +516,15 @@ Alors $S$ est continue sur $I$, et pour tout $x_0 \in I$, la suite des sommes pa
 
 On a notamment pour tout $[a, b] \subseteq I$ :
 $$\int_a^b \left( \sum\limits_{n=0}^\infty f_n(t) \right) dt = \sum\limits_{n=0}^\infty \int_a^b f_n(t) dt$$"
-68,Théorème de la double limite pour les séries de fonctions,Fonctions vectorielles,"Soit $X$ un espace métrique et $(E, \|\cdot\|)$ un espace de Banach (espace vectoriel normé complet). Soit $a$ un point adhérent à $X$ (avec $a \in \overline{\mathbb{R}}$ si $E = \mathbb{R}$). Soit $\sum f_n$ une série de fonctions de $X$ vers $E$.
+68,Théorème de la double limite pour les séries de fonctions,Fonctions vectorielles,"Soit $(E,d)$ un espace métrique et $(F, \|\cdot\|)$ un espace de Banach (espace vectoriel normé complet). Soit $a$ un point adhérent à $E$ (avec $a \in \overline{\mathbb{R}}$ si $E = \mathbb{R}$). Soit $\sum f_n$ une série de fonctions de $E$ vers $F$.
 Supposons que :
 
-1. Pour tout $n \in \mathbb{N}$, $f_n(x) \xrightarrow[x \to a]{} \lambda_n$ existe dans $E$.
-2. La série de fonctions $\sum f_n$ converge uniformément sur $X$ vers une fonction $S : X \to E$.
+1. Pour tout $n \in \mathbb{N}$, $f_n(x) \xrightarrow[x \to a]{} \lambda_n$ existe dans $F$.
+2. La série de fonctions $\sum f_n$ converge uniformément sur $E$ vers une fonction $S : E \to F$.
 
 Alors :
 
-- La série numérique $\sum\limits_{n \in \mathbb{N}} \lambda_n$ converge vers une limite $\lambda \in E$.
+- La série numérique $\sum\limits_{n \in \mathbb{N}} \lambda_n$ converge vers une limite $\lambda \in F$.
 - La fonction $S$ admet une limite en $a$ qui est égale à $\lambda$.
 
 On a alors l'égalité : $\sum\limits_{n=0}^\infty f_n(x) \xrightarrow[x \to a]{} \sum\limits_{n=0}^\infty \lambda_n$."
@@ -654,3 +654,13 @@ $$\iff m_u = \chi_u$$
 $$\iff C(u) = \mathbb{K}[u]$$
 
 Si $u$ est diagonalisable, alors $u$ est cyclique $\iff u$ est à valeurs propres simples."
+92,Théorème de prolongement d'une fonction uniformément continue,Topologie,"Soit $(E,d)$ et $(F, \delta)$ deux espaces métriques et $A \subseteq E$. On suppose que $F$ est complet. Soit $f : A \to F$ une fonction uniformément continue.
+
+Alors il existe une unique fonction continue $\tilde{f} : \overline{A} \to F$ telle que $\tilde{f}_{|A} = f$. De plus, $\tilde{f}$ est uniformément continue."
+93,Propriété de Borel-Lebesgue,Topologie,"Soit $(E,d)$ un espace métrique, $A \subseteq E$. Alors $A$ est compact si et seulement si toute famille d'ouverts de $E$ qui recouvre $A$ admet un sous-recouvrement fini.
+
+Ceci équivaut à : de toute famille de fermés de $E$ dont l'intersection est vide dans $A$, on peut extraire une sous-famille finie dont l'intersection est vide dans $A$."
+94,Théorème de Heine-Borel,Topologie,"Soit $(E, d)$ un espace métrique. Alors une partie $A \subseteq E$ est compacte si et seulement si elle est séquentiellement compacte.
+
+Propriété de Borel-Lebesgue $\iff$ Propriété de Bolzano-Weierstrass"
+95,Propriété de Bolzano-Weierstrass,Topologie,"Soit $(E, d)$ un espace métrique. Alors une partie $A \subseteq E$ est séquentiellement compacte si et seulement si toute suite d'éléments de $A$ admet une sous-suite convergente vers un élément de $A$."

@@ -26,7 +26,8 @@ Vous êtes un assistant spécialisé dans la gestion et le développement d'un o
     - Fonctions continues par morceaux : $\mathcal{C}_m$.
     - Continuité : Écrire "continue" en toutes lettres.
     - Scalaires : $\lambda$.
-    - Espaces vectoriels : $E, F$.
+    - Espaces vectoriels : $E, F$. Si normé, ou muni d'un produit scalaire, préciser $(E, \|\cdot\|)$ ou $(E, \langle \cdot, \cdot \rangle)$.
+    - Espace métrique : $(E,d)$.
     - Anneaux : $A, B$.
     - Groupes : $G, H$.
     - Corps quelconques : $k, l$.
