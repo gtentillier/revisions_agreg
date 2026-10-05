@@ -664,3 +664,11 @@ Ceci équivaut à : de toute famille de fermés de $E$ dont l'intersection est v
 
 Propriété de Borel-Lebesgue $\iff$ Propriété de Bolzano-Weierstrass"
 95,Propriété de Bolzano-Weierstrass,Topologie,"Soit $(E, d)$ un espace métrique. Alors une partie $A \subseteq E$ est séquentiellement compacte si et seulement si toute suite d'éléments de $A$ admet une sous-suite convergente vers un élément de $A$."
+96,Théorème des zéros isolés,Analyse complexe,"Soit $U$ un ouvert connexe de $\mathbb{C}$ et soit $f : U \to \mathbb{C}$ une fonction holomorphe. Si l'ensemble
+$$
+f^{-1}(\{0\}) = \{z \in U \mid f(z) = 0\}
+$$
+admet un point d'accumulation dans $U$, alors $f$ est identiquement nulle sur $U$."
+97,Théorème du prolongement analytique,Analyse complexe,"Soit $U$ un ouvert connexe de $\mathbb{C}$, $z_0 \in U$ et $f : U \to \mathbb{C}$ une fonction analytique.
+
+$$\left[\forall n \in \mathbb{N},\ f^{(n)}(z_0)=0\right] \Longleftrightarrow f \equiv 0.$$"
