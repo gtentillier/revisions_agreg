@@ -544,7 +544,7 @@ $\forall P, Q \in A[X]$, $\deg(PQ) \le \deg(P) + \deg(Q)$.
 Si $A$ est intègre, alors $\deg(PQ) = \deg(P) + \deg(Q)$."
 74,Lemme d'Euclide,Anneaux,"Soit $A$ un anneau principal. Soit $p \in A$ un élément irréductible. Soient $a, b \in A$.
 Si $p | ab$, alors $p | a$ ou $p | b$."
-75,Anneau euclidien,Anneaux,"Un anneau commutatif intègre $A$ est dit **euclidien** s'il existe une application $\varphi : A \setminus \{0\} \to \mathbb{N}$, appelée stathme, telle que :
+75,Anneau euclidien,Anneaux,"Un anneau commutatif intègre $A$ est dit **euclidien** s'il existe une application $\varphi : A \setminus \{0\} \to \mathbb{N}$, appelé stathme, tel que :
 $$\forall (a, b) \in A \times A \setminus \{0\}, \exists (q, r) \in A^2, \quad a = bq + r \quad \text{avec} \quad r = 0 \text{ ou } \varphi(r) < \varphi(b)$$
 
 De plus, tout anneau **euclidien** est **principal**.
@@ -714,3 +714,71 @@ $$ \int_{\gamma} f(z) \, dz = 0 $$"
 Si $f$ est bornée au voisinage de $z_0$, alors $f$ admet un prolongement holomorphe sur $U$."
 110,Inégalité de Cauchy,Analyse complexe,"Soit $U$ un ouvert de $\mathbb{C}$, $z_0 \in U$, $r > 0$ tel que $\overline{D(z_0, r)} \subseteq U$. Soit $f : U \to \mathbb{C}$ une fonction holomorphe. Alors
 $$\forall n \in \mathbb{N} , |f^{(n)}(z)| \le \frac{n!}{r^n} \sup_{C(z_0, r)} |f|$$"
+111,Théorème de Bézout,Anneaux,"Soit $A$ un anneau principal et $(a_i)_{i \in I}$ une famille d'éléments de $A$.
+Si $d$ est un pgcd des $(a_i)$, alors il existe une famille $(u_i)_{i \in I}$ à support fini telle que :
+$$ d = \sum_{i \in I} u_i a_i $$
+Plus concrètement, pour tous $a, b \in A$, il existe $u, v \in A$ tels que :
+$$ \text{pgcd}(a, b) = au + bv $$"
+112,"Définition, existence et unicité du pgcd",Anneaux,"Soit $a, b \in \mathbb{A}$ commutatif. On appelle un **pgcd** de $a$ et $b$ un élément $d \in \mathbb{A}$ tel que :
+
+1. $d$ divise $a$ et $b$.
+2. Pour tout $c \in \mathbb{A}$ qui divise $a$ et $b$, on a $c$ divise $d$.
+
+On généralise cette notion à toute famille d'éléments de $\mathbb{A}$ : soit $(a_i)_{i \in I}$ une famille d'éléments de $\mathbb{A}$. On appelle un **pgcd** de la famille $(a_i)_{i \in I}$ un élément $d \in \mathbb{A}$ tel que :
+
+1. $d$ divise tous les $a_i$.
+2. Pour tout $c \in \mathbb{A}$ qui divise tous les $a_i$, on a $c$ divise $d$.
+
+Si $\mathbb{A}$ est un anneau principal, alors pour toute famille $(a_i)_{i \in I}$ d'éléments de $\mathbb{A}$, il existe un pgcd de cette famille, et il est unique à multiplication par un élément inversible près.
+
+En particulier, si $a, b \in \mathbb{A}$, il existe un pgcd de $a$ et $b$, et il est unique à multiplication par un élément inversible près.
+
+Plus précisément, un élément $d \in \mathbb{A}$ est un pgcd des $(a_i)$ si et seulement si on a l'égalité d'idéaux $(d) = (a_i, i \in I)$."
+113,Lemme de Gauss,Anneaux,"Soit $A$ un anneau principal.
+
+Pour tous $a, b, c \in A$, si $a$ divise $bc$ et $\text{pgcd}(a, b) = 1$, alors $a$ divise $c$."
+114,Théorème chinois dans un anneau principal,Anneaux,"Soit $A$ un anneau principal, et $a, b \in A$ deux éléments premiers entre eux (i.e. tels que $\text{pgcd}(a, b) = 1$).
+Alors le morphisme naturel
+$$ \varphi : A/(ab) \to A/(a) \times A/(b) $$
+est un isomorphisme d'anneaux, dont on peut expliciter la réciproque à l'aide d'une relation de Bézout entre $a$ et $b$ : si $au + bv = 1$, l'antécédent de $(\bar{x}, \bar{y}) \in A/(a) \times A/(b)$ par ce morphisme est la classe de $auy + bvx$ dans $A/(ab)$.
+
+Par récurrence, on peut étendre ce résultat à $a_1, \dots, a_n$ deux-à-deux premiers entre eux."
+115,Factorisation en irréductibles,Anneaux,"Soit $A$ un anneau principal. Pour tout $a \in A \setminus \{0\}$, il existe $u \in A^\times$ (un inversible) et $p_1, \dots, p_n \in A$ des éléments irréductibles tels que :
+$$ a = u \prod\limits_{i=1}^n p_i $$
+De plus, cette décomposition est unique à l'ordre près des facteurs et à multiplication près par des inversibles de $A$."
+116,Générateurs et inversibles de $\mathbb{Z}/n\mathbb{Z}$,Anneaux,"Soit $n \ge 1$ et $k \in \mathbb{Z}$. On note $\bar{k}$ la classe de $k$ dans $\mathbb{Z}/n\mathbb{Z}$. Les assertions suivantes sont équivalentes :
+
+1. $\bar{k}$ est un générateur du groupe ($\mathbb{Z}/n\mathbb{Z}$, +).
+2. Il existe $d \in \mathbb{Z}$ tel que $d\bar{k} = \bar{1}$ dans $\mathbb{Z}/n\mathbb{Z}$ (on dit que $\bar{k}$ est inversible dans l'anneau $\mathbb{Z}/n\mathbb{Z}$).
+3. $k$ et $n$ sont premiers entre eux."
+117,Sous-groupes finis du groupe multiplicatif d'un corps,Anneaux,"Soit $k$ un corps (ou même un anneau intègre) et $G$ un sous-groupe fini de $(k^*, \times)$.
+Alors $G$ est cyclique.
+En particulier, le groupe des inversibles d'un corps fini est cyclique."
+118,Indicatrice d'Euler,Anneaux,"On note $\varphi(n)$ le nombre d'entiers $k$ tels que $1 \le k < n$ et $\text{pgcd}(k, n) = 1$. La fonction $\varphi$ est appelée l'indicatrice d'Euler.
+
+Le groupe $\mathbb{Z}/n\mathbb{Z}$ (et donc tout groupe cyclique d'ordre $n$) admet exactement $\varphi(n)$ générateurs.
+
+On a la relation :
+$$ n = \sum\limits_{d|n} \varphi(d) $$
+
+La fonction indicatrice d'Euler est multiplicative, au sens suivant : si $m, n \in \mathbb{N}^*$ sont deux entiers premiers entre eux, alors $\varphi(mn) = \varphi(m)\varphi(n)$.
+
+Propriétés de calcul :
+— Pour tout $p$ premier et $k \ge 1$, $\varphi(p^k) = p^{k-1}(p-1)$.
+— Pour tout $n \ge 1$, si $n = \prod\limits_{i=1}^{r} p_i^{k_i}$ est la décomposition de $n$ en facteurs premiers, alors :
+$$ \varphi(n) = \prod\limits_{i=1}^r p_i^{k_i-1} (p_i-1) $$
+ou autrement dit :
+$$ \frac{\varphi(n)}{n} = \prod\limits_{i=1}^r \left( 1 - \frac{1}{p_i} \right) $$"
+119,Algorithme d'Euclide (étendu),Anneaux,"Soit $A$ un anneau euclidien muni d'un stathme $\varphi$. L'algorithme d'Euclide permet de calculer un pgcd de deux éléments $a, b \in A$.
+En effectuant des divisions euclidiennes successives :
+$$ a = bq_1 + r_1, \quad \varphi(r_1) < \varphi(b) $$
+$$ b = r_1 q_2 + r_2, \quad \varphi(r_2) < \varphi(r_1) $$
+$$ r_1 = r_2 q_3 + r_3, \quad \varphi(r_3) < \varphi(r_2) $$
+L'algorithme s'arrête lorsque le reste est nul. Le dernier reste non nul est un pgcd de $a$ et $b$.
+
+L'algorithme d'Euclide étendu permet, en remontant les égalités ou en maintenant des suites de coefficients, de déterminer deux éléments $u, v \in A$ tels que :
+$$ au + bv = \text{pgcd}(a, b) $$
+Cette relation est appelée relation de Bézout."
+120,Existence d'un élément maximal dans une famille d'idéaux,Anneaux,"Soit $A$ un anneau principal, $K \not ={\emptyset}$. Toute famille d'idéaux \{I_\alpha\}_{\alpha \in K} de $A$ admet un idéal maximal pour l'inclusion.
+
+En particulier, tout idéal propre de $A$ est contenu dans un idéal maximal."
