@@ -5,7 +5,7 @@ Outil de révision par répétition espacée (SRS) pour l'agrégation de mathém
 ## 🚀 Workflow de Révision
 
 1. **Mettre à jour** :
-   - Lancez la tâche VS Code **"Mise à jour Révisions"** (ou `python3 mise_a_jour.py`).
+   - Lancez la tâche VS Code **"Mise à jour Révisions"** (ou `python3 scripts/mise_a_jour.py`).
    - Le script va, pour chaque théorème :
      - Incrémenter le niveau d'acquisition de 1 si succès est à `oui` ou le réinitialiser à 1 si `non`.
      - Calculer la prochaine date de révision pour chaque théorème.
@@ -22,9 +22,10 @@ Outil de révision par répétition espacée (SRS) pour l'agrégation de mathém
 
 ## 📁 Structure du Projet
 
-- **`liste_theoremes.csv`** : Source de vérité. Contient les colonnes `id` (entier unique), `nom_theoreme`, `chapitre`, et `expression_LaTeX`. C'est le seul fichier à modifier manuellement pour ajouter des théorèmes.
+- **`liste_theoremes.csv`** : Source de vérité. Contient les colonnes `id` (entier unique), `nom_theoreme`, `chapitre`, et `expression_LaTeX`. C'est le seul fichier à modifier pour ajouter des théorèmes, via `scripts/extract_theorems.py`.
 - **`suivi_revisions.csv`** : Suivi généré automatiquement. Contient le `niveau_acquisition` (1 à 10), la `date_revision`, et la colonne `succès` ("oui"/"non").
 - **`espacement.json`** : Paramètres d'espacement (en jours) selon le niveau d'acquisition.
-- **`mise_a_jour.py`** : Script principal qui traite les résultats du jour et génère le fichier de révision.
-- **`revisions.md`** : Fichier d'étude généré quotidiennement contenant les théorèmes à réviser.
-- **`img/`** : Graphiques de progression générés (`progression_globale.png` et `progression_chapitres.png`).
+- **`scripts/mise_a_jour.py`** : Script principal qui traite les résultats du jour et génère le fichier de révision.
+- **`scripts/extract_theorems.py`** : Script pour ajouter de nouveaux théorèmes à partir d'un fichier `draft.md`.
+- **`revisions.md`** : Fichier d'étude généré via `scripts/mise_a_jour.py` contenant les noms des théorèmes à réviser, ainsi que leur chapitre et énoncé.
+- **`img/`** : Graphiques de progression générés (`progression_globale.png` et `progression_chapitres.png`), et autres illustrations.
