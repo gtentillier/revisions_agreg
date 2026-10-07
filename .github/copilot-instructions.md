@@ -49,6 +49,13 @@ Vous êtes un assistant spécialisé dans la gestion et le développement d'un o
     - Dans `liste_theoremes.csv`, les expressions LaTeX peuvent contenir de vrais sauts de ligne (gérés par des guillemets doubles `"..."`).
     - **Règle CSV**: Toujours entourer de guillemets doubles `"..."` toute valeur (nom de théorème, chapitre, expression) contenant une virgule ou un saut de ligne. Si la valeur contient elle-même des guillemets doubles, ils doivent être doublés (par exemple `""` pour un guillemet unique à l'intérieur d'un champ).
 
+## Outils et Scripts
+- `scripts/extract_theorems.py`: Script Python permettant d'extraire les théorèmes d'un fichier Markdown structuré (typiquement `draft.md`) pour les préparer à l'insertion dans `data/liste_theoremes.csv`.
+    - **Format Markdown attendu** :
+        - Chapitres : `# Nom du Chapitre`
+        - Théorèmes : `## Titre du Théorème`
+    - **Fonctionnement** : Il lit le dernier ID de `liste_theoremes.csv` pour générer les nouveaux IDs, vérifie la structure des données extraites, et les ajoute directement au fichier source.
+
 ## Logique du Script `mise_a_jour.py`
 - **Étape 1**: Ajouter les nouveaux théorèmes de `liste_theoremes.csv` à `suivi_revisions.csv` (niveau 1, date calculée).
 - **Étape 2**: Traiter la colonne "succès" ("oui"/"non").
