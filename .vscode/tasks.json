@@ -6,7 +6,7 @@
 			"type": "shell",
 			"command": "/usr/local/bin/python3",
 			"args": [
-				"mise_a_jour.py"
+				"scripts/mise_a_jour.py"
 			],
 			"isBackground": false,
 			"problemMatcher": [],
