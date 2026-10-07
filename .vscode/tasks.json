@@ -6,7 +6,7 @@
 			"type": "shell",
 			"command": "/usr/local/bin/python3",
 			"args": [
-				"mise_a_jour.py"
+				"scripts/mise_a_jour.py"
 			],
 			"isBackground": false,
 			"problemMatcher": [],
@@ -18,6 +18,17 @@
 			"command": "git add -A && git commit -m 'auto-commit' && git push",
 			"problemMatcher": []
 		},
+		{
+			"label": "Extraire Théorèmes (draft -> csv)",
+			"type": "shell",
+			"command": "/usr/local/bin/python3",
+			"args": [
+				"scripts/extract_theorems.py"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		}
 
 	]
 }

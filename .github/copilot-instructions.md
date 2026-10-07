@@ -11,21 +11,28 @@ Vous êtes un assistant spécialisé dans la gestion et le développement d'un o
 - `data/img/`: Dossier contenant les graphiques de progression (`progression_globale.png`, `progression_chapitres.png`).
 
 ## Directives de Rédaction (LaTeX & Contenu)
-1.  **Indépendance des Propositions**: Chaque théorème doit être rédigé comme une unité autonome.
+1. Les théorèmes seront rédigés une première fois dans le fichier `txt_gast/draft.md`, afin que l'utilisateur valide le rendu du LaTeX.
+2. Ce n'est qu'à la demande explicite de l'utilisateur que l'assistant recopiera les théorèmes du fichier `draft.md` vers le fichier source `data/liste_theoremes.csv`, en recopiant les titres et contenu à l'identique.
+3.  **Indépendance des Propositions**: Chaque théorème doit être rédigé comme une unité autonome.
     - Toujours introduire les objets (Soit $X$ un ensemble, $(E, \|\cdot\|)$ un evn...).
     - Ne jamais faire de références implicites ("Comme vu précédemment").
-2.  **Préférences de Notation**:
+4.  **Préférences de Notation**:
+    - Fidélité au texte : Lors de l'ajout de nouveaux théorèmes depuis un fichier source (ex: draft.md), recopier l'intégralité du texte sans résumer ni omettre de détails tout en appliquant les règles de notation ci-dessous.
     - Fonctions : $f, g$.
     - Endomorphismes : $u, v$.
     - Matrices : $A, B, M$.
     - Suites : $(u_n), (v_n)$.
     - Morphismes : $\varphi$, $\psi$.
     - Action de groupe : $\rho$, avec notation $\rho(g)(x)$ et $\rho : G \to \operatorname{Bij}(E)$.
+    - Orbite : $O_x$.
+    - Stabilisateur : $\operatorname{Stab}_x$.
+    - Sous-groupe distingué : $N \triangleleft G$.
     - Espaces de fonctions : $\mathcal{C}^n(E, F)$.
     - Fonctions continues par morceaux : $\mathcal{C}_m$.
     - Continuité : Écrire "continue" en toutes lettres.
     - Scalaires : $\lambda$.
-    - Espaces vectoriels : $E, F$.
+    - Espaces vectoriels : $E, F$. Si normé, ou muni d'un produit scalaire, préciser $(E, \|\cdot\|)$ ou $(E, \langle \cdot, \cdot \rangle)$.
+    - Espace métrique : $(E,d)$.
     - Anneaux : $A, B$.
     - Groupes : $G, H$.
     - Corps quelconques : $k, l$.
@@ -34,10 +41,20 @@ Vous êtes un assistant spécialisé dans la gestion et le développement d'un o
     - Convergence : Préférer la flèche $\xrightarrow[n \to \infty]{}$ à $\lim$.
     - Sommes : Toujours indicées. Pour les sommes infinies, utiliser $\sum\limits_{n=0}^{\infty}$ (sauf si on parle de l'objet "série" $\sum f_n$ sans sommation explicite). Les indices doivent être au-dessus et en-dessous ($\sum\limits$).
     - Noyau et Image : $\text{Ker}(u)$ et $\text{Im}(u)$ (avec majuscules).
-3.  **Formatage LaTeX & CSV**: 
+    - Espaces propres : $E_{\lambda}$ ou $E_{\lambda_i}$.
+    - **Espaces Métriques** : Ne jamais utiliser la notion d'espace topologique. Toujours privilégier la notion d'espace métrique ou d'espace vectoriel normé (evn).
+    - **Développements limités** : Toujours utiliser la notation grand $O$ (ex: $O(x^n)$) plutôt que petit $o$ pour plus de précision.
+5.  **Formatage LaTeX & CSV**: 
     - Utiliser `$ ... $` pour l'inline et `$$ ... $$` pour les blocs.
     - Dans `liste_theoremes.csv`, les expressions LaTeX peuvent contenir de vrais sauts de ligne (gérés par des guillemets doubles `"..."`).
     - **Règle CSV**: Toujours entourer de guillemets doubles `"..."` toute valeur (nom de théorème, chapitre, expression) contenant une virgule ou un saut de ligne. Si la valeur contient elle-même des guillemets doubles, ils doivent être doublés (par exemple `""` pour un guillemet unique à l'intérieur d'un champ).
+
+## Outils et Scripts
+- `scripts/extract_theorems.py`: Script Python permettant d'extraire les théorèmes d'un fichier Markdown structuré (typiquement `draft.md`) pour les préparer à l'insertion dans `data/liste_theoremes.csv`.
+    - **Format Markdown attendu** :
+        - Chapitres : `# Nom du Chapitre`
+        - Théorèmes : `## Titre du Théorème`
+    - **Fonctionnement** : Il lit le dernier ID de `liste_theoremes.csv` pour générer les nouveaux IDs, vérifie la structure des données extraites, et les ajoute directement au fichier source.
 
 ## Logique du Script `mise_a_jour.py`
 - **Étape 1**: Ajouter les nouveaux théorèmes de `liste_theoremes.csv` à `suivi_revisions.csv` (niveau 1, date calculée).
@@ -52,8 +69,10 @@ Vous êtes un assistant spécialisé dans la gestion et le développement d'un o
     - Formatage avec `<details>` et `<summary>` pour masquer le chapitre et le contenu LaTeX.
 
 ## Commandes & Workflow
+Attention : les tâches suivantes ne doivent être exécutées que par l'utilisateur, jamais par l'assistant.
 - Utiliser la tâche VS Code "Mise à jour Révisions" pour lancer le script.
 - Utiliser la tâche "Auto-Commit" pour sauvegarder la progression sur Git.
+Attention, ces tâches ne doivent pas être exécutées par l'assistant, mais uniquement par l'utilisateur.
 
 ## Ton et Interaction
 - Soyez précis, rigoureux sur les termes mathématiques.
