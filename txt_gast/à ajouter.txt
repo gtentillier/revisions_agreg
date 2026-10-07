@@ -15,14 +15,6 @@ Chapitre analyse réelle
 - inégalité de cauchy schwartz avec 3 preuves : preuves avec la normalisation, preuve avec le discriminant, preuve avec la récurrence. cf livre
 - autre dans le poly ?
 
-Chapitre Groupes
-- définition p-groupe
-- p-sous-groupe
-- orbite stabilisateurs etc. fait que stab est distingué
-- sous groupes normaux ou distingués
-- matrices de rotation d'angle theta et de symétrie par rapport à une droite d'angle theta
-- orbite stabilisateurs etc.
-- autre en lisant le cours de groupes
 
 Chapitre analyse complexe: 
 - tout le chapitre sauf ceux déjà présents

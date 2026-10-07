@@ -24,6 +24,9 @@ Vous êtes un assistant spécialisé dans la gestion et le développement d'un o
     - Suites : $(u_n), (v_n)$.
     - Morphismes : $\varphi$, $\psi$.
     - Action de groupe : $\rho$, avec notation $\rho(g)(x)$ et $\rho : G \to \operatorname{Bij}(E)$.
+    - Orbite : $O_x$.
+    - Stabilisateur : $\operatorname{Stab}_x$.
+    - Sous-groupe distingué : $N \triangleleft G$.
     - Espaces de fonctions : $\mathcal{C}^n(E, F)$.
     - Fonctions continues par morceaux : $\mathcal{C}_m$.
     - Continuité : Écrire "continue" en toutes lettres.

@@ -112,8 +112,8 @@ $$R = \frac{1}{\ell}$$
 - $f$ admet une primitive sur $U$ (donnée par $F(z) = \int_{[z_0, z]} f(w) dw$. Celle-ci s'annule en $z_0$. Cette intégrale ne dépend pas du chemin $C^1_{pm}$ entre $z_0$ et $z$ dans $U$)
 - si $\gamma$ est un lacet $\mathcal{C}^1$ par morceaux et à valeurs dans $U$, alors $\int_{\gamma} f(z) dz = 0$
 - si de plus $z \in U \setminus \text{Im}(\gamma)$, alors $f(z) \text{Ind}_{\gamma}(z) = \frac{1}{2i\pi} \int_{\gamma} \frac{f(w)}{w-z} dw$."
-25,Théorème de Liouville,Analyse complexe,"Toute fonction holomorphe sur $\mathbb{C}$ bornée est constante."
-26,Théorème fondamental de l'algèbre (D'Alembert-Gauss),Analyse complexe,"Toute fonction polynomiale non constante à coefficients complexes admet au moins une racine complexe."
+25,Théorème de Liouville,Analyse complexe,Toute fonction holomorphe sur $\mathbb{C}$ bornée est constante.
+26,Théorème fondamental de l'algèbre (D'Alembert-Gauss),Analyse complexe,Toute fonction polynomiale non constante à coefficients complexes admet au moins une racine complexe.
 27,Factorisation de $a^n - b^n$,Analyse réelle,"Soient $a, b \in \mathbb{C}$ et $n \in \mathbb{N}^*$. On a :
 $$a^n - b^n = (a-b) \sum_{k=0}^{n-1} a^{n-1-k} b^k$$"
 28,Caractérisation de l'égalité des idéaux engendrés par deux éléments,Anneaux,"Soit $A$ un anneau commutatif intègre, $a, b \in A$.
@@ -149,8 +149,8 @@ $(iii)$ $\times$ est distributive à gauche et à droite par rapport à $+$
 - **Élément nilpotent** : $x \in A$ est nilpotent s'il existe $n \in \mathbb{N}^*$ tel que $x^n = 0$.
 
 Un anneau est dit **réduit** si seul $0$ est nilpotent."
-33,Diviseurs de zéro dans un anneau,Anneaux,"Un élément $x \in A \setminus \{0\}$ est un **diviseur de zéro** s'il existe $y \in A \setminus \{0\}$ tel que $xy = 0$ ou $yx = 0$."
-34,Éléments inversibles d'un anneau,Anneaux,"Un élément $x \in A$ est **inversible** s'il existe $y \in A$ tel que $xy = yx = 1_A$. L'ensemble des éléments inversibles est noté $A^\times$ ou $U(A)$."
+33,Diviseurs de zéro dans un anneau,Anneaux,Un élément $x \in A \setminus \{0\}$ est un **diviseur de zéro** s'il existe $y \in A \setminus \{0\}$ tel que $xy = 0$ ou $yx = 0$.
+34,Éléments inversibles d'un anneau,Anneaux,Un élément $x \in A$ est **inversible** s'il existe $y \in A$ tel que $xy = yx = 1_A$. L'ensemble des éléments inversibles est noté $A^\times$ ou $U(A)$.
 35,"Morphismes d'anneaux, isomorphismes, endomorphismes, automorphismes",Anneaux,"Une application $\varphi : A \to B$ est un **morphisme d'anneaux** si :
 
 - $\forall x, y \in A, \varphi(x+y) = \varphi(x) + \varphi(y)$
@@ -160,7 +160,7 @@ Un anneau est dit **réduit** si seul $0$ est nilpotent."
 $\ker \varphi = \{x \in A, \varphi(x) = 0_B\}$ est un **idéal** de $A$.
 
 On parle d'**isomorphisme**, **endomorphisme** ou **automorphisme** selon les propriétés usuelles."
-36,Algèbre,Anneaux,"Soit $R$ un anneau commutatif. Une $R$-**algèbre** est un anneau $A$ muni d'un morphisme d'anneaux $f : R \to A$ tel que $f(R) \subseteq Z(A)$."
+36,Algèbre,Anneaux,Soit $R$ un anneau commutatif. Une $R$-**algèbre** est un anneau $A$ muni d'un morphisme d'anneaux $f : R \to A$ tel que $f(R) \subseteq Z(A)$.
 37,"Idéal, premier, maximal, caractérisations et propriétés",Anneaux,"Soit $A$ un anneau commutatif. Une partie $I$ est un **idéal** de $A$ si :
 
 $(i)$ $(I, +)$ est un sous-groupe de $(A, +)$
@@ -531,7 +531,7 @@ On a alors l'égalité : $\sum\limits_{n=0}^\infty f_n(x) \xrightarrow[x \to a]{
 69,Critère de Cauchy uniforme,Fonctions vectorielles,"Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace de Banach (espace vectoriel normé complet). On dit qu'une suite de fonctions $(f_n)_{n \in \mathbb{N}}$ de $X$ vers $E$ vérifie le critère de Cauchy uniforme sur $X$ si :
 $$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall p, q \ge N, \forall x \in X, \|f_p(x) - f_q(x)\| < \varepsilon$$
 Une suite de fonctions $(f_n)_{n \in \mathbb{N}}$ converge uniformément sur $X$ vers une fonction $f : X \to E$ si et seulement si elle vérifie le critère de Cauchy uniforme sur $X$."
-70,Bon ordre,Théorie des ensembles,"Un ordre sur un ensemble $E$ est dit **bon** si toute partie non vide de $E$ possède un minimum."
+70,Bon ordre,Théorie des ensembles,Un ordre sur un ensemble $E$ est dit **bon** si toute partie non vide de $E$ possède un minimum.
 71,Espace métrique séparable,Topologie,"Un espace métrique $(E, d)$ est dit **séparable** s'il existe une partie de $E$ dénombrable dense."
 72,Polynôme,Anneaux,"Soit $A$ un anneau commutatif. L'anneau des polynômes à une indéterminée $X$ à coefficients dans $A$ est l'ensemble :
 $$A[X] = \left\{ \sum_{i=0}^n a_i X^i : n \in \mathbb{N}, a_i \in A \right\}$$"
@@ -587,7 +587,7 @@ $$x \mapsto (x \pmod{I_1}, \dots, x \pmod{I_n})$$
    - Le morphisme $\phi$ est surjectif.
      En particulier, on a l'isomorphisme d'anneaux :
      $$A / \left( \bigcap\limits_{i=1}^n I_i \right) \cong \prod\limits_{i=1}^n A/I_i$$"
-80,Caractérisation d'un corps avec les idéaux,Anneaux,"Soit $A$ un anneau commutatif. Alors $A$ est un corps ssi les seuls idéaux de $A$ sont $\{0\}$ et $A$."
+80,Caractérisation d'un corps avec les idéaux,Anneaux,Soit $A$ un anneau commutatif. Alors $A$ est un corps ssi les seuls idéaux de $A$ sont $\{0\}$ et $A$.
 81,Continuité et caractérisations,Topologie,"Soient $(E, d_E)$ et $(F, d_F)$ deux espaces métriques. Soit $f : E \to F$ une application, $x \in E$. Alors les assertions suivantes sont équivalentes :
 
 1. $f$ est continue en $x$.
@@ -629,7 +629,7 @@ Alors il existe une base orthonormée de $E$ composée de vecteurs propres de $u
 Version matricielle :
 Soit $A \in \mathcal{M}_n(\mathbb{R})$ une matrice symétrique. Alors il existe $P \in \mathcal{O}_n(\mathbb{R}), D \in \mathcal{D}_n(\mathbb{R})$ telles que :
 $$ A = P^T D P$$"
-88,Caractérisation des matrices trigonalisables,Algèbre linéaire,"Une matrice $A \in \mathcal{M}_n(\mathbb{K})$ est trigonalisable sur $\mathbb{K}$ si et seulement si son polynôme caractéristique $\chi_A$ est scindé sur $\mathbb{K}$."
+88,Caractérisation des matrices trigonalisables,Algèbre linéaire,Une matrice $A \in \mathcal{M}_n(\mathbb{K})$ est trigonalisable sur $\mathbb{K}$ si et seulement si son polynôme caractéristique $\chi_A$ est scindé sur $\mathbb{K}$.
 89,Caractérisation des matrices diagonalisables,Algèbre linéaire,"Une matrice $A \in \mathcal{M}_n(\mathbb{K})$ est diagonalisable sur $\mathbb{K}$ si et seulement si l'une des conditions suivantes est vérifiée :
 
 1. Son polynôme caractéristique $\chi_A$ est scindé (ie. u est scindé) sur $\mathbb{K}$ et la dimension de chaque sous-espace propre est égale à la multiplicité de la valeur propre correspondante.
@@ -758,7 +758,7 @@ En particulier, le groupe des inversibles d'un corps fini est cyclique."
 
 Le groupe $\mathbb{Z}/n\mathbb{Z}$ (et donc tout groupe cyclique d'ordre $n$) admet exactement $\varphi(n)$ générateurs.
 
-On a la relation :
+On a la formule de Möbius :
 $$ n = \sum\limits_{d|n} \varphi(d) $$
 
 La fonction indicatrice d'Euler est multiplicative, au sens suivant : si $m, n \in \mathbb{N}^*$ sont deux entiers premiers entre eux, alors $\varphi(mn) = \varphi(m)\varphi(n)$.
@@ -835,3 +835,18 @@ $$\text{Res}(f, z_0) = a_{-1}$$"
 129,Théorème des résidus,Analyse complexe,"Soit $U$ un ouvert étoilé de $\mathbb{C}$ et $\{z_1, z_2, \dots, z_p\}$ un nombre fini de points de $U$ deux à deux distincts. Soit $f : U \setminus \{z_1, z_2, \dots, z_p\} \to \mathbb{C}$ holomorphe. Soit $\gamma$ un lacet $\mathcal{C}^1$ par morceaux à valeurs dans $U \setminus \{z_1, z_2, \dots, z_p\}$. Alors
 
 $$\frac{1}{2i\pi} \int_\gamma f(z) dz = \sum\limits_{k=1}^p \text{Ind}_\gamma(z_k) \text{Res}(f, z_k)$$"
+130,Sous-groupe engendré par une partie,Groupes,"Soit $G$ un groupe et $X \subset G$. Le **sous-groupe engendré par $X$**, noté $\langle X \rangle$, est le plus petit sous-groupe de $G$ contenant $X$.
+
+$$ \langle X \rangle = \bigcap_{\substack{H \le G \\ X \subset H}} H $$
+
+$$\langle X \rangle = \{x_1 \cdot x_2 \cdot \ldots \cdot x_n \mid n \in \mathbb{N}, x_i \in X \cup X^{-1}\}$$"
+131,Théorème de factorisation dans un groupe,Groupes,"Soit $\varphi : G \to H$ un morphisme de groupes et $N \triangleleft G$.
+
+$N \subseteq \text{Ker}(\varphi)$ $\iff$ $\exists!$ morphisme de groupes $\bar{\varphi} : G/N \to H$ tel que $\varphi = \bar{\varphi} \circ \pi$, où $\pi : G \to G/N$ est la projection canonique, c'est-à-dire tel que le diagramme suivant commute :
+
+<p align=""center"">
+  <img src=""data/img/dessins théorèmes/diagramme_groupes.png"" width=""300"">
+</p>
+
+En particulier, si $N = \text{Ker}(\varphi)$, alors $\bar{\varphi}$ induit un **isomorphisme** :
+$$G/\text{Ker}(\varphi) \simeq \text{Im}(\varphi)$$"
