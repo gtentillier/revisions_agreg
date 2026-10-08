@@ -1,6 +1,8 @@
 id,nom_theoreme,chapitre,expression_LaTeX
-1,Théorème du rang,Algèbre Linéaire,"Soient $E$ et $F$ deux espaces vectoriels de dimension finie sur un corps $\mathbb{k}$. Soit $u \in \mathcal{L}(E, F)$ une application linéaire de $E$ dans $F$.
-Alors :
+1,Théorème du rang,Algèbre Linéaire,"Soient $E$ et $F$ deux espaces vectoriels sur un corps $\mathbb{k}$. Soit $u \in \mathcal{L}(E, F)$. Alors :
+$$u \text{ induit un isomorphisme } \bar{u} :{E}/{\text{Ker}(u)} \cong \text{Im}(u)$$
+
+Si de plus $E$ et $F$ sont de dimension finie, alors :
 $$\dim(E) = \dim(\text{Ker}(u)) + \text{rg}(u)$$
 où $\text{Ker}(u)$ est le noyau de $u$ et $\text{rg}(u) = \dim(\text{Im}(u))$ est le rang de $u$."
 2,Théorème des valeurs intermédiaires,Analyse Réelle,"Soient $a, b \in \mathbb{R}$ tels que $a < b$. Soit $f : [a, b] \to \mathbb{R}$ une fonction continue sur le segment $[a, b]$.
@@ -1099,3 +1101,25 @@ Théorème de Heine : toute fonction continue sur un segment est uniformément c
 $$\|f(b) - f(a)\| \le g(b) - g(a)$$"
 "161","Formule de changement de variable","Fonctions vectorielles","Soit $f : [a, b] \to \mathbb{R}^n$ une fonction continue, et soit $\varphi : [\alpha, \beta] \to [a, b]$ une fonction $C^1$. Alors :
 $$\int_{\alpha}^{\beta} f(\varphi(t)) \varphi'(t) dt = \int_{\varphi(\alpha)}^{\varphi(\beta)} f(u) du$$"
+"162","Espace vectoriel","Algèbre linéaire","Soit $k$ un corps et $(V,+,\cdot)$ un ensemble muni d'une loi de composition interne $+$ et d'une loi de composition externe $\cdot$. On dit que $V$ est un **espace vectoriel** sur $k$ si les conditions suivantes sont satisfaites :
+
+1. $(V,+)$ est un groupe abélien.
+2. Pour tout $v, w \in V$ et tout $\lambda, \mu \in k$, on a :
+   - $\lambda \cdot (v + w) = \lambda \cdot v + \lambda \cdot w$
+   - $(\lambda + \mu) \cdot v = \lambda \cdot v + \mu \cdot v$
+   - $(\lambda \cdot \mu) \cdot v = \lambda \cdot (\mu \cdot v)$
+   - $1 \cdot v = v$"
+"163","Sous-espace vectoriel","Algèbre linéaire","Soit $V$ un espace vectoriel sur $k$. Un sous-ensemble $W$ de $V$ est un **sous-espace vectoriel** de $V$ si les conditions suivantes sont satisfaites :
+
+1. $W$ est non vide.
+2. Pour tout $v, w \in W$, on a $v + w \in W$.
+3. Pour tout $v \in W$ et tout $\lambda \in k$, on a $\lambda \cdot v \in W$.
+
+Ceci équivaut à :
+
+1. $0 \in W$.
+2. $\forall \lambda \in k, \forall v, w \in W, \lambda v + w \in W$."
+"164","Dimension d'un produit et d'un quotient d'espaces vectoriels","Algèbre linéaire","Soient $E$ et $F$ deux espaces vectoriels sur un corps $\mathbb{k}$. Alors :
+
+- $\dim(E \times F) = \dim(E) + \dim(F)$
+- Si $F$ est un sous-espace vectoriel de $E$, alors $\dim(E/F) = \dim(E) - \dim(F)$."
