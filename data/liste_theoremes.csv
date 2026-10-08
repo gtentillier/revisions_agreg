@@ -1123,3 +1123,118 @@ Ceci équivaut à :
 
 - $\dim(E \times F) = \dim(E) + \dim(F)$
 - Si $F$ est un sous-espace vectoriel de $E$, alors $\dim(E/F) = \dim(E) - \dim(F)$."
+"165","Limites supérieure et inférieure","Analyse réelle","Soit $(u_n)_{n \in \mathbb{N}}$ une suite réelle bornée. On définit :
+
+- La **limite supérieure** de la suite $(u_n)$ par :
+
+  $$
+  \limsup_{n \to \infty} u_n = \lim_{n \to \infty} \left( \sup_{k \ge n} u_k \right)
+  $$
+
+- La **limite inférieure** de la suite $(u_n)$ par :
+  $$
+  \liminf_{n \to \infty} u_n = \lim_{n \to \infty} \left( \inf_{k \ge n} u_k \right)
+  $$
+
+On les note respectivement $\overline{\lim}_{n \to \infty} u_n$ et $\underline{\lim}_{n \to \infty} u_n$.
+
+La suite $(u_n)$ converge dans $\mathbb{R}$ si et seulement si $\limsup_{n \to \infty} u_n = \liminf_{n \to \infty} u_n$."
+"166","Critère d'Abel","Analyse réelle","Soient $(a_n)_{n \in \mathbb{N}}$ et $(b_n)_{n \in \mathbb{N}}$ deux suites réelles. On suppose que :
+
+1. La suite $(a_n)$ est à termes positifs et décroissante vers $0$.
+2. La suite des sommes partielles $\left(\sum\limits_{k=0}^n b_k\right)_{n \in \mathbb{N}}$ est bornée.
+
+Alors la série $\sum a_n b_n$ converge.
+
+Pour les fonctions : soient $f : [0, +\infty[ \to \mathbb{R}$ une fonction de classe $\mathcal{C}^1$ décroissante vers $0$ et $g : [0, +\infty[ \to \mathbb{R}$ une fonction continue telle que la fonction $G : x \mapsto \int_0^x g(t) \, dt$ soit bornée sur $[0, +\infty[$.
+
+Alors l'intégrale $\int_0^{+\infty} f(t) g(t) \, dt$ converge."
+"167","Théorème de la bijection","Analyse réelle","Soit $f : I \to \mathbb{R}$ une fonction continue et strictement monotone sur un intervalle $I$ de $\mathbb{R}$. Alors :
+
+1. $f$ réalise une bijection de $I$ sur l'intervalle $J = f(I)$.
+2. La fonction réciproque $f^{-1} : J \to I$ est continue et possède le même sens de variation que $f$."
+"168","Théorème de Rolle","Analyse réelle","Soit $f : [a, b] \to \mathbb{R}$ une fonction continue sur le segment $[a, b]$ ($a < b$) et dérivable sur l'intervalle ouvert $]a, b[$. Si $f(a) = f(b)$, alors il existe au moins un point $c \in ]a, b[$ tel que $f'(c) = 0$."
+"169","Théorème des accroissements finis","Analyse réelle","Soit $f : [a, b] \to \mathbb{R}$ une fonction continue sur le segment $[a, b]$ ($a < b$) et dérivable sur l'intervalle ouvert $]a, b[$. Alors il existe au moins un point $c \in ]a, b[$ tel que :
+
+$$
+f(b) - f(a) = f'(c)(b - a)
+$$"
+"170","Inégalité des accroissements finis","Analyse réelle","Soit $f : [a, b] \to \mathbb{R}$ une fonction continue sur le segment $[a, b]$ ($a < b$) et dérivable sur $]a, b[$. On suppose qu'il existe $M \in \mathbb{R}^+$ tel que pour tout $t \in ]a, b[$, $|f'(t)| \le M$. Alors pour tout $x, y \in [a, b]$ :
+
+$$
+|f(x) - f(y)| \leq M |x - y|
+$$"
+"171","Variation et signe de la dérivée","Analyse réelle","Soit $f : I \to \mathbb{R}$ une fonction dérivable sur un intervalle $I$ de $\mathbb{R}$.
+
+- $f$ est croissante sur $I$ si et seulement si pour tout $x \in I$, $f'(x) \ge 0$.
+- Si pour tout $x \in I$, $f'(x) \ge 0$ et si l'ensemble $\{x \in I \mid f'(x) = 0\}$ est d'intérieur vide, alors $f$ est strictement croissante sur $I$.
+- $f$ est constante sur $I$ si et seulement si pour tout $x \in I$, $f'(x) = 0$."
+"172","Formule de Leibniz","Analyse réelle","Soient $n \in \mathbb{N}^*$ et $f, g$ deux fonctions $n$ fois dérivables sur un intervalle $I$ de $\mathbb{R}$. Alors la fonction $fg$ est $n$ fois dérivable sur $I$ et pour tout $x \in I$ :
+
+$$
+(fg)^{(n)}(x) = \sum_{k=0}^n \binom{n}{k} f^{(k)}(x) g^{(n-k)}(x)
+$$"
+"173","Théorème fondamental de l'analyse","Analyse réelle","Soit $f : [a, b] \to \mathbb{R}$ une fonction continue sur le segment $[a, b]$. Soit $x_0 \in [a, b]$. La fonction $F : [a, b] \to \mathbb{R}$ définie par :
+
+$$
+F(x) = \int_{x_0}^x f(t) \, dt
+$$
+
+est l'unique primitive de $f$ sur $[a, b]$ qui s'annule en $x_0$. Elle est de classe $\mathcal{C}^1$ sur $[a, b]$ et pour tout $x \in [a, b]$, $F'(x) = f(x)$."
+"174","Théorème de Weierstrass","Analyse réelle","Soit $f : [a, b] \to \mathbb{R}$ une fonction continue sur le segment $[a, b]$. Alors $f$ est limite uniforme sur $[a, b]$ d'une suite de fonctions polynomiales. Autrement dit, pour tout $\varepsilon > 0$, il existe un polynôme $P \in \mathbb{R}[X]$ tel que :
+
+$$
+\sup_{x \in [a, b]} |f(x) - P(x)| \le \varepsilon
+$$"
+"175","Comparaison série-intégrale","Analyse réelle","Soit $f : [0, +\infty[ \to \mathbb{R}$ une fonction continue, positive et décroissante.
+
+- La série $\sum\limits_{n \ge 0} f(n)$ et l'intégrale $\int_0^{+\infty} f(t) \, dt$ sont de même nature.
+- Si elles divergent, alors :
+  $$
+  \sum_{k=0}^n f(k) \sim_{n \to \infty} \int_0^n f(t) \, dt
+  $$
+- De plus, la suite $\left(\sum\limits_{k=0}^n f(k) - \int_0^n f(t) \, dt\right)_{n \in \mathbb{N}}$ converge vers une limite finie."
+"176","Inégalité de Cauchy-Schwarz","Analyse réelle","Soit $n \in \mathbb{N}^*$. Pour tous réels $u_1, \ldots, u_n$ et $v_1, \ldots, v_n$, on a :
+
+$$
+\left(\sum_{i=1}^n u_i v_i\right)^2 \leq \left(\sum_{i=1}^n u_i^2\right) \left(\sum_{i=1}^n v_i^2\right)
+$$
+
+avec égalité si et seulement si les familles $(u_i)$ et $(v_i)$ sont proportionnelles.
+
+<details>
+<summary>Idées de preuve</summary>
+
+---
+
+1. Preuve par normalisation.
+2. Preuve par le discriminant.
+3. Preuve par récurrence.
+
+</details>"
+"177","Caractérisation des sous-groupes de $(\mathbb{R}, +)$","Analyse réelle","Soit $G$ un sous-groupe de $(\mathbb{R}, +)$. Alors :
+
+- Soit il existe $\alpha \in \mathbb{R}^+$ tel que $G = \alpha \mathbb{Z}$ ($G$ est alors dit discret).
+- Soit $G$ est dense dans $\mathbb{R}$."
+"178","Sommation des relations de comparaison","Analyse réelle","Soient $(u_n)$ une suite réelle et $(v_n)$ une suite de réels positifs.
+
+- **Cas où la série $\sum v_n$ converge** :
+  - Si $u_n = O(v_n)$, alors $\sum\limits_{k=n+1}^{\infty} u_k = O\left(\sum\limits_{k=n+1}^{\infty} v_k\right)$.
+  - Si $u_n = o(v_n)$, alors $\sum\limits_{k=n+1}^{\infty} u_k = o\left(\sum\limits_{k=n+1}^{\infty} v_k\right)$.
+  - Si $u_n \sim v_n$, alors $\sum\limits_{k=n+1}^{\infty} u_k \sim \sum\limits_{k=n+1}^{\infty} v_k$.
+
+- **Cas où la série $\sum v_n$ diverge** :
+  - Si $u_n = O(v_n)$, alors $\sum\limits_{k=0}^{n} u_k = O\left(\sum\limits_{k=0}^{n} v_k\right)$.
+  - Si $u_n = o(v_n)$, alors $\sum\limits_{k=0}^{n} u_k = o\left(\sum\limits_{k=0}^{n} v_k\right)$.
+  - Si $u_n \sim v_n$, alors $\sum\limits_{k=0}^{n} u_k \sim \sum\limits_{k=0}^{n} v_k$."
+"179","Intégration des relations de comparaison","Analyse réelle","Soient $f : [a, b[ \to \mathbb{R}$ et $g : [a, b[ \to \mathbb{R}^+$ deux fonctions continues par morceaux, où $b \in \mathbb{R} \cup \{+\infty\}$.
+
+- **Si $g$ est intégrable sur $[a, b[$** :
+  - Si $f(x) = O(g(x))$ au voisinage de $b$, alors $\int_x^b f(t) \, dt = O\left(\int_x^b g(t) \, dt\right)$.
+  - Si $f(x) = o(g(x))$ au voisinage de $b$, alors $\int_x^b f(t) \, dt = o\left(\int_x^b g(t) \, dt\right)$.
+  - Si $f(x) \sim g(x)$ au voisinage de $b$, alors $\int_x^b f(t) \, dt \sim \int_x^b g(t) \, dt$.
+
+- **Si $g$ n'est pas intégrable sur $[a, b[$** :
+  - Si $f(x) = O(g(x))$ au voisinage de $b$, alors $\int_a^x f(t) \, dt = O\left(\int_a^x g(t) \, dt\right)$.
+  - Si $f(x) = o(g(x))$ au voisinage de $b$, alors $\int_a^x f(t) \, dt = o\left(\int_a^x g(t) \, dt\right)$.
+  - Si $f(x) \sim g(x)$ au voisinage de $b$, alors $\int_a^x f(t) \, dt \sim \int_a^x g(t) \, dt$."

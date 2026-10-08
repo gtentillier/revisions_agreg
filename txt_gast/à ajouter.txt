@@ -1,13 +1,5 @@
 à ajouter à la main :
 
-Chapitre analyse réelle
-- critère d'abel
-- théorème de rolle
-- théorème des accroissements finis
-- inégalité des accroissements finis : avec le sup de f' en valeur absolue, et avec comparaison à la dérivée d'une autre fonction g
-- inégalité de cauchy schwartz avec 3 preuves : preuves avec la normalisation, preuve avec le discriminant, preuve avec la récurrence. cf livre
-- autre dans le poly ?
-
 Autres chapitres spé
 - espaces préhilbertiens
 - Probas
