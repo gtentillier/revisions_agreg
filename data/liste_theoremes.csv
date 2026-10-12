@@ -1238,3 +1238,160 @@ avec égalité si et seulement si les familles $(u_i)$ et $(v_i)$ sont proportio
   - Si $f(x) = O(g(x))$ au voisinage de $b$, alors $\int_a^x f(t) \, dt = O\left(\int_a^x g(t) \, dt\right)$.
   - Si $f(x) = o(g(x))$ au voisinage de $b$, alors $\int_a^x f(t) \, dt = o\left(\int_a^x g(t) \, dt\right)$.
   - Si $f(x) \sim g(x)$ au voisinage de $b$, alors $\int_a^x f(t) \, dt \sim \int_a^x g(t) \, dt$."
+"180","Calcul du produit scalaire dans une base, matrice de Gram","Espaces vectoriels normés","Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien et $(e_1, \ldots, e_n)$ une base de $E$. Alors pour tous $x, y \in E$ :
+$$ x = \sum_{i=1}^{n} x_i e_i, \quad y = \sum_{i=1}^{n} y_i e_i $$
+On a :
+$$ \langle x, y \rangle = \sum_{i=1}^{n} \sum_{j=1}^{n} x_i y_j \langle e_i, e_j \rangle $$
+Si la base est orthonormée, on a :
+$$ \langle x, y \rangle = \sum_{i=1}^{n} x_i y_i $$
+
+Autrement dit en notation matricielle, si $X = (x_1, \ldots, x_n)^T$ et $Y = (y_1, \ldots, y_n)^T$, on a :
+$$ \langle x, y \rangle = X^T G Y $$
+où $G$ est la matrice de Gram de la base $(e_1, \ldots, e_n)$, c'est-à-dire $G = (\langle e_i, e_j \rangle)_{1 \le i, j \le n}$."
+181,Endomorphismes anti-symétriques et matrices anti-symétriques,Espaces vectoriels normés,"
+Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien et $u \in \mathcal{L}(E)$. On dit que $u$ est anti-symétrique si pour tous $x, y \in E$, on a :
+$$ \langle u(x), y \rangle = -\langle x, u(y) \rangle $$
+
+Ceci équivaut à :
+$$ \forall x \in E, \langle u(x), x \rangle = 0 $$
+
+L'ensemble des endomorphismes anti-symétriques est noté $\mathcal{A}(E)$.
+L'ensemble des matrices anti-symétriques est noté $\mathcal{A}_n(\mathbb{R})$.
+
+On a les sommes directes suivantes :
+$$ \mathcal{L}(E) = \mathcal{S}(E) \oplus \mathcal{A}(E) $$
+$$\mathcal{M}_n(\mathbb{R}) = \mathcal{S}_n(\mathbb{R}) \oplus \mathcal{A}_n(\mathbb{R}) $$"
+182,Adjoint d'un endomorphisme,Espaces vectoriels normés,"Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien et $u \in \mathcal{L}(E)$. Il existe un unique endomorphisme $u^* \in \mathcal{L}(E)$ tel que pour tous $x, y \in E$, on ait :
+$$ \langle u(x), y \rangle = \langle x, u^*(y) \rangle $$
+On dit que $u^*$ est l'adjoint de $u$.
+
+De plus, si A est la matrice de $u$ dans une base orthonormée, alors la matrice de $u^*$ dans cette même base est $A^T$.
+
+1. $u$ est symétrique $\iff$ $u = u^*$.
+2. $u$ est anti-symétrique $\iff$ $u = -u^*$.
+3. $u$ est un projecteur orthogonal $\iff$ $u = u^*$ et $u^2 = u$.
+4. $u$ est une isométrie vectorielle (automorphisme orthogonal) $\iff$ $u^* u = \operatorname{Id}_E$.
+
+On a les propriétés suivantes :
+1. $u \mapsto u^*$ est linéaire involutive.
+2. $(u \circ v)^* = v^* \circ u^*$.
+3. $\operatorname{Ker}(u^*) = \operatorname{Im}(u)^{\perp}$ et $\operatorname{Im}(u^*) = \operatorname{Ker}(u)^{\perp}$.
+4. Si $u$ est inversible, alors $u^*$ est inversible et $(u^{-1})^* = (u^*)^{-1}$.
+5. Si un sous-espace vectoriel $F$ de $E$ est stable par $u$, alors $F^{\perp}$ est stable par $u^*$."
+"183","Produit scalaire","Espaces vectoriels normés","Un produit scalaire sur un espace vectoriel $E$ sur le corps $\mathbb{K}$ est une forme bilinéaire (ou sesquilinéraire si $\mathbb{K} = \mathbb{C}$) qui associe à chaque paire de vecteurs $(x, y) \in E \times E$ un scalaire $\langle x, y \rangle \in \mathbb{K}$, et qui satisfait les propriétés suivantes :
+
+1. **Bilinéaire/Sesquilinéaire** : $\langle \alpha x + y, z \rangle = \alpha \langle x, z \rangle + \langle y, z \rangle$ pour tous $x, y, z \in E$ et $\alpha \in \mathbb{K}$.
+2. **Symétrique** : $\langle x, y \rangle = \overline{\langle y, x \rangle}$ pour tous $x, y \in E$.
+3. **Définie** : $\langle x, x \rangle = 0$ si et seulement si $x = 0$.
+4. **Positive** : $\langle x, x \rangle \geq 0$."
+"184","Espace euclidien","Espaces vectoriels normés","Un espace euclidien est un espace préhilbertien de dimension finie.
+
+Rappel : un espace préhilbertien est un espace vectoriel sur $\mathbb{R}$ muni d'un produit scalaire. Il est noté $(E, \langle \cdot, \cdot \rangle)$."
+"185","Espace préhilbertien","Espaces vectoriels normés","Un espace préhilbertien est un espace vectoriel sur $\mathbb{R}$ muni d'un produit scalaire. Il est noté $(E, \langle \cdot, \cdot \rangle)$."
+"186","Formules de polarisation","Espaces vectoriels normés","Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien réel. Pour tous $x, y \in E$ :
+$$ \langle x, y \rangle = \frac{1}{2} (\|x+y\|^2 - \|x\|^2 - \|y\|^2) $$
+$$ \langle x, y \rangle = \frac{1}{2} (\|x\|^2 + \|y\|^2 - \|x-y\|^2) $$
+$$ \langle x, y \rangle = \frac{1}{4} (\|x+y\|^2 - \|x-y\|^2) $$"
+"187","Inégalités de Minkowski","Espaces vectoriels normés","Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien. Pour tous $x, y \in E$ :
+$$ \|x+y\| \le \|x\| + \|y\| $$
+Avec égalité si et seulement si $x$ et $y$ sont colinéaires de même sens (positivement liés)."
+"188","Orthogonal de la somme, somme des orthogonaux","Espaces vectoriels normés","Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien et $F, G$ deux sous-espaces vectoriels de $E$.
+$$ (F + G)^{\perp} = F^{\perp} \cap G^{\perp} $$
+$$ F^{\perp} + G^{\perp} \subset (F \cap G)^{\perp} $$
+Si $E$ est de dimension finie, on a l'égalité $F^{\perp} + G^{\perp} = (F \cap G)^{\perp}$."
+"189","Mise en dualité","Espaces vectoriels normés","Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien. On définit l'application linéaire $f : E \to E^*$ par :
+$$ f(x) = \langle x, \cdot \rangle $$
+f est injective. Si $E$ est de dimension finie, $f$ est un isomorphisme."
+"190","Théorème de projection orthogonale","Espaces vectoriels normés","Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien et $F$ un sous-espace vectoriel de dimension finie de $E$. Alors pour tout $x \in E$, il existe un unique couple $(y, z) \in F \times F^{\perp}$ tel que :
+$$ x = y + z $$
+Autrement dit, $E = F \oplus F^{\perp}$.
+De plus, $F^{\perp^{\perp}} = F$.
+
+Si de plus $E$ est de dimension finie, on a :
+$$ \dim E = \dim F + \dim F^{\perp} $$"
+"191","Inégalité de Bessel","Espaces vectoriels normés","Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien et $(e_i)_{i \in \mathbb{N}}$ une famille orthonormée de $E$. Alors pour tout $x \in E$, la série $\sum |\langle x, e_i \rangle|^2$ converge et on a :
+$$\sum_{i=0}^{\infty} |\langle x, e_i \rangle|^2 \le \|x\|^2$$
+
+Une telle famille orthonormale est dite totale ssi $\overline{\operatorname{Vect}(e_i)_{i \in \mathbb{N}}} = E$.
+
+La famille $(e_i)_{i \in \mathbb{N}}$ est totale ssi pour tout $x \in E$, on a l'égalité :
+$$\sum_{i=0}^{\infty} |\langle x, e_i \rangle|^2 = \|x\|^2$$
+
+<details>
+<summary>Idée de preuve</summary>
+
+---
+
+Le membre de gauche est la limite de la norme au carré du projeté orthogonal de $x$ sur $\operatorname{Vect}(e_1, \ldots, e_n)$.
+
+</details>"
+"192","Distance à un sous-espace vectoriel de dimension finie","Espaces vectoriels normés","Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien et $F$ un sous-espace vectoriel de dimension finie de $E$. Alors pour tout $x \in E$, on a :
+$$ d(x, F) = \|x - P_F(x)\| $$
+où $P_F(x)$ est le projeté orthogonal de $x$ sur $F$.
+
+De plus, on a l'égalité :
+$$\|x\|^2 = \|P_F(x)\|^2 + \|x - P_F(x)\|^2$$"
+"193","Endomorphismes auto-adjoints et propriétés","Espaces vectoriels normés","Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien et $u \in \mathcal{L}(E)$. On dit que $u$ est auto-adjoint si pour tous $x, y \in E$, on a :
+$$ \langle u(x), y \rangle = \langle x, u(y) \rangle $$
+
+De plus, on a les propriétés suivantes :
+
+1. Si $F$ est un sous-espace vectoriel de $E$ stable par $u$, alors $F^{\perp}$ est également stable par $u$.
+2. $\operatorname{Ker}(u) = \operatorname{Im}(u)^{\perp}$ et $\operatorname{Im}(u) = \operatorname{Ker}(u)^{\perp}$.
+3. Soit $p$ un projecteur. $p$ est un projecteur orthogonal $\iff$ $p$ est auto-adjoint."
+"194","Endomorphismes / Matrices symétriques (définis) positifs","Espaces vectoriels normés","Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien et $u \in \mathcal{L}(E)$ symétrique.
+
+On dit que $u$ est symétrique positif si pour tout $x \in E$, on a :
+$$ \langle u(x), x \rangle \ge 0 $$
+Cet ensemble est noté $\mathcal{S}^{+}(E)$.
+
+On dit que $u$ est symétrique défini positif si pour tout $x \in E \setminus \{0\}$, on a :
+$$ \langle u(x), x \rangle > 0 $$
+Cet ensemble est noté $\mathcal{S}^{++}(E)$.
+
+Version matricielle :
+
+Soit $A \in \mathcal{M}_n(\mathbb{R})$ symétrique. On dit que $A$ est symétrique positif si pour tout $X \in \mathbb{R}^n$, on a :
+$$ X^T A X \ge 0 $$
+Cet ensemble est noté $\mathcal{S}^{+}_n(\mathbb{R})$.
+
+On dit que $A$ est symétrique défini positif si pour tout $X \in \mathbb{R}^n \setminus \{0\}$, on a :
+$$ X^T A X > 0 $$
+Cet ensemble est noté $\mathcal{S}^{++}_n(\mathbb{R})$."
+"195","Isométries vectorielles et caractérisations","Espaces vectoriels normés","Soit $(E, \langle \cdot, \cdot \rangle)$ un espace euclidien, et $u : E \to E$ une application. On a l'équivalence entre :
+
+1. $$\forall x, y \in E, \langle u(x), u(y) \rangle = \langle x, y \rangle$$
+2. $$u \text{ est linéaire et } \forall x \in E, \|u(x)\| = \|x\|$$
+3. $$u(0) = 0 \text{ et } \forall x, y \in E, \|u(x) - u(y)\| = \|x - y\|$$
+
+On dit que $u$ est une isométrie vectorielle, ou un automorphisme orthogonal.
+
+Dans ce cas, $u^{-1}$ est également une isométrie vectorielle. On a la caractérisation suivante :
+
+$u$ est une isométrie vectorielle $\iff$ l'image par $u$ d'une base orthonormée est une base orthonormée.
+
+Version matricielle :
+
+Soit $A \in \mathcal{M}_n(\mathbb{R})$ la matrice de $u$ dans une base orthonormée. On a l'équivalence suivante : $u$ est une isométrie vectorielle $\iff$ $A^T A = I_n$.
+
+On note $O_n(\mathbb{R})$ l'ensemble des matrices orthogonales. C'est un groupe pour la multiplication des matrices.
+
+On note $O(E)$ l'ensemble des isométries vectorielles de $E$. C'est un groupe pour la composition des applications."
+"196","Théorème spectral pour les endomorphismes symétriques","Espaces vectoriels normés","Soit $(E, \langle \cdot, \cdot \rangle)$ un espace euclidien et $u \in \mathcal{L}(E)$ un endomorphisme symétrique.
+
+Alors toutes les valeurs propres de $u$ sont réelles, et il existe une base orthonormée de $E$ formée de vecteurs propres de $u$.
+
+Application : Soit $A \in \mathcal{S}^+_n(\mathbb{R})$. Alors il existe une unique matrice $B \in \mathcal{S}^+_n(\mathbb{R})$ telle que $A = B^2$. On note $B = \sqrt{A}$."
+"197","Forme réduite des endomorphismes anti-symétriques","Espaces vectoriels normés","Soit $(E, \langle \cdot, \cdot \rangle)$ un espace euclidien et $u \in \mathcal{L}(E)$ un endomorphisme anti-symétrique.
+On note $J = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$.
+
+Il existe une base orthonormée de $E$ dans laquelle la matrice de $u$ est une matrice diagonale par blocs de la forme :
+
+$$ \operatorname{Mat}(u) = \begin{pmatrix}
+\lambda_1 J & & & (0) \\
+& \ddots & & \\
+& & \lambda_p J & \\
+(0) & & & 0_{n-2p}
+\end{pmatrix} $$
+
+où $p \in \mathbb{N}$ tel que $2p \leq \dim(E)$, $\lambda_1, \dots, \lambda_p$ sont des réels strictement positifs, et $0_{n-2p}$ désigne le bloc carré nul de taille $(n-2p) \times (n-2p)$."
