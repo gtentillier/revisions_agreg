@@ -1395,3 +1395,34 @@ $$ \operatorname{Mat}(u) = \begin{pmatrix}
 \end{pmatrix} $$
 
 où $p \in \mathbb{N}$ tel que $2p \leq \dim(E)$, $\lambda_1, \dots, \lambda_p$ sont des réels strictement positifs, et $0_{n-2p}$ désigne le bloc carré nul de taille $(n-2p) \times (n-2p)$."
+"198","Matrice de passage","Algèbre linéaire","Soit $E$ un $mathbb(K)$-espace vectoriel de dimension finie et soient $B = (e_1, e_2, \ldots, e_n)$ et $B' = (e'_1, e'_2, \ldots, e'_n)$ deux bases de $E$.
+
+La matrice de passage de la base $B$ à la base $B'$ est la matrice $P_{B \to B'} := P_{B', B} := \operatorname{Mat}_{B',B}(\operatorname{id_E})$
+
+De plus, $P_{B', B}^{-1} = P_{B, B'}$."
+"199","Formule de changement de base","Algèbre linéaire","Soit $u in \mathcal{L}(E,F)$ et soient $B$ et $B'$ deux bases de $E$, et $C$ et $C'$ deux bases de $F$. Alors, on a la formule de changement de base suivante :
+
+$$\operatorname{Mat}_{C',B'}(u) = P_{C \to C'} \operatorname{Mat}_{C,B}(u) P_{B' \to B} = P_{C',C} \operatorname{Mat}_{C,B}(u) P_{B,B'}$$"
+"200","Matrices équivalentes et caractérisation du rang","Algèbre linéaire","Deux matrices $A$ et $B \in \mathcal{M}_{n,p}(\mathbb{K})$ sont dites équivalentes si et seulement s'il existe deux matrices inversibles $P \in \operatorname{GL}_n(\mathbb{K})$ et $Q \in \operatorname{GL}_p(\mathbb{K})$ telles que $B = PAQ$.
+
+Autrement dit, deux matrices sont équivalentes si elles représentent la même application linéaire dans des bases différentes.
+
+Caractérisation du rang : Les matrices $A \in \mathcal{M}_{n,p}(\mathbb{K})$ de rang r sont exactement les matrices équivalentes à la matrice suivante :
+
+$$
+J_r =
+\begin{pmatrix}
+I_r & 0_{r,p-r} \\
+0_{n-r,r} & 0_{n-r,p-r}
+\end{pmatrix}
+$$"
+"201","Matrices semblables","Algèbre linéaire","Deux matrices $A$ et $B \in \mathcal{M}_n(\mathbb{K})$ sont dites semblables si et seulement s'il existe une matrice inversible $P \in \operatorname{GL}_n(\mathbb{K})$ telle que $B = P^{-1}AP$."
+"202","Injection canonique de bidualité","Algèbre linéaire","Soit $E$ un $\mathbb{K}$-espace vectoriel. L'application canonique de bidualité est l'application linéaire $\varphi : E \to E^{**}$ définie par :
+$$\varphi(x)(f) = f(x) \quad \text{pour tout } x \in E \text{ et } f \in E^*$$
+C'est un morphisme de $\mathbb{K}$-espaces vectoriels.<br>De plus, si $E$ est de dimension finie, alors $\varphi$ est un isomorphisme."
+"203","Application linéaire duale / transposée","Algèbre linéaire","Soit $E$ et $F$ deux $\mathbb{K}$-espaces vectoriels et soit $u \in \mathcal{L}(E,F)$. L'application linéaire duale (ou transposée) de $u$ est l'application linéaire $u^* := {}^{\mathcal{t}}u \in \mathcal{L}(F^*,E^*)$ définie par :
+$$u^*(g) = g \circ u \quad \text{pour tout }g \in F^*$$
+C'est un morphisme de $\mathbb{K}$-espaces vectoriels. De plus, si $E$ et $F$ sont de dimension finie, alors $\operatorname{Mat}_{B^*,C^*}(u^*) = \operatorname{Mat}_{C,B}(u)^T$ pour toutes bases $B$ de $E$ et $C$ de $F$."
+"204","Base duale","Algèbre linéaire","Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie et soit $B = (e_1, e_2, \ldots, e_n)$ une base de $E$. La base duale de $B$ est la base $B^* = (e_1^*, e_2^*, \ldots, e_n^*)$ de $E^*$ définie par :
+$$e_i^*(e_j) = \delta_{ij} \quad \text{pour tout } i,j \in \{1,2,\ldots,n\}$$
+En particulier, si $B$ est une base de $E$, alors $B^*$ est une base de $E^*$ et $\dim(E^*) = \dim(E)$."
