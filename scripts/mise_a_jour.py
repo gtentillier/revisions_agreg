@@ -12,6 +12,7 @@ LISTE_THEOREMES = os.path.join("data", "liste_theoremes.csv")
 SUIVI_REVISIONS = "suivi_revisions.csv"
 ESPACEMENT_JSON = os.path.join("data", "espacement.json")
 REVISIONS_MD = "revisions.md"
+THEOREMES_LISTE_MD = "theoremes.md"
 IMG_DIR = os.path.join("data", "img")
 
 
@@ -90,6 +91,9 @@ def mise_a_jour():
 
     # Etape 3: Rédiger revisions.md
     write_revisions_md(suivi_revisions, liste_theoremes)
+
+    # Etape 4: Rédiger theoremes.md
+    write_all_theorems_md(liste_theoremes)
 
 
 def generate_visualisations(suivi_revisions):
@@ -180,6 +184,26 @@ def write_revisions_md(suivi_revisions, liste_theoremes):
 
                 latex = latex_map.get(row['id'], "Expression non trouvée")
                 f.write(f"<details>\n<summary><b>Énoncé</b></summary>\n\n---\n\n{latex}\n\n---\n\n</details>\n\n")
+
+
+def write_all_theorems_md(liste_theoremes):
+    """Génère un fichier contenant tous les théorèmes triés par chapitre et nom."""
+    if not liste_theoremes:
+        return
+
+    # Tri : chapitre ASC, puis nom_theoreme ASC
+    sorted_theorems = sorted(liste_theoremes, key=lambda x: (x['chapitre'], x['nom_theoreme']))
+
+    with open(THEOREMES_LISTE_MD, 'w', encoding='utf-8') as f:
+        current_chapter = None
+        for row in sorted_theorems:
+            if row['chapitre'] != current_chapter:
+                current_chapter = row['chapitre']
+                f.write(f"# {current_chapter}\n\n")
+
+            f.write(f"## {row['nom_theoreme']}\n\n")
+            f.write(f"{row['expression_LaTeX']}\n\n")
+            f.write("---\n\n")
 
 
 if __name__ == "__main__":
