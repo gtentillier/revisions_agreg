@@ -21,7 +21,11 @@ De plus, la projection sur $\text{Ker}(P_i(u))$ parallèlement à $\bigoplus_{j 
 
 ## Pivot de Gauss
 
-Le pivot de Gauss consiste à transformer une matrice par opérations élémentaires sur les lignes : échanger deux lignes, multiplier une ligne par un scalaire non nul ou ajouter à une ligne un multiple d'une autre.
+Le pivot de Gauss consiste à transformer une matrice par opérations élémentaires sur les lignes OU sur les colonnes, mais il faut choisir l'un des deux et s'y tenir. Les opérations élémentaires sont :
+
+1. échanger deux lignes
+2. multiplier une ligne par un scalaire non nul
+3. ajouter à une ligne un multiple d'une autre.
 
 ---
 
@@ -106,7 +110,7 @@ $$
 
 > **Principe général** : Les opérations sur les lignes conservent les relations de dépendance linéaire entre les colonnes. Pour obtenir une base de $\text{Im}(A)$, on peut choisir n'importe quelle famille d'indices de colonnes qui forment une base de l'image de la matrice **échelonnée**, et extraire les colonnes correspondantes dans la matrice **initiale**.
 >
-> _Exemple_ : Si la forme échelonnée est $U = \begin{pmatrix} 1 & 2 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{pmatrix}$, les colonnes 1 et 3 sont les colonnes pivots (base évidente), mais les colonnes 2 et 3 sont également libres dans $U$. On peut donc aussi former une base de $\text{Im}(A)$ en prenant les colonnes 2 et 3 de la matrice $A$ d'origine.
+> *Exemple* : Si la forme échelonnée est $U = \begin{pmatrix} 1 & 2 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{pmatrix}$, les colonnes 1 et 3 sont les colonnes pivots (base évidente), mais les colonnes 2 et 3 sont également libres dans $U$. On peut donc aussi former une base de $\text{Im}(A)$ en prenant les colonnes 2 et 3 de la matrice $A$ d'origine.
 
 ---
 
@@ -257,6 +261,14 @@ $$C_2(u) = \mathbb{K}[u]$$
 
 ---
 
+## Correspondance matricielle de l'application linéaire et de son dual
+
+Soit $u \in \mathcal{L}(E,F)$ et soient $\mathcal{B} = (e_1, \ldots, e_n)$ et $\mathcal{C} = (f_1, \ldots, f_m)$ des bases respectives de $E$ et $F$. On note $\mathcal{B}^* = (e_1^*, \ldots, e_n^*)$ et $\mathcal{C}^* = (f_1^*, \ldots, f_m^*)$ les bases duales correspondantes. Alors, on a l'epression matricielle suivante pour l'application linéaire $u$ et son dual $u^*$ :
+
+$$\text{Mat}_{\mathcal{C}^*, \mathcal{B}^*}(u^*) = \text{Mat}_{\mathcal{B}, \mathcal{C}}(u)^T$$
+
+---
+
 ## Dimension d'un produit et d'un quotient d'espaces vectoriels
 
 Soient $E$ et $F$ deux espaces vectoriels sur un corps $\mathbb{k}$. Alors :
@@ -349,13 +361,26 @@ C'est un morphisme de $\mathbb{K}$-espaces vectoriels.<br>De plus, si $E$ est de
 
 ---
 
+## Isomorphismes canoniques de dualité : noyaux et images
+
+Soit $(E, F)$ deux $\mathbb{K}$-espaces vectoriels de dimension finie et soit $u \in \mathcal{L}(E,F)$. Alors, on a les isomorphismes canoniques de dualité suivants :
+
+- $\text{Ker}(u^*) \cong (F/\text{Im}(u))^*$
+- $\text{Im}(u^*) \cong (E/\text{Ker}(u))^*  \cong \text{Im}(u)^*$
+
+---
+
 ## Matrice de passage
 
-Soit $E$ un $mathbb(K)$-espace vectoriel de dimension finie et soient $B = (e_1, e_2, \ldots, e_n)$ et $B' = (e'_1, e'_2, \ldots, e'_n)$ deux bases de $E$.
+Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie et soient $B = (e_1, e_2, \ldots, e_n)$ et $B' = (e'_1, e'_2, \ldots, e'_n)$ deux bases de $E$.
 
-La matrice de passage de la base $B$ à la base $B'$ est la matrice $P_{B \to B'} := P_{B', B} := \operatorname{Mat}_{B',B}(\operatorname{id_E})$
+La matrice de passage de la base $B$ à la base $B'$ est la matrice $P_{B \to B'} := P_{B', B} := \operatorname{Mat}_{B',B}(\operatorname{id_E})$<br>
+Cette matrice est l'écriture en colonnes des vecteurs de la base $B$ dans la base $B'$ :
+
+$$P_{B \to B'} = \begin{pmatrix} [e_1]_{B'} & [e_2]_{B'} & \cdots & [e_n]_{B'} \end{pmatrix}$$
 
 De plus, $P_{B', B}^{-1} = P_{B, B'}$.
+
 
 ---
 
@@ -394,6 +419,55 @@ I_r & 0_{r,p-r} \\
 0_{n-r,r} & 0_{n-r,p-r}
 \end{pmatrix}
 $$
+
+---
+
+## Morphisme entre un espace vectoriel de dimension finie et son dual
+
+Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie. La donnée d'un morphisme $\varphi : E \to E^*$ équivaut à la donnée d'une forme bilinéaire $\psi : E \times E \to \mathbb{K}$ définie par :
+$$\psi(x,y) = \varphi(x)(y), \quad \forall x,y \in E$$
+
+De plus, $\varphi$ est un isomorphisme si et seulement si $\psi$ est non dégénérée.<br>
+Par exemple, $\psi : (A,B) \in \mathcal{M}_n(\mathbb{K}) \times \mathcal{M}_n(\mathbb{K}) \mapsto \text{tr}(AB)$ est une forme bilinéaire non dégénérée sur $\mathcal{M}_n(\mathbb{K})$ et l'application $\varphi : A \in \mathcal{M}_n(\mathbb{K}) \mapsto \operatorname{tr}(A,.) \in \mathcal{M}_n(\mathbb{K})^*$ est un isomorphisme.
+
+---
+
+## Morphismes canoniques entre les quotients et les orthogonaux
+
+Soit $E$ un $\mathbb{K}$-espace vectoriel et soit $F \subset E, G \subset E^*$. Alors, on a les morphismes canoniques suivants :
+$$E^*/F^\perp \cong F^* \quad \text{et} \quad E/G^\circ \cong G^*$$
+
+Le premier est un isomorphisme, le second un morphisme injectif. De plus, si $E$ est de dimension finie, le second est également un isomorphisme.
+
+---
+
+## Orthogonal
+
+Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie et soit $F \subset E$. On définit l'orthogonal de $F$ dans le dual $E^*$ par :
+$$F^\perp = \{ f \in E^* \mid f(x) = 0, \forall x \in F \}$$
+Soit $G \subset E^*$, on définit l'orthogonal de $G$ dans $E$ par :
+$$G^\circ = \{ x \in E \mid f(x) = 0, \forall f \in G \}$$
+
+---
+
+## Orthogonaux et opérations ensemblistes
+
+Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie et soient $F_1, F_2 \subset E$ et $G_1, G_2 \subset E^*$. Alors, on a les propriétés suivantes :
+
+1. $(F_1 \cup F_2)^\perp = F_1^\perp \cap F_2^\perp$
+2. $F_1^\perp + F_2^\perp \subset (F_1 \cap F_2)^\perp$
+3. $(G_1 \cup G_2)^\circ = G_1^\circ \cap G_2^\circ$
+4. $G_1^\circ + G_2^\circ \subset (G_1 \cap G_2)^\circ$
+
+---
+
+## Rang de la transposée
+
+Soit $u \in \mathcal{L}(E,F)$. Alors, on a l'égalité suivante entre le rang de l'application linéaire et le rang de sa transposée :
+$$\text{rg}(u) = \text{rg}(u^*)$$
+
+Version matricielle, si $A \in \mathcal{M}_{m,n}(\mathbb{K})$, on a :
+$$\text{rg}(A) = \text{rg}(A^T)$$
 
 ---
 
@@ -504,28 +578,28 @@ Soit $n \in \mathbb{N}^*$.
 ## Développement limité de l'exponentielle
 
 Soit $n \in \mathbb{N}$. Au voisinage de $0$, on a :
-$$ e^x = \sum\limits\_{k=0}^{n} \frac{x^k}{k!} + O(x^{n+1}) $$
+$$ e^x = \sum\limits_{k=0}^{n} \frac{x^k}{k!} + O(x^{n+1}) $$
 
 ---
 
 ## Développement limité du cosinus
 
 Soit $n \in \mathbb{N}$. Au voisinage de $0$, on a :
-$$ \cos(x) = \sum\limits\_{k=0}^{n} (-1)^k \frac{x^{2k}}{(2k)!} + O(x^{2n+2}) $$
+$$ \cos(x) = \sum\limits_{k=0}^{n} (-1)^k \frac{x^{2k}}{(2k)!} + O(x^{2n+2}) $$
 
 ---
 
 ## Développement limité du logarithme
 
 Soit $n \in \mathbb{N}^*$. Au voisinage de $0$, on a :
-$$ \ln(1+x) = \sum\limits\_{k=1}^{n} (-1)^{k-1} \frac{x^k}{k} + O(x^{n+1}) $$
+$$ \ln(1+x) = \sum\limits_{k=1}^{n} (-1)^{k-1} \frac{x^k}{k} + O(x^{n+1}) $$
 
 ---
 
 ## Développement limité du sinus
 
 Soit $n \in \mathbb{N}$. Au voisinage de $0$, on a :
-$$ \sin(x) = \sum\limits\_{k=0}^{n} (-1)^k \frac{x^{2k+1}}{(2k+1)!} + O(x^{2n+3}) $$
+$$ \sin(x) = \sum\limits_{k=0}^{n} (-1)^k \frac{x^{2k+1}}{(2k+1)!} + O(x^{2n+3}) $$
 
 ---
 
@@ -543,7 +617,7 @@ Autrement dit, l'image d'un intervalle par une fonction continue est un interval
 ## Caractérisation de l'existance d'une primitive d'une fonction complexe continue
 
 Soit $U$ un ouvert de $\mathbb{C}$ et $f : U \to \mathbb{C}$ une fonction continue. Alors $f$ admet une primitive sur $U$ si et seulement si pour tout lacet $\gamma : [a,b] \to U$ de classe $C^1$ par morceaux, on a :
-$$ \int\_{\gamma} f(z) \, dz = 0 $$
+$$ \int_{\gamma} f(z) \, dz = 0 $$
 
 ---
 
@@ -649,7 +723,7 @@ L'application $\text{ind}_{\gamma} : \mathbb{C} \setminus \text{Im}(\gamma) \to 
 ## Intégrale d'une fonction continue selon un chemin $C^1_pm$
 
 Soit $U$ un ouvert de $\mathbb{C}$ et $\gamma : [a,b] \to U$ un chemin de classe $C^1$ par morceaux. Soit $f : U \to \mathbb{C}$ une fonction continue. On définit l'intégrale de $f$ selon $\gamma$ par :
-$$ \int\_{\gamma} f(z) \, dz = \int_a^b f(\gamma(t)) \cdot \gamma'(t) \, dt $$
+$$ \int_{\gamma} f(z) \, dz = \int_a^b f(\gamma(t)) \cdot \gamma'(t) \, dt $$
 
 ---
 
@@ -703,14 +777,14 @@ Soit $\exp : \mathbb{C} \to \mathbb{C}$ la fonction exponentielle complexe défi
 Cette fonction vérifie les propriétés suivantes :
 
 1. Morphisme de groupes : $\exp$ est un morphisme du groupe additif $(\mathbb{C}, +)$ vers le groupe multiplicatif $(\mathbb{C}^*, \times)$. Autrement dit, pour tous $z, w \in \mathbb{C}$ :
-   $$\exp(z+w) = \exp(z)\exp(w)$$
+$$\exp(z+w) = \exp(z)\exp(w)$$
 
 2. Continuité : La fonction $\exp$ est continue sur $\mathbb{C}$.
 
 3. Surjectivité : L'application $\exp : \mathbb{C} \to \mathbb{C}^*$ est surjective.
 
 4. Non-injectivité : La fonction $\exp$ n'est pas injective. Elle est périodique de période $2i\pi$. Son noyau est :
-   $$\text{Ker}(\exp) = \{z \in \mathbb{C} \mid \exp(z) = 1\} = 2i\pi\mathbb{Z}$$
+$$\text{Ker}(\exp) = \{z \in \mathbb{C} \mid \exp(z) = 1\} = 2i\pi\mathbb{Z}$$
 
 ---
 
@@ -777,11 +851,9 @@ $$\frac{1}{2i\pi} \int_\gamma f(z) dz = \sum\limits_{k=1}^p \text{Ind}_\gamma(z_
 ## Théorème des zéros isolés
 
 Soit $U$ un ouvert connexe de $\mathbb{C}$ et soit $f : U \to \mathbb{C}$ une fonction holomorphe. Si l'ensemble
-
 $$
 f^{-1}(\{0\}) = \{z \in U \mid f(z) = 0\}
 $$
-
 admet un point d'accumulation dans $U$, alors $f$ est identiquement nulle sur $U$.
 
 ---
@@ -920,9 +992,8 @@ avec égalité si et seulement si les familles $(u_i)$ et $(v_i)$ sont proportio
 ---
 
 1. Preuve par normalisation.
-2. Preuve par le discriminant de la fonction $f(t) = \sum_{i=1}^n (u_i - t v_i)^2$.
+2. Preuve par le discriminant.
 3. Preuve par récurrence.
-4. Preuve par étude des cas 2, 3 puis cas général avec $\sum_{i\le j} (u_i v_j - u_j v_i)^2$.
 
 </details>
 
@@ -1186,7 +1257,7 @@ Les assertions suivantes sont équivalentes :
 ## Caractérisation de l'égalité des idéaux engendrés par deux éléments
 
 Soit $A$ un anneau commutatif intègre, $a, b \in A$.
-$$(a) = (b) \iff a \text{ et } b \text{ sont associés (i.e. } \exists u \in A^\times, a = ub)$$
+$$(a) = (b) \iff a \text{ et } b \text{ sont associés (i.e. } \exists u \in A^\times, a = ub)$$ 
 
 ---
 
@@ -1238,7 +1309,7 @@ Plus précisément, un élément $d \in \mathbb{A}$ est un pgcd des $(a_i)$ si e
 
 ## Existence d'un élément maximal dans une famille d'idéaux
 
-Soit $A$ un anneau principal, $K \not ={\emptyset}$. Toute famille d'idéaux \{I*\alpha\}*{\alpha \in K} de $A$ admet un idéal maximal pour l'inclusion.
+Soit $A$ un anneau principal, $K \not ={\emptyset}$. Toute famille d'idéaux \{I_\alpha\}_{\alpha \in K} de $A$ admet un idéal maximal pour l'inclusion.
 En particulier, tout idéal propre de $A$ est contenu dans un idéal maximal.
 
 ---
@@ -1246,7 +1317,7 @@ En particulier, tout idéal propre de $A$ est contenu dans un idéal maximal.
 ## Factorisation en irréductibles
 
 Soit $A$ un anneau principal. Pour tout $a \in A \setminus \{0\}$, il existe $u \in A^\times$ (un inversible) et $p_1, \dots, p_n \in A$ des éléments irréductibles tels que :
-$$ a = u \prod\limits\_{i=1}^n p_i $$
+$$ a = u \prod\limits_{i=1}^n p_i $$
 De plus, cette décomposition est unique à l'ordre près des facteurs et à multiplication près par des inversibles de $A$.
 
 ---
@@ -1301,16 +1372,16 @@ On note $\varphi(n)$ le nombre d'entiers $k$ tels que $1 \le k < n$ et $\text{pg
 Le groupe $\mathbb{Z}/n\mathbb{Z}$ (et donc tout groupe cyclique d'ordre $n$) admet exactement $\varphi(n)$ générateurs.
 
 On a la formule de Möbius :
-$$ n = \sum\limits\_{d|n} \varphi(d) $$
+$$ n = \sum\limits_{d|n} \varphi(d) $$
 
 La fonction indicatrice d'Euler est multiplicative, au sens suivant : si $m, n \in \mathbb{N}^*$ sont deux entiers premiers entre eux, alors $\varphi(mn) = \varphi(m)\varphi(n)$.
 
 Propriétés de calcul :
 — Pour tout $p$ premier et $k \ge 1$, $\varphi(p^k) = p^{k-1}(p-1)$.
 — Pour tout $n \ge 1$, si $n = \prod\limits_{i=1}^{r} p_i^{k_i}$ est la décomposition de $n$ en facteurs premiers, alors :
-$$ \varphi(n) = \prod\limits*{i=1}^r p_i^{k_i-1} (p_i-1) $$
+$$ \varphi(n) = \prod\limits_{i=1}^r p_i^{k_i-1} (p_i-1) $$
 ou autrement dit :
-$$ \frac{\varphi(n)}{n} = \prod\limits*{i=1}^r \left( 1 - \frac{1}{p_i} \right) $$
+$$ \frac{\varphi(n)}{n} = \prod\limits_{i=1}^r \left( 1 - \frac{1}{p_i} \right) $$
 
 ---
 
@@ -1402,7 +1473,7 @@ $$x \mapsto (x \pmod{I_1}, \dots, x \pmod{I_n})$$
 
 Soit $A$ un anneau principal et $(a_i)_{i \in I}$ une famille d'éléments de $A$.
 Si $d$ est un pgcd des $(a_i)$, alors il existe une famille $(u_i)_{i \in I}$ à support fini telle que :
-$$ d = \sum\_{i \in I} u_i a_i $$
+$$ d = \sum_{i \in I} u_i a_i $$
 Plus concrètement, pour tous $a, b \in A$, il existe $u, v \in A$ tels que :
 $$ \text{pgcd}(a, b) = au + bv $$
 
@@ -1413,7 +1484,6 @@ $$ \text{pgcd}(a, b) = au + bv $$
 Soit $f : A \to B$ un morphisme d'anneaux et $I$ un idéal de $A$.
 
 $I \subseteq \ker f$ $\iff$ $\exists!$ morphisme d'anneaux $\bar{f} : A/I \to B$ tel que $f = \bar{f} \circ \pi$, où $\pi : A \to A/I$ est la projection canonique, c'est-à-dire tel que le diagramme suivant commute :
-
 <p align="center">
   <img src="data/img/dessins théorèmes/anneaux_1.png" width="300">
 </p>
@@ -1444,8 +1514,8 @@ Un élément $x \in A$ est **inversible** s'il existe $y \in A$ tel que $xy = yx
 ## Adjoint d'un endomorphisme
 
 Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien et $u \in \mathcal{L}(E)$. Il existe un unique endomorphisme $u^* \in \mathcal{L}(E)$ tel que pour tous $x, y \in E$, on ait :
-$$ \langle u(x), y \rangle = \langle x, u^_(y) \rangle $$
-On dit que $u^_$ est l'adjoint de $u$.
+$$ \langle u(x), y \rangle = \langle x, u^*(y) \rangle $$
+On dit que $u^*$ est l'adjoint de $u$.
 
 De plus, si A est la matrice de $u$ dans une base orthonormée, alors la matrice de $u^*$ dans cette même base est $A^T$.
 
@@ -1455,7 +1525,6 @@ De plus, si A est la matrice de $u$ dans une base orthonormée, alors la matrice
 4. $u$ est une isométrie vectorielle (automorphisme orthogonal) $\iff$ $u^* u = \operatorname{Id}_E$.
 
 On a les propriétés suivantes :
-
 1. $u \mapsto u^*$ est linéaire involutive.
 2. $(u \circ v)^* = v^* \circ u^*$.
 3. $\operatorname{Ker}(u^*) = \operatorname{Im}(u)^{\perp}$ et $\operatorname{Im}(u^*) = \operatorname{Ker}(u)^{\perp}$.
@@ -1467,11 +1536,11 @@ On a les propriétés suivantes :
 ## Calcul du produit scalaire dans une base, matrice de Gram
 
 Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien et $(e_1, \ldots, e_n)$ une base de $E$. Alors pour tous $x, y \in E$ :
-$$ x = \sum*{i=1}^{n} x_i e_i, \quad y = \sum*{i=1}^{n} y*i e_i $$
+$$ x = \sum_{i=1}^{n} x_i e_i, \quad y = \sum_{i=1}^{n} y_i e_i $$
 On a :
-$$ \langle x, y \rangle = \sum*{i=1}^{n} \sum*{j=1}^{n} x_i y_j \langle e_i, e_j \rangle $$
+$$ \langle x, y \rangle = \sum_{i=1}^{n} \sum_{j=1}^{n} x_i y_j \langle e_i, e_j \rangle $$
 Si la base est orthonormée, on a :
-$$ \langle x, y \rangle = \sum*{i=1}^{n} x_i y_i $$
+$$ \langle x, y \rangle = \sum_{i=1}^{n} x_i y_i $$
 
 Autrement dit en notation matricielle, si $X = (x_1, \ldots, x_n)^T$ et $Y = (y_1, \ldots, y_n)^T$, on a :
 $$ \langle x, y \rangle = X^T G Y $$
@@ -1516,6 +1585,7 @@ Cet ensemble est noté $\mathcal{S}^{++}_n(\mathbb{R})$.
 
 ## Endomorphismes anti-symétriques et matrices anti-symétriques
 
+
 Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien et $u \in \mathcal{L}(E)$. On dit que $u$ est anti-symétrique si pour tous $x, y \in E$, on a :
 $$ \langle u(x), y \rangle = -\langle x, u(y) \rangle $$
 
@@ -1527,7 +1597,7 @@ L'ensemble des matrices anti-symétriques est noté $\mathcal{A}_n(\mathbb{R})$.
 
 On a les sommes directes suivantes :
 $$ \mathcal{L}(E) = \mathcal{S}(E) \oplus \mathcal{A}(E) $$
-$$\mathcal{M}\_n(\mathbb{R}) = \mathcal{S}\_n(\mathbb{R}) \oplus \mathcal{A}\_n(\mathbb{R}) $$
+$$\mathcal{M}_n(\mathbb{R}) = \mathcal{S}_n(\mathbb{R}) \oplus \mathcal{A}_n(\mathbb{R}) $$
 
 ---
 
@@ -1565,14 +1635,12 @@ On note $J = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$.
 
 Il existe une base orthonormée de $E$ dans laquelle la matrice de $u$ est une matrice diagonale par blocs de la forme :
 
-$$
-\operatorname{Mat}(u) = \begin{pmatrix}
+$$ \operatorname{Mat}(u) = \begin{pmatrix}
 \lambda_1 J & & & (0) \\
 & \ddots & & \\
 & & \lambda_p J & \\
 (0) & & & 0_{n-2p}
-\end{pmatrix}
-$$
+\end{pmatrix} $$
 
 où $p \in \mathbb{N}$ tel que $2p \leq \dim(E)$, $\lambda_1, \dots, \lambda_p$ sont des réels strictement positifs, et $0_{n-2p}$ désigne le bloc carré nul de taille $(n-2p) \times (n-2p)$.
 
@@ -2106,7 +2174,7 @@ Un sous-groupe $N$ d'un groupe $G$ est dit **distingué** (ou **normal**) ie. $N
 
 Soit $G$ un groupe et $X \subset G$. Le **sous-groupe engendré par $X$**, noté $\langle X \rangle$, est le plus petit sous-groupe de $G$ contenant $X$.
 
-$$ \langle X \rangle = \bigcap\_{\substack{H \le G \\ X \subset H}} H $$
+$$ \langle X \rangle = \bigcap_{\substack{H \le G \\ X \subset H}} H $$
 
 $$\langle X \rangle = \{x_1 \cdot x_2 \cdot \ldots \cdot x_n \mid n \in \mathbb{N}, x_i \in X \cup X^{-1}\}$$
 
@@ -2278,6 +2346,52 @@ Dans un espace vectoriel normé, les deux dernières inclusions sont des égalit
 
 ---
 
+## Caractérisation de la complétude par les séries absolument convergentes
+
+Soit $(E, \|\cdot\|)$ un espace vectoriel normé. $E$ est complet si et seulement si toute série absolument convergente d'éléments de $E$ est convergente dans $E$.
+C'est-à-dire, si pour toute suite $(u_n) \in E^{\mathbb{N}}$, la condition $\sum\limits_{n=0}^{\infty} \|u_n\| < \infty$ implique que la série $\sum u_n$ converge dans $E$.
+
+---
+
+## Comparaison des normes en dimension finie
+
+Soit $E$ un espace vectoriel de dimension finie sur $\mathbb{K}$. Toutes les normes sur $E$ sont équivalentes.
+C'est-à-dire que pour toutes normes $\|\cdot\|_1$ et $\|\cdot\|_2$ sur $E$, il existe deux réels $\alpha, \beta > 0$ tels que :
+$$\forall x \in E, \quad \alpha \|x\|_1 \le \|x\|_2 \le \beta \|x\|_1$$
+
+---
+
+## Condition suffisante pour que $\mathcal{L}(E, F)$ soit un espace de Banach
+
+Il suffit que $F$ soit un espace de Banach (ie. un espace vectoriel normé complet) pour que l'espace $\mathcal{L}(E, F)$ des applications linéaires continues de $E$ dans $F$ soit lui-même un espace de Banach.
+
+<details>
+<summary>Idée de preuve</summary>
+
+---
+
+Soit $(T_n)_{n \in \mathbb{N}}$ une suite de Cauchy dans $\mathcal{L}(E, F)$. Pour tout $x \in E$, la suite $(T_n(x))_{n \in \mathbb{N}}$ est une suite de Cauchy dans $F$, donc elle converge vers un élément $T(x) \in F$. On définit ainsi une application $T : E \to F$ par $T(x) = \lim_{n \to \infty} T_n(x)$. Il reste à montrer que $T$ est linéaire et continue, et que $T_n \to T$ dans $\mathcal{L}(E, F)$. On pourra utiliser le fait que $T_n$ est bornée et que la norme est continue pour conclure.
+
+</details>
+
+---
+
+## Continuité d'une application linéaire entre deux espaces vectoriels normés
+
+Soient $E$ et $F$ deux espaces vectoriels normés sur le corps $\mathbb{K}$.<br>
+Une application linéaire $T : E \to F$ est **continue** si et seulement si elle est bornée, c'est-à-dire si et seulement si :
+$$\exists M > 0, \forall x \in E, \quad \|T(x)\|_F \le M \|x\|_E$$
+
+---
+
+## Continuité de la norme sur une espace vectoriel normé
+
+Soit $E$ un espace vectoriel normé. La norme $\|\cdot\| : E \to \mathbb{R}$ est une application continue. En effet, pour tout $x, y \in E$, on a :
+$$|\|x\| - \|y\|| \le \|x - y\|$$
+Cette inégalité anti-triangulaire montre que la norme est Lipschitzienne avec une constante de Lipschitz égale à 1, ce qui implique sa continuité.
+
+---
+
 ## Continuité et caractérisations
 
 Soient $(E, d_E)$ et $(F, d_F)$ deux espaces métriques. Soit $f : E \to F$ une application, $x \in E$. Alors les assertions suivantes sont équivalentes :
@@ -2344,6 +2458,12 @@ Un espace métrique $E$ est connexe ssi :
 
 ---
 
+## Espace de Banach
+
+Soit $(E, \|\cdot\|)$ un espace vectoriel normé sur $\mathbb{K}$. On dit que $E$ est un espace de Banach si $(E, \|\cdot\|)$ est complet pour la distance induite par la norme.
+
+---
+
 ## Espace métrique séparable
 
 Un espace métrique $(E, d)$ est dit **séparable** s'il existe une partie de $E$ dénombrable dense.
@@ -2389,6 +2509,33 @@ Soit $E$ un espace vectoriel sur $\mathbb{K}$. Une norme sur $E$ est une applica
 2. Homogénéité : $\|\lambda x\| = |\lambda| \|x\|$
 3. Inégalité triangulaire : $\|x+y\| \le \|x\| + \|y\|$
 
+**Exemple** : Norme $L^p$ sur $\mathbb{K}^n$ :<br>
+Pour $p \ge 1$, on définit la norme $\|x\|_p = \left( \sum\limits_{i=1}^n |x_i|^p \right)^{1/p}$ pour tout $x = (x_1, \dots, x_n) \in \mathbb{K}^n$.
+
+<details>
+<summary>Idée de preuve</summary>
+
+---
+
+L'inégalité triangulaire $\|x+y\|_p \le \|x\|_p + \|y\|_p$ peut se démontrer en utilisant la convexité de la fonction $t \mapsto t^p$ sur $\mathbb{R}_+$, dans un premier temps sur des vecteurs normalisés, puis en utilisant l'homogénéité de la norme pour le cas général.
+
+</details>
+
+
+---
+
+## Norme d'une application linéaire
+
+Soit $T : E \to F$ une application linéaire continue entre deux espaces vectoriels normés. La **norme** de $T$ est définie par :
+$$\|T\| = \inf \{ M > 0 : \forall x \in E, \|T(x)\|_F \le M \|x\|_E \} = \max_{\|x\|_E = 1} \|T(x)\|_F$$
+Cette norme est également appelée **norme d'opérateur** ou **norme subordonnée** et plus rarement **norme triple**.
+
+---
+
+## Ouvert connexe
+
+Soit $(E, \|\cdot\|)$ un espace vectoriel normé et $U \subset E$ un ouvert. $U$ est connexe si et seulement si $U$ est connexe par arcs.
+
 ---
 
 ## Points intérieurs, adhérents, isolés et d'accumulation
@@ -2411,6 +2558,13 @@ $$\overline{A} = \text{Acc}(A) \sqcup \text{Isol}(A)$$
 
 ---
 
+## Prolongement d'une application linéaire continue sur un sous-espace vectoriel dense
+
+Soit $E$ un espace vectoriel normé et $F$ un espace de Banach. Soit $G$ un sous-espace vectoriel dense de $E$ et soit $T : G \to F$ une application linéaire continue. Alors, il existe une unique application linéaire continue $\tilde{T} : E \to F$ qui prolonge $T$, c'est-à-dire telle que $\tilde{T}|_G = T$. De plus, on a :
+$$\|\tilde{T}\| = \|T\|$$
+
+---
+
 ## Propriété de Bolzano-Weierstrass
 
 Soit $(E, d)$ un espace métrique. Alors une partie $A \subseteq E$ est séquentiellement compacte si et seulement si toute suite d'éléments de $A$ admet une sous-suite convergente vers un élément de $A$.
@@ -2422,6 +2576,13 @@ Soit $(E, d)$ un espace métrique. Alors une partie $A \subseteq E$ est séquent
 Soit $(E,d)$ un espace métrique, $A \subseteq E$. Alors $A$ est compact si et seulement si toute famille d'ouverts de $E$ qui recouvre $A$ admet un sous-recouvrement fini.
 
 Ceci équivaut à : de toute famille de fermés de $E$ dont l'intersection est vide dans $A$, on peut extraire une sous-famille finie dont l'intersection est vide dans $A$.
+
+---
+
+## Sous-multiplicativité de la norme d'opérateur
+
+Soient $E$, $F$ et $G$ trois espaces vectoriels normés et soient $T : E \to F$ et $S : F \to G$ deux applications linéaires continues. Alors, l'application composée $S \circ T : E \to G$ est continue et sa norme satisfait l'inégalité suivante :
+$$\|S \circ T\| \le \|S\| \cdot \|T\|$$
 
 ---
 
@@ -2454,11 +2615,24 @@ Propriété de Borel-Lebesgue $\iff$ Propriété de Bolzano-Weierstrass
 
 ---
 
+## Théorème de Riesz
+
+Soit $(E, \|\cdot\|)$ un espace vectoriel normé sur $\mathbb{K}$. La boule unité fermée $B^f(0,1)$ est compacte si et seulement si $E$ est de dimension finie.
+
+---
+
 ## Théorème de prolongement d'une fonction uniformément continue
 
 Soit $(E,d)$ et $(F, \delta)$ deux espaces métriques et $A \subseteq E$. On suppose que $F$ est complet. Soit $f : A \to F$ une fonction uniformément continue.
 
 Alors il existe une unique fonction continue $\tilde{f} : \overline{A} \to F$ telle que $\tilde{f}_{|A} = f$. De plus, $\tilde{f}$ est uniformément continue.
+
+---
+
+## Topologie d'un espace vectoriel de dimension finie
+
+1. Tout espace vectoriel normé de dimension finie est complet.
+2. Tout sous-espace vectoriel de dimension finie d'un espace vectoriel normé est fermé.
 
 ---
 
@@ -2474,3 +2648,4 @@ $$\text{Adh}(x_n) = \bigcap\limits_{n \in \mathbb{N}} \overline{\{x_m : m \ge n\
 $$l \in \text{Adh}(x_n) \iff \exists \varphi \text{ extractrice telle que } x_{\varphi(n)} \to l$$
 
 ---
+

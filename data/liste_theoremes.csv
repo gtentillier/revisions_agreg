@@ -186,7 +186,11 @@ _Propriétés_ :
 38,Caractéristique,Anneaux,"La **caractéristique** d'un anneau unitaire $A$ est l'unique $n \in \mathbb{N}$ tel que $\ker \varphi = n\mathbb{Z}$, où $\varphi : \mathbb{Z} \to A, k \mapsto k \cdot 1_A$ est le morphisme canonique.
 
 C'est donc le plus petit entier $n > 0$ tel que $n \cdot 1_A = 0_A$ s'il existe, et $0$ sinon."
-39,Pivot de Gauss,Algèbre Linéaire,"Le pivot de Gauss consiste à transformer une matrice par opérations élémentaires sur les lignes : échanger deux lignes, multiplier une ligne par un scalaire non nul ou ajouter à une ligne un multiple d'une autre.
+39,Pivot de Gauss,Algèbre Linéaire,"Le pivot de Gauss consiste à transformer une matrice par opérations élémentaires sur les lignes OU sur les colonnes, mais il faut choisir l'un des deux et s'y tenir. Les opérations élémentaires sont :
+
+1. échanger deux lignes
+2. multiplier une ligne par un scalaire non nul
+3. ajouter à une ligne un multiple d'une autre.
 
 ---
 
@@ -439,7 +443,20 @@ $$\mathring{A \cap B} = \mathring{A} \cap \mathring{B}, \qquad \overline{A \cap 
 
 1. Séparation : $\|x\| = 0 \iff x = 0$
 2. Homogénéité : $\|\lambda x\| = |\lambda| \|x\|$
-3. Inégalité triangulaire : $\|x+y\| \le \|x\| + \|y\|$"
+3. Inégalité triangulaire : $\|x+y\| \le \|x\| + \|y\|$
+
+**Exemple** : Norme $L^p$ sur $\mathbb{K}^n$ :<br>
+Pour $p \ge 1$, on définit la norme $\|x\|_p = \left( \sum\limits_{i=1}^n |x_i|^p \right)^{1/p}$ pour tout $x = (x_1, \dots, x_n) \in \mathbb{K}^n$.
+
+<details>
+<summary>Idée de preuve</summary>
+
+---
+
+L'inégalité triangulaire $\|x+y\|_p \le \|x\|_p + \|y\|_p$ peut se démontrer en utilisant la convexité de la fonction $t \mapsto t^p$ sur $\mathbb{R}_+$, dans un premier temps sur des vecteurs normalisés, puis en utilisant l'homogénéité de la norme pour le cas général.
+
+</details>
+"
 49,Image continue d'un compact,Topologie,"Soit $f : E \to F$ une application continue d'un espace métrique $E$ dans un espace métrique $F$.
 Si $K$ est un sous-ensemble compact de $E$, alors son image $f(K)$ est un sous-ensemble compact de $F$."
 50,Théorème de Heine,Topologie,"Soit $f : E \to F$ une application continue d'un espace métrique compact $E$ dans un espace métrique $F$.
@@ -1395,11 +1412,15 @@ $$ \operatorname{Mat}(u) = \begin{pmatrix}
 \end{pmatrix} $$
 
 où $p \in \mathbb{N}$ tel que $2p \leq \dim(E)$, $\lambda_1, \dots, \lambda_p$ sont des réels strictement positifs, et $0_{n-2p}$ désigne le bloc carré nul de taille $(n-2p) \times (n-2p)$."
-"198","Matrice de passage","Algèbre linéaire","Soit $E$ un $mathbb(K)$-espace vectoriel de dimension finie et soient $B = (e_1, e_2, \ldots, e_n)$ et $B' = (e'_1, e'_2, \ldots, e'_n)$ deux bases de $E$.
+"198","Matrice de passage","Algèbre linéaire","Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie et soient $B = (e_1, e_2, \ldots, e_n)$ et $B' = (e'_1, e'_2, \ldots, e'_n)$ deux bases de $E$.
 
-La matrice de passage de la base $B$ à la base $B'$ est la matrice $P_{B \to B'} := P_{B', B} := \operatorname{Mat}_{B',B}(\operatorname{id_E})$
+La matrice de passage de la base $B$ à la base $B'$ est la matrice $P_{B \to B'} := P_{B', B} := \operatorname{Mat}_{B',B}(\operatorname{id_E})$<br>
+Cette matrice est l'écriture en colonnes des vecteurs de la base $B$ dans la base $B'$ :
 
-De plus, $P_{B', B}^{-1} = P_{B, B'}$."
+$$P_{B \to B'} = \begin{pmatrix} [e_1]_{B'} & [e_2]_{B'} & \cdots & [e_n]_{B'} \end{pmatrix}$$
+
+De plus, $P_{B', B}^{-1} = P_{B, B'}$.
+"
 "199","Formule de changement de base","Algèbre linéaire","Soit $u in \mathcal{L}(E,F)$ et soient $B$ et $B'$ deux bases de $E$, et $C$ et $C'$ deux bases de $F$. Alors, on a la formule de changement de base suivante :
 
 $$\operatorname{Mat}_{C',B'}(u) = P_{C \to C'} \operatorname{Mat}_{C,B}(u) P_{B' \to B} = P_{C',C} \operatorname{Mat}_{C,B}(u) P_{B,B'}$$"
@@ -1426,3 +1447,67 @@ C'est un morphisme de $\mathbb{K}$-espaces vectoriels. De plus, si $E$ et $F$ so
 "204","Base duale","Algèbre linéaire","Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie et soit $B = (e_1, e_2, \ldots, e_n)$ une base de $E$. La base duale de $B$ est la base $B^* = (e_1^*, e_2^*, \ldots, e_n^*)$ de $E^*$ définie par :
 $$e_i^*(e_j) = \delta_{ij} \quad \text{pour tout } i,j \in \{1,2,\ldots,n\}$$
 En particulier, si $B$ est une base de $E$, alors $B^*$ est une base de $E^*$ et $\dim(E^*) = \dim(E)$."
+"205","Espace de Banach","Topologie","Soit $(E, \|\cdot\|)$ un espace vectoriel normé sur $\mathbb{K}$. On dit que $E$ est un espace de Banach si $(E, \|\cdot\|)$ est complet pour la distance induite par la norme."
+"206","Caractérisation de la complétude par les séries absolument convergentes","Topologie","Soit $(E, \|\cdot\|)$ un espace vectoriel normé. $E$ est complet si et seulement si toute série absolument convergente d'éléments de $E$ est convergente dans $E$.
+C'est-à-dire, si pour toute suite $(u_n) \in E^{\mathbb{N}}$, la condition $\sum\limits_{n=0}^{\infty} \|u_n\| < \infty$ implique que la série $\sum u_n$ converge dans $E$."
+"207","Ouvert connexe","Topologie","Soit $(E, \|\cdot\|)$ un espace vectoriel normé et $U \subset E$ un ouvert. $U$ est connexe si et seulement si $U$ est connexe par arcs."
+"208","Comparaison des normes en dimension finie","Topologie","Soit $E$ un espace vectoriel de dimension finie sur $\mathbb{K}$. Toutes les normes sur $E$ sont équivalentes.
+C'est-à-dire que pour toutes normes $\|\cdot\|_1$ et $\|\cdot\|_2$ sur $E$, il existe deux réels $\alpha, \beta > 0$ tels que :
+$$\forall x \in E, \quad \alpha \|x\|_1 \le \|x\|_2 \le \beta \|x\|_1$$"
+"209","Topologie d'un espace vectoriel de dimension finie","Topologie","1. Tout espace vectoriel normé de dimension finie est complet.
+2. Tout sous-espace vectoriel de dimension finie d'un espace vectoriel normé est fermé."
+"210","Théorème de Riesz","Topologie","Soit $(E, \|\cdot\|)$ un espace vectoriel normé sur $\mathbb{K}$. La boule unité fermée $B^f(0,1)$ est compacte si et seulement si $E$ est de dimension finie."
+"211","Continuité d'une application linéaire entre deux espaces vectoriels normés","Topologie","Soient $E$ et $F$ deux espaces vectoriels normés sur le corps $\mathbb{K}$.<br>
+Une application linéaire $T : E \to F$ est **continue** si et seulement si elle est bornée, c'est-à-dire si et seulement si :
+$$\exists M > 0, \forall x \in E, \quad \|T(x)\|_F \le M \|x\|_E$$"
+"212","Norme d'une application linéaire","Topologie","Soit $T : E \to F$ une application linéaire continue entre deux espaces vectoriels normés. La **norme** de $T$ est définie par :
+$$\|T\| = \inf \{ M > 0 : \forall x \in E, \|T(x)\|_F \le M \|x\|_E \} = \max_{\|x\|_E = 1} \|T(x)\|_F$$
+Cette norme est également appelée **norme d'opérateur** ou **norme subordonnée** et plus rarement **norme triple**."
+"213","Sous-multiplicativité de la norme d'opérateur","Topologie","Soient $E$, $F$ et $G$ trois espaces vectoriels normés et soient $T : E \to F$ et $S : F \to G$ deux applications linéaires continues. Alors, l'application composée $S \circ T : E \to G$ est continue et sa norme satisfait l'inégalité suivante :
+$$\|S \circ T\| \le \|S\| \cdot \|T\|$$"
+"214","Continuité de la norme sur une espace vectoriel normé","Topologie","Soit $E$ un espace vectoriel normé. La norme $\|\cdot\| : E \to \mathbb{R}$ est une application continue. En effet, pour tout $x, y \in E$, on a :
+$$|\|x\| - \|y\|| \le \|x - y\|$$
+Cette inégalité anti-triangulaire montre que la norme est Lipschitzienne avec une constante de Lipschitz égale à 1, ce qui implique sa continuité."
+"215","Condition suffisante pour que $\mathcal{L}(E, F)$ soit un espace de Banach","Topologie","Il suffit que $F$ soit un espace de Banach (ie. un espace vectoriel normé complet) pour que l'espace $\mathcal{L}(E, F)$ des applications linéaires continues de $E$ dans $F$ soit lui-même un espace de Banach.
+
+<details>
+<summary>Idée de preuve</summary>
+
+---
+
+Soit $(T_n)_{n \in \mathbb{N}}$ une suite de Cauchy dans $\mathcal{L}(E, F)$. Pour tout $x \in E$, la suite $(T_n(x))_{n \in \mathbb{N}}$ est une suite de Cauchy dans $F$, donc elle converge vers un élément $T(x) \in F$. On définit ainsi une application $T : E \to F$ par $T(x) = \lim_{n \to \infty} T_n(x)$. Il reste à montrer que $T$ est linéaire et continue, et que $T_n \to T$ dans $\mathcal{L}(E, F)$. On pourra utiliser le fait que $T_n$ est bornée et que la norme est continue pour conclure.
+
+</details>"
+"216","Prolongement d'une application linéaire continue sur un sous-espace vectoriel dense","Topologie","Soit $E$ un espace vectoriel normé et $F$ un espace de Banach. Soit $G$ un sous-espace vectoriel dense de $E$ et soit $T : G \to F$ une application linéaire continue. Alors, il existe une unique application linéaire continue $\tilde{T} : E \to F$ qui prolonge $T$, c'est-à-dire telle que $\tilde{T}|_G = T$. De plus, on a :
+$$\|\tilde{T}\| = \|T\|$$"
+"217","Isomorphismes canoniques de dualité : noyaux et images","Algèbre linéaire","Soit $(E, F)$ deux $\mathbb{K}$-espaces vectoriels de dimension finie et soit $u \in \mathcal{L}(E,F)$. Alors, on a les isomorphismes canoniques de dualité suivants :
+
+- $\text{Ker}(u^*) \cong (F/\text{Im}(u))^*$
+- $\text{Im}(u^*) \cong (E/\text{Ker}(u))^*  \cong \text{Im}(u)^*$"
+"218","Correspondance matricielle de l'application linéaire et de son dual","Algèbre linéaire","Soit $u \in \mathcal{L}(E,F)$ et soient $\mathcal{B} = (e_1, \ldots, e_n)$ et $\mathcal{C} = (f_1, \ldots, f_m)$ des bases respectives de $E$ et $F$. On note $\mathcal{B}^* = (e_1^*, \ldots, e_n^*)$ et $\mathcal{C}^* = (f_1^*, \ldots, f_m^*)$ les bases duales correspondantes. Alors, on a l'epression matricielle suivante pour l'application linéaire $u$ et son dual $u^*$ :
+
+$$\text{Mat}_{\mathcal{C}^*, \mathcal{B}^*}(u^*) = \text{Mat}_{\mathcal{B}, \mathcal{C}}(u)^T$$"
+"219","Rang de la transposée","Algèbre linéaire","Soit $u \in \mathcal{L}(E,F)$. Alors, on a l'égalité suivante entre le rang de l'application linéaire et le rang de sa transposée :
+$$\text{rg}(u) = \text{rg}(u^*)$$
+
+Version matricielle, si $A \in \mathcal{M}_{m,n}(\mathbb{K})$, on a :
+$$\text{rg}(A) = \text{rg}(A^T)$$"
+"220","Orthogonal","Algèbre linéaire","Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie et soit $F \subset E$. On définit l'orthogonal de $F$ dans le dual $E^*$ par :
+$$F^\perp = \{ f \in E^* \mid f(x) = 0, \forall x \in F \}$$
+Soit $G \subset E^*$, on définit l'orthogonal de $G$ dans $E$ par :
+$$G^\circ = \{ x \in E \mid f(x) = 0, \forall f \in G \}$$"
+"221","Orthogonaux et opérations ensemblistes","Algèbre linéaire","Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie et soient $F_1, F_2 \subset E$ et $G_1, G_2 \subset E^*$. Alors, on a les propriétés suivantes :
+
+1. $(F_1 \cup F_2)^\perp = F_1^\perp \cap F_2^\perp$
+2. $F_1^\perp + F_2^\perp \subset (F_1 \cap F_2)^\perp$
+3. $(G_1 \cup G_2)^\circ = G_1^\circ \cap G_2^\circ$
+4. $G_1^\circ + G_2^\circ \subset (G_1 \cap G_2)^\circ$"
+"222","Morphismes canoniques entre les quotients et les orthogonaux","Algèbre linéaire","Soit $E$ un $\mathbb{K}$-espace vectoriel et soit $F \subset E, G \subset E^*$. Alors, on a les morphismes canoniques suivants :
+$$E^*/F^\perp \cong F^* \quad \text{et} \quad E/G^\circ \cong G^*$$
+
+Le premier est un isomorphisme, le second un morphisme injectif. De plus, si $E$ est de dimension finie, le second est également un isomorphisme."
+"223","Morphisme entre un espace vectoriel de dimension finie et son dual","Algèbre linéaire","Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie. La donnée d'un morphisme $\varphi : E \to E^*$ équivaut à la donnée d'une forme bilinéaire $\psi : E \times E \to \mathbb{K}$ définie par :
+$$\psi(x,y) = \varphi(x)(y), \quad \forall x,y \in E$$
+
+De plus, $\varphi$ est un isomorphisme si et seulement si $\psi$ est non dégénérée.<br>
+Par exemple, $\psi : (A,B) \in \mathcal{M}_n(\mathbb{K}) \times \mathcal{M}_n(\mathbb{K}) \mapsto \text{tr}(AB)$ est une forme bilinéaire non dégénérée sur $\mathcal{M}_n(\mathbb{K})$ et l'application $\varphi : A \in \mathcal{M}_n(\mathbb{K}) \mapsto \operatorname{tr}(A,.) \in \mathcal{M}_n(\mathbb{K})^*$ est un isomorphisme."
