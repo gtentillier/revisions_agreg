@@ -291,6 +291,19 @@ De plus, $d$ et $n$ sont des polynômes en $u$.
 
 ---
 
+## Déterminant et propriétés
+
+Soit $E$ un $K$-espace vectoriel de dimension finie $n$, $B$ une base de $E$. Le déterminant est l'unique forme n-linéaire alternée sur $E^n$ qui prend la valeur $1$ sur $B$, notée $\operatorname{det}_B$.
+
+De plus, on a les propriétés suivantes :
+
+1. $\mathcal{A}_n(E) = \operatorname{Vect}(\operatorname{det}_B)$
+2. $\operatorname{det}_C = \operatorname{det}_C(B) \cdot \operatorname{det}_B$ pour toute autre base $C$ de $E$.
+3. $\operatorname{det}(u) := \operatorname{det}_{B}(u(B))$, ne dépend pas de la base $B$ choisie.
+4. $\operatorname{det}(u \circ v) = \operatorname{det}(u) \cdot \operatorname{det}(v)$ pour toutes applications linéaires $u, v : E \to E$.
+
+---
+
 ## Endomorphismes cycliques
 
 Un endomorphisme $u \in \mathcal{L}(E)$ est dit **cyclique** ssi $\exists x \in E$ tel que $(x, u(x), u^2(x), \dots, u^{n-1}(x))$ forme une base de $E$.
@@ -321,6 +334,24 @@ Soit $k$ un corps et $(V,+,\cdot)$ un ensemble muni d'une loi de composition int
    - $(\lambda + \mu) \cdot v = \lambda \cdot v + \mu \cdot v$
    - $(\lambda \cdot \mu) \cdot v = \lambda \cdot (\mu \cdot v)$
    - $1 \cdot v = v$
+
+---
+
+## Forme n-linéaire symétrique, antisymétrique et alternée
+
+On appelle forme n-linéaire sur un $\mathbb{K}$-espace vectoriel $E$ une application $f : E^n \to \mathbb{K}$ qui est linéaire par rapport à chacune de ses variables.
+
+1. Une forme n-linéaire est **symétrique** si pour toute permutation $\sigma \in S_n$, on a :
+   $$f(v_{\sigma(1)}, v_{\sigma(2)}, \ldots, v_{\sigma(n)}) = f(v_1, v_2, \ldots, v_n)$$
+2. Une forme n-linéaire est **antisymétrique** si pour toute permutation $\sigma \in S_n$, on a :
+   $$f(v_{\sigma(1)}, v_{\sigma(2)}, \ldots, v_{\sigma(n)}) = \epsilon(\sigma) f(v_1, v_2, \ldots, v_n)$$
+3. Une forme n-linéaire est **alternée**
+   si pour tout $v_1, \ldots, v_n \in E$, si deux de ces vecteurs sont égaux, alors $f(v_1, \ldots, v_n) = 0$.
+
+On a les implications suivantes :
+
+- Toute forme alternée est antisymétrique.
+- Si le corps de base $\mathbb{K}$ est de caractéristique différente de 2, alors toute forme antisymétrique est alternée.
 
 ---
 
@@ -1192,9 +1223,15 @@ Cette relation est appelée relation de Bézout.
 
 ---
 
-## Algèbre
+## Algèbre sur un anneau commutatif
 
 Soit $R$ un anneau commutatif. Une $R$-**algèbre** est un anneau $A$ muni d'un morphisme d'anneaux $f : R \to A$ tel que $f(R) \subseteq Z(A)$.
+
+Autrement dit, une $R$-algèbre est un ensemble $(A, +, \times, \cdot)$ muni de deux lois de composition interne $+$ et $\times$ et d'une loi de composition externe $\cdot : R \times A \to A$ telle que :
+
+1. $(A, +, \times)$ est un anneau.
+2. $(A, +, \cdot)$ est un $R$-espace vectoriel.
+3. $\forall r \in R, \forall x, y \in A, r \cdot (xy) = (r \cdot x)y = x(r \cdot y)$.
 
 ---
 
@@ -2472,7 +2509,7 @@ Un espace métrique $(E, d)$ est dit **séparable** s'il existe une partie de $E
 
 ## Homéomorphisme
 
-Une application $f : E \to F$ entre deux espaces topologiques est un homéomorphisme si :
+Une application $f : E \to F$ entre deux espaces métriques est un homéomorphisme si :
 
 $(i)$ $f$ est bijective
 

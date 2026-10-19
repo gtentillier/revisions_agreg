@@ -162,7 +162,13 @@ Un anneau est dit **réduit** si seul $0$ est nilpotent."
 $\ker \varphi = \{x \in A, \varphi(x) = 0_B\}$ est un **idéal** de $A$.
 
 On parle d'**isomorphisme**, **endomorphisme** ou **automorphisme** selon les propriétés usuelles."
-36,Algèbre,Anneaux,Soit $R$ un anneau commutatif. Une $R$-**algèbre** est un anneau $A$ muni d'un morphisme d'anneaux $f : R \to A$ tel que $f(R) \subseteq Z(A)$.
+36,Algèbre sur un anneau commutatif,Anneaux,"Soit $R$ un anneau commutatif. Une $R$-**algèbre** est un anneau $A$ muni d'un morphisme d'anneaux $f : R \to A$ tel que $f(R) \subseteq Z(A)$.
+
+Autrement dit, une $R$-algèbre est un ensemble $(A, +, \times, \cdot)$ muni de deux lois de composition interne $+$ et $\times$ et d'une loi de composition externe $\cdot : R \times A \to A$ telle que :
+
+1. $(A, +, \times)$ est un anneau.
+2. $(A, +, \cdot)$ est un $R$-espace vectoriel.
+3. $\forall r \in R, \forall x, y \in A, r \cdot (xy) = (r \cdot x)y = x(r \cdot y)$."
 37,"Idéal, premier, maximal, caractérisations et propriétés",Anneaux,"Soit $A$ un anneau commutatif. Une partie $I$ est un **idéal** de $A$ si :
 
 $(i)$ $(I, +)$ est un sous-groupe de $(A, +)$
@@ -467,7 +473,7 @@ $$\forall \varepsilon > 0, \exists \delta > 0, \forall x, y \in E, d_E(x, y) < \
 - $\nexists (U, V) \in \mathcal{P}(E)^2, \quad U, V \text{ ouverts non-vides}, \quad E = U \sqcup V$
 - $\forall A \subseteq E, \quad (A \text{ ouvert et fermé}) \implies A \in \{\emptyset, E\}$
 - $f \in \mathcal{C}(E, \{0, 1\}) \implies f \text{ est constante}$"
-52,Homéomorphisme,Topologie,"Une application $f : E \to F$ entre deux espaces topologiques est un homéomorphisme si :
+52,Homéomorphisme,Topologie,"Une application $f : E \to F$ entre deux espaces métriques est un homéomorphisme si :
 
 $(i)$ $f$ est bijective
 
@@ -1511,3 +1517,24 @@ $$\psi(x,y) = \varphi(x)(y), \quad \forall x,y \in E$$
 
 De plus, $\varphi$ est un isomorphisme si et seulement si $\psi$ est non dégénérée.<br>
 Par exemple, $\psi : (A,B) \in \mathcal{M}_n(\mathbb{K}) \times \mathcal{M}_n(\mathbb{K}) \mapsto \text{tr}(AB)$ est une forme bilinéaire non dégénérée sur $\mathcal{M}_n(\mathbb{K})$ et l'application $\varphi : A \in \mathcal{M}_n(\mathbb{K}) \mapsto \operatorname{tr}(A,.) \in \mathcal{M}_n(\mathbb{K})^*$ est un isomorphisme."
+"224","Forme n-linéaire symétrique, antisymétrique et alternée","Algèbre linéaire","On appelle forme n-linéaire sur un $\mathbb{K}$-espace vectoriel $E$ une application $f : E^n \to \mathbb{K}$ qui est linéaire par rapport à chacune de ses variables.
+
+1. Une forme n-linéaire est **symétrique** si pour toute permutation $\sigma \in S_n$, on a :
+   $$f(v_{\sigma(1)}, v_{\sigma(2)}, \ldots, v_{\sigma(n)}) = f(v_1, v_2, \ldots, v_n)$$
+2. Une forme n-linéaire est **antisymétrique** si pour toute permutation $\sigma \in S_n$, on a :
+   $$f(v_{\sigma(1)}, v_{\sigma(2)}, \ldots, v_{\sigma(n)}) = \epsilon(\sigma) f(v_1, v_2, \ldots, v_n)$$
+3. Une forme n-linéaire est **alternée**
+   si pour tout $v_1, \ldots, v_n \in E$, si deux de ces vecteurs sont égaux, alors $f(v_1, \ldots, v_n) = 0$.
+
+On a les implications suivantes :
+
+- Toute forme alternée est antisymétrique.
+- Si le corps de base $\mathbb{K}$ est de caractéristique différente de 2, alors toute forme antisymétrique est alternée."
+"225","Déterminant et propriétés","Algèbre linéaire","Soit $E$ un $K$-espace vectoriel de dimension finie $n$, $B$ une base de $E$. Le déterminant est l'unique forme n-linéaire alternée sur $E^n$ qui prend la valeur $1$ sur $B$, notée $\operatorname{det}_B$.
+
+De plus, on a les propriétés suivantes :
+
+1. $\mathcal{A}_n(E) = \operatorname{Vect}(\operatorname{det}_B)$
+2. $\operatorname{det}_C = \operatorname{det}_C(B) \cdot \operatorname{det}_B$ pour toute autre base $C$ de $E$.
+3. $\operatorname{det}(u) := \operatorname{det}_{B}(u(B))$, ne dépend pas de la base $B$ choisie.
+4. $\operatorname{det}(u \circ v) = \operatorname{det}(u) \cdot \operatorname{det}(v)$ pour toutes applications linéaires $u, v : E \to E$."

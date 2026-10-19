@@ -8,7 +8,6 @@ Autres chapitres spé
 
 peut-être un jour :
 
-- autre définition d'une algèbre avec l'espace vectoriel
 - Règle de l'Hôpital :
   Soient $f, g$ deux fonctions dérivables sur $]a, b[$ telles que $g'$ ne s'annule pas. Supposons que $\lim_{x \to a} f(x) = \lim_{x \to a} g(x) = 0$ (ou $\pm \infty$).
   Si $\lim_{x \to a} \frac{f'(x)}{g'(x)} = L \in \bar{\mathbb{R}}$, alors :
