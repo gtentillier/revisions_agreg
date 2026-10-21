@@ -488,9 +488,9 @@ Si $f'(x) \xrightarrow[x \to a]{} l$ existe (avec $l \in E$), alors $f$ est dér
 La fonction $f'$ est alors continue en $a$."
 56,Convergence simple d'une suite de fonctions,Fonctions vectorielles,"Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de $X$ vers $E$. On dit que la suite $(f_n)$ converge simplement vers une fonction $f : X \to E$ si :
 $$\forall x \in X, f_n(x) \xrightarrow[n \to \infty]{} f(x)$$"
-57,Convergence uniforme d'une suite de fonctions,Fonctions vectorielles,"Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de $X$ vers $E$. On dit que la suite $(f_n)$ converge uniformément vers une fonction $f : X \to E$ si :
-$$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall n \ge N, \forall x \in X, \|f_n(x) - f(x)\| < \varepsilon$$
-Ceci est équivalent à dire que $\sup_{x \in X} \|f_n(x) - f(x)\| \xrightarrow[n \to \infty]{} 0$."
+57,Convergence uniforme d'une suite de fonctions,Fonctions vectorielles,"Soit $X$ un ensemble et $(E, d)$ un espace métrique. Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de $X$ vers $E$. On dit que la suite $(f_n)$ converge uniformément vers une fonction $f : X \to E$ si :
+$$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall n \ge N, \forall x \in X, d(f_n(x), f(x)) < \varepsilon$$
+Ceci est équivalent à dire que $\sup_{x \in X} d(f_n(x), f(x)) \xrightarrow[n \to \infty]{} 0$."
 58,Convergence uniforme d'une série de fonctions,Fonctions vectorielles,"Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $\sum f_n$ une série de fonctions de $X$ vers $E$. On dit que la série $\sum f_n$ converge uniformément sur $X$ si la suite de ses sommes partielles $(S_n)_{n \in \mathbb{N}}$ converge uniformément sur $X$ vers une fonction $S : X \to E$."
 59,Convergence absolue d'une série de fonctions,Fonctions vectorielles,"Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $\sum f_n$ une série de fonctions de $X$ vers $E$. On dit que la série $\sum f_n$ converge absolument si pour tout $x \in X$, la série numérique $\sum\limits_{n=0}^{\infty} \|f_n(x)\|$ converge."
 60,Convergence normale d'une série de fonctions,Fonctions vectorielles,"Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $\sum f_n$ une série de fonctions de $X$ vers $E$. On dit que la série $\sum f_n$ converge normalement sur $X$ si chaque fonction $f_n$ est bornée sur $X$ et si la série numérique $\sum\limits_{n=0}^{\infty} \sup_{x \in X} \|f_n(x)\|$ converge."
@@ -553,8 +553,8 @@ Alors :
 - La fonction $S$ admet une limite en $a$ qui est égale à $\lambda$.
 
 On a alors l'égalité : $\sum\limits_{n=0}^\infty f_n(x) \xrightarrow[x \to a]{} \sum\limits_{n=0}^\infty \lambda_n$."
-69,Critère de Cauchy uniforme,Fonctions vectorielles,"Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace de Banach (espace vectoriel normé complet). On dit qu'une suite de fonctions $(f_n)_{n \in \mathbb{N}}$ de $X$ vers $E$ vérifie le critère de Cauchy uniforme sur $X$ si :
-$$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall p, q \ge N, \forall x \in X, \|f_p(x) - f_q(x)\| < \varepsilon$$
+69,Critère de Cauchy uniforme,Fonctions vectorielles,"Soit $X$ un ensemble et $(E, d)$ un espace métrique complet. On dit qu'une suite de fonctions $(f_n)_{n \in \mathbb{N}}$ de $X$ vers $E$ vérifie le critère de Cauchy uniforme sur $X$ si :
+$$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall p, q \ge N, \forall x \in X, d(f_p(x), f_q(x)) < \varepsilon$$
 Une suite de fonctions $(f_n)_{n \in \mathbb{N}}$ converge uniformément sur $X$ vers une fonction $f : X \to E$ si et seulement si elle vérifie le critère de Cauchy uniforme sur $X$."
 70,Bon ordre,Théorie des ensembles,Un ordre sur un ensemble $E$ est dit **bon** si toute partie non vide de $E$ possède un minimum.
 71,Espace métrique séparable,Topologie,"Un espace métrique $(E, d)$ est dit **séparable** s'il existe une partie de $E$ dénombrable dense."
@@ -598,10 +598,12 @@ Un anneau unitaire commutatif intègre $A$ est dit **principal** si tout idéal 
 78,$1^{\text{er}}$ théorème d'isomorphisme pour les anneaux,Anneaux,"Soient $A, B$ deux anneaux et $\varphi : A \to B$ un morphisme d'anneaux.
 Alors $\text{Ker}(\varphi)$ est un idéal de $A$, $\text{Im}(\varphi)$ est un sous-anneau de $B$, et $\varphi$ induit un isomorphisme d'anneaux :
 $$\bar{\varphi} : A/\text{Ker}(\varphi) \xrightarrow{\sim} \text{Im}(\varphi)$$"
-79,"Théorème chinois, version générale",Anneaux,"Soit $A$ un anneau. Soient $I, J$ deux idéaux de $A$. Si $I + J = A$, alors $I \cap J = IJ$ et l'on a l'isomorphisme d'anneaux :
+79,"Théorème chinois, version générale",Anneaux,"Soit $A$ un anneau (commutatif). Soient $I, J$ deux idéaux de $A$. Si $I$ et $J$ sont comaximaux, _ie._ $I + J = A$, alors $I \cap J = IJ$ où
+$$IJ = \left\{ \sum\limits_{k=1}^n x_k y_k \mid n \in \mathbb{N}^*, x_k \in I, y_k \in J \right\}$$
+et on a l'isomorphisme d'anneaux :
 $$A/(I \cap J) \cong A/I \times A/J$$
 
-Plus généralement, soit $A$ un anneau. Soient $I_1, \dots, I_n$ des idéaux de $A$.
+Plus généralement : soient $I_1, \dots, I_n$ des idéaux de $A$.
 On considère le morphisme d'anneaux :
 $$\phi : A \to A/I_1 \times \dots \times A/I_n$$
 $$x \mapsto (x \pmod{I_1}, \dots, x \pmod{I_n})$$

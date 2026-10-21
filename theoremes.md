@@ -1489,10 +1489,12 @@ Par récurrence, on peut étendre ce résultat à $a_1, \dots, a_n$ deux-à-deux
 
 ## Théorème chinois, version générale
 
-Soit $A$ un anneau. Soient $I, J$ deux idéaux de $A$. Si $I + J = A$, alors $I \cap J = IJ$ et l'on a l'isomorphisme d'anneaux :
+Soit $A$ un anneau (commutatif). Soient $I, J$ deux idéaux de $A$. Si $I$ et $J$ sont comaximaux, _ie._ $I + J = A$, alors $I \cap J = IJ$ où
+$$IJ = \left\{ \sum\limits_{k=1}^n x_k y_k \mid n \in \mathbb{N}^*, x_k \in I, y_k \in J \right\}$$
+et on a l'isomorphisme d'anneaux :
 $$A/(I \cap J) \cong A/I \times A/J$$
 
-Plus généralement, soit $A$ un anneau. Soient $I_1, \dots, I_n$ des idéaux de $A$.
+Plus généralement : soient $I_1, \dots, I_n$ des idéaux de $A$.
 On considère le morphisme d'anneaux :
 $$\phi : A \to A/I_1 \times \dots \times A/I_n$$
 $$x \mapsto (x \pmod{I_1}, \dots, x \pmod{I_n})$$
@@ -1836,9 +1838,9 @@ $$\forall x \in X, f_n(x) \xrightarrow[n \to \infty]{} f(x)$$
 
 ## Convergence uniforme d'une suite de fonctions
 
-Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de $X$ vers $E$. On dit que la suite $(f_n)$ converge uniformément vers une fonction $f : X \to E$ si :
-$$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall n \ge N, \forall x \in X, \|f_n(x) - f(x)\| < \varepsilon$$
-Ceci est équivalent à dire que $\sup_{x \in X} \|f_n(x) - f(x)\| \xrightarrow[n \to \infty]{} 0$.
+Soit $X$ un ensemble et $(E, d)$ un espace métrique. Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de $X$ vers $E$. On dit que la suite $(f_n)$ converge uniformément vers une fonction $f : X \to E$ si :
+$$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall n \ge N, \forall x \in X, d(f_n(x), f(x)) < \varepsilon$$
+Ceci est équivalent à dire que $\sup_{x \in X} d(f_n(x), f(x)) \xrightarrow[n \to \infty]{} 0$.
 
 ---
 
@@ -1850,8 +1852,8 @@ Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $\sum 
 
 ## Critère de Cauchy uniforme
 
-Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace de Banach (espace vectoriel normé complet). On dit qu'une suite de fonctions $(f_n)_{n \in \mathbb{N}}$ de $X$ vers $E$ vérifie le critère de Cauchy uniforme sur $X$ si :
-$$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall p, q \ge N, \forall x \in X, \|f_p(x) - f_q(x)\| < \varepsilon$$
+Soit $X$ un ensemble et $(E, d)$ un espace métrique complet. On dit qu'une suite de fonctions $(f_n)_{n \in \mathbb{N}}$ de $X$ vers $E$ vérifie le critère de Cauchy uniforme sur $X$ si :
+$$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall p, q \ge N, \forall x \in X, d(f_p(x), f_q(x)) < \varepsilon$$
 Une suite de fonctions $(f_n)_{n \in \mathbb{N}}$ converge uniformément sur $X$ vers une fonction $f : X \to E$ si et seulement si elle vérifie le critère de Cauchy uniforme sur $X$.
 
 ---
