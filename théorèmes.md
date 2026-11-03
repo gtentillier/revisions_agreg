@@ -1,4 +1,35 @@
-# Algèbre Linéaire
+# Algèbre linéaire
+
+## Application linéaire duale / transposée
+
+Soit $E$ et $F$ deux $\mathbb{K}$-espaces vectoriels et soit $u \in \mathcal{L}(E,F)$. L'application linéaire duale (ou transposée) de $u$ est l'application linéaire $u^* := {}^{\mathcal{t}}u \in \mathcal{L}(F^*,E^*)$ définie par :
+$$u^*(g) = g \circ u \quad \text{pour tout }g \in F^*$$
+C'est un morphisme de $\mathbb{K}$-espaces vectoriels. De plus, si $E$ et $F$ sont de dimension finie, alors $\operatorname{Mat}_{B^*,C^*}(u^*) = \operatorname{Mat}_{C,B}(u)^T$ pour toutes bases $B$ de $E$ et $C$ de $F$.
+
+---
+
+## Base duale
+
+Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie et soit $B = (e_1, e_2, \ldots, e_n)$ une base de $E$. La base duale de $B$ est la base $B^* = (e_1^*, e_2^*, \ldots, e_n^*)$ de $E^*$ définie par :
+$$e_i^*(e_j) = \delta_{ij} \quad \text{pour tout } i,j \in \{1,2,\ldots,n\}$$
+En particulier, si $B$ est une base de $E$, alors $B^*$ est une base de $E^*$ et $\dim(E^*) = \dim(E)$.
+
+---
+
+## Caractérisation des matrices diagonalisables
+
+Une matrice $A \in \mathcal{M}_n(\mathbb{K})$ est diagonalisable sur $\mathbb{K}$ si et seulement si l'une des conditions suivantes est vérifiée :
+
+1. Son polynôme caractéristique $\chi_A$ est scindé (ie. u est scindé) sur $\mathbb{K}$ et la dimension de chaque sous-espace propre est égale à la multiplicité de la valeur propre correspondante.
+2. Son polynôme minimal $m_A$ est scindé à racines simples sur $\mathbb{K}$.
+
+---
+
+## Caractérisation des matrices trigonalisables
+
+Une matrice $A \in \mathcal{M}_n(\mathbb{K})$ est trigonalisable sur $\mathbb{K}$ si et seulement si son polynôme caractéristique $\chi_A$ est scindé sur $\mathbb{K}$.
+
+---
 
 ## Caractérisation du rang d'une matrice
 
@@ -10,12 +41,261 @@ Soit $A \in \mathcal{M}_{m,n}(\mathbb{K})$. Le rang de $A$, noté $\operatorname
 
 ---
 
+## Commutant d'un endomorphisme
+
+Soit $u \in \mathcal{L}(E)$. Le commutant de $u$ est l'ensemble $C(u) = \{v \in \mathcal{L}(E) : u \circ v = v \circ u\}$. C'est une sous-algèbre de $\mathcal{L}(E)$.
+
+Si $u$ est diagonalisable de valeurs propres $\lambda_1, \dots, \lambda_p$ et d'espaces propres associés $E_{\lambda_1}, \dots, E_{\lambda_p}$, alors l'application suivante est un isomorphisme d'algèbres :
+$$\varphi : \begin{cases} C(u) \to \mathcal{L}(E_{\lambda_1}) \times \dots \times \mathcal{L}(E_{\lambda_p}) \\ v \mapsto (v_{|E_{\lambda_1}}, \dots, v_{|E_{\lambda_p}}) \end{cases}$$
+En particulier, $\dim(C(u)) = \sum\limits_{i=1}^p \dim(E_{\lambda_i})^2$.
+
+Si $u$ est diagonalisable, on a l'équivalence :
+$$C(u) = \mathbb{K}[u] \iff u \text{ est à valeurs propres simples}$$
+Dans ce cas, $\dim(C(u)) = n$.
+
+Le **bicommutant** de $u$ est $C_2(u) = \{w \in \mathcal{L}(E) : \forall v \in C(u), v \circ w = w \circ v\}$.
+On a toujours l'égalité :
+$$C_2(u) = \mathbb{K}[u]$$
+
+---
+
+## Correspondance matricielle de l'application linéaire et de son dual
+
+Soit $u \in \mathcal{L}(E,F)$ et soient $\mathcal{B} = (e_1, \ldots, e_n)$ et $\mathcal{C} = (f_1, \ldots, f_m)$ des bases respectives de $E$ et $F$. On note $\mathcal{B}^* = (e_1^*, \ldots, e_n^*)$ et $\mathcal{C}^* = (f_1^*, \ldots, f_m^*)$ les bases duales correspondantes. Alors, on a l'epression matricielle suivante pour l'application linéaire $u$ et son dual $u^*$ :
+
+$$\text{Mat}_{\mathcal{C}^*, \mathcal{B}^*}(u^*) = \text{Mat}_{\mathcal{B}, \mathcal{C}}(u)^T$$
+
+---
+
+## Dimension d'un produit et d'un quotient d'espaces vectoriels
+
+Soient $E$ et $F$ deux espaces vectoriels sur un corps $\mathbb{k}$. Alors :
+
+- $\dim(E \times F) = \dim(E) + \dim(F)$
+- Si $F$ est un sous-espace vectoriel de $E$, alors $\dim(E/F) = \dim(E) - \dim(F)$.
+
+---
+
+## Décomposition de Dunford
+
+Soit $E$ un espace vectoriel de dimension finie sur $\mathbb{K}$. Soit $u \in \mathcal{L}(E)$ un endomorphisme dont le polynôme caractéristique est scindé sur $\mathbb{K}$.
+Alors il existe un unique couple $(d, n) \in \mathcal{L}(E)^2$ tel que :
+
+1. $u = d + n$
+2. $d$ est diagonalisable et $n$ est nilpotent
+3. $d$ et $n$ commutent ($d \circ n = n \circ d$)
+
+De plus, $d$ et $n$ sont des polynômes en $u$.
+
+---
+
+## Déterminant et propriétés
+
+Soit $E$ un $K$-espace vectoriel de dimension finie $n$, $B$ une base de $E$. Le déterminant est l'unique forme n-linéaire alternée sur $E^n$ qui prend la valeur $1$ sur $B$, notée $\operatorname{det}_B$.
+
+De plus, on a les propriétés suivantes :
+
+1. $\mathcal{A}_n(E) = \operatorname{Vect}(\operatorname{det}_B)$
+2. $\operatorname{det}_C = \operatorname{det}_C(B) \cdot \operatorname{det}_B$ pour toute autre base $C$ de $E$.
+3. $\operatorname{det}(u) := \operatorname{det}_{B}(u(B))$, ne dépend pas de la base $B$ choisie.
+4. $\operatorname{det}(u \circ v) = \operatorname{det}(u) \cdot \operatorname{det}(v)$ pour toutes applications linéaires $u, v : E \to E$.
+
+---
+
+## Endomorphismes cycliques
+
+Un endomorphisme $u \in \mathcal{L}(E)$ est dit **cyclique** ssi $\exists x \in E$ tel que $(x, u(x), u^2(x), \dots, u^{n-1}(x))$ forme une base de $E$.
+
+$$u \text{ est cyclique }$$
+$$\iff m_u = \chi_u$$
+$$\iff C(u) = \mathbb{K}[u]$$
+
+Si $u$ est diagonalisable, alors $u$ est cyclique $\iff u$ est à valeurs propres simples.
+
+---
+
+## Endomorphismes qui commutent, sous-espaces stables
+
+Soient $u, v \in \mathcal{L}(E)$ deux endomorphismes d'un espace vectoriel $E$ tels que $u \circ v = v \circ u$.
+
+Alors les sous-espaces propres de $u$, $\text{Ker}(u)$ et $\text{Im}(u)$ sont stables par $v$.
+
+---
+
+## Espace vectoriel
+
+Soit $k$ un corps et $(V,+,\cdot)$ un ensemble muni d'une loi de composition interne $+$ et d'une loi de composition externe $\cdot$. On dit que $V$ est un **espace vectoriel** sur $k$ si les conditions suivantes sont satisfaites :
+
+1. $(V,+)$ est un groupe abélien.
+2. Pour tout $v, w \in V$ et tout $\lambda, \mu \in k$, on a :
+   - $\lambda \cdot (v + w) = \lambda \cdot v + \lambda \cdot w$
+   - $(\lambda + \mu) \cdot v = \lambda \cdot v + \mu \cdot v$
+   - $(\lambda \cdot \mu) \cdot v = \lambda \cdot (\mu \cdot v)$
+   - $1 \cdot v = v$
+
+---
+
+## Forme n-linéaire symétrique, antisymétrique et alternée
+
+On appelle forme n-linéaire sur un $\mathbb{K}$-espace vectoriel $E$ une application $f : E^n \to \mathbb{K}$ qui est linéaire par rapport à chacune de ses variables.
+
+1. Une forme n-linéaire est **symétrique** si pour toute permutation $\sigma \in S_n$, on a :
+   $$f(v_{\sigma(1)}, v_{\sigma(2)}, \ldots, v_{\sigma(n)}) = f(v_1, v_2, \ldots, v_n)$$
+2. Une forme n-linéaire est **antisymétrique** si pour toute permutation $\sigma \in S_n$, on a :
+   $$f(v_{\sigma(1)}, v_{\sigma(2)}, \ldots, v_{\sigma(n)}) = \epsilon(\sigma) f(v_1, v_2, \ldots, v_n)$$
+3. Une forme n-linéaire est **alternée**
+   si pour tout $v_1, \ldots, v_n \in E$, si deux de ces vecteurs sont égaux, alors $f(v_1, \ldots, v_n) = 0$.
+
+On a les implications suivantes :
+
+- Toute forme alternée est antisymétrique.
+- Si le corps de base $\mathbb{K}$ est de caractéristique différente de 2, alors toute forme antisymétrique est alternée.
+
+---
+
+## Formule de Grassmann
+
+Soient $E$ un espace vectoriel et $F, G$ deux sous-espaces vectoriels de $E$. Alors :
+$$\dim(F + G) = \dim(F) + \dim(G) - \dim(F \cap G)$$
+
+---
+
+## Formule de changement de base
+
+Soit $u in \mathcal{L}(E,F)$ et soient $B$ et $B'$ deux bases de $E$, et $C$ et $C'$ deux bases de $F$. Alors, on a la formule de changement de base suivante :
+
+$$\operatorname{Mat}_{C',B'}(u) = P_{C \to C'} \operatorname{Mat}_{C,B}(u) P_{B' \to B} = P_{C',C} \operatorname{Mat}_{C,B}(u) P_{B,B'}$$
+
+---
+
+## Groupe orthogonal $O_n(\mathbb{R})$ et unitaire $U_n(\mathbb{C})$
+
+Version matricielle : <br>$O_n(\mathbb{R}) = \{M \in GL_n(\mathbb{R}) \mid M^T M = I_n\}$
+<br>$SO_n(\mathbb{R}) = \{M \in O_n(\mathbb{R}) \mid \det(M) = 1\}$
+<br>$U_n(\mathbb{C}) = \{M \in GL_n(\mathbb{C}) \mid M^* M = I_n\}$
+<br>$SU_n(\mathbb{C}) = \{M \in U_n(\mathbb{C}) \mid \det(M) = 1\}$
+
+Version fonctionnelle : <br>$O(E) = \{f \in GL(E) \mid \forall x, y \in E, \langle f(x), f(y) \rangle = \langle x, y \rangle\}$
+<br>$SO(E) = \{f \in O(E) \mid \det(f) = 1\}$
+<br>$U(E) = \{f \in GL(E) \mid \forall x, y \in E, \langle f(x), f(y) \rangle = \langle x, y \rangle\}$
+<br>$SU(E) = \{f \in U(E) \mid \det(f) = 1\}$
+
+---
+
+## Injection canonique de bidualité
+
+Soit $E$ un $\mathbb{K}$-espace vectoriel. L'application canonique de bidualité est l'application linéaire $\varphi : E \to E^{**}$ définie par :
+$$\varphi(x)(f) = f(x) \quad \text{pour tout } x \in E \text{ et } f \in E^*$$
+C'est un morphisme de $\mathbb{K}$-espaces vectoriels.<br>De plus, si $E$ est de dimension finie, alors $\varphi$ est un isomorphisme.
+
+---
+
+## Isomorphismes canoniques de dualité : noyaux et images
+
+Soit $(E, F)$ deux $\mathbb{K}$-espaces vectoriels de dimension finie et soit $u \in \mathcal{L}(E,F)$. Alors, on a les isomorphismes canoniques de dualité suivants :
+
+- $\text{Ker}(u^*) \cong (F/\text{Im}(u))^*$
+- $\text{Im}(u^*) \cong (E/\text{Ker}(u))^*  \cong \text{Im}(u)^*$
+
+---
+
 ## Lemme des noyaux
 
 Soient $E$ un espace vectoriel sur un corps $\mathbb{K}$ et $u \in \mathcal{L}(E)$ un endomorphisme de $E$. Soient $P_1, \dots, P_n \in \mathbb{K}[X]$ des polynômes deux à deux premiers entre eux. On note $P = \prod_{i=1}^n P_i$.
 Alors :
 $$\text{Ker}(P(u)) = \bigoplus_{i=1}^n \text{Ker}(P_i(u))$$
 De plus, la projection sur $\text{Ker}(P_i(u))$ parallèlement à $\bigoplus_{j \neq i} \text{Ker}(P_j(u))$ est donnée par la restriction à $\text{Ker}(P(u))$ d'un polynôme en $u$.
+
+---
+
+## Matrice de passage
+
+Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie et soient $B = (e_1, e_2, \ldots, e_n)$ et $B' = (e'_1, e'_2, \ldots, e'_n)$ deux bases de $E$.
+
+La matrice de passage de la base $B$ à la base $B'$ est la matrice $P_{B \to B'} := P_{B', B} := \operatorname{Mat}_{B',B}(\operatorname{id_E})$<br>
+Cette matrice est l'écriture en colonnes des vecteurs de la base $B$ dans la base $B'$ :
+
+$$P_{B \to B'} = \begin{pmatrix} [e_1]_{B'} & [e_2]_{B'} & \cdots & [e_n]_{B'} \end{pmatrix}$$
+
+De plus, $P_{B', B}^{-1} = P_{B, B'}$.
+
+
+---
+
+## Matrices de $O_2(\mathbb{R})$
+
+Soit $(E, \langle \cdot, \cdot \rangle)$ un espace euclidien de dimension 2 orienté.
+
+1. Les **rotations** (ou automorphismes orthogonaux directs) de $E$ ont pour matrice dans une base orthonormée directe :
+   $$R_\theta = \begin{pmatrix} \cos(\theta) & -\sin(\theta) \\ \sin(\theta) & \cos(\theta) \end{pmatrix} \quad \text{avec } \theta \in \mathbb{R}$$
+   Elles forment le groupe spécial orthogonal $SO_2(\mathbb{R})$.
+2. Les **symétries orthogonales par rapport à une droite** (ou réflexions) ont pour matrice dans une base orthonormée directe :
+   $$S_\theta = \begin{pmatrix} \cos(\theta) & \sin(\theta) \\ \sin(\theta) & -\cos(\theta) \end{pmatrix} \quad \text{avec } \theta \in \mathbb{R}$$
+   Il s'agit de la symétrie par rapport à la droite vectorielle faisant un angle $\theta/2$ avec le premier vecteur de la base.
+   Elles appartiennent à $O_2(\mathbb{R}) \setminus SO_2(\mathbb{R})$ et sont de déterminant $-1$.
+
+---
+
+## Matrices semblables
+
+Deux matrices $A$ et $B \in \mathcal{M}_n(\mathbb{K})$ sont dites semblables si et seulement s'il existe une matrice inversible $P \in \operatorname{GL}_n(\mathbb{K})$ telle que $B = P^{-1}AP$.
+
+---
+
+## Matrices équivalentes et caractérisation du rang
+
+Deux matrices $A$ et $B \in \mathcal{M}_{n,p}(\mathbb{K})$ sont dites équivalentes si et seulement s'il existe deux matrices inversibles $P \in \operatorname{GL}_n(\mathbb{K})$ et $Q \in \operatorname{GL}_p(\mathbb{K})$ telles que $B = PAQ$.
+
+Autrement dit, deux matrices sont équivalentes si elles représentent la même application linéaire dans des bases différentes.
+
+Caractérisation du rang : Les matrices $A \in \mathcal{M}_{n,p}(\mathbb{K})$ de rang r sont exactement les matrices équivalentes à la matrice suivante :
+
+$$
+J_r =
+\begin{pmatrix}
+I_r & 0_{r,p-r} \\
+0_{n-r,r} & 0_{n-r,p-r}
+\end{pmatrix}
+$$
+
+---
+
+## Morphisme entre un espace vectoriel de dimension finie et son dual
+
+Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie. La donnée d'un morphisme $\varphi : E \to E^*$ équivaut à la donnée d'une forme bilinéaire $\psi : E \times E \to \mathbb{K}$ définie par :
+$$\psi(x,y) = \varphi(x)(y), \quad \forall x,y \in E$$
+
+De plus, $\varphi$ est un isomorphisme si et seulement si $\psi$ est non dégénérée.<br>
+Par exemple, $\psi : (A,B) \in \mathcal{M}_n(\mathbb{K}) \times \mathcal{M}_n(\mathbb{K}) \mapsto \text{tr}(AB)$ est une forme bilinéaire non dégénérée sur $\mathcal{M}_n(\mathbb{K})$ et l'application $\varphi : A \in \mathcal{M}_n(\mathbb{K}) \mapsto \operatorname{tr}(A,.) \in \mathcal{M}_n(\mathbb{K})^*$ est un isomorphisme.
+
+---
+
+## Morphismes canoniques entre les quotients et les orthogonaux
+
+Soit $E$ un $\mathbb{K}$-espace vectoriel et soit $F \subset E, G \subset E^*$. Alors, on a les morphismes canoniques suivants :
+$$E^*/F^\perp \cong F^* \quad \text{et} \quad E/G^\circ \cong G^*$$
+
+Le premier est un isomorphisme, le second un morphisme injectif. De plus, si $E$ est de dimension finie, le second est également un isomorphisme.
+
+---
+
+## Orthogonal
+
+Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie et soit $F \subset E$. On définit l'orthogonal de $F$ dans le dual $E^*$ par :
+$$F^\perp = \{ f \in E^* \mid f(x) = 0, \forall x \in F \}$$
+Soit $G \subset E^*$, on définit l'orthogonal de $G$ dans $E$ par :
+$$G^\circ = \{ x \in E \mid f(x) = 0, \forall f \in G \}$$
+
+---
+
+## Orthogonaux et opérations ensemblistes
+
+Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie et soient $F_1, F_2 \subset E$ et $G_1, G_2 \subset E^*$. Alors, on a les propriétés suivantes :
+
+1. $(F_1 \cup F_2)^\perp = F_1^\perp \cap F_2^\perp$
+2. $F_1^\perp + F_2^\perp \subset (F_1 \cap F_2)^\perp$
+3. $(G_1 \cup G_2)^\circ = G_1^\circ \cap G_2^\circ$
+4. $G_1^\circ + G_2^\circ \subset (G_1 \cap G_2)^\circ$
 
 ---
 
@@ -199,299 +479,6 @@ Calculer le rang de $A$, déterminer une base de son image et une base de son no
 
 ---
 
-## Théorème du rang
-
-Soient $E$ et $F$ deux espaces vectoriels sur un corps $\mathbb{k}$. Soit $u \in \mathcal{L}(E, F)$. Alors :
-$$u \text{ induit un isomorphisme } \bar{u} :{E}/{\text{Ker}(u)} \cong \text{Im}(u)$$
-
-Si de plus $E$ et $F$ sont de dimension finie, alors :
-$$\dim(E) = \dim(\text{Ker}(u)) + \text{rg}(u)$$
-où $\text{Ker}(u)$ est le noyau de $u$ et $\text{rg}(u) = \dim(\text{Im}(u))$ est le rang de $u$.
-
----
-
-# Algèbre linéaire
-
-## Application linéaire duale / transposée
-
-Soit $E$ et $F$ deux $\mathbb{K}$-espaces vectoriels et soit $u \in \mathcal{L}(E,F)$. L'application linéaire duale (ou transposée) de $u$ est l'application linéaire $u^* := {}^{\mathcal{t}}u \in \mathcal{L}(F^*,E^*)$ définie par :
-$$u^*(g) = g \circ u \quad \text{pour tout }g \in F^*$$
-C'est un morphisme de $\mathbb{K}$-espaces vectoriels. De plus, si $E$ et $F$ sont de dimension finie, alors $\operatorname{Mat}_{B^*,C^*}(u^*) = \operatorname{Mat}_{C,B}(u)^T$ pour toutes bases $B$ de $E$ et $C$ de $F$.
-
----
-
-## Base duale
-
-Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie et soit $B = (e_1, e_2, \ldots, e_n)$ une base de $E$. La base duale de $B$ est la base $B^* = (e_1^*, e_2^*, \ldots, e_n^*)$ de $E^*$ définie par :
-$$e_i^*(e_j) = \delta_{ij} \quad \text{pour tout } i,j \in \{1,2,\ldots,n\}$$
-En particulier, si $B$ est une base de $E$, alors $B^*$ est une base de $E^*$ et $\dim(E^*) = \dim(E)$.
-
----
-
-## Caractérisation des matrices diagonalisables
-
-Une matrice $A \in \mathcal{M}_n(\mathbb{K})$ est diagonalisable sur $\mathbb{K}$ si et seulement si l'une des conditions suivantes est vérifiée :
-
-1. Son polynôme caractéristique $\chi_A$ est scindé (ie. u est scindé) sur $\mathbb{K}$ et la dimension de chaque sous-espace propre est égale à la multiplicité de la valeur propre correspondante.
-2. Son polynôme minimal $m_A$ est scindé à racines simples sur $\mathbb{K}$.
-
----
-
-## Caractérisation des matrices trigonalisables
-
-Une matrice $A \in \mathcal{M}_n(\mathbb{K})$ est trigonalisable sur $\mathbb{K}$ si et seulement si son polynôme caractéristique $\chi_A$ est scindé sur $\mathbb{K}$.
-
----
-
-## Commutant d'un endomorphisme
-
-Soit $u \in \mathcal{L}(E)$. Le commutant de $u$ est l'ensemble $C(u) = \{v \in \mathcal{L}(E) : u \circ v = v \circ u\}$. C'est une sous-algèbre de $\mathcal{L}(E)$.
-
-Si $u$ est diagonalisable de valeurs propres $\lambda_1, \dots, \lambda_p$ et d'espaces propres associés $E_{\lambda_1}, \dots, E_{\lambda_p}$, alors l'application suivante est un isomorphisme d'algèbres :
-$$\varphi : \begin{cases} C(u) \to \mathcal{L}(E_{\lambda_1}) \times \dots \times \mathcal{L}(E_{\lambda_p}) \\ v \mapsto (v_{|E_{\lambda_1}}, \dots, v_{|E_{\lambda_p}}) \end{cases}$$
-En particulier, $\dim(C(u)) = \sum\limits_{i=1}^p \dim(E_{\lambda_i})^2$.
-
-Si $u$ est diagonalisable, on a l'équivalence :
-$$C(u) = \mathbb{K}[u] \iff u \text{ est à valeurs propres simples}$$
-Dans ce cas, $\dim(C(u)) = n$.
-
-Le **bicommutant** de $u$ est $C_2(u) = \{w \in \mathcal{L}(E) : \forall v \in C(u), v \circ w = w \circ v\}$.
-On a toujours l'égalité :
-$$C_2(u) = \mathbb{K}[u]$$
-
----
-
-## Correspondance matricielle de l'application linéaire et de son dual
-
-Soit $u \in \mathcal{L}(E,F)$ et soient $\mathcal{B} = (e_1, \ldots, e_n)$ et $\mathcal{C} = (f_1, \ldots, f_m)$ des bases respectives de $E$ et $F$. On note $\mathcal{B}^* = (e_1^*, \ldots, e_n^*)$ et $\mathcal{C}^* = (f_1^*, \ldots, f_m^*)$ les bases duales correspondantes. Alors, on a l'epression matricielle suivante pour l'application linéaire $u$ et son dual $u^*$ :
-
-$$\text{Mat}_{\mathcal{C}^*, \mathcal{B}^*}(u^*) = \text{Mat}_{\mathcal{B}, \mathcal{C}}(u)^T$$
-
----
-
-## Dimension d'un produit et d'un quotient d'espaces vectoriels
-
-Soient $E$ et $F$ deux espaces vectoriels sur un corps $\mathbb{k}$. Alors :
-
-- $\dim(E \times F) = \dim(E) + \dim(F)$
-- Si $F$ est un sous-espace vectoriel de $E$, alors $\dim(E/F) = \dim(E) - \dim(F)$.
-
----
-
-## Décomposition de Dunford
-
-Soit $E$ un espace vectoriel de dimension finie sur $\mathbb{K}$. Soit $u \in \mathcal{L}(E)$ un endomorphisme dont le polynôme caractéristique est scindé sur $\mathbb{K}$.
-Alors il existe un unique couple $(d, n) \in \mathcal{L}(E)^2$ tel que :
-
-1. $u = d + n$
-2. $d$ est diagonalisable et $n$ est nilpotent
-3. $d$ et $n$ commutent ($d \circ n = n \circ d$)
-
-De plus, $d$ et $n$ sont des polynômes en $u$.
-
----
-
-## Déterminant et propriétés
-
-Soit $E$ un $K$-espace vectoriel de dimension finie $n$, $B$ une base de $E$. Le déterminant est l'unique forme n-linéaire alternée sur $E^n$ qui prend la valeur $1$ sur $B$, notée $\operatorname{det}_B$.
-
-De plus, on a les propriétés suivantes :
-
-1. $\mathcal{A}_n(E) = \operatorname{Vect}(\operatorname{det}_B)$
-2. $\operatorname{det}_C = \operatorname{det}_C(B) \cdot \operatorname{det}_B$ pour toute autre base $C$ de $E$.
-3. $\operatorname{det}(u) := \operatorname{det}_{B}(u(B))$, ne dépend pas de la base $B$ choisie.
-4. $\operatorname{det}(u \circ v) = \operatorname{det}(u) \cdot \operatorname{det}(v)$ pour toutes applications linéaires $u, v : E \to E$.
-
----
-
-## Endomorphismes cycliques
-
-Un endomorphisme $u \in \mathcal{L}(E)$ est dit **cyclique** ssi $\exists x \in E$ tel que $(x, u(x), u^2(x), \dots, u^{n-1}(x))$ forme une base de $E$.
-
-$$u \text{ est cyclique }$$
-$$\iff m_u = \chi_u$$
-$$\iff C(u) = \mathbb{K}[u]$$
-
-Si $u$ est diagonalisable, alors $u$ est cyclique $\iff u$ est à valeurs propres simples.
-
----
-
-## Endomorphismes qui commutent, sous-espaces stables
-
-Soient $u, v \in \mathcal{L}(E)$ deux endomorphismes d'un espace vectoriel $E$ tels que $u \circ v = v \circ u$.
-
-Alors les sous-espaces propres de $u$, $\text{Ker}(u)$ et $\text{Im}(u)$ sont stables par $v$.
-
----
-
-## Espace vectoriel
-
-Soit $k$ un corps et $(V,+,\cdot)$ un ensemble muni d'une loi de composition interne $+$ et d'une loi de composition externe $\cdot$. On dit que $V$ est un **espace vectoriel** sur $k$ si les conditions suivantes sont satisfaites :
-
-1. $(V,+)$ est un groupe abélien.
-2. Pour tout $v, w \in V$ et tout $\lambda, \mu \in k$, on a :
-   - $\lambda \cdot (v + w) = \lambda \cdot v + \lambda \cdot w$
-   - $(\lambda + \mu) \cdot v = \lambda \cdot v + \mu \cdot v$
-   - $(\lambda \cdot \mu) \cdot v = \lambda \cdot (\mu \cdot v)$
-   - $1 \cdot v = v$
-
----
-
-## Forme n-linéaire symétrique, antisymétrique et alternée
-
-On appelle forme n-linéaire sur un $\mathbb{K}$-espace vectoriel $E$ une application $f : E^n \to \mathbb{K}$ qui est linéaire par rapport à chacune de ses variables.
-
-1. Une forme n-linéaire est **symétrique** si pour toute permutation $\sigma \in S_n$, on a :
-   $$f(v_{\sigma(1)}, v_{\sigma(2)}, \ldots, v_{\sigma(n)}) = f(v_1, v_2, \ldots, v_n)$$
-2. Une forme n-linéaire est **antisymétrique** si pour toute permutation $\sigma \in S_n$, on a :
-   $$f(v_{\sigma(1)}, v_{\sigma(2)}, \ldots, v_{\sigma(n)}) = \epsilon(\sigma) f(v_1, v_2, \ldots, v_n)$$
-3. Une forme n-linéaire est **alternée**
-   si pour tout $v_1, \ldots, v_n \in E$, si deux de ces vecteurs sont égaux, alors $f(v_1, \ldots, v_n) = 0$.
-
-On a les implications suivantes :
-
-- Toute forme alternée est antisymétrique.
-- Si le corps de base $\mathbb{K}$ est de caractéristique différente de 2, alors toute forme antisymétrique est alternée.
-
----
-
-## Formule de Grassmann
-
-Soient $E$ un espace vectoriel et $F, G$ deux sous-espaces vectoriels de $E$. Alors :
-$$\dim(F + G) = \dim(F) + \dim(G) - \dim(F \cap G)$$
-
----
-
-## Formule de changement de base
-
-Soit $u in \mathcal{L}(E,F)$ et soient $B$ et $B'$ deux bases de $E$, et $C$ et $C'$ deux bases de $F$. Alors, on a la formule de changement de base suivante :
-
-$$\operatorname{Mat}_{C',B'}(u) = P_{C \to C'} \operatorname{Mat}_{C,B}(u) P_{B' \to B} = P_{C',C} \operatorname{Mat}_{C,B}(u) P_{B,B'}$$
-
----
-
-## Groupe orthogonal $O_n(\mathbb{R})$ et unitaire $U_n(\mathbb{C})$
-
-Version matricielle : <br>$O_n(\mathbb{R}) = \{M \in GL_n(\mathbb{R}) \mid M^T M = I_n\}$
-<br>$SO_n(\mathbb{R}) = \{M \in O_n(\mathbb{R}) \mid \det(M) = 1\}$
-<br>$U_n(\mathbb{C}) = \{M \in GL_n(\mathbb{C}) \mid M^* M = I_n\}$
-<br>$SU_n(\mathbb{C}) = \{M \in U_n(\mathbb{C}) \mid \det(M) = 1\}$
-
-Version fonctionnelle : <br>$O(E) = \{f \in GL(E) \mid \forall x, y \in E, \langle f(x), f(y) \rangle = \langle x, y \rangle\}$
-<br>$SO(E) = \{f \in O(E) \mid \det(f) = 1\}$
-<br>$U(E) = \{f \in GL(E) \mid \forall x, y \in E, \langle f(x), f(y) \rangle = \langle x, y \rangle\}$
-<br>$SU(E) = \{f \in U(E) \mid \det(f) = 1\}$
-
----
-
-## Injection canonique de bidualité
-
-Soit $E$ un $\mathbb{K}$-espace vectoriel. L'application canonique de bidualité est l'application linéaire $\varphi : E \to E^{**}$ définie par :
-$$\varphi(x)(f) = f(x) \quad \text{pour tout } x \in E \text{ et } f \in E^*$$
-C'est un morphisme de $\mathbb{K}$-espaces vectoriels.<br>De plus, si $E$ est de dimension finie, alors $\varphi$ est un isomorphisme.
-
----
-
-## Isomorphismes canoniques de dualité : noyaux et images
-
-Soit $(E, F)$ deux $\mathbb{K}$-espaces vectoriels de dimension finie et soit $u \in \mathcal{L}(E,F)$. Alors, on a les isomorphismes canoniques de dualité suivants :
-
-- $\text{Ker}(u^*) \cong (F/\text{Im}(u))^*$
-- $\text{Im}(u^*) \cong (E/\text{Ker}(u))^*  \cong \text{Im}(u)^*$
-
----
-
-## Matrice de passage
-
-Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie et soient $B = (e_1, e_2, \ldots, e_n)$ et $B' = (e'_1, e'_2, \ldots, e'_n)$ deux bases de $E$.
-
-La matrice de passage de la base $B$ à la base $B'$ est la matrice $P_{B \to B'} := P_{B', B} := \operatorname{Mat}_{B',B}(\operatorname{id_E})$<br>
-Cette matrice est l'écriture en colonnes des vecteurs de la base $B$ dans la base $B'$ :
-
-$$P_{B \to B'} = \begin{pmatrix} [e_1]_{B'} & [e_2]_{B'} & \cdots & [e_n]_{B'} \end{pmatrix}$$
-
-De plus, $P_{B', B}^{-1} = P_{B, B'}$.
-
-
----
-
-## Matrices de $O_2(\mathbb{R})$
-
-Soit $(E, \langle \cdot, \cdot \rangle)$ un espace euclidien de dimension 2 orienté.
-
-1. Les **rotations** (ou automorphismes orthogonaux directs) de $E$ ont pour matrice dans une base orthonormée directe :
-   $$R_\theta = \begin{pmatrix} \cos(\theta) & -\sin(\theta) \\ \sin(\theta) & \cos(\theta) \end{pmatrix} \quad \text{avec } \theta \in \mathbb{R}$$
-   Elles forment le groupe spécial orthogonal $SO_2(\mathbb{R})$.
-2. Les **symétries orthogonales par rapport à une droite** (ou réflexions) ont pour matrice dans une base orthonormée directe :
-   $$S_\theta = \begin{pmatrix} \cos(\theta) & \sin(\theta) \\ \sin(\theta) & -\cos(\theta) \end{pmatrix} \quad \text{avec } \theta \in \mathbb{R}$$
-   Il s'agit de la symétrie par rapport à la droite vectorielle faisant un angle $\theta/2$ avec le premier vecteur de la base.
-   Elles appartiennent à $O_2(\mathbb{R}) \setminus SO_2(\mathbb{R})$ et sont de déterminant $-1$.
-
----
-
-## Matrices semblables
-
-Deux matrices $A$ et $B \in \mathcal{M}_n(\mathbb{K})$ sont dites semblables si et seulement s'il existe une matrice inversible $P \in \operatorname{GL}_n(\mathbb{K})$ telle que $B = P^{-1}AP$.
-
----
-
-## Matrices équivalentes et caractérisation du rang
-
-Deux matrices $A$ et $B \in \mathcal{M}_{n,p}(\mathbb{K})$ sont dites équivalentes si et seulement s'il existe deux matrices inversibles $P \in \operatorname{GL}_n(\mathbb{K})$ et $Q \in \operatorname{GL}_p(\mathbb{K})$ telles que $B = PAQ$.
-
-Autrement dit, deux matrices sont équivalentes si elles représentent la même application linéaire dans des bases différentes.
-
-Caractérisation du rang : Les matrices $A \in \mathcal{M}_{n,p}(\mathbb{K})$ de rang r sont exactement les matrices équivalentes à la matrice suivante :
-
-$$
-J_r =
-\begin{pmatrix}
-I_r & 0_{r,p-r} \\
-0_{n-r,r} & 0_{n-r,p-r}
-\end{pmatrix}
-$$
-
----
-
-## Morphisme entre un espace vectoriel de dimension finie et son dual
-
-Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie. La donnée d'un morphisme $\varphi : E \to E^*$ équivaut à la donnée d'une forme bilinéaire $\psi : E \times E \to \mathbb{K}$ définie par :
-$$\psi(x,y) = \varphi(x)(y), \quad \forall x,y \in E$$
-
-De plus, $\varphi$ est un isomorphisme si et seulement si $\psi$ est non dégénérée.<br>
-Par exemple, $\psi : (A,B) \in \mathcal{M}_n(\mathbb{K}) \times \mathcal{M}_n(\mathbb{K}) \mapsto \text{tr}(AB)$ est une forme bilinéaire non dégénérée sur $\mathcal{M}_n(\mathbb{K})$ et l'application $\varphi : A \in \mathcal{M}_n(\mathbb{K}) \mapsto \operatorname{tr}(A,.) \in \mathcal{M}_n(\mathbb{K})^*$ est un isomorphisme.
-
----
-
-## Morphismes canoniques entre les quotients et les orthogonaux
-
-Soit $E$ un $\mathbb{K}$-espace vectoriel et soit $F \subset E, G \subset E^*$. Alors, on a les morphismes canoniques suivants :
-$$E^*/F^\perp \cong F^* \quad \text{et} \quad E/G^\circ \cong G^*$$
-
-Le premier est un isomorphisme, le second un morphisme injectif. De plus, si $E$ est de dimension finie, le second est également un isomorphisme.
-
----
-
-## Orthogonal
-
-Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie et soit $F \subset E$. On définit l'orthogonal de $F$ dans le dual $E^*$ par :
-$$F^\perp = \{ f \in E^* \mid f(x) = 0, \forall x \in F \}$$
-Soit $G \subset E^*$, on définit l'orthogonal de $G$ dans $E$ par :
-$$G^\circ = \{ x \in E \mid f(x) = 0, \forall f \in G \}$$
-
----
-
-## Orthogonaux et opérations ensemblistes
-
-Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie et soient $F_1, F_2 \subset E$ et $G_1, G_2 \subset E^*$. Alors, on a les propriétés suivantes :
-
-1. $(F_1 \cup F_2)^\perp = F_1^\perp \cap F_2^\perp$
-2. $F_1^\perp + F_2^\perp \subset (F_1 \cap F_2)^\perp$
-3. $(G_1 \cup G_2)^\circ = G_1^\circ \cap G_2^\circ$
-4. $G_1^\circ + G_2^\circ \subset (G_1 \cap G_2)^\circ$
-
----
-
 ## Rang de la transposée
 
 Soit $u \in \mathcal{L}(E,F)$. Alors, on a l'égalité suivante entre le rang de l'application linéaire et le rang de sa transposée :
@@ -534,6 +521,17 @@ On a alors la décomposition : $E = \operatorname{Ker}(u - \operatorname{id}_E) 
 
 Soit $E$ un espace vectoriel de dimension finie $n$. Pour tout endomorphisme $u \in \mathcal{L}(E)$, son polynôme caractéristique $\chi_u$ est un polynôme annulateur de $u$ :
 $$\chi_u(u) = 0_{\mathcal{L}(E)}$$
+
+---
+
+## Théorème du rang
+
+Soient $E$ et $F$ deux espaces vectoriels sur un corps $\mathbb{k}$. Soit $u \in \mathcal{L}(E, F)$. Alors :
+$$u \text{ induit un isomorphisme } \bar{u} :{E}/{\text{Ker}(u)} \cong \text{Im}(u)$$
+
+Si de plus $E$ et $F$ sont de dimension finie, alors :
+$$\dim(E) = \dim(\text{Ker}(u)) + \text{rg}(u)$$
+où $\text{Ker}(u)$ est le noyau de $u$ et $\text{rg}(u) = \dim(\text{Im}(u))$ est le rang de $u$.
 
 ---
 
@@ -601,45 +599,6 @@ Soit $n \in \mathbb{N}^*$.
 ---
 
 </details>
-
----
-
-# Analyse Réelle
-
-## Développement limité de l'exponentielle
-
-Soit $n \in \mathbb{N}$. Au voisinage de $0$, on a :
-$$ e^x = \sum\limits_{k=0}^{n} \frac{x^k}{k!} + O(x^{n+1}) $$
-
----
-
-## Développement limité du cosinus
-
-Soit $n \in \mathbb{N}$. Au voisinage de $0$, on a :
-$$ \cos(x) = \sum\limits_{k=0}^{n} (-1)^k \frac{x^{2k}}{(2k)!} + O(x^{2n+2}) $$
-
----
-
-## Développement limité du logarithme
-
-Soit $n \in \mathbb{N}^*$. Au voisinage de $0$, on a :
-$$ \ln(1+x) = \sum\limits_{k=1}^{n} (-1)^{k-1} \frac{x^k}{k} + O(x^{n+1}) $$
-
----
-
-## Développement limité du sinus
-
-Soit $n \in \mathbb{N}$. Au voisinage de $0$, on a :
-$$ \sin(x) = \sum\limits_{k=0}^{n} (-1)^k \frac{x^{2k+1}}{(2k+1)!} + O(x^{2n+3}) $$
-
----
-
-## Théorème des valeurs intermédiaires
-
-Soient $a, b \in \mathbb{R}$ tels que $a < b$. Soit $f : [a, b] \to \mathbb{R}$ une fonction continue sur le segment $[a, b]$.
-Pour tout réel $y$ compris entre $f(a)$ et $f(b)$, il existe au moins un réel $c \in [a, b]$ tel que :
-$$f(c) = y$$
-Autrement dit, l'image d'un intervalle par une fonction continue est un intervalle.
 
 ---
 
@@ -957,6 +916,34 @@ $$(f^{-1})'(b) = \frac{1}{f'(a)} = \frac{1}{f'(f^{-1}(b))}$$
 
 ---
 
+## Développement limité de l'exponentielle
+
+Soit $n \in \mathbb{N}$. Au voisinage de $0$, on a :
+$$ e^x = \sum\limits_{k=0}^{n} \frac{x^k}{k!} + O(x^{n+1}) $$
+
+---
+
+## Développement limité du cosinus
+
+Soit $n \in \mathbb{N}$. Au voisinage de $0$, on a :
+$$ \cos(x) = \sum\limits_{k=0}^{n} (-1)^k \frac{x^{2k}}{(2k)!} + O(x^{2n+2}) $$
+
+---
+
+## Développement limité du logarithme
+
+Soit $n \in \mathbb{N}^*$. Au voisinage de $0$, on a :
+$$ \ln(1+x) = \sum\limits_{k=1}^{n} (-1)^{k-1} \frac{x^k}{k} + O(x^{n+1}) $$
+
+---
+
+## Développement limité du sinus
+
+Soit $n \in \mathbb{N}$. Au voisinage de $0$, on a :
+$$ \sin(x) = \sum\limits_{k=0}^{n} (-1)^k \frac{x^{2k+1}}{(2k+1)!} + O(x^{2n+3}) $$
+
+---
+
 ## Factorisation de $a^n - b^n$
 
 Soient $a, b \in \mathbb{C}$ et $n \in \mathbb{N}^*$. On a :
@@ -1161,6 +1148,15 @@ Soit $f : [a, b] \to \mathbb{R}$ une fonction continue sur le segment $[a, b]$ (
 $$
 f(b) - f(a) = f'(c)(b - a)
 $$
+
+---
+
+## Théorème des valeurs intermédiaires
+
+Soient $a, b \in \mathbb{R}$ tels que $a < b$. Soit $f : [a, b] \to \mathbb{R}$ une fonction continue sur le segment $[a, b]$.
+Pour tout réel $y$ compris entre $f(a)$ et $f(b)$, il existe au moins un réel $c \in [a, b]$ tel que :
+$$f(c) = y$$
+Autrement dit, l'image d'un intervalle par une fonction continue est un intervalle.
 
 ---
 
@@ -2284,6 +2280,111 @@ Si $G$ est abélien, l'ensemble des éléments de torsion de $G$ forme un sous-g
 
 ---
 
+# Intégration de Lebesgue
+
+## Classe de parties de E
+
+Une classe $\mathcal{C}$ de parties de $E$ est une famille de parties de $E$, autrement dit $\mathcal{C} \subset \mathcal{P}(E)$.
+
+---
+
+## Dénombrabilité
+
+Un ensemble $E$ est dit dénombrable s'il existe une injection de $E$ dans $\mathbb{N} \iff$ il existe une surjection de $\mathbb{N}$ dans $E$.
+
+---
+
+## Fonctions boréliennes
+
+Soit $(E, d)$ et $(F, d')$ deux espaces métriques. Une application $f : E \to F$ est dite borélienne si elle est mesurable par rapport aux tribus boréliennes de $E$ et $F$, c'est-à-dire si pour tout ouvert $O \subset F$, on a $f^{-1}(O) \in \mathcal{B}(E)$.
+
+De plus, si $f$ est continue, alors elle est borélienne.
+
+---
+
+## Fonctions mesurables
+
+Soit $(E, \mathcal{A})$ et $(F, \mathcal{B})$ deux espaces mesurables. Une application $f : E \to F$ est dite mesurable si et seulement si pour tout $B \in \mathcal{B}$, on a $f^{-1}(B) \in \mathcal{A}$.
+
+### Critère de mesurabilité
+
+Soit $(E, \mathcal{A})$ et $(F, \sigma(\mathcal{C}))$ deux espaces mesurables, et $f : E \to F$ une application. Alors $f$ est mesurable si et seulement si pour tout $C \in \mathcal{C}$, on a $f^{-1}(C) \in \mathcal{A}$.
+
+---
+
+## Intersection de tribus
+
+L'intersection d'une famille quelconque de tribus sur un ensemble $E$ est une tribu sur $E$.
+
+---
+
+## Produit fini d'ensembles dénombrables
+
+Un produit cartésien fini d'ensembles dénombrables est dénombrable.
+
+---
+
+## Réunion dénombrable d'ensembles dénombrables
+
+Une réunion dénombrable d'ensembles dénombrables est dénombrable.
+
+---
+
+## Trace d'une classe de parties de E sur une partie X de E
+
+Soit $\mathcal{C}$ une classe de parties de $E$ et $X \subset E$. La trace de $\mathcal{C}$ sur $X$ est la classe de parties de $X$ définie par :
+$$\mathcal{C}|_X = \{A \cap X : A \in \mathcal{C}\}$$
+
+Si $\mathcal{A}$ est une tribu sur $E$, alors $\mathcal{A}|_X$ est une tribu sur $X$.
+
+---
+
+## Tribu / $\sigma$-algèbre
+
+Une tribu (ou $\sigma$-algèbre) $\mathcal{A}$ sur un ensemble $E$ est une classe de parties de $E$ qui satisfait les conditions suivantes :
+
+(i) $\emptyset \in \mathcal{A}$,<br>
+(ii) si $A \in \mathcal{A}$, alors $E \setminus A \in \mathcal{A}$,<br>
+(iii) si $(A_n)_{n \in \mathbb{N}}$ est une suite d'éléments de $\mathcal{A}$, alors $\bigcup_{n \in \mathbb{N}} A_n \in \mathcal{A}$.<br>
+
+$(E, \mathcal{A})$ est appelé un espace mesurable.
+
+De plus, les propriétés suivantes sont vérifiées :
+
+1. Si $A, B \in \mathcal{A}$, alors $A \setminus B$, $A \cap B$, $A \cup B$ et $A \triangle B \in \mathcal{A}$.
+2. Si $(A_n)_{n \in \mathbb{N}}$ est une suite d'éléments de $\mathcal{A}$, alors $\bigcap_{n \in \mathbb{N}} A_n \in \mathcal{A}$.
+3. Si $(A_n)_{n \in \mathbb{N}}$ est une suite d'éléments de $\mathcal{A}$, alors $\bigcup_{n \in \mathbb{N}} A_n \in \mathcal{A}$.
+
+---
+
+## Tribu borélienne
+
+Soit $(E, d)$ un espace métrique. La tribu borélienne sur $E$, notée $\mathcal{B}(E)$, est la tribu engendrée par les ouverts de $E$ :
+$$\mathcal{B}(E) = \sigma(\{O \subset E : O \text{ ouvert}\})$$
+
+Sur $\mathbb{R}$, la tribu borélienne est engendrée par les intervalles ouverts.
+
+---
+
+## Tribu engendrée par une classe de parties de E
+
+La tribu engendrée par une classe $\mathcal{C}$ de parties de $E$ est la plus petite tribu contenant $\mathcal{C}$, notée $\sigma(\mathcal{C})$.
+
+$\sigma(\mathcal{C}) = \bigcap_{\mathcal{A} \text{ tribu sur } E, \mathcal{C} \subset \mathcal{A}} \mathcal{A}$
+
+---
+
+## Tribu réciproque et lemme de transport
+
+Soit $(E, \mathcal{A})$ et $(F, \mathcal{B})$ deux espaces mesurables et $f : E \to F$ une application. La tribu réciproque de $\mathcal{B}$ par $f$ est la tribu sur $E$ définie par :
+$$f^{-1}(\mathcal{B}) = \{f^{-1}(B) : B \in \mathcal{B}\}$$
+
+### Lemme de transport
+
+Soit $f : E \to F$ une application, et $\mathcal{C}$ une classe de parties de $F$. Alors $f^{-1}(\sigma(\mathcal{C})) = \sigma(f^{-1}(\mathcal{C}))$.
+
+---
+
 # Intégration sur un intervalle quelconque
 
 ## Théorème de continuité d'une intégrale à paramètre
@@ -2348,6 +2449,12 @@ Un ordre sur un ensemble $E$ est dit **bon** si toute partie non vide de $E$ pos
 ---
 
 # Topologie
+
+## $(\mathcal{C}^0([a,b]), \|\cdot\|_\infty)$ est un espace de Banach
+
+Toute suite de Cauchy $(f_n)_{n \in \mathbb{N}}$ dans cet espace vérifie le critère de Cauchy uniforme, $\mathbb{R}$ est complet donc $(f_n)$ converge uniformément dans $\mathcal{C}^0([a,b])$
+
+---
 
 ## Adhérence d'un connexe
 
@@ -2577,6 +2684,18 @@ Soit $(E, \|\cdot\|)$ un espace vectoriel normé et $U \subset E$ un ouvert. $U$
 
 ---
 
+## Partie relativement compacte et précompacte
+
+Soit $(X,d)$ un espace métrique. $A \subset X$ est relativement compacte ssi $\overline{A}$ est compact.
+
+Soit $(X,d)$ un espace métrique. $A \subset X$ est précompacte ssi $\forall \epsilon > 0, \exists x_1, \ldots, x_n \in X$ tels que $A \subset \bigcup_{i=1}^n B(x_i, \epsilon)$.
+
+Compact $\implies$ Relativement compact $\implies$ Précompact
+
+De plus, $X$ est compact $\iff$ $X$ est précompact et complet.
+
+---
+
 ## Points intérieurs, adhérents, isolés et d'accumulation
 
 Soit $(E, d)$ un espace métrique et $A \subseteq E$.
@@ -2632,6 +2751,14 @@ $$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall p, q \ge N, d(u_p, 
 
 ---
 
+## Théorème d'Ascoli-Arzelà
+
+$\forall (f_n)_{n \in \mathbb{N}} \in \mathcal{C}^0([a,b])^\mathbb{N}$, si $(f_n)$ est une suite bornée et uniformément équicontinue sur $[a,b]$, alors $(f_n)$ admet une sous-suite convergente pour la convergence uniforme sur $[a,b]$.
+
+Réciproquement, si $(f_n) \in \mathcal{C}^0([a,b])^\mathbb{N}$ converge uniformément vers $f \in \mathcal{C}^0([a,b])$, alors $(f_n)$ est bornée et uniformément équicontinue sur $[a,b]$.
+
+---
+
 ## Théorème de Borel-Lebesgue
 
 Dans un espace vectoriel normé de dimension finie, les fermés bornés sont compacts.
@@ -2657,6 +2784,12 @@ Propriété de Borel-Lebesgue $\iff$ Propriété de Bolzano-Weierstrass
 ## Théorème de Riesz
 
 Soit $(E, \|\cdot\|)$ un espace vectoriel normé sur $\mathbb{K}$. La boule unité fermée $B^f(0,1)$ est compacte si et seulement si $E$ est de dimension finie.
+
+---
+
+## Théorème de Weierstrass
+
+$\forall f \in \mathcal{C}^0([a,b]), \exists (P_n)_{n \in \mathbb{N}}$ une suite de polynômes telle que $P_n \to f$ uniformément sur $[a,b]$
 
 ---
 

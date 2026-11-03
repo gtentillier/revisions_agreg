@@ -12,7 +12,7 @@ LISTE_THEOREMES = os.path.join("data", "liste_theoremes.csv")
 SUIVI_REVISIONS = "suivi_revisions.csv"
 ESPACEMENT_JSON = os.path.join("data", "espacement.json")
 REVISIONS_MD = "revisions.md"
-THEOREMES_LISTE_MD = "theoremes.md"
+THEOREMES_LISTE_MD = "théorèmes.md"
 IMG_DIR = os.path.join("data", "img")
 
 
@@ -92,7 +92,7 @@ def mise_a_jour():
     # Etape 3: Rédiger revisions.md
     write_revisions_md(suivi_revisions, liste_theoremes)
 
-    # Etape 4: Rédiger theoremes.md
+    # Etape 4: Rédiger théorèmes.md
     write_all_theorems_md(liste_theoremes)
 
 

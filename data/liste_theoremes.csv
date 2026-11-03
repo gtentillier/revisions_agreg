@@ -1,15 +1,15 @@
 id,nom_theoreme,chapitre,expression_LaTeX
-1,Théorème du rang,Algèbre Linéaire,"Soient $E$ et $F$ deux espaces vectoriels sur un corps $\mathbb{k}$. Soit $u \in \mathcal{L}(E, F)$. Alors :
+1,Théorème du rang,Algèbre linéaire,"Soient $E$ et $F$ deux espaces vectoriels sur un corps $\mathbb{k}$. Soit $u \in \mathcal{L}(E, F)$. Alors :
 $$u \text{ induit un isomorphisme } \bar{u} :{E}/{\text{Ker}(u)} \cong \text{Im}(u)$$
 
 Si de plus $E$ et $F$ sont de dimension finie, alors :
 $$\dim(E) = \dim(\text{Ker}(u)) + \text{rg}(u)$$
 où $\text{Ker}(u)$ est le noyau de $u$ et $\text{rg}(u) = \dim(\text{Im}(u))$ est le rang de $u$."
-2,Théorème des valeurs intermédiaires,Analyse Réelle,"Soient $a, b \in \mathbb{R}$ tels que $a < b$. Soit $f : [a, b] \to \mathbb{R}$ une fonction continue sur le segment $[a, b]$.
+2,Théorème des valeurs intermédiaires,Analyse réelle,"Soient $a, b \in \mathbb{R}$ tels que $a < b$. Soit $f : [a, b] \to \mathbb{R}$ une fonction continue sur le segment $[a, b]$.
 Pour tout réel $y$ compris entre $f(a)$ et $f(b)$, il existe au moins un réel $c \in [a, b]$ tel que :
 $$f(c) = y$$
 Autrement dit, l'image d'un intervalle par une fonction continue est un intervalle."
-3,Lemme des noyaux,Algèbre Linéaire,"Soient $E$ un espace vectoriel sur un corps $\mathbb{K}$ et $u \in \mathcal{L}(E)$ un endomorphisme de $E$. Soient $P_1, \dots, P_n \in \mathbb{K}[X]$ des polynômes deux à deux premiers entre eux. On note $P = \prod_{i=1}^n P_i$.
+3,Lemme des noyaux,Algèbre linéaire,"Soient $E$ un espace vectoriel sur un corps $\mathbb{K}$ et $u \in \mathcal{L}(E)$ un endomorphisme de $E$. Soient $P_1, \dots, P_n \in \mathbb{K}[X]$ des polynômes deux à deux premiers entre eux. On note $P = \prod_{i=1}^n P_i$.
 Alors :
 $$\text{Ker}(P(u)) = \bigoplus_{i=1}^n \text{Ker}(P_i(u))$$
 De plus, la projection sur $\text{Ker}(P_i(u))$ parallèlement à $\bigoplus_{j \neq i} \text{Ker}(P_j(u))$ est donnée par la restriction à $\text{Ker}(P(u))$ d'un polynôme en $u$."
@@ -192,7 +192,7 @@ _Propriétés_ :
 38,Caractéristique,Anneaux,"La **caractéristique** d'un anneau unitaire $A$ est l'unique $n \in \mathbb{N}$ tel que $\ker \varphi = n\mathbb{Z}$, où $\varphi : \mathbb{Z} \to A, k \mapsto k \cdot 1_A$ est le morphisme canonique.
 
 C'est donc le plus petit entier $n > 0$ tel que $n \cdot 1_A = 0_A$ s'il existe, et $0$ sinon."
-39,Pivot de Gauss,Algèbre Linéaire,"Le pivot de Gauss consiste à transformer une matrice par opérations élémentaires sur les lignes OU sur les colonnes, mais il faut choisir l'un des deux et s'y tenir. Les opérations élémentaires sont :
+39,Pivot de Gauss,Algèbre linéaire,"Le pivot de Gauss consiste à transformer une matrice par opérations élémentaires sur les lignes OU sur les colonnes, mais il faut choisir l'un des deux et s'y tenir. Les opérations élémentaires sont :
 
 1. échanger deux lignes
 2. multiplier une ligne par un scalaire non nul
@@ -369,7 +369,7 @@ Calculer le rang de $A$, déterminer une base de son image et une base de son no
 </details>"
 40,Lemme de Gauss,Groupes,"Soient $a, b, c \in \mathbb{Z}$. Si $a \mid bc$ et si $a$ est premier avec $b$, c'est-à-dire si $\operatorname{pgcd}(a,b)=1$, alors :
 $$a \mid c.$$"
-41,Caractérisation du rang d'une matrice,Algèbre Linéaire,"Soit $A \in \mathcal{M}_{m,n}(\mathbb{K})$. Le rang de $A$, noté $\operatorname{rg}(A)$, est caractérisé par les propriétés équivalentes suivantes :
+41,Caractérisation du rang d'une matrice,Algèbre linéaire,"Soit $A \in \mathcal{M}_{m,n}(\mathbb{K})$. Le rang de $A$, noté $\operatorname{rg}(A)$, est caractérisé par les propriétés équivalentes suivantes :
 
 1. $\operatorname{rg}(A)$ est la dimension de l'espace engendré par les colonnes de $A$ ; c'est aussi la dimension de l'espace engendré par ses lignes.
 2. $\operatorname{rg}(A)$ est le nombre maximal de colonnes linéairement indépendantes de $A$ ; c'est aussi le nombre maximal de lignes linéairement indépendantes de $A$.
@@ -711,13 +711,13 @@ $$\exp(z+w) = \exp(z)\exp(w)$$
 
 4. Non-injectivité : La fonction $\exp$ n'est pas injective. Elle est périodique de période $2i\pi$. Son noyau est :
 $$\text{Ker}(\exp) = \{z \in \mathbb{C} \mid \exp(z) = 1\} = 2i\pi\mathbb{Z}$$"
-99,Développement limité de l'exponentielle,Analyse Réelle,"Soit $n \in \mathbb{N}$. Au voisinage de $0$, on a :
+99,Développement limité de l'exponentielle,Analyse réelle,"Soit $n \in \mathbb{N}$. Au voisinage de $0$, on a :
 $$ e^x = \sum\limits_{k=0}^{n} \frac{x^k}{k!} + O(x^{n+1}) $$"
-100,Développement limité du logarithme,Analyse Réelle,"Soit $n \in \mathbb{N}^*$. Au voisinage de $0$, on a :
+100,Développement limité du logarithme,Analyse réelle,"Soit $n \in \mathbb{N}^*$. Au voisinage de $0$, on a :
 $$ \ln(1+x) = \sum\limits_{k=1}^{n} (-1)^{k-1} \frac{x^k}{k} + O(x^{n+1}) $$"
-101,Développement limité du sinus,Analyse Réelle,"Soit $n \in \mathbb{N}$. Au voisinage de $0$, on a :
+101,Développement limité du sinus,Analyse réelle,"Soit $n \in \mathbb{N}$. Au voisinage de $0$, on a :
 $$ \sin(x) = \sum\limits_{k=0}^{n} (-1)^k \frac{x^{2k+1}}{(2k+1)!} + O(x^{2n+3}) $$"
-102,Développement limité du cosinus,Analyse Réelle,"Soit $n \in \mathbb{N}$. Au voisinage de $0$, on a :
+102,Développement limité du cosinus,Analyse réelle,"Soit $n \in \mathbb{N}$. Au voisinage de $0$, on a :
 $$ \cos(x) = \sum\limits_{k=0}^{n} (-1)^k \frac{x^{2k}}{(2k)!} + O(x^{2n+2}) $$"
 103,Fonctions holomorphes et équations de Cauchy-Riemann,Analyse complexe,"Soit $U$ un ouvert de $\mathbb{C}$. On dit qu'une fonction $f : U \to \mathbb{C}$ est holomorphe sur $U$ si elle est $\mathbb{C}$-dérivable en tout point de $U$.
 
@@ -1540,3 +1540,58 @@ De plus, on a les propriétés suivantes :
 2. $\operatorname{det}_C = \operatorname{det}_C(B) \cdot \operatorname{det}_B$ pour toute autre base $C$ de $E$.
 3. $\operatorname{det}(u) := \operatorname{det}_{B}(u(B))$, ne dépend pas de la base $B$ choisie.
 4. $\operatorname{det}(u \circ v) = \operatorname{det}(u) \cdot \operatorname{det}(v)$ pour toutes applications linéaires $u, v : E \to E$."
+"226","$(\mathcal{C}^0([a,b]), \|\cdot\|_\infty)$ est un espace de Banach","Topologie","Toute suite de Cauchy $(f_n)_{n \in \mathbb{N}}$ dans cet espace vérifie le critère de Cauchy uniforme, $\mathbb{R}$ est complet donc $(f_n)$ converge uniformément dans $\mathcal{C}^0([a,b])$"
+"227","Théorème de Weierstrass","Topologie","$\forall f \in \mathcal{C}^0([a,b]), \exists (P_n)_{n \in \mathbb{N}}$ une suite de polynômes telle que $P_n \to f$ uniformément sur $[a,b]$"
+"228","Théorème d'Ascoli-Arzelà","Topologie","$\forall (f_n)_{n \in \mathbb{N}} \in \mathcal{C}^0([a,b])^\mathbb{N}$, si $(f_n)$ est une suite bornée et uniformément équicontinue sur $[a,b]$, alors $(f_n)$ admet une sous-suite convergente pour la convergence uniforme sur $[a,b]$.
+
+Réciproquement, si $(f_n) \in \mathcal{C}^0([a,b])^\mathbb{N}$ converge uniformément vers $f \in \mathcal{C}^0([a,b])$, alors $(f_n)$ est bornée et uniformément équicontinue sur $[a,b]$."
+"229","Partie relativement compacte et précompacte","Topologie","Soit $(X,d)$ un espace métrique. $A \subset X$ est relativement compacte ssi $\overline{A}$ est compact.
+
+Soit $(X,d)$ un espace métrique. $A \subset X$ est précompacte ssi $\forall \epsilon > 0, \exists x_1, \ldots, x_n \in X$ tels que $A \subset \bigcup_{i=1}^n B(x_i, \epsilon)$.
+
+Compact $\implies$ Relativement compact $\implies$ Précompact
+
+De plus, $X$ est compact $\iff$ $X$ est précompact et complet."
+"230","Dénombrabilité","Intégration de Lebesgue","Un ensemble $E$ est dit dénombrable s'il existe une injection de $E$ dans $\mathbb{N} \iff$ il existe une surjection de $\mathbb{N}$ dans $E$."
+"231","Produit fini d'ensembles dénombrables","Intégration de Lebesgue","Un produit cartésien fini d'ensembles dénombrables est dénombrable."
+"232","Réunion dénombrable d'ensembles dénombrables","Intégration de Lebesgue","Une réunion dénombrable d'ensembles dénombrables est dénombrable."
+"233","Classe de parties de E","Intégration de Lebesgue","Une classe $\mathcal{C}$ de parties de $E$ est une famille de parties de $E$, autrement dit $\mathcal{C} \subset \mathcal{P}(E)$."
+"234","Tribu / $\sigma$-algèbre","Intégration de Lebesgue","Une tribu (ou $\sigma$-algèbre) $\mathcal{A}$ sur un ensemble $E$ est une classe de parties de $E$ qui satisfait les conditions suivantes :
+
+(i) $\emptyset \in \mathcal{A}$,<br>
+(ii) si $A \in \mathcal{A}$, alors $E \setminus A \in \mathcal{A}$,<br>
+(iii) si $(A_n)_{n \in \mathbb{N}}$ est une suite d'éléments de $\mathcal{A}$, alors $\bigcup_{n \in \mathbb{N}} A_n \in \mathcal{A}$.<br>
+
+$(E, \mathcal{A})$ est appelé un espace mesurable.
+
+De plus, les propriétés suivantes sont vérifiées :
+
+1. Si $A, B \in \mathcal{A}$, alors $A \setminus B$, $A \cap B$, $A \cup B$ et $A \triangle B \in \mathcal{A}$.
+2. Si $(A_n)_{n \in \mathbb{N}}$ est une suite d'éléments de $\mathcal{A}$, alors $\bigcap_{n \in \mathbb{N}} A_n \in \mathcal{A}$.
+3. Si $(A_n)_{n \in \mathbb{N}}$ est une suite d'éléments de $\mathcal{A}$, alors $\bigcup_{n \in \mathbb{N}} A_n \in \mathcal{A}$."
+"235","Intersection de tribus","Intégration de Lebesgue","L'intersection d'une famille quelconque de tribus sur un ensemble $E$ est une tribu sur $E$."
+"236","Tribu engendrée par une classe de parties de E","Intégration de Lebesgue","La tribu engendrée par une classe $\mathcal{C}$ de parties de $E$ est la plus petite tribu contenant $\mathcal{C}$, notée $\sigma(\mathcal{C})$.
+
+$\sigma(\mathcal{C}) = \bigcap_{\mathcal{A} \text{ tribu sur } E, \mathcal{C} \subset \mathcal{A}} \mathcal{A}$"
+"237","Trace d'une classe de parties de E sur une partie X de E","Intégration de Lebesgue","Soit $\mathcal{C}$ une classe de parties de $E$ et $X \subset E$. La trace de $\mathcal{C}$ sur $X$ est la classe de parties de $X$ définie par :
+$$\mathcal{C}|_X = \{A \cap X : A \in \mathcal{C}\}$$
+
+Si $\mathcal{A}$ est une tribu sur $E$, alors $\mathcal{A}|_X$ est une tribu sur $X$."
+"238","Tribu réciproque et lemme de transport","Intégration de Lebesgue","Soit $(E, \mathcal{A})$ et $(F, \mathcal{B})$ deux espaces mesurables et $f : E \to F$ une application. La tribu réciproque de $\mathcal{B}$ par $f$ est la tribu sur $E$ définie par :
+$$f^{-1}(\mathcal{B}) = \{f^{-1}(B) : B \in \mathcal{B}\}$$
+
+### Lemme de transport
+
+Soit $f : E \to F$ une application, et $\mathcal{C}$ une classe de parties de $F$. Alors $f^{-1}(\sigma(\mathcal{C})) = \sigma(f^{-1}(\mathcal{C}))$."
+"239","Tribu borélienne","Intégration de Lebesgue","Soit $(E, d)$ un espace métrique. La tribu borélienne sur $E$, notée $\mathcal{B}(E)$, est la tribu engendrée par les ouverts de $E$ :
+$$\mathcal{B}(E) = \sigma(\{O \subset E : O \text{ ouvert}\})$$
+
+Sur $\mathbb{R}$, la tribu borélienne est engendrée par les intervalles ouverts."
+"240","Fonctions mesurables","Intégration de Lebesgue","Soit $(E, \mathcal{A})$ et $(F, \mathcal{B})$ deux espaces mesurables. Une application $f : E \to F$ est dite mesurable si et seulement si pour tout $B \in \mathcal{B}$, on a $f^{-1}(B) \in \mathcal{A}$.
+
+### Critère de mesurabilité
+
+Soit $(E, \mathcal{A})$ et $(F, \sigma(\mathcal{C}))$ deux espaces mesurables, et $f : E \to F$ une application. Alors $f$ est mesurable si et seulement si pour tout $C \in \mathcal{C}$, on a $f^{-1}(C) \in \mathcal{A}$."
+"241","Fonctions boréliennes","Intégration de Lebesgue","Soit $(E, d)$ et $(F, d')$ deux espaces métriques. Une application $f : E \to F$ est dite borélienne si elle est mesurable par rapport aux tribus boréliennes de $E$ et $F$, c'est-à-dire si pour tout ouvert $O \subset F$, on a $f^{-1}(O) \in \mathcal{B}(E)$.
+
+De plus, si $f$ est continue, alors elle est borélienne."

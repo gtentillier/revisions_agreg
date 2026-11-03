@@ -1,1 +1,1 @@
-# Algèbre linéaire
+# Intégration de Lebesgue
