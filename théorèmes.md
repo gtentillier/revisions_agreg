@@ -16,6 +16,16 @@ En particulier, si $B$ est une base de $E$, alors $B^*$ est une base de $E^*$ et
 
 ---
 
+## Calcul du déterminant en développant par rapport à une ligne ou une colonne
+
+(i) $\forall i \in \{1, 2, \ldots, n\}$, $\det(A) = \sum_{j=1}^{n} a_{ij} C_{ij}$, où $C_{ij}$ est le cofacteur de $A$ d'indice $(i,j)$.
+
+(ii) $\forall j \in \{1, 2, \ldots, n\}$, $\det(A) = \sum_{i=1}^{n} a_{ij} C_{ij}$, où $C_{ij}$ est le cofacteur de $A$ d'indice $(i,j)$.
+
+$C_{ij} = (-1)^{i+j} \det(A_{ij})$, où $A_{ij}$ est la matrice obtenue en supprimant la $i$-ème ligne et la $j$-ème colonne de $A$.
+
+---
+
 ## Caractérisation des matrices diagonalisables
 
 Une matrice $A \in \mathcal{M}_n(\mathbb{K})$ est diagonalisable sur $\mathbb{K}$ si et seulement si l'une des conditions suivantes est vérifiée :
@@ -86,6 +96,16 @@ Alors il existe un unique couple $(d, n) \in \mathcal{L}(E)^2$ tel que :
 3. $d$ et $n$ commutent ($d \circ n = n \circ d$)
 
 De plus, $d$ et $n$ sont des polynômes en $u$.
+
+---
+
+## Définition et formule de la comatrice
+
+Soit $A \in \operatorname{M}_n(\mathbb{K})$. $\operatorname{Com}(A) = (C_{ij})_{1 \leq i,j \leq n}$ où $C_{ij}$ est le cofacteur de $A$ d'indice $(i,j)$.
+
+C'est à dire que $\operatorname{Com}(A)_{ij} = (-1)^{i+j} \det(A_{ij})$, où $A_{ij}$ est la matrice obtenue en supprimant la $i$-ème ligne et la $j$-ème colonne de $A$.
+
+On a la formule suivante : $\det(A)I_n = A \cdot \operatorname{Com}(A)^T$ = $\operatorname{Com}(A)^T \cdot A$.
 
 ---
 
@@ -179,6 +199,18 @@ Version fonctionnelle : <br>$O(E) = \{f \in GL(E) \mid \forall x, y \in E, \lang
 <br>$SO(E) = \{f \in O(E) \mid \det(f) = 1\}$
 <br>$U(E) = \{f \in GL(E) \mid \forall x, y \in E, \langle f(x), f(y) \rangle = \langle x, y \rangle\}$
 <br>$SU(E) = \{f \in U(E) \mid \det(f) = 1\}$
+
+---
+
+## Groupe spécial linéaire et générateurs
+
+$SL_n(\mathbb{K}) = \{ A \in \operatorname{GL}_n(\mathbb{K}) \mid \det(A) = 1 \} = \operatorname{ker}(\det : \operatorname{GL}_n(\mathbb{K}) \to \mathbb{K}^*)$.
+
+$SL(E) = \{ f \in \mathcal{GL}(E) \mid \det(f) = 1 \} = \operatorname{ker}(\det : \mathcal{GL}(E) \to \mathbb{K}^*)$.
+
+$SL(E) \lhd \mathcal{GL}(E)$ et $GL(E) / SL(E) \simeq \mathbb{K}^*$.
+
+$SL_n(\mathbb{K})$ est engendré par les transvections $T_{ij}(\lambda) = I_n + \lambda E_{ij}$, où $i \neq j$ et $\lambda \in \mathbb{K}$.
 
 ---
 

@@ -1595,3 +1595,20 @@ Soit $(E, \mathcal{A})$ et $(F, \sigma(\mathcal{C}))$ deux espaces mesurables, e
 "241","Fonctions boréliennes","Intégration de Lebesgue","Soit $(E, d)$ et $(F, d')$ deux espaces métriques. Une application $f : E \to F$ est dite borélienne si elle est mesurable par rapport aux tribus boréliennes de $E$ et $F$, c'est-à-dire si pour tout ouvert $O \subset F$, on a $f^{-1}(O) \in \mathcal{B}(E)$.
 
 De plus, si $f$ est continue, alors elle est borélienne."
+"242","Calcul du déterminant en développant par rapport à une ligne ou une colonne","Algèbre linéaire","(i) $\forall i \in \{1, 2, \ldots, n\}$, $\det(A) = \sum_{j=1}^{n} a_{ij} C_{ij}$, où $C_{ij}$ est le cofacteur de $A$ d'indice $(i,j)$.
+
+(ii) $\forall j \in \{1, 2, \ldots, n\}$, $\det(A) = \sum_{i=1}^{n} a_{ij} C_{ij}$, où $C_{ij}$ est le cofacteur de $A$ d'indice $(i,j)$.
+
+$C_{ij} = (-1)^{i+j} \det(A_{ij})$, où $A_{ij}$ est la matrice obtenue en supprimant la $i$-ème ligne et la $j$-ème colonne de $A$."
+"243","Définition et formule de la comatrice","Algèbre linéaire","Soit $A \in \operatorname{M}_n(\mathbb{K})$. $\operatorname{Com}(A) = (C_{ij})_{1 \leq i,j \leq n}$ où $C_{ij}$ est le cofacteur de $A$ d'indice $(i,j)$.
+
+C'est à dire que $\operatorname{Com}(A)_{ij} = (-1)^{i+j} \det(A_{ij})$, où $A_{ij}$ est la matrice obtenue en supprimant la $i$-ème ligne et la $j$-ème colonne de $A$.
+
+On a la formule suivante : $\det(A)I_n = A \cdot \operatorname{Com}(A)^T$ = $\operatorname{Com}(A)^T \cdot A$."
+"244","Groupe spécial linéaire et générateurs","Algèbre linéaire","$SL_n(\mathbb{K}) = \{ A \in \operatorname{GL}_n(\mathbb{K}) \mid \det(A) = 1 \} = \operatorname{ker}(\det : \operatorname{GL}_n(\mathbb{K}) \to \mathbb{K}^*)$.
+
+$SL(E) = \{ f \in \mathcal{GL}(E) \mid \det(f) = 1 \} = \operatorname{ker}(\det : \mathcal{GL}(E) \to \mathbb{K}^*)$.
+
+$SL(E) \lhd \mathcal{GL}(E)$ et $GL(E) / SL(E) \simeq \mathbb{K}^*$.
+
+$SL_n(\mathbb{K})$ est engendré par les transvections $T_{ij}(\lambda) = I_n + \lambda E_{ij}$, où $i \neq j$ et $\lambda \in \mathbb{K}$."
