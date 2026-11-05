@@ -1,0 +1,2 @@
+ALgèbre linéaire :
+- théorème de la base incomplète en dimension infinie avec le lemme de zorn

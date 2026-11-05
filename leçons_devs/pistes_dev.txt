@@ -1,0 +1,44 @@
+sujets développements:
+
+Groupes :
+- Un Sous groupe multiplicatif fini d’un corps est cyclique, version avec phi et version avec l’exposant
+- petit théorème de fermat pour les traces de matrice avec actions de groupe
+- probabilité que deux éléments commutent dans un groupe non abélien fini <5/8
+- Théorème de Cauchy
+- exos caractérisation p-groupe + théorème de sylow Ex 6 TD2 Algèbre, théorème de Cayley
+- formule de Burnside cf TD
+
++algèbre linéaire :
+- quotienter le groupe linéaire par le groupe spécial linéaire
+- action du groupe GLn(K) ×GLp(K) sur Mn,p(K), et en disant que deux matrices sont ´equivalentes si et seulement si elles sont dans la mˆeme orbite
+- Centre de On(R) = +-In
+
+Algèbre linéaire :
+- commutant d’un endomorphisme C(f) = K[f] si f diagonalisable, pareil bicommutant
+- cayley hamilton avec la comatrice
+- identité de sylvester
+- pivot de gauss et géométrie : par chaque 5 points du plan affine passe une conique
+- Réduction de Jordan
+- Surjectivité de l’exponentielle de matrice voir analyse complexe 125
+
++topo :
+- intérieur et adhérence matrices diagonalisables dans Mn(C) et cayley hamilton
+- GLn(R) a deux composantes connexes par arcs, avec décomposition polaire et exercice 11 TD feuille 2. GLn(C) n’en a qu’une (on les relie à In, via la trigonalisation, où directement en essayant avec un segment, et en se décalant si on croise des 1/1-vp). décomposition polaire généralisée de GLn(R) à Mn(R) par densité de GLn(R) et compacité de On(R)
+
+Analyse complexe :
+- théorème de picard
+- Surjectivité de l’exponentielle voir analyse complexe 125
+- Théorème de Borel et conditions pour qu’une fonction réelle Cinfini soit analytique page 19 cf DM1 AP
+
+à trier :
+- connexité de GLn(C) avec l’exponentielle
+- surjection de la projection de SLn(Z) dans SLn(Z/pZ) (cours algèbre linéaire, page 6,1
+- théorème de frobenius-zolotarev et application (génial, recasable) poly algèbre linéaire, page 32 fin de page
+- géométrie : théorème du confinement
+- suites récurrentes : fonctions complexes -> ensemble de Julia ou de Mandelbrot
+- cas d’usage produit de dualité
+- Théorème de Bruhat et action de GLn(K) sur les drapeaux
+- polynômes orthogonaux / polynômes de hermite cf cours spé chap 12 page 3,1/4
+- adhérence des fonctions polynômiales à coefficients positifs, et autre question voir poly châteaux chapitre séries de fonctions
+- endomorphismes cycliques, matrices compagnons, topologie des matrices cycliques (ouvert dense non-borné connexe par arcs de Mn(K))
+- Théorème de Luca : racine de P’ dans conv(P-1({0})), puis si P’ a une racine dans H alors P(H) = C où P polynôme à coefficients complexes, H un demi plan de C. lien avec le fait que ça fonctionne car couper le plan en deux parties convexes est forcément fait un séparant de part et d’autre d’une droite (ou d’un hyperplan plus généralement).
