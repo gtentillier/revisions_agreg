@@ -16,7 +16,7 @@ Groupes :
 Algèbre linéaire :
 - commutant d’un endomorphisme C(f) = K[f] si f diagonalisable, pareil bicommutant
 - cayley hamilton avec la comatrice
-- identité de sylvester
+- identité de sylvester et formule de Binet-Cauchy
 - pivot de gauss et géométrie : par chaque 5 points du plan affine passe une conique
 - Réduction de Jordan
 - Surjectivité de l’exponentielle de matrice voir analyse complexe 125
