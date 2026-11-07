@@ -2472,6 +2472,56 @@ Supposons que :
 
 ---
 
+# Probabilités
+
+## Croissance et décroissance séquentielle
+
+Soit $(\varOmega,\mathcal{F},\mathbb{P})$ un espace de probabilité.
+
+Soit $(A_n)_{n \in \mathbb{N}}$ une suite d'événements telle que $A_n \subset A_{n+1}$ pour tout $n \in \mathbb{N}$. Alors, on a :
+$$\mathbb{P}\left(\bigcup_{n=1}^{\infty} A_n\right) = \lim_{n \to \infty} \mathbb{P}(A_n)$$
+
+Soit $(A_n)_{n \in \mathbb{N}}$ une suite d'événements telle que $A_{n+1} \subset A_n$ pour tout $n \in \mathbb{N}$. Alors, on a :
+$$\mathbb{P}\left(\bigcap_{n=1}^{\infty} A_n\right) = \lim_{n \to \infty} \mathbb{P}(A_n)$$
+
+---
+
+## Espace de probabilité
+
+Soit $(\varOmega,\mathcal{F},\mathbb{P})$ un espace mesuré. C'est un espace de probabilité si $\mathbb{P}(\varOmega) = 1$.
+
+---
+
+## Formule de Bayes
+
+Soit $(\varOmega,\mathcal{F},\mathbb{P})$ un espace de probabilité et $A,B \in \mathcal{F}$ des événements tels que $\mathbb{P}(A), \mathbb{P}(B) > 0$. Alors, on a :
+$$\mathbb{P}(A \mid B) = \frac{\mathbb{P}(B \mid A) \mathbb{P}(A)}{\mathbb{P}(B)}$$
+
+---
+
+## Formule des probabilités totales
+
+Soit $(\varOmega,\mathcal{F},\mathbb{P})$ un espace de probabilité et $A_1, \ldots, A_n \in \mathcal{F}$ des événements tels que $A_i \cap A_j = \varnothing$ pour tout $i \neq j$, $\bigcup_{i=1}^{n} A_i = \varOmega$ et $\mathbb{P}(A_i) > 0$ pour tout $i$. Alors, pour tout événement $B \in \mathcal{F}$, on a :
+$$\mathbb{P}(B) = \sum_{i=1}^{n} \mathbb{P}(B \mid A_i) \mathbb{P}(A_i)$$
+
+---
+
+## Formule du crible
+
+Soit $(\varOmega,\mathcal{F},\mathbb{P})$ un espace de probabilité et $A_1, \ldots, A_n \in \mathcal{F}$ des événements. Alors, on a :
+$$\mathbb{P}\left(\bigcup_{i=1}^{n} A_i\right) = \sum_{i=1}^{n} \mathbb{P}(A_i) - \sum_{1 \leq i < j \leq n} \mathbb{P}(A_i \cap A_j) + \sum_{1 \leq i < j < k \leq n} \mathbb{P}(A_i \cap A_j \cap A_k) - \ldots + (-1)^{n+1} \mathbb{P}(A_1 \cap \ldots \cap A_n)$$
+Autrement dit, on a :
+$$\mathbb{P}\left(\bigcup_{i=1}^{n} A_i\right) = \sum_{k=1}^{n} (-1)^{k+1} \sum_{1 \leq i_1 < \ldots < i_k \leq n} \mathbb{P}(A_{i_1} \cap \ldots \cap A_{i_k})$$
+
+---
+
+## Sous-$\sigma$-additivité
+
+Soit $(\varOmega,\mathcal{F},\mathbb{P})$ un espace de probabilité et $(A_n)_{n \in \mathbb{N}}$ une suite d'événements. Alors, on a :
+$$\mathbb{P}\left(\bigcup_{n=1}^{\infty} A_n\right) \leq \sum_{n=1}^{\infty} \mathbb{P}(A_n)$$
+
+---
+
 # Théorie des ensembles
 
 ## Bon ordre
@@ -2833,10 +2883,26 @@ Alors il existe une unique fonction continue $\tilde{f} : \overline{A} \to F$ te
 
 ---
 
+## Topologie
+
+Soit $E$ un ensemble et $\mathcal{T} \subset \mathcal{P}(E)$ une famille de parties de $E$. $\mathcal{T}$ est une topologie sur $E$ si elle satisfait les conditions suivantes :
+
+1. $\varnothing,E \in \mathcal{T}$
+2. $\mathcal{T}$ est stable par intersection finie (ou simple)
+3. $\mathcal{T}$ est stable par union quelconque
+
+---
+
 ## Topologie d'un espace vectoriel de dimension finie
 
 1. Tout espace vectoriel normé de dimension finie est complet.
 2. Tout sous-espace vectoriel de dimension finie d'un espace vectoriel normé est fermé.
+
+---
+
+## Topologie induite
+
+Soit $(E,\mathcal{T})$ un espace topologique et $A \subset E$. La topologie induite sur $A$ est la famille $\mathcal{T}_A = \{U \cap A \mid U \in \mathcal{T}\}$. On note $(A,\mathcal{T}_A)$ l'espace topologique induit.
 
 ---
 

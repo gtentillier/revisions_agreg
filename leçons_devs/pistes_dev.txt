@@ -42,3 +42,6 @@ Analyse complexe :
 - adhérence des fonctions polynômiales à coefficients positifs, et autre question voir poly châteaux chapitre séries de fonctions
 - endomorphismes cycliques, matrices compagnons, topologie des matrices cycliques (ouvert dense non-borné connexe par arcs de Mn(K))
 - Théorème de Luca : racine de P’ dans conv(P-1({0})), puis si P’ a une racine dans H alors P(H) = C où P polynôme à coefficients complexes, H un demi plan de C. lien avec le fait que ça fonctionne car couper le plan en deux parties convexes est forcément fait un séparant de part et d’autre d’une droite (ou d’un hyperplan plus généralement).
+
+Poubelle :
+- Formule du crible et application au nombre de dérangements de 1,n
