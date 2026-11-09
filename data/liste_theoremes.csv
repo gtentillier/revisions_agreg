@@ -1636,3 +1636,45 @@ $$\mathbb{P}\left(\bigcup_{i=1}^{n} A_i\right) = \sum_{k=1}^{n} (-1)^{k+1} \sum_
 $$\mathbb{P}(A \mid B) = \frac{\mathbb{P}(B \mid A) \mathbb{P}(A)}{\mathbb{P}(B)}$$"
 "252","Formule des probabilités totales","Probabilités","Soit $(\varOmega,\mathcal{F},\mathbb{P})$ un espace de probabilité et $A_1, \ldots, A_n \in \mathcal{F}$ des événements tels que $A_i \cap A_j = \varnothing$ pour tout $i \neq j$, $\bigcup_{i=1}^{n} A_i = \varOmega$ et $\mathbb{P}(A_i) > 0$ pour tout $i$. Alors, pour tout événement $B \in \mathcal{F}$, on a :
 $$\mathbb{P}(B) = \sum_{i=1}^{n} \mathbb{P}(B \mid A_i) \mathbb{P}(A_i)$$"
+"253","Structure de l'ensemble des fonctions mesurables à valeurs dans $(\mathbb{K},\mathcal{B}(\mathbb{K}))$","Intégration de Lebesgue","L'ensemble des fonctions mesurables à valeurs dans $\mathbb{K} = \mathbb{R}$ ou $\mathbb{C}$ sur un espace mesurable $(E, \mathcal{A})$ est une algèbre, munie des lois de composition internes $+$ et $\cdot$ définies par :
+
+$$
+(f + g)(x) = f(x) + g(x) \quad \text{et} \quad (f \cdot g)(x) = f(x) \cdot g(x)
+$$
+
+pour toutes fonctions $f$ et $g$ mesurables et tout $x \in E$.
+
+et de la loi de composition externe définie par :
+
+$$
+(\alpha \cdot f)(x) = \alpha \cdot f(x)
+$$"
+"254","Mesure","Intégration de Lebesgue","Soit $(E, \mathcal{A})$ un espace mesurable. On dit que $\mu : \mathcal{A} \to [0, +\infty]$ est une mesure sur $(E, \mathcal{A})$ si elle satisfait les conditions suivantes :
+
+1. $\mu(\emptyset) = 0$.
+2. $\mu$ est $\sigma$-additive, c'est-à-dire que pour toute famille dénombrable $(A_n)_{n \in \mathbb{N}}$ d'ensembles disjoints de $\mathcal{A}$,
+
+$$
+\mu\left(\bigcup_{n=0}^{\infty} A_n\right) = \sum_{n=0}^{\infty} \mu(A_n).
+$$
+
+De plus, on dit que $\mu$ est finie si $\mu(E) < +\infty$ et $\sigma$-finie si $E$ peut être écrit comme une union dénombrable disjointe d'ensembles de mesure finie.
+
+Enfin, une mesure est sous-$\sigma$-additive : pour toute famille dénombrable $(A_n)_{n \in \mathbb{N}}$ d'ensembles de $\mathcal{A}$,
+
+$$
+\mu\left(\bigcup_{n=0}^{\infty} A_n\right) \leq \sum_{n=0}^{\infty} \mu(A_n).
+$$"
+"255","Théorème de la limite monotone","Intégration de Lebesgue","Soit $(E, \mathcal{A}, \mu)$ un espace mesuré. Soit $(A_n)_{n \in \mathbb{N}}$ une suite de $\mathcal{A}$.
+
+Si $(A_n)_{n \in \mathbb{N}}$ est croissante, c'est-à-dire que $A_n \subseteq A_{n+1}$ pour tout $n \in \mathbb{N}$, alors :
+
+$$
+\mu\left(\bigcup_{n=0}^{\infty} A_n\right) = \lim_{n \to \infty} \mu(A_n).
+$$
+
+Si $(A_n)_{n \in \mathbb{N}}$ est décroissante, c'est-à-dire que $A_n \supseteq A_{n+1}$ pour tout $n \in \mathbb{N}$, et si $\mu(A_N) < +\infty$ APCR, alors :
+
+$$
+\mu\left(\bigcap_{n=0}^{\infty} A_n\right) = \lim_{n \to \infty} \mu(A_n).
+$$"

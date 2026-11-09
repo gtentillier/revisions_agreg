@@ -1,5 +1,8 @@
 sujets développements:
 
+Analyse réelle :
+- Théorème du point fixe de Banach
+
 Groupes :
 - Un Sous groupe multiplicatif fini d’un corps est cyclique, version avec phi et version avec l’exposant
 - petit théorème de fermat pour les traces de matrice avec actions de groupe
@@ -20,6 +23,7 @@ Algèbre linéaire :
 - pivot de gauss et géométrie : par chaque 5 points du plan affine passe une conique
 - Réduction de Jordan
 - Surjectivité de l’exponentielle de matrice voir analyse complexe 125
+- décomposition de dunford
 
 +topo :
 - intérieur et adhérence matrices diagonalisables dans Mn(C) et cayley hamilton

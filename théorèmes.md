@@ -2350,6 +2350,27 @@ L'intersection d'une famille quelconque de tribus sur un ensemble $E$ est une tr
 
 ---
 
+## Mesure
+
+Soit $(E, \mathcal{A})$ un espace mesurable. On dit que $\mu : \mathcal{A} \to [0, +\infty]$ est une mesure sur $(E, \mathcal{A})$ si elle satisfait les conditions suivantes :
+
+1. $\mu(\emptyset) = 0$.
+2. $\mu$ est $\sigma$-additive, c'est-à-dire que pour toute famille dénombrable $(A_n)_{n \in \mathbb{N}}$ d'ensembles disjoints de $\mathcal{A}$,
+
+$$
+\mu\left(\bigcup_{n=0}^{\infty} A_n\right) = \sum_{n=0}^{\infty} \mu(A_n).
+$$
+
+De plus, on dit que $\mu$ est finie si $\mu(E) < +\infty$ et $\sigma$-finie si $E$ peut être écrit comme une union dénombrable disjointe d'ensembles de mesure finie.
+
+Enfin, une mesure est sous-$\sigma$-additive : pour toute famille dénombrable $(A_n)_{n \in \mathbb{N}}$ d'ensembles de $\mathcal{A}$,
+
+$$
+\mu\left(\bigcup_{n=0}^{\infty} A_n\right) \leq \sum_{n=0}^{\infty} \mu(A_n).
+$$
+
+---
+
 ## Produit fini d'ensembles dénombrables
 
 Un produit cartésien fini d'ensembles dénombrables est dénombrable.
@@ -2359,6 +2380,42 @@ Un produit cartésien fini d'ensembles dénombrables est dénombrable.
 ## Réunion dénombrable d'ensembles dénombrables
 
 Une réunion dénombrable d'ensembles dénombrables est dénombrable.
+
+---
+
+## Structure de l'ensemble des fonctions mesurables à valeurs dans $(\mathbb{K},\mathcal{B}(\mathbb{K}))$
+
+L'ensemble des fonctions mesurables à valeurs dans $\mathbb{K} = \mathbb{R}$ ou $\mathbb{C}$ sur un espace mesurable $(E, \mathcal{A})$ est une algèbre, munie des lois de composition internes $+$ et $\cdot$ définies par :
+
+$$
+(f + g)(x) = f(x) + g(x) \quad \text{et} \quad (f \cdot g)(x) = f(x) \cdot g(x)
+$$
+
+pour toutes fonctions $f$ et $g$ mesurables et tout $x \in E$.
+
+et de la loi de composition externe définie par :
+
+$$
+(\alpha \cdot f)(x) = \alpha \cdot f(x)
+$$
+
+---
+
+## Théorème de la limite monotone
+
+Soit $(E, \mathcal{A}, \mu)$ un espace mesuré. Soit $(A_n)_{n \in \mathbb{N}}$ une suite de $\mathcal{A}$.
+
+Si $(A_n)_{n \in \mathbb{N}}$ est croissante, c'est-à-dire que $A_n \subseteq A_{n+1}$ pour tout $n \in \mathbb{N}$, alors :
+
+$$
+\mu\left(\bigcup_{n=0}^{\infty} A_n\right) = \lim_{n \to \infty} \mu(A_n).
+$$
+
+Si $(A_n)_{n \in \mathbb{N}}$ est décroissante, c'est-à-dire que $A_n \supseteq A_{n+1}$ pour tout $n \in \mathbb{N}$, et si $\mu(A_N) < +\infty$ APCR, alors :
+
+$$
+\mu\left(\bigcap_{n=0}^{\infty} A_n\right) = \lim_{n \to \infty} \mu(A_n).
+$$
 
 ---
 
