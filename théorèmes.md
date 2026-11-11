@@ -30,14 +30,18 @@ $C_{ij} = (-1)^{i+j} \det(A_{ij})$, où $A_{ij}$ est la matrice obtenue en suppr
 
 Une matrice $A \in \mathcal{M}_n(\mathbb{K})$ est diagonalisable sur $\mathbb{K}$ si et seulement si l'une des conditions suivantes est vérifiée :
 
-1. Son polynôme caractéristique $\chi_A$ est scindé (ie. u est scindé) sur $\mathbb{K}$ et la dimension de chaque sous-espace propre est égale à la multiplicité de la valeur propre correspondante.
-2. Son polynôme minimal $m_A$ est scindé à racines simples sur $\mathbb{K}$.
+1. $\chi_A$ est scindé (ie. u est scindé) sur $\mathbb{K}$ et la dimension de chaque sous-espace propre est égale à la multiplicité de la valeur propre correspondante.
+2. Son polynôme minimal $\pi_A$ est scindé à racines simples sur $\mathbb{K}$.
 
 ---
 
 ## Caractérisation des matrices trigonalisables
 
-Une matrice $A \in \mathcal{M}_n(\mathbb{K})$ est trigonalisable sur $\mathbb{K}$ si et seulement si son polynôme caractéristique $\chi_A$ est scindé sur $\mathbb{K}$.
+Soit $A \in \mathcal{M}_n(\mathbb{K})$. Les propositions suivantes sont équivalentes :
+
+1. $A$ est trigonalisable sur $\mathbb{K}$.
+2. $\chi_A$ est scindé sur $\mathbb{K}$.
+3. $\pi_A$ est scindé sur $\mathbb{K}$.
 
 ---
 
@@ -1576,6 +1580,29 @@ Un élément $x \in A$ est **inversible** s'il existe $y \in A$ tel que $xy = yx
 
 ---
 
+# Divers
+
+## Bon ordre
+
+Un ordre sur un ensemble $E$ est dit **bon** si toute partie non vide de $E$ possède un minimum.
+
+---
+
+## Polynômes de Tchebychev
+
+Pour tout $n \in \mathbb{N}$, on définit le polynôme de Tchebychev de degré $n$ de première espèce par la relation suivante :
+$$T_n(\cos \theta) = \cos(n\theta)$$
+
+On a la relation de récurrence suivante :
+$$T_0(x) = 1, \quad T_1(x) = x, \quad T_{n+1}(x) = 2xT_n(x) - T_{n-1}(x) \quad \text{pour } n \ge 1$$
+
+De plus, pour tout $x \in \mathbb{R}$, $T_n(-x) = (-1)^n T_n(x)$, ce qui montre que $T_n$ est pair si $n$ est pair et impair si $n$ est impair.
+
+Enfin, pour $n, m \in \mathbb{N}$, on a la relation suivante :
+$$T_n(T_m(x)) = T_{nm}(x)$$
+
+---
+
 # Espaces vectoriels normés
 
 ## Adjoint d'un endomorphisme
@@ -2572,6 +2599,64 @@ $$\mathbb{P}\left(\bigcup_{i=1}^{n} A_i\right) = \sum_{k=1}^{n} (-1)^{k+1} \sum_
 
 ---
 
+## Indépendance d'événements $\implies$ indépendance des tribus engendrées
+
+Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $(A_i)_{i \in I}$ une famille d'événements. Les deux propositions suivantes sont équivalentes :
+
+1. Les événements $(A_i)_{i \in I}$ sont mutuellement indépendants sous $\mathbb{P}$.
+2. Les tribus $(\sigma(A_i))_{i \in I}$ sont mutuellement indépendantes sous $\mathbb{P}$.
+
+---
+
+## Indépendance de classes d'événements
+
+Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $(\mathcal{C}_i)_{i \in I}$ une famille de classes d'événements ($\mathcal{C}_i \subset \mathcal{F}$ pour tout $i \in I$).
+
+On dit que les classes d'événements $(\mathcal{C}_i)_{i \in I}$ sont mutuellement indépendantes sous $\mathbb{P}$ si pour tout $n \in \mathbb{N}^*$, pour tout $i_1, \dots, i_n \in I$ distincts, pour tout $A_1 \in \mathcal{C}_{i_1}, \dots, A_n \in \mathcal{C}_{i_n}$, on a :
+$$\mathbb{P}(A_1 \cap \dots \cap A_n) = \mathbb{P}(A_1) \cdots \mathbb{P}(A_n).$$
+
+Si de plus $I = \{1, \dots, n\}$ et pour tout $i \in I$, $\Omega \in \mathcal{C}_i$, alors la condition suivante suffit pour que les classes d'événements $(\mathcal{C}_i)_{i \in I}$ soient mutuellement indépendantes sous $\mathbb{P}$ :
+$$\forall (A_1, \dots, A_n) \in \mathcal{C}_1 \times \dots \times \mathcal{C}_n, \quad \mathbb{P}(A_1 \cap \dots \cap A_n) = \mathbb{P}(A_1) \cdots \mathbb{P}(A_n).$$
+
+---
+
+## Indépendance des $pi$-systèmes $\implies$ indépendance des tribus engendrées
+
+Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $(\mathcal{P}_i)_{i \in I}$ une famille de $\pi$-systèmes de $\mathcal{F}$. Soit $(\mathcal{F}_i)_{i \in I}$ la famille des tribus engendrées par les $\pi$-systèmes $(\mathcal{P}_i)_{i \in I}$, c'est-à-dire pour tout $i \in I$, $\mathcal{F}_i = \sigma(\mathcal{P}_i)$.
+
+Si les $\pi$-systèmes $(\mathcal{P}_i)_{i \in I}$ sont mutuellement indépendants sous $\mathbb{P}$, alors les tribus $(\mathcal{F}_i)_{i \in I}$ sont mutuellement indépendantes sous $\mathbb{P}$.
+
+---
+
+## Indépendance par paquets
+
+Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $(\mathcal{F}_i)_{i \in I}$ une famille de sous-tribus de $\mathcal{F}$. Soit $(I_j)_{j \in J}$ une partition de $I$.
+
+Si les sous-tribus $(\mathcal{F}_i)_{i \in I}$ sont mutuellement indépendantes sous $\mathbb{P}$, alors les sous-tribus $(\mathcal{F}_{I_j})_{j \in J}$ sont mutuellement indépendantes sous $\mathbb{P}$, où pour tout $j \in J$, $\mathcal{F}_{I_j} = \sigma(\mathcal{F}_i : i \in I_j) = \sigma(\bigcup_{i \in I_j} \mathcal{F}_i)$.
+
+---
+
+## Lemmes de Borel-Cantelli
+
+Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $(A_n)_{n \in \mathbb{N}}$ une suite d'événements.
+
+On définit l'événement $A^*$ : "une infinité de $A_n$ se produisent" par :
+$$A^* := \limsup_{n \to +\infty} A_n := \bigcap_{n \in \mathbb{N}} \bigcup_{k \geq n} A_k.$$
+Le terme limsup peut être interprété de la manière suivante :
+$$\mathbf{1}_{A^*} = \limsup_{n \to +\infty} \mathbf{1}_{A_n}.$$
+
+Si $\sum_{n \in \mathbb{N}} \mathbb{P}(A_n) < +\infty$, alors $\mathbb{P}(\limsup_{n \to +\infty} A_n) = 0$.
+
+Si $\sum_{n \in \mathbb{N}} \mathbb{P}(A_n) = +\infty$ et que les événements $(A_n)_{n \in \mathbb{N}}$ sont mutuellement indépendants sous $\mathbb{P}$, alors $\mathbb{P}(\limsup_{n \to +\infty} A_n) = 1$.
+
+---
+
+## Loi du 0-1 de Kolmogorov
+
+Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $(\mathcal{G}_n)_{n \in \mathbb{N}}$ une suite de sous-tribus mutuellement indépendantes sous $\mathbb{P}$ de $\mathcal{F}$. Alors la tribu asymptotique $\mathcal{G}_\infty$ est $\mathbb{P}$-triviale.
+
+---
+
 ## Sous-$\sigma$-additivité
 
 Soit $(\varOmega,\mathcal{F},\mathbb{P})$ un espace de probabilité et $(A_n)_{n \in \mathbb{N}}$ une suite d'événements. Alors, on a :
@@ -2579,11 +2664,17 @@ $$\mathbb{P}\left(\bigcup_{n=1}^{\infty} A_n\right) \leq \sum_{n=1}^{\infty} \ma
 
 ---
 
-# Théorie des ensembles
+## Sous-tribu $\mathcal{P}$-triviale
 
-## Bon ordre
+Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $\mathcal{P} \subset \mathcal{F}$ une sous-tribu de $\mathcal{F}$. On dit que $\mathcal{P}$ est $\mathbb{P}$-triviale si pour tout $A \in \mathcal{P}$, $\mathbb{P}(A) = 0$ ou $\mathbb{P}(A) = 1$.
 
-Un ordre sur un ensemble $E$ est dit **bon** si toute partie non vide de $E$ possède un minimum.
+---
+
+## Tribu asymptotique
+
+Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $(\mathcal{G}_n)_{n \in \mathbb{N}}$ une suite de sous-tribus de $\mathcal{F}$. On définit la tribu asymptotique $(\mathcal{G}_\infty)_{n \in \mathbb{N}}$ par :
+
+$$\mathcal{G}_\infty = \bigcap_{n \in \mathbb{N}} \sigma(\bigcup_{k \geq n} \mathcal{G}_k).$$
 
 ---
 

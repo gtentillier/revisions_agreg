@@ -556,7 +556,7 @@ On a alors l'égalité : $\sum\limits_{n=0}^\infty f_n(x) \xrightarrow[x \to a]{
 69,Critère de Cauchy uniforme,Fonctions vectorielles,"Soit $X$ un ensemble et $(E, d)$ un espace métrique complet. On dit qu'une suite de fonctions $(f_n)_{n \in \mathbb{N}}$ de $X$ vers $E$ vérifie le critère de Cauchy uniforme sur $X$ si :
 $$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall p, q \ge N, \forall x \in X, d(f_p(x), f_q(x)) < \varepsilon$$
 Une suite de fonctions $(f_n)_{n \in \mathbb{N}}$ converge uniformément sur $X$ vers une fonction $f : X \to E$ si et seulement si elle vérifie le critère de Cauchy uniforme sur $X$."
-70,Bon ordre,Théorie des ensembles,Un ordre sur un ensemble $E$ est dit **bon** si toute partie non vide de $E$ possède un minimum.
+70,Bon ordre,Divers,Un ordre sur un ensemble $E$ est dit **bon** si toute partie non vide de $E$ possède un minimum.
 71,Espace métrique séparable,Topologie,"Un espace métrique $(E, d)$ est dit **séparable** s'il existe une partie de $E$ dénombrable dense."
 72,Polynôme,Anneaux,"Soit $A$ un anneau commutatif. L'anneau des polynômes à une indéterminée $X$ à coefficients dans $A$ est l'ensemble :
 $$A[X] = \left\{ \sum_{i=0}^n a_i X^i : n \in \mathbb{N}, a_i \in A \right\}$$"
@@ -656,11 +656,15 @@ Alors il existe une base orthonormée de $E$ composée de vecteurs propres de $u
 Version matricielle :
 Soit $A \in \mathcal{M}_n(\mathbb{R})$ une matrice symétrique. Alors il existe $P \in \mathcal{O}_n(\mathbb{R}), D \in \mathcal{D}_n(\mathbb{R})$ telles que :
 $$ A = P^T D P$$"
-88,Caractérisation des matrices trigonalisables,Algèbre linéaire,Une matrice $A \in \mathcal{M}_n(\mathbb{K})$ est trigonalisable sur $\mathbb{K}$ si et seulement si son polynôme caractéristique $\chi_A$ est scindé sur $\mathbb{K}$.
+88,Caractérisation des matrices trigonalisables,Algèbre linéaire,"Soit $A \in \mathcal{M}_n(\mathbb{K})$. Les propositions suivantes sont équivalentes :
+
+1. $A$ est trigonalisable sur $\mathbb{K}$.
+2. $\chi_A$ est scindé sur $\mathbb{K}$.
+3. $\pi_A$ est scindé sur $\mathbb{K}$."
 89,Caractérisation des matrices diagonalisables,Algèbre linéaire,"Une matrice $A \in \mathcal{M}_n(\mathbb{K})$ est diagonalisable sur $\mathbb{K}$ si et seulement si l'une des conditions suivantes est vérifiée :
 
-1. Son polynôme caractéristique $\chi_A$ est scindé (ie. u est scindé) sur $\mathbb{K}$ et la dimension de chaque sous-espace propre est égale à la multiplicité de la valeur propre correspondante.
-2. Son polynôme minimal $m_A$ est scindé à racines simples sur $\mathbb{K}$."
+1. $\chi_A$ est scindé (ie. u est scindé) sur $\mathbb{K}$ et la dimension de chaque sous-espace propre est égale à la multiplicité de la valeur propre correspondante.
+2. Son polynôme minimal $\pi_A$ est scindé à racines simples sur $\mathbb{K}$."
 90,Commutant d'un endomorphisme,Algèbre linéaire,"Soit $u \in \mathcal{L}(E)$. Le commutant de $u$ est l'ensemble $C(u) = \{v \in \mathcal{L}(E) : u \circ v = v \circ u\}$. C'est une sous-algèbre de $\mathcal{L}(E)$.
 
 Si $u$ est diagonalisable de valeurs propres $\lambda_1, \dots, \lambda_p$ et d'espaces propres associés $E_{\lambda_1}, \dots, E_{\lambda_p}$, alors l'application suivante est un isomorphisme d'algèbres :
@@ -1678,3 +1682,45 @@ Si $(A_n)_{n \in \mathbb{N}}$ est décroissante, c'est-à-dire que $A_n \supsete
 $$
 \mu\left(\bigcap_{n=0}^{\infty} A_n\right) = \lim_{n \to \infty} \mu(A_n).
 $$"
+"256","Polynômes de Tchebychev","Divers","Pour tout $n \in \mathbb{N}$, on définit le polynôme de Tchebychev de degré $n$ de première espèce par la relation suivante :
+$$T_n(\cos \theta) = \cos(n\theta)$$
+
+On a la relation de récurrence suivante :
+$$T_0(x) = 1, \quad T_1(x) = x, \quad T_{n+1}(x) = 2xT_n(x) - T_{n-1}(x) \quad \text{pour } n \ge 1$$
+
+De plus, pour tout $x \in \mathbb{R}$, $T_n(-x) = (-1)^n T_n(x)$, ce qui montre que $T_n$ est pair si $n$ est pair et impair si $n$ est impair.
+
+Enfin, pour $n, m \in \mathbb{N}$, on a la relation suivante :
+$$T_n(T_m(x)) = T_{nm}(x)$$"
+"257","Indépendance de classes d'événements","Probabilités","Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $(\mathcal{C}_i)_{i \in I}$ une famille de classes d'événements ($\mathcal{C}_i \subset \mathcal{F}$ pour tout $i \in I$).
+
+On dit que les classes d'événements $(\mathcal{C}_i)_{i \in I}$ sont mutuellement indépendantes sous $\mathbb{P}$ si pour tout $n \in \mathbb{N}^*$, pour tout $i_1, \dots, i_n \in I$ distincts, pour tout $A_1 \in \mathcal{C}_{i_1}, \dots, A_n \in \mathcal{C}_{i_n}$, on a :
+$$\mathbb{P}(A_1 \cap \dots \cap A_n) = \mathbb{P}(A_1) \cdots \mathbb{P}(A_n).$$
+
+Si de plus $I = \{1, \dots, n\}$ et pour tout $i \in I$, $\Omega \in \mathcal{C}_i$, alors la condition suivante suffit pour que les classes d'événements $(\mathcal{C}_i)_{i \in I}$ soient mutuellement indépendantes sous $\mathbb{P}$ :
+$$\forall (A_1, \dots, A_n) \in \mathcal{C}_1 \times \dots \times \mathcal{C}_n, \quad \mathbb{P}(A_1 \cap \dots \cap A_n) = \mathbb{P}(A_1) \cdots \mathbb{P}(A_n).$$"
+"258","Indépendance par paquets","Probabilités","Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $(\mathcal{F}_i)_{i \in I}$ une famille de sous-tribus de $\mathcal{F}$. Soit $(I_j)_{j \in J}$ une partition de $I$.
+
+Si les sous-tribus $(\mathcal{F}_i)_{i \in I}$ sont mutuellement indépendantes sous $\mathbb{P}$, alors les sous-tribus $(\mathcal{F}_{I_j})_{j \in J}$ sont mutuellement indépendantes sous $\mathbb{P}$, où pour tout $j \in J$, $\mathcal{F}_{I_j} = \sigma(\mathcal{F}_i : i \in I_j) = \sigma(\bigcup_{i \in I_j} \mathcal{F}_i)$."
+"259","Indépendance des $pi$-systèmes $\implies$ indépendance des tribus engendrées","Probabilités","Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $(\mathcal{P}_i)_{i \in I}$ une famille de $\pi$-systèmes de $\mathcal{F}$. Soit $(\mathcal{F}_i)_{i \in I}$ la famille des tribus engendrées par les $\pi$-systèmes $(\mathcal{P}_i)_{i \in I}$, c'est-à-dire pour tout $i \in I$, $\mathcal{F}_i = \sigma(\mathcal{P}_i)$.
+
+Si les $\pi$-systèmes $(\mathcal{P}_i)_{i \in I}$ sont mutuellement indépendants sous $\mathbb{P}$, alors les tribus $(\mathcal{F}_i)_{i \in I}$ sont mutuellement indépendantes sous $\mathbb{P}$."
+"260","Indépendance d'événements $\implies$ indépendance des tribus engendrées","Probabilités","Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $(A_i)_{i \in I}$ une famille d'événements. Les deux propositions suivantes sont équivalentes :
+
+1. Les événements $(A_i)_{i \in I}$ sont mutuellement indépendants sous $\mathbb{P}$.
+2. Les tribus $(\sigma(A_i))_{i \in I}$ sont mutuellement indépendantes sous $\mathbb{P}$."
+"261","Sous-tribu $\mathcal{P}$-triviale","Probabilités","Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $\mathcal{P} \subset \mathcal{F}$ une sous-tribu de $\mathcal{F}$. On dit que $\mathcal{P}$ est $\mathbb{P}$-triviale si pour tout $A \in \mathcal{P}$, $\mathbb{P}(A) = 0$ ou $\mathbb{P}(A) = 1$."
+"262","Tribu asymptotique","Probabilités","Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $(\mathcal{G}_n)_{n \in \mathbb{N}}$ une suite de sous-tribus de $\mathcal{F}$. On définit la tribu asymptotique $(\mathcal{G}_\infty)_{n \in \mathbb{N}}$ par :
+
+$$\mathcal{G}_\infty = \bigcap_{n \in \mathbb{N}} \sigma(\bigcup_{k \geq n} \mathcal{G}_k).$$"
+"263","Loi du 0-1 de Kolmogorov","Probabilités","Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $(\mathcal{G}_n)_{n \in \mathbb{N}}$ une suite de sous-tribus mutuellement indépendantes sous $\mathbb{P}$ de $\mathcal{F}$. Alors la tribu asymptotique $\mathcal{G}_\infty$ est $\mathbb{P}$-triviale."
+"264","Lemmes de Borel-Cantelli","Probabilités","Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $(A_n)_{n \in \mathbb{N}}$ une suite d'événements.
+
+On définit l'événement $A^*$ : ""une infinité de $A_n$ se produisent"" par :
+$$A^* := \limsup_{n \to +\infty} A_n := \bigcap_{n \in \mathbb{N}} \bigcup_{k \geq n} A_k.$$
+Le terme limsup peut être interprété de la manière suivante :
+$$\mathbf{1}_{A^*} = \limsup_{n \to +\infty} \mathbf{1}_{A_n}.$$
+
+Si $\sum_{n \in \mathbb{N}} \mathbb{P}(A_n) < +\infty$, alors $\mathbb{P}(\limsup_{n \to +\infty} A_n) = 0$.
+
+Si $\sum_{n \in \mathbb{N}} \mathbb{P}(A_n) = +\infty$ et que les événements $(A_n)_{n \in \mathbb{N}}$ sont mutuellement indépendants sous $\mathbb{P}$, alors $\mathbb{P}(\limsup_{n \to +\infty} A_n) = 1$."

@@ -3,6 +3,10 @@ sujets développements:
 Analyse réelle :
 - Théorème du point fixe de Banach
 
+Probas :
+- développement de la fonction zeta de Riemann en produit eulérien (va avec le suivant :)
+- probabilité que deux entiers au hasard soient premiers entre eux = 6/pi^2 = 0,61 environ avec astuce : on regarde pour les m premiers nombres premiers, en prenant des nombres n jusqu'à N = produit des m premiers nombres premiers. (cf data/miscellaneous/dev_proba_1.md)
+
 Groupes :
 - Un Sous groupe multiplicatif fini d’un corps est cyclique, version avec phi et version avec l’exposant
 - petit théorème de fermat pour les traces de matrice avec actions de groupe
@@ -15,6 +19,7 @@ Groupes :
 - quotienter le groupe linéaire par le groupe spécial linéaire
 - action du groupe GLn(K) ×GLp(K) sur Mn,p(K), et en disant que deux matrices sont ´equivalentes si et seulement si elles sont dans la mˆeme orbite
 - Centre de On(R) = +-In
+- isomorphisme entre GLn(C) et GLm(C) ssi n=m (Algèbre linéaire page 6,2)
 
 Algèbre linéaire :
 - commutant d’un endomorphisme C(f) = K[f] si f diagonalisable, pareil bicommutant
@@ -24,6 +29,10 @@ Algèbre linéaire :
 - Réduction de Jordan
 - Surjectivité de l’exponentielle de matrice voir analyse complexe 125
 - décomposition de dunford
+- u trigo ssi chi_u scindé (avec dualité possible cf algèbre linéaire page 6,2) ssi pi_u scindé (corps de rupture d'un irréductible de chi_u)
+- Dn(C) bar = Mn(C) (AL page 6,2)
+- Dn(R) bar = Tn(R) (AL page 6,2)
+- classe de similitude de A dans Mn(C) fermée ssi A diagonalisable (AL page 6,2)
 
 +topo :
 - intérieur et adhérence matrices diagonalisables dans Mn(C) et cayley hamilton
@@ -46,6 +55,7 @@ Analyse complexe :
 - adhérence des fonctions polynômiales à coefficients positifs, et autre question voir poly châteaux chapitre séries de fonctions
 - endomorphismes cycliques, matrices compagnons, topologie des matrices cycliques (ouvert dense non-borné connexe par arcs de Mn(K))
 - Théorème de Luca : racine de P’ dans conv(P-1({0})), puis si P’ a une racine dans H alors P(H) = C où P polynôme à coefficients complexes, H un demi plan de C. lien avec le fait que ça fonctionne car couper le plan en deux parties convexes est forcément fait un séparant de part et d’autre d’une droite (ou d’un hyperplan plus généralement).
+- polynômes de Tchebychev
 
 Poubelle :
 - Formule du crible et application au nombre de dérangements de 1,n
