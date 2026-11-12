@@ -159,7 +159,7 @@ Un anneau est dit **réduit** si seul $0$ est nilpotent."
 - $\forall x, y \in A, \varphi(xy) = \varphi(x)\varphi(y)$
 - $\varphi(1_A) = 1_B$
 
-$\ker \varphi = \{x \in A, \varphi(x) = 0_B\}$ est un **idéal** de $A$.
+$\ker \varphi = \{x \in A, \varphi(x) = 0_B\}$ est un **idéal** de $A$. Réciproquement, si $I$ est un idéal de $A$, alors I est le noyau d'un morphisme d'anneaux canonique $\pi : A \to A/I$.
 
 On parle d'**isomorphisme**, **endomorphisme** ou **automorphisme** selon les propriétés usuelles."
 36,Algèbre sur un anneau commutatif,Anneaux,"Soit $R$ un anneau commutatif. Une $R$-**algèbre** est un anneau $A$ muni d'un morphisme d'anneaux $f : R \to A$ tel que $f(R) \subseteq Z(A)$.
@@ -1571,8 +1571,7 @@ $(E, \mathcal{A})$ est appelé un espace mesurable.
 De plus, les propriétés suivantes sont vérifiées :
 
 1. Si $A, B \in \mathcal{A}$, alors $A \setminus B$, $A \cap B$, $A \cup B$ et $A \triangle B \in \mathcal{A}$.
-2. Si $(A_n)_{n \in \mathbb{N}}$ est une suite d'éléments de $\mathcal{A}$, alors $\bigcap_{n \in \mathbb{N}} A_n \in \mathcal{A}$.
-3. Si $(A_n)_{n \in \mathbb{N}}$ est une suite d'éléments de $\mathcal{A}$, alors $\bigcup_{n \in \mathbb{N}} A_n \in \mathcal{A}$."
+2. Si $(A_n)_{n \in \mathbb{N}}$ est une suite d'éléments de $\mathcal{A}$, alors $\bigcap_{n \in \mathbb{N}} A_n \in \mathcal{A}$."
 "235","Intersection de tribus","Intégration de Lebesgue","L'intersection d'une famille quelconque de tribus sur un ensemble $E$ est une tribu sur $E$."
 "236","Tribu engendrée par une classe de parties de E","Intégration de Lebesgue","La tribu engendrée par une classe $\mathcal{C}$ de parties de $E$ est la plus petite tribu contenant $\mathcal{C}$, notée $\sigma(\mathcal{C})$.
 
@@ -1724,3 +1723,23 @@ $$\mathbf{1}_{A^*} = \limsup_{n \to +\infty} \mathbf{1}_{A_n}.$$
 Si $\sum_{n \in \mathbb{N}} \mathbb{P}(A_n) < +\infty$, alors $\mathbb{P}(\limsup_{n \to +\infty} A_n) = 0$.
 
 Si $\sum_{n \in \mathbb{N}} \mathbb{P}(A_n) = +\infty$ et que les événements $(A_n)_{n \in \mathbb{N}}$ sont mutuellement indépendants sous $\mathbb{P}$, alors $\mathbb{P}(\limsup_{n \to +\infty} A_n) = 1$."
+"265","Tribu = $\pi$-système + classe monotone","Probabilités","Une classe de parties d'un ensemble $E$ qui est à la fois un $\pi$-système et une classe monotone est une tribu sur $E$."
+"266","Théorème de la classe monotone","Probabilités","Soit $E$ un ensemble, $P$ un $\pi$-système de parties de $E$ et $\mathcal{M}$ une classe monotone de parties de $E$ contenant $P$. Alors la tribu engendrée par $P$ est incluse dans $\mathcal{M}$, c'est-à-dire $\sigma(P) \subset \mathcal{M}$."
+"267","Règles de bioche","Analyse réelle","Pour calculer une intégrale trigonométrique, on peut utiliser les règles de bioche. Ces règles permettent de savoir quel changement de variable utiliser pour simplifier l'intégrale en fonction de la parité et de la périodicité de la fonction à intégrer.
+
+On se donne l'intégrale $\int f(x) dx$ avec $f$ une fonction trigonométrique. On note $F(x) = \int f(x) dx$ une primitive de $f$.
+
+- Si la transformation $x \mapsto -x$ laisse $f(x)dx$ inchangée, alors on peut utiliser le changement de variable $u = \cos(x)$ pour simplifier l'intégrale.
+- Si la transformation $x \mapsto \pi - x$ laisse $f(x)dx$ inchangée, alors on peut utiliser le changement de variable $u = \sin(x)$ pour simplifier l'intégrale.
+- Si la transformation $x \mapsto \pi + x$ laisse $f(x)dx$ inchangée, alors on peut utiliser le changement de variable $u = \tan(x)$ pour simplifier l'intégrale.
+- Sinon, on peut utiliser le changement de variable $u = \tan(\frac{x}{2})$ pour simplifier l'intégrale.
+
+Dans ce dernier cas, on a les relations suivantes :
+$$\sin(x) = \frac{2u}{1+u^2}, \quad \cos(x) = \frac{1-u^2}{1+u^2}, \quad dx = \frac{2du}{1+u^2}.$$"
+"268","Primitives de $\frac{1}{cos^2(x)}$, $\frac{1}{sin^2(x)}$, $\frac{1}{cos(x)}$, $\frac{1}{sin(x)}$, $\frac{1}{\sqrt{1-x^2}}$","Analyse réelle","On a les primitives suivantes :
+
+- $\int \frac{dx}{\cos^2(x)} = \tan(x) + C$
+- $\int \frac{dx}{\sin^2(x)} = -\cot(x) + C$
+- $\int \frac{dx}{\cos(x)} = \frac{1}{2}\ln|\frac{1+\sin(x)}{1-\sin(x)}| + C$
+- $\int \frac{dx}{\sin(x)} = \ln|\tan(\frac{x}{2})| + C$
+- $\int \frac{dx}{\sqrt{1-x^2}} = \arcsin(x) + C$ = $-\arccos(x) + C$"
