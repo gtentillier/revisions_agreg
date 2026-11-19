@@ -33,6 +33,7 @@ Algèbre linéaire :
 - Dn(C) bar = Mn(C) (AL page 6,2)
 - Dn(R) bar = Tn(R) (AL page 6,2)
 - classe de similitude de A dans Mn(C) fermée ssi A diagonalisable (AL page 6,2)
+- décomposition de Frobenius
 
 +topo :
 - intérieur et adhérence matrices diagonalisables dans Mn(C) et cayley hamilton
@@ -44,6 +45,7 @@ Analyse complexe :
 - Théorème de Borel et conditions pour qu’une fonction réelle Cinfini soit analytique page 19 cf DM1 AP
 
 à trier :
+- Cauchy-Schwartz avec plusieurs preuves
 - connexité de GLn(C) avec l’exponentielle
 - surjection de la projection de SLn(Z) dans SLn(Z/pZ) (cours algèbre linéaire, page 6,1
 - théorème de frobenius-zolotarev et application (génial, recasable) poly algèbre linéaire, page 32 fin de page

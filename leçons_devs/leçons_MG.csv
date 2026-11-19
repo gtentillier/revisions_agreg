@@ -1,4 +1,4 @@
-"Thème","Numéro","Titre"
+"Thème","Numéro","Titre",Développement top,Développement mid,Développement bof
 "Groupes",101,"Groupe opérant sur un ensemble. Exemples et applications."
 "Groupes",102,"Groupe des nombres complexes de module 1. Racines de l’unité. Applications."
 "Groupes",103,"Conjugaison dans un groupe. Exemples de sous-groupes distingués et de groupes quotients. Applications."
@@ -32,4 +32,4 @@
 "Géométrie",171,"Formes quadratiques réelles. Coniques. Exemples et applications."
 "Géométrie",181,"Convexité dans Rn. Applications en algèbre et en géométrie."
 "Géométrie",191,"Exemples d’utilisation des techniques d’algèbre en géométrie."
-"Géométrie",190,"Méthodes combinatoires, problèmes de dénombrement."
+"Géométrie",190,"Méthodes combinatoires, problèmes de dénombrement.",zeta_proba

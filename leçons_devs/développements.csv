@@ -1,1 +1,4 @@
-titre,chapitres concernés,leçons concernées,description
+titre,chapitres concernés,leçons top,leçons mid,leçons bof,description
+zeta_proba,"Suites, Arithmétique, Dénombrement, Proba, Intégration","121, 190, 266, 264, 223",,261
+développement asymptotique Hn,"Suites, Séries","224, 230"
+Inégalité Arithmético-Géométrique,"Convexité, Géométrie","253, 229"

@@ -480,7 +480,7 @@ $(i)$ $f$ est bijective
 $(ii)$ $f$ est continue
 
 $(iii)$ $f^{-1}$ est continue"
-53,Théorème de Borel-Lebesgue,Topologie,"Dans un espace vectoriel normé de dimension finie, les fermés bornés sont compacts."
+53,Compacts en dimension finie,Topologie,"Dans un espace vectoriel normé de dimension finie, les fermés bornés sont compacts."
 54,Adhérence d'un connexe,Topologie,"Soit $E$ un espace métrique et $A$ une partie connexe de $E$.
 Si $B$ est une partie telle que $A \subseteq B \subseteq \bar{A}$, alors $B$ est connexe. En particulier, l'adhérence $\bar{A}$ d'un connexe est connexe."
 55,Théorème de limite de la dérivée,Fonctions vectorielles,"Soit $(E, \|\cdot\|)$ un $\mathbb{K}$-espace vectoriel de dimension finie. Soit $I$ un intervalle de $\mathbb{R}$ et $a \in I$. Soit $f : I \to E$ une fonction continue sur $I$ et dérivable sur $I \setminus \{a\}$.
@@ -680,11 +680,12 @@ On a toujours l'égalité :
 $$C_2(u) = \mathbb{K}[u]$$"
 91,Endomorphismes cycliques,Algèbre linéaire,"Un endomorphisme $u \in \mathcal{L}(E)$ est dit **cyclique** ssi $\exists x \in E$ tel que $(x, u(x), u^2(x), \dots, u^{n-1}(x))$ forme une base de $E$.
 
-$$u \text{ est cyclique }$$
-$$\iff m_u = \chi_u$$
-$$\iff C(u) = \mathbb{K}[u]$$
+Ceci équivaut à $\pi_u = \chi_u$
 
-Si $u$ est diagonalisable, alors $u$ est cyclique $\iff u$ est à valeurs propres simples."
+Si $u \in \mathcal{L}(E)$ est diagonalisable, on a même les équivalences suivantes :
+1. $u$ est cyclique
+2. $C(u) = \mathbb{K}[u]$
+3. $\chi_u$ est à racines simples"
 92,Théorème de prolongement d'une fonction uniformément continue,Topologie,"Soit $(E,d)$ et $(F, \delta)$ deux espaces métriques et $A \subseteq E$. On suppose que $F$ est complet. Soit $f : A \to F$ une fonction uniformément continue.
 
 Alors il existe une unique fonction continue $\tilde{f} : \overline{A} \to F$ telle que $\tilde{f}_{|A} = f$. De plus, $\tilde{f}$ est uniformément continue."
@@ -1651,7 +1652,11 @@ et de la loi de composition externe définie par :
 
 $$
 (\alpha \cdot f)(x) = \alpha \cdot f(x)
-$$"
+$$
+
+De plus, si $f$ et $g$ sont à valeurs dans $\overline{\mathbb{R}}$ ou $\mathbb{C}$ et mesurables, alors $f^+$, $f^-$, $|f|$, $\max(f,g)$ et $\min(f,g)$ sont mesurables.
+
+Si $f_n$ est une suite de fonctions mesurables à valeurs dans $\overline{\mathbb{R}}$, alors $\sup f_n$, $\inf f_n$, $\limsup f_n$ et $\liminf f_n$ sont mesurables. Si de plus $f_n$ converge simplement vers une fonction $f$, alors $f$ est mesurable."
 "254","Mesure","Intégration de Lebesgue","Soit $(E, \mathcal{A})$ un espace mesurable. On dit que $\mu : \mathcal{A} \to [0, +\infty]$ est une mesure sur $(E, \mathcal{A})$ si elle satisfait les conditions suivantes :
 
 1. $\mu(\emptyset) = 0$.
@@ -1743,3 +1748,51 @@ $$\sin(x) = \frac{2u}{1+u^2}, \quad \cos(x) = \frac{1-u^2}{1+u^2}, \quad dx = \f
 - $\int \frac{dx}{\cos(x)} = \frac{1}{2}\ln|\frac{1+\sin(x)}{1-\sin(x)}| + C$
 - $\int \frac{dx}{\sin(x)} = \ln|\tan(\frac{x}{2})| + C$
 - $\int \frac{dx}{\sqrt{1-x^2}} = \arcsin(x) + C$ = $-\arccos(x) + C$"
+"269","Fonctions étagées et théorème fondamental de l'approximation","Intégration de Lebesgue","$s : (E, \mathcal{A}) \to (\mathbb{R}, {\mathcal{B(\mathbb{R})}})$ est dite étagée si elle est mesurable et prend un nombre fini de valeurs.
+
+Pour tout $f : (E, \mathcal{A}) \to (\mathbb{R}, {\mathcal{B(\mathbb{R})}})$ mesurable positive, il existe une suite croissante de fonctions étagées positives $(s_n)$ telle que $s_n \to f$ simplement."
+"270","Mesure de Lebesgue $\lambda$ sur $\mathbb{R}^d$","Intégration de Lebesgue","Il existe une unique mesure $\lambda$ sur $(\mathbb{R}^d, \mathcal{B}(\mathbb{R}^d))$ telle que $\lambda(]a_1, b_1[ \times \cdots \times ]a_d, b_d[) = \prod_{i=1}^d (b_i - a_i)$ pour tout $a_i < b_i$.
+
+De plus, $\lambda$ est $\sigma$-finie et invariante par translation."
+"271","Intégrale de Lebesgue d'une fonction étagée, et d'une fonction mesurable positive","Intégration de Lebesgue","Soit $f : (E, \mathcal{A}) \to (\mathbb{R}, {\mathcal{B(\mathbb{R})}})$ une fonction étagée. On définit l'intégrale de Lebesgue de $f$ sur $E$ par :
+$$
+\int_E f d\lambda = \sum_{\alpha \in f(E)} \alpha \lambda(f^{-1}(\{\alpha\}))
+$$
+
+Soit $f : (E, \mathcal{A}) \to ([0, +\infty], \mathcal{B}([0, +\infty]))$ une fonction mesurable positive. On définit l'intégrale de Lebesgue de $f$ sur $E$ par :
+
+$$
+\int_E f d\lambda = \sup \left\{ \int_E s d\lambda : s \text{ est étagée et } 0 \leq s \le f \right\}
+$$"
+"272","Théorème de convergence monotone / Beppo-Levi","Intégration de Lebesgue","Soit $(f_n)$ une suite croissante de fonctions à valeurs dans $[0, +\infty]$ mesurables sur $(E, \mathcal{A})$, alors $f = \lim_{n \to +\infty} f_n$ est mesurable positive et :
+$$
+\int_E f d\lambda = \lim_{n \to +\infty} \int_E f_n d\lambda
+$$"
+"273","Inégalité de Markov","Intégration de Lebesgue","Soit $f : (E, \mathcal{A}) \to ([0, +\infty], \mathcal{B}([0, +\infty]))$ une fonction mesurable. Alors pour tout $\alpha > 0$ :
+
+$$
+\lambda(\{x \in E : f(x) \geq \alpha\}) \leq \frac{1}{\alpha} \int_E f d\lambda
+$$"
+"274","Propriétés de l'intégrale de Lebesgue","Intégration de Lebesgue","Soit $f : (E, \mathcal{A}) \to [0, +\infty]$ mesurable.
+
+1. Si $A \in \mathcal{A}$, $\mu (A) = 0 \implies \int_A f d\lambda = 0$.
+2. $\int_E f d\lambda = \int_E f\mathbb{1}_{f>0} d\lambda$
+3. $\int_E f d\lambda = 0 \iff f = 0$ presque partout.
+4. Si $\int_E f d\lambda < +\infty$, alors $f < +\infty$ presque partout.
+
+De plus, si $f$ est mesurable à valeurs dans $\mathbb{C}$ :
+$$
+\left| \int_E f d\lambda \right| \leq \int_E |f| d\lambda
+$$"
+"275","Intégrale de Lebesgue d'une fonction mesurable quelconque","Intégration de Lebesgue","Soit $f : (E, \mathcal{A}) \to ({\mathbb{R}}, \mathcal{B}({\mathbb{R}}))$ mesurable. On dit que f est intégrable si $\int_E |f| d\lambda < +\infty$. On définit dans ce cas l'intégrale de Lebesgue de $f$ sur $E$ par :
+$$
+\int_E f d\lambda = \int_E f^+ d\lambda - \int_E f^- d\lambda
+$$
+
+Si $f$ est à valeurs dans $\mathbb{C}$, on dit que $f$ est intégrable si $\int_E |f| d\lambda < +\infty$. On définit dans ce cas l'intégrale de Lebesgue de $f$ sur $E$ par :
+$$
+\int_E f d\lambda = \int_E \Re(f) d\lambda + i \int_E \Im(f) d\lambda
+$$"
+"276","Mesurabilité terme à terme","Intégration de Lebesgue","Soit $f1, f2, \ldots, fn$ des fonctions de $(E, \mathcal{A})$ dans $(E_i, \mathcal{A}_i)$, $i = 1, \ldots, n$. Posons $f = (f1, f2, \ldots, fn)$ : E $\to E_1 \times E_2 \times \ldots \times E_n$. 
+
+Alors $f$ est $(A, \mathcal{A}_1 \otimes \ldots \otimes \mathcal{A}_n)$-mesurable si et seulement si $f_i$ est $(A, \mathcal{A}_i)$-mesurable pour tout $i = 1, \ldots, n$"

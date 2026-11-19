@@ -130,11 +130,12 @@ De plus, on a les propriétés suivantes :
 
 Un endomorphisme $u \in \mathcal{L}(E)$ est dit **cyclique** ssi $\exists x \in E$ tel que $(x, u(x), u^2(x), \dots, u^{n-1}(x))$ forme une base de $E$.
 
-$$u \text{ est cyclique }$$
-$$\iff m_u = \chi_u$$
-$$\iff C(u) = \mathbb{K}[u]$$
+Ceci équivaut à $\pi_u = \chi_u$
 
-Si $u$ est diagonalisable, alors $u$ est cyclique $\iff u$ est à valeurs propres simples.
+Si $u \in \mathcal{L}(E)$ est diagonalisable, on a même les équivalences suivantes :
+1. $u$ est cyclique
+2. $C(u) = \mathbb{K}[u]$
+3. $\chi_u$ est à racines simples
 
 ---
 
@@ -2399,9 +2400,64 @@ Soit $(E, \mathcal{A})$ et $(F, \sigma(\mathcal{C}))$ deux espaces mesurables, e
 
 ---
 
+## Fonctions étagées et théorème fondamental de l'approximation
+
+$s : (E, \mathcal{A}) \to (\mathbb{R}, {\mathcal{B(\mathbb{R})}})$ est dite étagée si elle est mesurable et prend un nombre fini de valeurs.
+
+Pour tout $f : (E, \mathcal{A}) \to (\mathbb{R}, {\mathcal{B(\mathbb{R})}})$ mesurable positive, il existe une suite croissante de fonctions étagées positives $(s_n)$ telle que $s_n \to f$ simplement.
+
+---
+
 ## Intersection de tribus
 
 L'intersection d'une famille quelconque de tribus sur un ensemble $E$ est une tribu sur $E$.
+
+---
+
+## Intégrale de Lebesgue d'une fonction mesurable quelconque
+
+Soit $f : (E, \mathcal{A}) \to ({\mathbb{R}}, \mathcal{B}({\mathbb{R}}))$ mesurable. On dit que f est intégrable si $\int_E |f| d\lambda < +\infty$. On définit dans ce cas l'intégrale de Lebesgue de $f$ sur $E$ par :
+$$
+\int_E f d\lambda = \int_E f^+ d\lambda - \int_E f^- d\lambda
+$$
+
+Si $f$ est à valeurs dans $\mathbb{C}$, on dit que $f$ est intégrable si $\int_E |f| d\lambda < +\infty$. On définit dans ce cas l'intégrale de Lebesgue de $f$ sur $E$ par :
+$$
+\int_E f d\lambda = \int_E \Re(f) d\lambda + i \int_E \Im(f) d\lambda
+$$
+
+---
+
+## Intégrale de Lebesgue d'une fonction étagée, et d'une fonction mesurable positive
+
+Soit $f : (E, \mathcal{A}) \to (\mathbb{R}, {\mathcal{B(\mathbb{R})}})$ une fonction étagée. On définit l'intégrale de Lebesgue de $f$ sur $E$ par :
+$$
+\int_E f d\lambda = \sum_{\alpha \in f(E)} \alpha \lambda(f^{-1}(\{\alpha\}))
+$$
+
+Soit $f : (E, \mathcal{A}) \to ([0, +\infty], \mathcal{B}([0, +\infty]))$ une fonction mesurable positive. On définit l'intégrale de Lebesgue de $f$ sur $E$ par :
+
+$$
+\int_E f d\lambda = \sup \left\{ \int_E s d\lambda : s \text{ est étagée et } 0 \leq s \le f \right\}
+$$
+
+---
+
+## Inégalité de Markov
+
+Soit $f : (E, \mathcal{A}) \to ([0, +\infty], \mathcal{B}([0, +\infty]))$ une fonction mesurable. Alors pour tout $\alpha > 0$ :
+
+$$
+\lambda(\{x \in E : f(x) \geq \alpha\}) \leq \frac{1}{\alpha} \int_E f d\lambda
+$$
+
+---
+
+## Mesurabilité terme à terme
+
+Soit $f1, f2, \ldots, fn$ des fonctions de $(E, \mathcal{A})$ dans $(E_i, \mathcal{A}_i)$, $i = 1, \ldots, n$. Posons $f = (f1, f2, \ldots, fn)$ : E $\to E_1 \times E_2 \times \ldots \times E_n$. 
+
+Alors $f$ est $(A, \mathcal{A}_1 \otimes \ldots \otimes \mathcal{A}_n)$-mesurable si et seulement si $f_i$ est $(A, \mathcal{A}_i)$-mesurable pour tout $i = 1, \ldots, n$
 
 ---
 
@@ -2426,9 +2482,33 @@ $$
 
 ---
 
+## Mesure de Lebesgue $\lambda$ sur $\mathbb{R}^d$
+
+Il existe une unique mesure $\lambda$ sur $(\mathbb{R}^d, \mathcal{B}(\mathbb{R}^d))$ telle que $\lambda(]a_1, b_1[ \times \cdots \times ]a_d, b_d[) = \prod_{i=1}^d (b_i - a_i)$ pour tout $a_i < b_i$.
+
+De plus, $\lambda$ est $\sigma$-finie et invariante par translation.
+
+---
+
 ## Produit fini d'ensembles dénombrables
 
 Un produit cartésien fini d'ensembles dénombrables est dénombrable.
+
+---
+
+## Propriétés de l'intégrale de Lebesgue
+
+Soit $f : (E, \mathcal{A}) \to [0, +\infty]$ mesurable.
+
+1. Si $A \in \mathcal{A}$, $\mu (A) = 0 \implies \int_A f d\lambda = 0$.
+2. $\int_E f d\lambda = \int_E f\mathbb{1}_{f>0} d\lambda$
+3. $\int_E f d\lambda = 0 \iff f = 0$ presque partout.
+4. Si $\int_E f d\lambda < +\infty$, alors $f < +\infty$ presque partout.
+
+De plus, si $f$ est mesurable à valeurs dans $\mathbb{C}$ :
+$$
+\left| \int_E f d\lambda \right| \leq \int_E |f| d\lambda
+$$
 
 ---
 
@@ -2452,6 +2532,19 @@ et de la loi de composition externe définie par :
 
 $$
 (\alpha \cdot f)(x) = \alpha \cdot f(x)
+$$
+
+De plus, si $f$ et $g$ sont à valeurs dans $\overline{\mathbb{R}}$ ou $\mathbb{C}$ et mesurables, alors $f^+$, $f^-$, $|f|$, $\max(f,g)$ et $\min(f,g)$ sont mesurables.
+
+Si $f_n$ est une suite de fonctions mesurables à valeurs dans $\overline{\mathbb{R}}$, alors $\sup f_n$, $\inf f_n$, $\limsup f_n$ et $\liminf f_n$ sont mesurables. Si de plus $f_n$ converge simplement vers une fonction $f$, alors $f$ est mesurable.
+
+---
+
+## Théorème de convergence monotone / Beppo-Levi
+
+Soit $(f_n)$ une suite croissante de fonctions à valeurs dans $[0, +\infty]$ mesurables sur $(E, \mathcal{A})$, alors $f = \lim_{n \to +\infty} f_n$ est mesurable positive et :
+$$
+\int_E f d\lambda = \lim_{n \to +\infty} \int_E f_n d\lambda
 $$
 
 ---
@@ -2768,6 +2861,12 @@ C'est-à-dire, si pour toute suite $(u_n) \in E^{\mathbb{N}}$, la condition $\su
 
 ---
 
+## Compacts en dimension finie
+
+Dans un espace vectoriel normé de dimension finie, les fermés bornés sont compacts.
+
+---
+
 ## Comparaison des normes en dimension finie
 
 Soit $E$ un espace vectoriel de dimension finie sur $\mathbb{K}$. Toutes les normes sur $E$ sont équivalentes.
@@ -3025,12 +3124,6 @@ $$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall p, q \ge N, d(u_p, 
 $\forall (f_n)_{n \in \mathbb{N}} \in \mathcal{C}^0([a,b])^\mathbb{N}$, si $(f_n)$ est une suite bornée et uniformément équicontinue sur $[a,b]$, alors $(f_n)$ admet une sous-suite convergente pour la convergence uniforme sur $[a,b]$.
 
 Réciproquement, si $(f_n) \in \mathcal{C}^0([a,b])^\mathbb{N}$ converge uniformément vers $f \in \mathcal{C}^0([a,b])$, alors $(f_n)$ est bornée et uniformément équicontinue sur $[a,b]$.
-
----
-
-## Théorème de Borel-Lebesgue
-
-Dans un espace vectoriel normé de dimension finie, les fermés bornés sont compacts.
 
 ---
 
