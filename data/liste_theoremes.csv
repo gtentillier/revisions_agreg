@@ -1615,7 +1615,11 @@ $SL(E) = \{ f \in \mathcal{GL}(E) \mid \det(f) = 1 \} = \operatorname{ker}(\det 
 
 $SL(E) \lhd \mathcal{GL}(E)$ et $GL(E) / SL(E) \simeq \mathbb{K}^*$.
 
-$SL_n(\mathbb{K})$ est engendré par les transvections $T_{ij}(\lambda) = I_n + \lambda E_{ij}$, où $i \neq j$ et $\lambda \in \mathbb{K}$."
+$SL_n(\mathbb{K})$ est engendré par les transvections $T_{ij}(\lambda) = I_n + \lambda E_{ij}$, où $i \neq j$ et $\lambda \in \mathbb{K}$.
+
+De plus, le groupe dérivé $D(SL_n(\mathbb{K})) := [SL_n(\mathbb{K}), SL_n(\mathbb{K})] = SL_n(\mathbb{K})$.
+
+Et enfin, le groupe dérivé $D(GL_n(\mathbb{K})) := [GL_n(\mathbb{K}), GL_n(\mathbb{K})] = SL_n(\mathbb{K})$."
 "245","Topologie","Topologie","Soit $E$ un ensemble et $\mathcal{T} \subset \mathcal{P}(E)$ une famille de parties de $E$. $\mathcal{T}$ est une topologie sur $E$ si elle satisfait les conditions suivantes :
 
 1. $\varnothing,E \in \mathcal{T}$
@@ -1964,3 +1968,29 @@ $$"
 $$
 \mathbb{P}(|X - \mathbb{E}[X]| \geq a) \leq \frac{\text{Var}(X)}{a^2}
 $$"
+"293","Groupe parfait","Groupes","Un groupe $G$ est dit parfait si $D(G) := [G,G] = G$."
+"294","Adhérence des matrices diagonalisables","Algèbre linéaire","$$
+\overline{D_n(\mathbb{C})} = M_n(\mathbb{C})
+$$
+
+$$
+\overline{D_n(\mathbb{R})} = T_n(\mathbb{R})
+$$"
+"295","Caractérisation des endomorphismes nilpotents","Algèbre linéaire","Soit $u \in \mathcal{L}(E)$. Les propositions suivantes sont équivalentes :
+1. $u$ est nilpotent
+2. $\pi_u(X) = X^m$, $m \in \mathbb{N}^*$
+3. $\chi_u(X) = X^n$
+4. $u$ est trigonalisable et $\mathrm{Sp}(u) = \{0\}$
+5. La matrice de $u$ dans une base convenable est triangulaire supérieure stricte."
+"296","Décomposition de Frobenius","Algèbre linéaire","Soit $u \in \mathcal{L}(E)$. Il existe $B$ une base de $E$, et des polynômes $P_1 | P_2 | \ldots | P_r$ unitaires de degré $\geq 1$ tels que la matrice de $u$ dans la base $B$ soit de la forme :
+
+$$
+\begin{pmatrix}
+C(P_1) & 0 & \ldots & 0 \\
+0 & C(P_2) & \ldots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \ldots & C(P_r)
+\end{pmatrix}
+$$
+
+De plus, les polynômes $P_1, \ldots, P_r$ sont uniques."

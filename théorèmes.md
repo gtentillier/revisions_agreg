@@ -1,5 +1,17 @@
 # Algèbre linéaire
 
+## Adhérence des matrices diagonalisables
+
+$$
+\overline{D_n(\mathbb{C})} = M_n(\mathbb{C})
+$$
+
+$$
+\overline{D_n(\mathbb{R})} = T_n(\mathbb{R})
+$$
+
+---
+
 ## Application linéaire duale / transposée
 
 Soit $E$ et $F$ deux $\mathbb{K}$-espaces vectoriels et soit $u \in \mathcal{L}(E,F)$. L'application linéaire duale (ou transposée) de $u$ est l'application linéaire $u^* := {}^{\mathcal{t}}u \in \mathcal{L}(F^*,E^*)$ définie par :
@@ -23,6 +35,17 @@ En particulier, si $B$ est une base de $E$, alors $B^*$ est une base de $E^*$ et
 (ii) $\forall j \in \{1, 2, \ldots, n\}$, $\det(A) = \sum_{i=1}^{n} a_{ij} C_{ij}$, où $C_{ij}$ est le cofacteur de $A$ d'indice $(i,j)$.
 
 $C_{ij} = (-1)^{i+j} \det(A_{ij})$, où $A_{ij}$ est la matrice obtenue en supprimant la $i$-ème ligne et la $j$-ème colonne de $A$.
+
+---
+
+## Caractérisation des endomorphismes nilpotents
+
+Soit $u \in \mathcal{L}(E)$. Les propositions suivantes sont équivalentes :
+1. $u$ est nilpotent
+2. $\pi_u(X) = X^m$, $m \in \mathbb{N}^*$
+3. $\chi_u(X) = X^n$
+4. $u$ est trigonalisable et $\mathrm{Sp}(u) = \{0\}$
+5. La matrice de $u$ dans une base convenable est triangulaire supérieure stricte.
 
 ---
 
@@ -100,6 +123,23 @@ Alors il existe un unique couple $(d, n) \in \mathcal{L}(E)^2$ tel que :
 3. $d$ et $n$ commutent ($d \circ n = n \circ d$)
 
 De plus, $d$ et $n$ sont des polynômes en $u$.
+
+---
+
+## Décomposition de Frobenius
+
+Soit $u \in \mathcal{L}(E)$. Il existe $B$ une base de $E$, et des polynômes $P_1 | P_2 | \ldots | P_r$ unitaires de degré $\geq 1$ tels que la matrice de $u$ dans la base $B$ soit de la forme :
+
+$$
+\begin{pmatrix}
+C(P_1) & 0 & \ldots & 0 \\
+0 & C(P_2) & \ldots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \ldots & C(P_r)
+\end{pmatrix}
+$$
+
+De plus, les polynômes $P_1, \ldots, P_r$ sont uniques.
 
 ---
 
@@ -216,6 +256,10 @@ $SL(E) = \{ f \in \mathcal{GL}(E) \mid \det(f) = 1 \} = \operatorname{ker}(\det 
 $SL(E) \lhd \mathcal{GL}(E)$ et $GL(E) / SL(E) \simeq \mathbb{K}^*$.
 
 $SL_n(\mathbb{K})$ est engendré par les transvections $T_{ij}(\lambda) = I_n + \lambda E_{ij}$, où $i \neq j$ et $\lambda \in \mathbb{K}$.
+
+De plus, le groupe dérivé $D(SL_n(\mathbb{K})) := [SL_n(\mathbb{K}), SL_n(\mathbb{K})] = SL_n(\mathbb{K})$.
+
+Et enfin, le groupe dérivé $D(GL_n(\mathbb{K})) := [GL_n(\mathbb{K}), GL_n(\mathbb{K})] = SL_n(\mathbb{K})$.
 
 ---
 
@@ -2147,6 +2191,12 @@ Un groupe monogène fini est dit **cyclique**.
 
 Un groupe $G$ est dit **simple** s'il est non trivial et n'admet aucun sous-groupe distingué propre non trivial.<br>
 En particulier, tout groupe abélien simple est isomorphe à $\mathbb{Z}/p\mathbb{Z}$ avec $p$ premier.
+
+---
+
+## Groupe parfait
+
+Un groupe $G$ est dit parfait si $D(G) := [G,G] = G$.
 
 ---
 
