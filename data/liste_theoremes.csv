@@ -716,14 +716,14 @@ $$\exp(z+w) = \exp(z)\exp(w)$$
 
 4. Non-injectivité : La fonction $\exp$ n'est pas injective. Elle est périodique de période $2i\pi$. Son noyau est :
 $$\text{Ker}(\exp) = \{z \in \mathbb{C} \mid \exp(z) = 1\} = 2i\pi\mathbb{Z}$$"
-99,Développement limité de l'exponentielle,Analyse réelle,"Soit $n \in \mathbb{N}$. Au voisinage de $0$, on a :
-$$ e^x = \sum\limits_{k=0}^{n} \frac{x^k}{k!} + O(x^{n+1}) $$"
-100,Développement limité du logarithme,Analyse réelle,"Soit $n \in \mathbb{N}^*$. Au voisinage de $0$, on a :
-$$ \ln(1+x) = \sum\limits_{k=1}^{n} (-1)^{k-1} \frac{x^k}{k} + O(x^{n+1}) $$"
-101,Développement limité du sinus,Analyse réelle,"Soit $n \in \mathbb{N}$. Au voisinage de $0$, on a :
-$$ \sin(x) = \sum\limits_{k=0}^{n} (-1)^k \frac{x^{2k+1}}{(2k+1)!} + O(x^{2n+3}) $$"
-102,Développement limité du cosinus,Analyse réelle,"Soit $n \in \mathbb{N}$. Au voisinage de $0$, on a :
-$$ \cos(x) = \sum\limits_{k=0}^{n} (-1)^k \frac{x^{2k}}{(2k)!} + O(x^{2n+2}) $$"
+99,Développement limité de l'exponentielle,Analyse réelle,"Pour tout $x \in \mathbb{R}$, on a :
+$$ e^x = \sum\limits_{k=0}^{\infty} \frac{x^k}{k!}$$"
+100,Développement limité du logarithme,Analyse réelle,"Pour tout $x \in ]-1, 1[$, on a :
+$$ \ln(1+x) = \sum\limits_{k=0}^{\infty} (-1)^{k} \frac{x^{k+1}}{k+1}$$"
+101,Développement limité du sinus,Analyse réelle,"Pour tout $x \in \mathbb{R}$ :
+$$ \sin(x) = \sum\limits_{k=0}^{\infty} (-1)^k \frac{x^{2k+1}}{(2k+1)!}$$"
+102,Développement limité du cosinus,Analyse réelle,"Pour tout $x \in \mathbb{R}$ :
+$$ \cos(x) = \sum\limits_{k=0}^{\infty} (-1)^k \frac{x^{2k}}{(2k)!}$$"
 103,Fonctions holomorphes et équations de Cauchy-Riemann,Analyse complexe,"Soit $U$ un ouvert de $\mathbb{C}$. On dit qu'une fonction $f : U \to \mathbb{C}$ est holomorphe sur $U$ si elle est $\mathbb{C}$-dérivable en tout point de $U$.
 
 Soit $f : U \to \mathbb{C}$ une fonction. On écrit $f = P + iQ$ où $P, Q : U \to \mathbb{R}$ sont les parties réelle et imaginaire de $f$. On identifie $U$ à un ouvert de $\mathbb{R}^2$.

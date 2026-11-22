@@ -10,7 +10,7 @@ import pandas as pd
 # Files configuration
 LISTE_THEOREMES = os.path.join("data", "liste_theoremes.csv")
 SUIVI_REVISIONS = "suivi_revisions.csv"
-ESPACEMENT_JSON = os.path.join("data", "espacement.json")
+ESPACEMENT_JSON = os.path.join("data", "miscellaneous", "espacement.json")
 REVISIONS_MD = "revisions.md"
 THEOREMES_LISTE_MD = "théorèmes.md"
 IMG_DIR = os.path.join("data", "img")

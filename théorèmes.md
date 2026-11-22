@@ -955,29 +955,29 @@ $$(f^{-1})'(b) = \frac{1}{f'(a)} = \frac{1}{f'(f^{-1}(b))}$$
 
 ## Développement limité de l'exponentielle
 
-Soit $n \in \mathbb{N}$. Au voisinage de $0$, on a :
-$$ e^x = \sum\limits_{k=0}^{n} \frac{x^k}{k!} + O(x^{n+1}) $$
+Pour tout $x \in \mathbb{R}$, on a :
+$$ e^x = \sum\limits_{k=0}^{\infty} \frac{x^k}{k!}$$
 
 ---
 
 ## Développement limité du cosinus
 
-Soit $n \in \mathbb{N}$. Au voisinage de $0$, on a :
-$$ \cos(x) = \sum\limits_{k=0}^{n} (-1)^k \frac{x^{2k}}{(2k)!} + O(x^{2n+2}) $$
+Pour tout $x \in \mathbb{R}$ :
+$$ \cos(x) = \sum\limits_{k=0}^{\infty} (-1)^k \frac{x^{2k}}{(2k)!}$$
 
 ---
 
 ## Développement limité du logarithme
 
-Soit $n \in \mathbb{N}^*$. Au voisinage de $0$, on a :
-$$ \ln(1+x) = \sum\limits_{k=1}^{n} (-1)^{k-1} \frac{x^k}{k} + O(x^{n+1}) $$
+Pour tout $x \in ]-1, 1[$, on a :
+$$ \ln(1+x) = \sum\limits_{k=0}^{\infty} (-1)^{k} \frac{x^{k+1}}{k+1}$$
 
 ---
 
 ## Développement limité du sinus
 
-Soit $n \in \mathbb{N}$. Au voisinage de $0$, on a :
-$$ \sin(x) = \sum\limits_{k=0}^{n} (-1)^k \frac{x^{2k+1}}{(2k+1)!} + O(x^{2n+3}) $$
+Pour tout $x \in \mathbb{R}$ :
+$$ \sin(x) = \sum\limits_{k=0}^{\infty} (-1)^k \frac{x^{2k+1}}{(2k+1)!}$$
 
 ---
 

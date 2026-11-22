@@ -1,2 +1,4 @@
 ALgèbre linéaire :
 - théorème de la base incomplète en dimension infinie avec le lemme de zorn
+- application aux générateurs de An et SLn(K) : groupe dérivée de An et Sn sont An, et groupe dérivé de SLn(K) et GLn(K) sont SLn(K) (1ère colle MG)
+- application théorème du rang : inégalité de Sylvester (minoration du rang de f rond g par : rang de f + rang de g - dimension de l'espace de départ de f)
