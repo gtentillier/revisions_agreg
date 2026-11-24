@@ -1469,7 +1469,7 @@ C'est-à-dire que pour toutes normes $\|\cdot\|_1$ et $\|\cdot\|_2$ sur $E$, il 
 $$\forall x \in E, \quad \alpha \|x\|_1 \le \|x\|_2 \le \beta \|x\|_1$$"
 "209","Topologie d'un espace vectoriel de dimension finie","Topologie","1. Tout espace vectoriel normé de dimension finie est complet.
 2. Tout sous-espace vectoriel de dimension finie d'un espace vectoriel normé est fermé."
-"210","Théorème de Riesz","Topologie","Soit $(E, \|\cdot\|)$ un espace vectoriel normé sur $\mathbb{K}$. La boule unité fermée $B^f(0,1)$ est compacte si et seulement si $E$ est de dimension finie."
+"210","Théorème de Riesz","Topologie","Soit $(E, \|\cdot\|)$ un espace vectoriel normé sur $\mathbb{K} = \mathbb{R}$ ou $\mathbb{C}$. La boule unité fermée $B^f(0,1)$ est compacte si et seulement si $E$ est de dimension finie."
 "211","Continuité d'une application linéaire entre deux espaces vectoriels normés","Topologie","Soient $E$ et $F$ deux espaces vectoriels normés sur le corps $\mathbb{K}$.<br>
 Une application linéaire $T : E \to F$ est **continue** si et seulement si elle est bornée, c'est-à-dire si et seulement si :
 $$\exists M > 0, \forall x \in E, \quad \|T(x)\|_F \le M \|x\|_E$$"

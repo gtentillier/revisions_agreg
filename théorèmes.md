@@ -3443,7 +3443,7 @@ Propriété de Borel-Lebesgue $\iff$ Propriété de Bolzano-Weierstrass
 
 ## Théorème de Riesz
 
-Soit $(E, \|\cdot\|)$ un espace vectoriel normé sur $\mathbb{K}$. La boule unité fermée $B^f(0,1)$ est compacte si et seulement si $E$ est de dimension finie.
+Soit $(E, \|\cdot\|)$ un espace vectoriel normé sur $\mathbb{K} = \mathbb{R}$ ou $\mathbb{C}$. La boule unité fermée $B^f(0,1)$ est compacte si et seulement si $E$ est de dimension finie.
 
 ---
 

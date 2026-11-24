@@ -6,13 +6,35 @@
 
 </div>
 
-**269** Théorèmes à réviser sur **296** au total
+**292** Théorèmes à réviser sur **296** au total
 
 # 📚 Révisions pour le 07/10/2026
 
 **37** Théorèmes
 
-## 1. Théorème fondamental de l'algèbre (D'Alembert-Gauss)
+## 1. Factorisation en irréductibles
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Anneaux
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $A$ un anneau principal. Pour tout $a \in A \setminus \{0\}$, il existe $u \in A^\times$ (un inversible) et $p_1, \dots, p_n \in A$ des éléments irréductibles tels que :
+$$ a = u \prod\limits_{i=1}^n p_i $$
+De plus, cette décomposition est unique à l'ordre près des facteurs et à multiplication près par des inversibles de $A$.
+
+---
+
+</details>
+
+## 2. Indice d'un lacet
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -26,13 +48,413 @@ Analyse complexe
 
 ---
 
-Toute fonction polynomiale non constante à coefficients complexes admet au moins une racine complexe.
+Soit $\gamma : [a,b] \to \mathbb{C}$ un lacet de classe $C^1_pm$. Pour tout point $z \in \mathbb{C} \setminus \text{Im}(\gamma)$, on définit l'indice de $\gamma$ par rapport à $z$ par :
+$$ \text{ind}_{\gamma}(z) = \frac{1}{2i\pi} \int_{\gamma} \frac{dw}{w-z} $$
+L'application $\text{ind}_{\gamma} : \mathbb{C} \setminus \text{Im}(\gamma) \to \mathbb{C}$ est continue et à valeurs dans $\mathbb{Z}$.
 
 ---
 
 </details>
 
-## 2. Générateurs et inversibles de $\mathbb{Z}/n\mathbb{Z}$
+## 3. Classification des singularités
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse complexe
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $U$ un ouvert de $\mathbb{C}$, $z_0 \in U$ et $f : U \setminus \{z_0\} \to \mathbb{C}$ une fonction holomorphe. Seuls 3 cas sont possibles :
+
+1. $f$ admet un prolongement holomorphe sur $U$. Dans ce cas, on dit que $z_0$ est une singularité **effaçable** de $f$.
+2. $\lim_{z \to z_0} |f(z)| = +\infty$. Dans ce cas, il existe un entier $n \in \mathbb{N}^*$, $g$ holomorphe sur $U$ tels que :
+   $$ \forall z \in U \setminus \{z_0\}, \text{ } f(z) = \frac{g(z)}{(z - z_0)^n} \text{ et } g(z_0) \neq 0 $$
+    On dit que $z_0$ est un **pôle** d'ordre $n$ pour $f$.
+
+3. L'image par $f$ de tout disque épointé $D(z_0, r) \setminus \{z_0\} \subset U$ est dense dans $\mathbb{C}$. Dans ce cas, on dit que $z_0$ est une singularité **essentielle** de $f$.
+
+---
+
+</details>
+
+## 4. Développement en série de Laurent
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse complexe
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Une série de Laurent est une série de fonctions s'écrivant
+$$z \mapsto \sum\limits_{n \in \mathbb{Z}} a_n z^n := \sum\limits_{n=0}^{+\infty} a_n z^n + \sum\limits_{n=1}^{+\infty} a_{-n} z^{-n}$$
+où $(a_n)_{n \in \mathbb{Z}} \in \mathbb{C}^{\mathbb{Z}}$. On dit que la série est convergente si les deux séries $\sum\limits_{n=0}^{+\infty} a_n z^n$ et $\sum\limits_{n=1}^{+\infty} a_{-n} z^{-n}$ convergent.
+
+Si on note $R$ le rayon de convergence de la série entière $z \mapsto \sum\limits_{n=0}^{+\infty} a_n z^n$ et $1/r$ celui de la série entière $w \mapsto \sum\limits_{n=1}^{+\infty} a_{-n} w^n$, alors la série de Laurent $z \mapsto \sum\limits_{n \in \mathbb{Z}} a_n z^n$ converge dans l'anneau $A(0, r, R)$ où
+$$A(z_0, r, R) := \{z \in \mathbb{C} \mid r < |z - z_0| < R\}$$
+qui est non vide seulement si $R > r$.
+
+En appliquant les résultats sur les séries entières à chacune de ces séries, on déduit que la convergence est normale sur tout anneau fermé $\overline{A}(0, r_1, r_2)$ tel que $r < r_1 < r_2 < R$, et que la somme d'une série de Laurent est holomorphe sur $A(0, r, R)$.
+
+---
+
+</details>
+
+## 5. Lemme de Gauss
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Anneaux
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $A$ un anneau principal.
+
+Pour tous $a, b, c \in A$, si $a$ divise $bc$ et $\text{pgcd}(a, b) = 1$, alors $a$ divise $c$.
+
+---
+
+</details>
+
+## 6. Éléments inversibles d'un anneau
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Anneaux
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Un élément $x \in A$ est **inversible** s'il existe $y \in A$ tel que $xy = yx = 1_A$. L'ensemble des éléments inversibles est noté $A^\times$ ou $U(A)$.
+
+---
+
+</details>
+
+## 7. Sinus de la somme
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse complexe
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soient $a, b \in \mathbb{C}$. On a :
+Moyen mnémotechnique : "sico cosi coco moins sisi"
+$$\sin(a+b) = \sin(a)\cos(b) + \cos(a)\sin(b)$$
+
+En particulier, pour $b=a$ :
+$$\sin(2a) = 2\sin(a)\cos(a)$$
+
+---
+
+</details>
+
+## 8. Longueur d'un chemin
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse complexe
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $U$ un ouvert de $\mathbb{C}$ et $\gamma : [a,b] \to U$ un chemin de classe $C^1$. La longueur du chemin $\gamma$ est définie par :
+$$ Long(\gamma) = \int_a^b |\gamma'(t)| \, dt $$
+
+---
+
+</details>
+
+## 9. Inégalités de Cauchy
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse complexe
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $U$ un ouvert de $\mathbb{C}$, $z_0 \in U$, $r > 0$ tel que $\overline{D(z_0, r)} \subseteq U$. Soit $f : U \to \mathbb{C}$ une fonction holomorphe. Alors
+$$\forall n \in \mathbb{N} , |f^{(n)}(z)| \le \frac{n!}{r^n} \sup_{C(z_0, r)} |f|$$
+
+---
+
+</details>
+
+## 10. Développement limité de l'exponentielle
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse réelle
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Pour tout $x \in \mathbb{R}$, on a :
+$$ e^x = \sum\limits_{k=0}^{\infty} \frac{x^k}{k!}$$
+
+---
+
+</details>
+
+## 11. Composition de fonctions convexes
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse réelle
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soient $I$ et $J$ deux intervalles de $\mathbb{R}$. Soit $f : I \to J$ et $g : J \to \mathbb{R}$ deux fonctions.
+Si $f$ est convexe, $g$ est convexe et $g$ est croissante, alors $g \circ f$ est convexe sur $I$.
+
+---
+
+</details>
+
+## 12. Théorème des résidus
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse complexe
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $U$ un ouvert étoilé de $\mathbb{C}$ et $\{z_1, z_2, \dots, z_p\}$ un nombre fini de points de $U$ deux à deux distincts. Soit $f : U \setminus \{z_1, z_2, \dots, z_p\} \to \mathbb{C}$ holomorphe. Soit $\gamma$ un lacet $\mathcal{C}^1$ par morceaux à valeurs dans $U \setminus \{z_1, z_2, \dots, z_p\}$. Alors
+
+$$\frac{1}{2i\pi} \int_\gamma f(z) dz = \sum\limits_{k=1}^p \text{Ind}_\gamma(z_k) \text{Res}(f, z_k)$$
+
+---
+
+</details>
+
+## 13. Caractérisation de l'existance d'une primitive d'une fonction complexe continue
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse complexe
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $U$ un ouvert de $\mathbb{C}$ et $f : U \to \mathbb{C}$ une fonction continue. Alors $f$ admet une primitive sur $U$ si et seulement si pour tout lacet $\gamma : [a,b] \to U$ de classe $C^1$ par morceaux, on a :
+$$ \int_{\gamma} f(z) \, dz = 0 $$
+
+---
+
+</details>
+
+## 14. Théorème de Bézout
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Anneaux
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $A$ un anneau principal et $(a_i)_{i \in I}$ une famille d'éléments de $A$.
+Si $d$ est un pgcd des $(a_i)$, alors il existe une famille $(u_i)_{i \in I}$ à support fini telle que :
+$$ d = \sum_{i \in I} u_i a_i $$
+Plus concrètement, pour tous $a, b \in A$, il existe $u, v \in A$ tels que :
+$$ \text{pgcd}(a, b) = au + bv $$
+
+---
+
+</details>
+
+## 15. Holomorphie des intégrales à paramètre
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse complexe
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $U$ un ouvert de $\mathbb{C}$, $f : U \times [a, b] \to \mathbb{C}$ telle que :
+
+1. $\forall t \in [a, b]$, la fonction $z \mapsto f(z, t)$ est holomorphe sur $U$.
+2. $\forall z \in U$, la fonction $t \mapsto f(z, t)$ est continue par morceaux sur $[a, b]$.
+3. $\exists \varphi : [a,b] \to \mathbb{R}_+$ intégrable telle que $\forall (z, t) \in U \times [a, b]$, $|f(z, t)| \leq \varphi(t)$.
+
+Alors la fonction :
+$$F(z) = \int_a^b f(z, t) dt$$
+est holomorphe sur $U$ et on a $\forall k \in \mathbb{N}$, $\forall z \in U$ :
+$$F^{(k)}(z) = \int_a^b \frac{\partial^k f}{\partial z^k}(z, t) dt$$
+
+---
+
+</details>
+
+## 16. Existence et unicité du développement en série de Laurent
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse complexe
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $f$ holomorphe sur un anneau $A(z_0, r, R)$. Alors $f$ admet un unique développement en série de Laurent : il existe une unique suite $(a_n)_{n \in \mathbb{Z}}$ telle que
+$$\forall z \in A(z_0, r, R), \quad f(z) = \sum\limits_{n = -\infty}^{+\infty} a_n (z - z_0)^n$$
+De plus, les coefficients sont donnés par :
+$$\forall n \in \mathbb{Z}, \quad a_n = \frac{1}{2i\pi} \int_{\mathcal{C}(z_0, r')} \frac{f(w)}{(w - z_0)^{n+1}} dw$$
+pour n'importe quel $r' \in ]r, R[$, où $\mathcal{C}(z_0, r')$ est le cercle de centre $z_0$ et de rayon $r'$ orienté positivement.
+
+---
+
+</details>
+
+## 17. Théorème de prolongement holomorphe
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse complexe
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $U$ un ouvert de $\mathbb{C}$, $z_0 \in U$ et $f : U \setminus \{z_0\} \to \mathbb{C}$ une fonction holomorphe.
+
+Si $f$ est bornée au voisinage de $z_0$, alors $f$ admet un prolongement holomorphe sur $U$.
+
+---
+
+</details>
+
+## 18. Propriété de la moyenne
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse complexe
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $U$ un ouvert de $\mathbb{C}$, $z_0 \in U$, $r > 0$ tel que $\overline{D(z_0, r)} \subseteq U$. Soit $f : U \to \mathbb{C}$ une fonction holomorphe. Alors
+
+$$f(z_0) = \frac{1}{2\pi} \int_0^{2\pi} f(z_0 + re^{i\theta}) d\theta$$
+
+et
+
+$$f(z_0) = \frac{1}{\pi r^2} \int_{D(z_0, r)} f(z) dz$$
+
+---
+
+</details>
+
+## 19. Principe du maximum
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse complexe
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $U$ un ouvert connexe de $\mathbb{C}$, $f : U \to \mathbb{C}$ une fonction holomorphe.
+
+1. Si $|f|$ atteint un maximum local en un point $z_0 \in U$, alors $f$ est constante sur $U$.
+2. Si de plus $U$ est borné et que $f$ est continue sur $\overline{U}$, alors $|f|$ atteint son maximum sur $\partial U$, ie
+   $$\max_{z \in \overline{U}} |f(z)| = \max_{z \in \partial U} |f(z)|$$
+
+---
+
+</details>
+
+## 20. Générateurs et inversibles de $\mathbb{Z}/n\mathbb{Z}$
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -56,12 +478,12 @@ Soit $n \ge 1$ et $k \in \mathbb{Z}$. On note $\bar{k}$ la classe de $k$ dans $\
 
 </details>
 
-## 3. Inégalités de Cauchy
+## 21. Développement limité du logarithme
 
 <details>
 <summary><b>Chapitre</b></summary>
 <blockquote>
-Analyse complexe
+Analyse réelle
 </blockquote>
 </details>
 
@@ -70,14 +492,64 @@ Analyse complexe
 
 ---
 
-Soit $U$ un ouvert de $\mathbb{C}$, $z_0 \in U$, $r > 0$ tel que $\overline{D(z_0, r)} \subseteq U$. Soit $f : U \to \mathbb{C}$ une fonction holomorphe. Alors
-$$\forall n \in \mathbb{N} , |f^{(n)}(z)| \le \frac{n!}{r^n} \sup_{C(z_0, r)} |f|$$
+Pour tout $x \in ]-1, 1[$, on a :
+$$ \ln(1+x) = \sum\limits_{k=0}^{\infty} (-1)^{k} \frac{x^{k+1}}{k+1}$$
 
 ---
 
 </details>
 
-## 4. Indicatrice d'Euler
+## 22. Développement limité du sinus
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse réelle
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Pour tout $x \in \mathbb{R}$ :
+$$ \sin(x) = \sum\limits_{k=0}^{\infty} (-1)^k \frac{x^{2k+1}}{(2k+1)!}$$
+
+---
+
+</details>
+
+## 23. Théorème de dérivation d'une intégrale à paramètre
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Intégration sur un intervalle quelconque
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $X$ et $I$ deux intervalles de $\mathbb{R}$. Soit $f : X \times I \to \mathbb{C}$ telle que :
+
+1. Pour tout $x \in X$, la fonction $t \mapsto f(x, t)$ est continue par morceaux et intégrable sur $I$.
+2. La fonction $f$ admet une dérivée partielle selon $x$, notée $\frac{\partial f}{\partial x}$, telle que :
+   - Pour tout $x \in X$, $t \mapsto \frac{\partial f}{\partial x}(x, t)$ est continue par morceaux sur $I$.
+   - Pour tout $t \in I$, $x \mapsto \frac{\partial f}{\partial x}(x, t)$ est continue sur $X$.
+3. Il existe $\varphi \in \mathcal{C}_{m}(I, \mathbb{R}^+)$ intégrable sur $I$ telle que pour tout $(x, t) \in X \times I$, $|\frac{\partial f}{\partial x}(x, t)| \le \varphi(t)$ (hypothèse de domination).
+
+Alors $F : x \mapsto \int_I f(x, t) dt$ est de classe $\mathcal{C}^1$ sur $X$ et :
+$$F'(x) = \int_I \frac{\partial f}{\partial x}(x, t) dt$$
+
+---
+
+</details>
+
+## 24. Indicatrice d'Euler
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -111,70 +583,7 @@ $$ \frac{\varphi(n)}{n} = \prod\limits_{i=1}^r \left( 1 - \frac{1}{p_i} \right) 
 
 </details>
 
-## 5. Développement limité du logarithme
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse réelle
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Pour tout $x \in ]-1, 1[$, on a :
-$$ \ln(1+x) = \sum\limits_{k=0}^{\infty} (-1)^{k} \frac{x^{k+1}}{k+1}$$
-
----
-
-</details>
-
-## 6. Développement limité du sinus
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse réelle
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Pour tout $x \in \mathbb{R}$ :
-$$ \sin(x) = \sum\limits_{k=0}^{\infty} (-1)^k \frac{x^{2k+1}}{(2k+1)!}$$
-
----
-
-</details>
-
-## 7. Longueur d'un chemin
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse complexe
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $U$ un ouvert de $\mathbb{C}$ et $\gamma : [a,b] \to U$ un chemin de classe $C^1$. La longueur du chemin $\gamma$ est définie par :
-$$ Long(\gamma) = \int_a^b |\gamma'(t)| \, dt $$
-
----
-
-</details>
-
-## 8. Algorithme d'Euclide (étendu)
+## 25. Existence d'un élément maximal dans une famille d'idéaux
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -188,104 +597,14 @@ Anneaux
 
 ---
 
-Soit $A$ un anneau euclidien muni d'un stathme $\varphi$. L'algorithme d'Euclide permet de calculer un pgcd de deux éléments $a, b \in A$.
-En effectuant des divisions euclidiennes successives :
-$$ a = bq_1 + r_1, \quad \varphi(r_1) < \varphi(b) $$
-$$ b = r_1 q_2 + r_2, \quad \varphi(r_2) < \varphi(r_1) $$
-$$ r_1 = r_2 q_3 + r_3, \quad \varphi(r_3) < \varphi(r_2) $$
-L'algorithme s'arrête lorsque le reste est nul. Le dernier reste non nul est un pgcd de $a$ et $b$.
-
-L'algorithme d'Euclide étendu permet, en remontant les égalités ou en maintenant des suites de coefficients, de déterminer deux éléments $u, v \in A$ tels que :
-$$ au + bv = \text{pgcd}(a, b) $$
-Cette relation est appelée relation de Bézout.
+Soit $A$ un anneau principal, $K \not ={\emptyset}$. Toute famille d'idéaux \{I_\alpha\}_{\alpha \in K} de $A$ admet un idéal maximal pour l'inclusion.
+En particulier, tout idéal propre de $A$ est contenu dans un idéal maximal.
 
 ---
 
 </details>
 
-## 9. Sous-groupes finis du groupe multiplicatif d'un corps
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Anneaux
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $k$ un corps (ou même un anneau intègre) et $G$ un sous-groupe fini de $(k^*, \times)$.
-Alors $G$ est cyclique.
-En particulier, le groupe des inversibles d'un corps fini est cyclique.
-
----
-
-</details>
-
-## 10. Théorème de dérivation d'une intégrale à paramètre
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Intégration sur un intervalle quelconque
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $X$ et $I$ deux intervalles de $\mathbb{R}$. Soit $f : X \times I \to \mathbb{C}$ telle que :
-
-1. Pour tout $x \in X$, la fonction $t \mapsto f(x, t)$ est continue par morceaux et intégrable sur $I$.
-2. La fonction $f$ admet une dérivée partielle selon $x$, notée $\frac{\partial f}{\partial x}$, telle que :
-   - Pour tout $x \in X$, $t \mapsto \frac{\partial f}{\partial x}(x, t)$ est continue par morceaux sur $I$.
-   - Pour tout $t \in I$, $x \mapsto \frac{\partial f}{\partial x}(x, t)$ est continue sur $X$.
-3. Il existe $\varphi \in \mathcal{C}_{m}(I, \mathbb{R}^+)$ intégrable sur $I$ telle que pour tout $(x, t) \in X \times I$, $|\frac{\partial f}{\partial x}(x, t)| \le \varphi(t)$ (hypothèse de domination).
-
-Alors $F : x \mapsto \int_I f(x, t) dt$ est de classe $\mathcal{C}^1$ sur $X$ et :
-$$F'(x) = \int_I \frac{\partial f}{\partial x}(x, t) dt$$
-
----
-
-</details>
-
-## 11. Anneau, unitaire, commutatif, intègre, réduit
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Anneaux
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Un **anneau** $(A, +, \times)$ est un ensemble muni de deux lois de composition interne telles que :
-
-$(i)$ $(A, +)$ est un groupe abélien
-
-$(ii)$ $\times$ est associative
-
-$(iii)$ $\times$ est distributive à gauche et à droite par rapport à $+$
-
-- **Unitaire** : s'il possède un élément neutre pour $\times$ (noté $1_A$), tous les anneaux sont supposés unitaires pour le cours.
-- **Commutatif** : si la loi $\times$ est commutative.
-- **Intègre** : non réduit au singleton $\{0\}$ et $\forall x, y \in A, xy = 0 \implies x = 0 \text{ ou } y = 0$.
-- **Réduit** : son seul élément nilpotent est 0 (i.e. $x^n = 0 \implies x = 0$).
-
----
-
-</details>
-
-## 12. Existence et unicité du développement en série de Laurent
+## 26. Intégrale d'une fonction continue selon un chemin $C^1_pm$
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -299,233 +618,14 @@ Analyse complexe
 
 ---
 
-Soit $f$ holomorphe sur un anneau $A(z_0, r, R)$. Alors $f$ admet un unique développement en série de Laurent : il existe une unique suite $(a_n)_{n \in \mathbb{Z}}$ telle que
-$$\forall z \in A(z_0, r, R), \quad f(z) = \sum\limits_{n = -\infty}^{+\infty} a_n (z - z_0)^n$$
-De plus, les coefficients sont donnés par :
-$$\forall n \in \mathbb{Z}, \quad a_n = \frac{1}{2i\pi} \int_{\mathcal{C}(z_0, r')} \frac{f(w)}{(w - z_0)^{n+1}} dw$$
-pour n'importe quel $r' \in ]r, R[$, où $\mathcal{C}(z_0, r')$ est le cercle de centre $z_0$ et de rayon $r'$ orienté positivement.
+Soit $U$ un ouvert de $\mathbb{C}$ et $\gamma : [a,b] \to U$ un chemin de classe $C^1$ par morceaux. Soit $f : U \to \mathbb{C}$ une fonction continue. On définit l'intégrale de $f$ selon $\gamma$ par :
+$$ \int_{\gamma} f(z) \, dz = \int_a^b f(\gamma(t)) \cdot \gamma'(t) \, dt $$
 
 ---
 
 </details>
 
-## 13. Fonctions holomorphes et équations de Cauchy-Riemann
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse complexe
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $U$ un ouvert de $\mathbb{C}$. On dit qu'une fonction $f : U \to \mathbb{C}$ est holomorphe sur $U$ si elle est $\mathbb{C}$-dérivable en tout point de $U$.
-
-Soit $f : U \to \mathbb{C}$ une fonction. On écrit $f = P + iQ$ où $P, Q : U \to \mathbb{R}$ sont les parties réelle et imaginaire de $f$. On identifie $U$ à un ouvert de $\mathbb{R}^2$.
-La fonction $f$ est holomorphe sur $U$ si et seulement si $P$ et $Q$ sont différentiables sur $U$ et vérifient les équations de Cauchy-Riemann :
-$$ \frac{\partial P}{\partial x} = \frac{\partial Q}{\partial y} \quad \text{et} \quad \frac{\partial P}{\partial y} = -\frac{\partial Q}{\partial x} $$
-
----
-
-</details>
-
-## 14. Propriété de la moyenne
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse complexe
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $U$ un ouvert de $\mathbb{C}$, $z_0 \in U$, $r > 0$ tel que $\overline{D(z_0, r)} \subseteq U$. Soit $f : U \to \mathbb{C}$ une fonction holomorphe. Alors
-
-$$f(z_0) = \frac{1}{2\pi} \int_0^{2\pi} f(z_0 + re^{i\theta}) d\theta$$
-
-et
-
-$$f(z_0) = \frac{1}{\pi r^2} \int_{D(z_0, r)} f(z) dz$$
-
----
-
-</details>
-
-## 15. Chemin opposé
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse complexe
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $U$ un ouvert de $\mathbb{C}$ et $\gamma : [a,b] \to U$ un chemin. On définit le chemin opposé $\tilde{\gamma} : [-b,-a] \to U$ par :
-$$ \tilde{\gamma}(t) = \gamma(-t) $$
-Alors $\int_{\tilde{\gamma}} f(z) \, dz = -\int_\gamma f(z) \, dz$.
-
----
-
-</details>
-
-## 16. Théorème de prolongement holomorphe
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse complexe
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $U$ un ouvert de $\mathbb{C}$, $z_0 \in U$ et $f : U \setminus \{z_0\} \to \mathbb{C}$ une fonction holomorphe.
-
-Si $f$ est bornée au voisinage de $z_0$, alors $f$ admet un prolongement holomorphe sur $U$.
-
----
-
-</details>
-
-## 17. Caractérisation d'un élément irréductible dans un anneau principal
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Anneaux
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $A$ un anneau principal. Soit $p \in A \setminus \{0\}$.
-Les assertions suivantes sont équivalentes :
-
-1. $p$ est irréductible.
-2. L'idéal $(p)$ est premier.
-3. L'idéal $(p)$ est maximal.
-
----
-
-</details>
-
-## 18. Classification des singularités
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse complexe
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $U$ un ouvert de $\mathbb{C}$, $z_0 \in U$ et $f : U \setminus \{z_0\} \to \mathbb{C}$ une fonction holomorphe. Seuls 3 cas sont possibles :
-
-1. $f$ admet un prolongement holomorphe sur $U$. Dans ce cas, on dit que $z_0$ est une singularité **effaçable** de $f$.
-2. $\lim_{z \to z_0} |f(z)| = +\infty$. Dans ce cas, il existe un entier $n \in \mathbb{N}^*$, $g$ holomorphe sur $U$ tels que :
-   $$ \forall z \in U \setminus \{z_0\}, \text{ } f(z) = \frac{g(z)}{(z - z_0)^n} \text{ et } g(z_0) \neq 0 $$
-    On dit que $z_0$ est un **pôle** d'ordre $n$ pour $f$.
-
-3. L'image par $f$ de tout disque épointé $D(z_0, r) \setminus \{z_0\} \subset U$ est dense dans $\mathbb{C}$. Dans ce cas, on dit que $z_0$ est une singularité **essentielle** de $f$.
-
----
-
-</details>
-
-## 19. Lemme de Gauss
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Anneaux
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $A$ un anneau principal.
-
-Pour tous $a, b, c \in A$, si $a$ divise $bc$ et $\text{pgcd}(a, b) = 1$, alors $a$ divise $c$.
-
----
-
-</details>
-
-## 20. Éléments inversibles d'un anneau
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Anneaux
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Un élément $x \in A$ est **inversible** s'il existe $y \in A$ tel que $xy = yx = 1_A$. L'ensemble des éléments inversibles est noté $A^\times$ ou $U(A)$.
-
----
-
-</details>
-
-## 21. Développement en série de Laurent
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse complexe
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Une série de Laurent est une série de fonctions s'écrivant
-$$z \mapsto \sum\limits_{n \in \mathbb{Z}} a_n z^n := \sum\limits_{n=0}^{+\infty} a_n z^n + \sum\limits_{n=1}^{+\infty} a_{-n} z^{-n}$$
-où $(a_n)_{n \in \mathbb{Z}} \in \mathbb{C}^{\mathbb{Z}}$. On dit que la série est convergente si les deux séries $\sum\limits_{n=0}^{+\infty} a_n z^n$ et $\sum\limits_{n=1}^{+\infty} a_{-n} z^{-n}$ convergent.
-
-Si on note $R$ le rayon de convergence de la série entière $z \mapsto \sum\limits_{n=0}^{+\infty} a_n z^n$ et $1/r$ celui de la série entière $w \mapsto \sum\limits_{n=1}^{+\infty} a_{-n} w^n$, alors la série de Laurent $z \mapsto \sum\limits_{n \in \mathbb{Z}} a_n z^n$ converge dans l'anneau $A(0, r, R)$ où
-$$A(z_0, r, R) := \{z \in \mathbb{C} \mid r < |z - z_0| < R\}$$
-qui est non vide seulement si $R > r$.
-
-En appliquant les résultats sur les séries entières à chacune de ces séries, on déduit que la convergence est normale sur tout anneau fermé $\overline{A}(0, r_1, r_2)$ tel que $r < r_1 < r_2 < R$, et que la somme d'une série de Laurent est holomorphe sur $A(0, r, R)$.
-
----
-
-</details>
-
-## 22. Définition, existence et unicité du pgcd
+## 27. Définition, existence et unicité du pgcd
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -559,7 +659,7 @@ Plus précisément, un élément $d \in \mathbb{A}$ est un pgcd des $(a_i)$ si e
 
 </details>
 
-## 23. Sinus de la somme
+## 28. Fonctions holomorphes et équations de Cauchy-Riemann
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -573,18 +673,213 @@ Analyse complexe
 
 ---
 
-Soient $a, b \in \mathbb{C}$. On a :
-Moyen mnémotechnique : "sico cosi coco moins sisi"
-$$\sin(a+b) = \sin(a)\cos(b) + \cos(a)\sin(b)$$
+Soit $U$ un ouvert de $\mathbb{C}$. On dit qu'une fonction $f : U \to \mathbb{C}$ est holomorphe sur $U$ si elle est $\mathbb{C}$-dérivable en tout point de $U$.
 
-En particulier, pour $b=a$ :
-$$\sin(2a) = 2\sin(a)\cos(a)$$
+Soit $f : U \to \mathbb{C}$ une fonction. On écrit $f = P + iQ$ où $P, Q : U \to \mathbb{R}$ sont les parties réelle et imaginaire de $f$. On identifie $U$ à un ouvert de $\mathbb{R}^2$.
+La fonction $f$ est holomorphe sur $U$ si et seulement si $P$ et $Q$ sont différentiables sur $U$ et vérifient les équations de Cauchy-Riemann :
+$$ \frac{\partial P}{\partial x} = \frac{\partial Q}{\partial y} \quad \text{et} \quad \frac{\partial P}{\partial y} = -\frac{\partial Q}{\partial x} $$
 
 ---
 
 </details>
 
-## 24. Propriétés de l'exponentielle complexe
+## 29. Limite uniforme de fonctions holomorphes
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse complexe
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $U$ un ouvert de $\mathbb{C}$ et $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions holomorphes sur $U$. On suppose que $(f_n)$ converge uniformément sur tout compact de $U$ vers une fonction $f : U \to \mathbb{C}$.
+
+Alors $f$ est holomorphe sur $U$ et on a $\forall k \in \mathbb{N}$, $(f_n^{(k)})_{n \in \mathbb{N}}$ converge uniformément sur tout compact de $U$ vers $f^{(k)}$.
+
+---
+
+</details>
+
+## 30. Sous-groupes finis du groupe multiplicatif d'un corps
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Anneaux
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $k$ un corps (ou même un anneau intègre) et $G$ un sous-groupe fini de $(k^*, \times)$.
+Alors $G$ est cyclique.
+En particulier, le groupe des inversibles d'un corps fini est cyclique.
+
+---
+
+</details>
+
+## 31. Algorithme d'Euclide (étendu)
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Anneaux
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $A$ un anneau euclidien muni d'un stathme $\varphi$. L'algorithme d'Euclide permet de calculer un pgcd de deux éléments $a, b \in A$.
+En effectuant des divisions euclidiennes successives :
+$$ a = bq_1 + r_1, \quad \varphi(r_1) < \varphi(b) $$
+$$ b = r_1 q_2 + r_2, \quad \varphi(r_2) < \varphi(r_1) $$
+$$ r_1 = r_2 q_3 + r_3, \quad \varphi(r_3) < \varphi(r_2) $$
+L'algorithme s'arrête lorsque le reste est nul. Le dernier reste non nul est un pgcd de $a$ et $b$.
+
+L'algorithme d'Euclide étendu permet, en remontant les égalités ou en maintenant des suites de coefficients, de déterminer deux éléments $u, v \in A$ tels que :
+$$ au + bv = \text{pgcd}(a, b) $$
+Cette relation est appelée relation de Bézout.
+
+---
+
+</details>
+
+## 32. Anneau, unitaire, commutatif, intègre, réduit
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Anneaux
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Un **anneau** $(A, +, \times)$ est un ensemble muni de deux lois de composition interne telles que :
+
+$(i)$ $(A, +)$ est un groupe abélien
+
+$(ii)$ $\times$ est associative
+
+$(iii)$ $\times$ est distributive à gauche et à droite par rapport à $+$
+
+- **Unitaire** : s'il possède un élément neutre pour $\times$ (noté $1_A$), tous les anneaux sont supposés unitaires pour le cours.
+- **Commutatif** : si la loi $\times$ est commutative.
+- **Intègre** : non réduit au singleton $\{0\}$ et $\forall x, y \in A, xy = 0 \implies x = 0 \text{ ou } y = 0$.
+- **Réduit** : son seul élément nilpotent est 0 (i.e. $x^n = 0 \implies x = 0$).
+
+---
+
+</details>
+
+## 33. Chemin opposé
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse complexe
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $U$ un ouvert de $\mathbb{C}$ et $\gamma : [a,b] \to U$ un chemin. On définit le chemin opposé $\tilde{\gamma} : [-b,-a] \to U$ par :
+$$ \tilde{\gamma}(t) = \gamma(-t) $$
+Alors $\int_{\tilde{\gamma}} f(z) \, dz = -\int_\gamma f(z) \, dz$.
+
+---
+
+</details>
+
+## 34. Théorème fondamental de l'algèbre (D'Alembert-Gauss)
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse complexe
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Toute fonction polynomiale non constante à coefficients complexes admet au moins une racine complexe.
+
+---
+
+</details>
+
+## 35. Théorème de la limite monotone
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse réelle
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $f : ]a, b[ \to \mathbb{R}$ une fonction croissante.
+
+1. Si $f$ est majorée, alors $f$ admet une limite finie en $b^-$.
+2. Sinon, $\lim_{x \to b^-} f(x) = +\infty$.
+
+De même pour la limite en $a^+$.
+
+---
+
+</details>
+
+## 36. Caractérisation d'un élément irréductible dans un anneau principal
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Anneaux
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $A$ un anneau principal. Soit $p \in A \setminus \{0\}$.
+Les assertions suivantes sont équivalentes :
+
+1. $p$ est irréductible.
+2. L'idéal $(p)$ est premier.
+3. L'idéal $(p)$ est maximal.
+
+---
+
+</details>
+
+## 37. Propriétés de l'exponentielle complexe
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -615,308 +910,63 @@ $$\text{Ker}(\exp) = \{z \in \mathbb{C} \mid \exp(z) = 1\} = 2i\pi\mathbb{Z}$$
 
 </details>
 
-## 25. Existence d'un élément maximal dans une famille d'idéaux
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Anneaux
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $A$ un anneau principal, $K \not ={\emptyset}$. Toute famille d'idéaux \{I_\alpha\}_{\alpha \in K} de $A$ admet un idéal maximal pour l'inclusion.
-En particulier, tout idéal propre de $A$ est contenu dans un idéal maximal.
-
----
-
-</details>
-
-## 26. Composition de fonctions convexes
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse réelle
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soient $I$ et $J$ deux intervalles de $\mathbb{R}$. Soit $f : I \to J$ et $g : J \to \mathbb{R}$ deux fonctions.
-Si $f$ est convexe, $g$ est convexe et $g$ est croissante, alors $g \circ f$ est convexe sur $I$.
-
----
-
-</details>
-
-## 27. Intégrale d'une fonction continue selon un chemin $C^1_pm$
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse complexe
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $U$ un ouvert de $\mathbb{C}$ et $\gamma : [a,b] \to U$ un chemin de classe $C^1$ par morceaux. Soit $f : U \to \mathbb{C}$ une fonction continue. On définit l'intégrale de $f$ selon $\gamma$ par :
-$$ \int_{\gamma} f(z) \, dz = \int_a^b f(\gamma(t)) \cdot \gamma'(t) \, dt $$
-
----
-
-</details>
-
-## 28. Limite uniforme de fonctions holomorphes
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse complexe
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $U$ un ouvert de $\mathbb{C}$ et $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions holomorphes sur $U$. On suppose que $(f_n)$ converge uniformément sur tout compact de $U$ vers une fonction $f : U \to \mathbb{C}$.
-
-Alors $f$ est holomorphe sur $U$ et on a $\forall k \in \mathbb{N}$, $(f_n^{(k)})_{n \in \mathbb{N}}$ converge uniformément sur tout compact de $U$ vers $f^{(k)}$.
-
----
-
-</details>
-
-## 29. Caractérisation de l'existance d'une primitive d'une fonction complexe continue
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse complexe
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $U$ un ouvert de $\mathbb{C}$ et $f : U \to \mathbb{C}$ une fonction continue. Alors $f$ admet une primitive sur $U$ si et seulement si pour tout lacet $\gamma : [a,b] \to U$ de classe $C^1$ par morceaux, on a :
-$$ \int_{\gamma} f(z) \, dz = 0 $$
-
----
-
-</details>
-
-## 30. Théorème de Bézout
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Anneaux
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $A$ un anneau principal et $(a_i)_{i \in I}$ une famille d'éléments de $A$.
-Si $d$ est un pgcd des $(a_i)$, alors il existe une famille $(u_i)_{i \in I}$ à support fini telle que :
-$$ d = \sum_{i \in I} u_i a_i $$
-Plus concrètement, pour tous $a, b \in A$, il existe $u, v \in A$ tels que :
-$$ \text{pgcd}(a, b) = au + bv $$
-
----
-
-</details>
-
-## 31. Indice d'un lacet
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse complexe
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $\gamma : [a,b] \to \mathbb{C}$ un lacet de classe $C^1_pm$. Pour tout point $z \in \mathbb{C} \setminus \text{Im}(\gamma)$, on définit l'indice de $\gamma$ par rapport à $z$ par :
-$$ \text{ind}_{\gamma}(z) = \frac{1}{2i\pi} \int_{\gamma} \frac{dw}{w-z} $$
-L'application $\text{ind}_{\gamma} : \mathbb{C} \setminus \text{Im}(\gamma) \to \mathbb{C}$ est continue et à valeurs dans $\mathbb{Z}$.
-
----
-
-</details>
-
-## 32. Holomorphie des intégrales à paramètre
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse complexe
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $U$ un ouvert de $\mathbb{C}$, $f : U \times [a, b] \to \mathbb{C}$ telle que :
-
-1. $\forall t \in [a, b]$, la fonction $z \mapsto f(z, t)$ est holomorphe sur $U$.
-2. $\forall z \in U$, la fonction $t \mapsto f(z, t)$ est continue par morceaux sur $[a, b]$.
-3. $\exists \varphi : [a,b] \to \mathbb{R}_+$ intégrable telle que $\forall (z, t) \in U \times [a, b]$, $|f(z, t)| \leq \varphi(t)$.
-
-Alors la fonction :
-$$F(z) = \int_a^b f(z, t) dt$$
-est holomorphe sur $U$ et on a $\forall k \in \mathbb{N}$, $\forall z \in U$ :
-$$F^{(k)}(z) = \int_a^b \frac{\partial^k f}{\partial z^k}(z, t) dt$$
-
----
-
-</details>
-
-## 33. Théorème de la limite monotone
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse réelle
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $f : ]a, b[ \to \mathbb{R}$ une fonction croissante.
-
-1. Si $f$ est majorée, alors $f$ admet une limite finie en $b^-$.
-2. Sinon, $\lim_{x \to b^-} f(x) = +\infty$.
-
-De même pour la limite en $a^+$.
-
----
-
-</details>
-
-## 34. Principe du maximum
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse complexe
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $U$ un ouvert connexe de $\mathbb{C}$, $f : U \to \mathbb{C}$ une fonction holomorphe.
-
-1. Si $|f|$ atteint un maximum local en un point $z_0 \in U$, alors $f$ est constante sur $U$.
-2. Si de plus $U$ est borné et que $f$ est continue sur $\overline{U}$, alors $|f|$ atteint son maximum sur $\partial U$, ie
-   $$\max_{z \in \overline{U}} |f(z)| = \max_{z \in \partial U} |f(z)|$$
-
----
-
-</details>
-
-## 35. Factorisation en irréductibles
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Anneaux
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $A$ un anneau principal. Pour tout $a \in A \setminus \{0\}$, il existe $u \in A^\times$ (un inversible) et $p_1, \dots, p_n \in A$ des éléments irréductibles tels que :
-$$ a = u \prod\limits_{i=1}^n p_i $$
-De plus, cette décomposition est unique à l'ordre près des facteurs et à multiplication près par des inversibles de $A$.
-
----
-
-</details>
-
-## 36. Théorème des résidus
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse complexe
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $U$ un ouvert étoilé de $\mathbb{C}$ et $\{z_1, z_2, \dots, z_p\}$ un nombre fini de points de $U$ deux à deux distincts. Soit $f : U \setminus \{z_1, z_2, \dots, z_p\} \to \mathbb{C}$ holomorphe. Soit $\gamma$ un lacet $\mathcal{C}^1$ par morceaux à valeurs dans $U \setminus \{z_1, z_2, \dots, z_p\}$. Alors
-
-$$\frac{1}{2i\pi} \int_\gamma f(z) dz = \sum\limits_{k=1}^p \text{Ind}_\gamma(z_k) \text{Res}(f, z_k)$$
-
----
-
-</details>
-
-## 37. Développement limité de l'exponentielle
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse réelle
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Pour tout $x \in \mathbb{R}$, on a :
-$$ e^x = \sum\limits_{k=0}^{\infty} \frac{x^k}{k!}$$
-
----
-
-</details>
-
 <br>
 
 # 📚 Révisions pour le 08/10/2026
 
 **31** Théorèmes
 
-## 1. Quatre exemples de produits semi-directs
+## 1. Formule de Burnside
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Groupes
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $G$ un groupe fini agissant sur un ensemble fini $E$. Alors le nombre d'orbites de $E$ sous l'action de $G$ est donné par la formule de Burnside :
+$$\frac{1}{|G|} \sum_{g \in G} |E^g|$$
+où $E^g = \{x \in E \mid g \cdot x = x\}$ est l'ensemble des points fixes de $g$.
+
+---
+
+</details>
+
+## 2. Groupe orthogonal $O_n(\mathbb{R})$ et unitaire $U_n(\mathbb{C})$
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Algèbre linéaire
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Version matricielle : <br>$O_n(\mathbb{R}) = \{M \in GL_n(\mathbb{R}) \mid M^T M = I_n\}$
+<br>$SO_n(\mathbb{R}) = \{M \in O_n(\mathbb{R}) \mid \det(M) = 1\}$
+<br>$U_n(\mathbb{C}) = \{M \in GL_n(\mathbb{C}) \mid M^* M = I_n\}$
+<br>$SU_n(\mathbb{C}) = \{M \in U_n(\mathbb{C}) \mid \det(M) = 1\}$
+
+Version fonctionnelle : <br>$O(E) = \{f \in GL(E) \mid \forall x, y \in E, \langle f(x), f(y) \rangle = \langle x, y \rangle\}$
+<br>$SO(E) = \{f \in O(E) \mid \det(f) = 1\}$
+<br>$U(E) = \{f \in GL(E) \mid \forall x, y \in E, \langle f(x), f(y) \rangle = \langle x, y \rangle\}$
+<br>$SU(E) = \{f \in U(E) \mid \det(f) = 1\}$
+
+---
+
+</details>
+
+## 3. Quatre exemples de produits semi-directs
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -995,397 +1045,7 @@ Le groupe obtenu $E \rtimes_\rho GL(E)$ est le **groupe affine** de $E$, noté $
 
 </details>
 
-## 2. Théorème de factorisation dans un groupe
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Groupes
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $\varphi : G \to H$ un morphisme de groupes et $N \triangleleft G$.
-
-$N \subseteq \text{Ker}(\varphi)$ $\iff$ $\exists!$ morphisme de groupes $\bar{\varphi} : G/N \to H$ tel que $\varphi = \bar{\varphi} \circ \pi$, où $\pi : G \to G/N$ est la projection canonique, c'est-à-dire tel que le diagramme suivant commute :
-
-<p align="center">
-  <img src="data/img/dessins théorèmes/diagramme_groupes.png" width="300">
-</p>
-
-En particulier, si $N = \text{Ker}(\varphi)$, alors $\bar{\varphi}$ induit un **isomorphisme** :
-$$G/\text{Ker}(\varphi) \simeq \text{Im}(\varphi)$$
-
----
-
-</details>
-
-## 3. Morphisme de groupes
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Groupes
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Un **morphisme de groupes** est une application $f : G \to H$ entre deux groupes $(G, \cdot)$ et $(H, *)$ telle que :
-$$\forall x, y \in G, \quad f(x \cdot y) = f(x) * f(y)$$
-
-De plus, on peut montrer que :
-$$f(e_G) = e_H \quad \text{et} \quad f(x^{-1}) = f(x)^{-1} \quad \text{pour tout } x \in G.$$
-
-On parle d'**isomorphisme**, d'**endomorphisme** ou d'**automorphisme** selon que $f$ est bijective, de $G$ dans lui-même, ou bijective de $G$ dans lui-même.
-
----
-
-</details>
-
-## 4. Formule des classes
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Groupes
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $G$ un groupe agissant sur un ensemble $E$. Alors l'ensemble des orbites de $E$ sous l'action de $G$ forme une partition de $E$, et on a la formule suivante :
-$$|E| = \sum_{x \in \mathcal{R}} |O_x|$$
-où $\mathcal{R}$ est l'espace quotient, c'est-à-dire un ensemble de représentants des orbites de $E$ sous l'action de $G$.
-
----
-
-</details>
-
-## 5. Action de groupe, fidèle, transitive
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Groupes
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $G$ un groupe et $E$ un ensemble. Une action de $G$ sur $E$ est un morphisme de groupes
-$$\rho : G \to \operatorname{Bij}(E)$$
-
-L'action est dite **fidèle** si $\rho$ est injectif, c'est-à-dire si :
-$$\operatorname{Ker}(\rho) = \{e_G\}$$
-
-L'action est dite **transitive** si pour tout $x, y \in E$, il existe $g \in G$ tel que $\rho(g)(x) = y$.
-
----
-
-</details>
-
-## 6. Règle de D'Alembert
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse complexe
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $\sum a_n z^n$ une série entière avec $a_n \neq 0$ pour $n$ assez grand.
-Si $\lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right| = \ell \in [0, +\infty]$, alors le rayon de convergence $R$ de la série est :
-$$R = \frac{1}{\ell}$$
-(avec la convention $1/0 = +\infty$ et $1/\infty = 0$).
-
----
-
-</details>
-
-## 7. Théorème de structure des groupes abéliens de type fini
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Groupes
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $G$ un groupe abélien de type fini. Alors il existe un entier $r \ge 0$ et des entiers $n_1, \dots, n_k \ge 2$ tels que :
-$$G \cong \mathbb{Z}^r \times \mathbb{Z}/n_1\mathbb{Z} \times \dots \times \mathbb{/Z}/n_k\mathbb{Z}$$
-où $n_1 | n_2 | \dots | n_k$. La suite d'entiers $(n_1, \dots, n_k)$ est unique et ses éléments sont appelés les facteurs invariants de $G$.
-
----
-
-</details>
-
-## 8. Groupe
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Groupes
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Un **groupe** est un ensemble $G$ muni d'une loi de composition interne $\cdot : G \times G \to G$ vérifiant les axiomes suivants :
-
-1. **Associativité** : $\forall x, y, z \in G$, $(x \cdot y) \cdot z = x \cdot (y \cdot z)$.
-2. **Élément neutre** : Il existe un élément $e \in G$ tel que $\forall x \in G$, $e \cdot x = x \cdot e = x$.
-3. **Inverse** : $\forall x \in G$, il existe un élément $x^{-1} \in G$ tel que $x \cdot x^{-1} = x^{-1} \cdot x = e$.
-
----
-
-</details>
-
-## 9. Formule de Burnside
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Groupes
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $G$ un groupe fini agissant sur un ensemble fini $E$. Alors le nombre d'orbites de $E$ sous l'action de $G$ est donné par la formule de Burnside :
-$$\frac{1}{|G|} \sum_{g \in G} |E^g|$$
-où $E^g = \{x \in E \mid g \cdot x = x\}$ est l'ensemble des points fixes de $g$.
-
----
-
-</details>
-
-## 10. 1er théorème d'isomorphisme pour les groupes
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Groupes
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soient $G, H$ deux groupes et $\varphi : G \to H$ un morphisme de groupes.
-Alors $\text{Ker}(\varphi) \triangleleft G$, $\text{Im}(\varphi)$ est un sous-groupe de $H$, et $\varphi$ induit un isomorphisme de groupes :
-$$\bar{\varphi} : G/\text{Ker}(\varphi) \xrightarrow{\sim} \text{Im}(\varphi)$$
-
----
-
-</details>
-
-## 11. Théorème de structure des groupes abéliens finis
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Groupes
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Tout groupe abélien fini $G$ est isomorphe à un produit direct de groupes cycliques :
-$$G \cong \mathbb{Z}/n_1\mathbb{Z} \times \mathbb{Z}/n_2\mathbb{Z} \times \dots \times \mathbb{Z}/n_k\mathbb{Z}$$
-où $n_1 | n_2 | \dots | n_k$. La suite d'entiers $(n_1, \dots, n_k)$ est unique et ses éléments sont appelés les facteurs invariants de $G$.
-
----
-
-</details>
-
-## 12. Éléments de torsion et sous-groupe de torsion
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Groupes
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $G$ un groupe. Un élément $g \in G$ est un **élément de torsion** si son ordre est fini, i.e. si $g^n = e$ pour un certain entier $n \ge 1$.
-
-Si $G$ est abélien, l'ensemble des éléments de torsion de $G$ forme un sous-groupe de $G$, appelé le **sous-groupe de torsion** de $G$.
-
----
-
-</details>
-
-## 13. Caractérisation de l'égalité des idéaux engendrés par deux éléments
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Anneaux
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $A$ un anneau commutatif intègre, $a, b \in A$.
-$$(a) = (b) \iff a \text{ et } b \text{ sont associés (i.e. } \exists u \in A^\times, a = ub)$$ 
-
----
-
-</details>
-
-## 14. Produit semi-direct
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Groupes
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soient $N$ et $H$ deux groupes et $\rho : H \to \text{Aut}(N)$ un morphisme de groupes. Le produit semi-direct $N \rtimes_\rho H$ est le groupe dont l'ensemble sous-jacent est $N \times H$ muni de la loi :
-$$ (n, h) \cdot (n', h') = (n \rho(h)(n'), hh') $$
-
----
-
-</details>
-
-## 15. Théorème de Cauchy
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Groupes
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $G$ un groupe fini et $p$ un nombre premier divisant l'ordre de $G$.
-Alors il existe un élément de $G$ d'ordre $p$.
-
----
-
-</details>
-
-## 16. Décomposition d'une permutation
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Groupes
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Toute permutation $\sigma \in \mathfrak{S}_n$ peut s'écrire de manière unique (à l'ordre des cycles près) comme un produit de cycles disjoints :
-$$\sigma = c_1 c_2 \dots c_k$$
-
----
-
-</details>
-
-## 17. Conjugaison d'un cycle par un élément de $\mathfrak{S}_n$
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Groupes
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $\sigma \in \mathfrak{S}_n$ et $(i_1, i_2, \dots, i_k)$ un cycle de $\mathfrak{S}_n$. Alors :
-$$\sigma (i_1, i_2, \dots, i_k) \sigma^{-1} = (\sigma(i_1), \sigma(i_2), \dots, \sigma(i_k))$$
-
----
-
-</details>
-
-## 18. Sous-groupe distingué/normal
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Groupes
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Un sous-groupe $N$ d'un groupe $G$ est dit **distingué** (ou **normal**) ie. $N \triangleleft G$ ssi l'une des conditions équivalentes suivantes est vérifiée :
-
-1. $gNg^{-1} = N$ pour tout $g \in G$.
-2. $gN = Ng$ pour tout $g \in G$.
-3. Il existe un morphisme de groupes $f : G \to H$ tel que $N = \operatorname{Ker}(f)$.
-4. Il existe une structure de groupe sur l'ensemble quotient $G/N$ compatible avec la loi de G, ie. la projection canonique $\pi : G \to G/N$ est un morphisme de groupes.
-
----
-
-</details>
-
-## 19. Produit semi-direct par conjugaison
+## 4. Produit semi-direct par conjugaison
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -1405,215 +1065,7 @@ Si $N$ est un sous-groupe distingué de $G$ et $H$ un sous-groupe de $G$ tels qu
 
 </details>
 
-## 20. Groupe orthogonal $O_n(\mathbb{R})$ et unitaire $U_n(\mathbb{C})$
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Algèbre linéaire
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Version matricielle : <br>$O_n(\mathbb{R}) = \{M \in GL_n(\mathbb{R}) \mid M^T M = I_n\}$
-<br>$SO_n(\mathbb{R}) = \{M \in O_n(\mathbb{R}) \mid \det(M) = 1\}$
-<br>$U_n(\mathbb{C}) = \{M \in GL_n(\mathbb{C}) \mid M^* M = I_n\}$
-<br>$SU_n(\mathbb{C}) = \{M \in U_n(\mathbb{C}) \mid \det(M) = 1\}$
-
-Version fonctionnelle : <br>$O(E) = \{f \in GL(E) \mid \forall x, y \in E, \langle f(x), f(y) \rangle = \langle x, y \rangle\}$
-<br>$SO(E) = \{f \in O(E) \mid \det(f) = 1\}$
-<br>$U(E) = \{f \in GL(E) \mid \forall x, y \in E, \langle f(x), f(y) \rangle = \langle x, y \rangle\}$
-<br>$SU(E) = \{f \in U(E) \mid \det(f) = 1\}$
-
----
-
-</details>
-
-## 21. Orbites, Stabilisateurs, Points fixes et propriétés
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Groupes
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $G$ un groupe agissant sur un ensemble $E$. Pour tout $x \in E$, on définit :
-
-- L'**orbite** de $x$ sous l'action de $G$ :
-  $$O_x = \{\rho(g)(x) \mid g \in G\}$$
-- Le **stabilisateur** de $x$ dans $G$ :
-  $$\operatorname{Stab}_x = \{g \in G \mid \rho(g)(x) = x\}$$
-- L'ensemble des **points fixes** :
-  $$E^G = \{x \in E \mid \forall g \in G, \rho(g)(x) = x\}$$
-
-L'application suivante est une bijection :
-$$\begin{aligned} f : G / \operatorname{Stab}_x &\to O_x \\ g \operatorname{Stab}_x &\mapsto \rho(g)(x) \end{aligned}$$
-En particulier, si $G$ est un groupe fini, on a la relation :
-$$|O_x| = [G : \operatorname{Stab}_x] = \frac{|G|}{|\operatorname{Stab}_x|}$$
-
-Si $G$ est un p-groupe, alors $|E^G| \equiv |E| \mod p$.
-
----
-
-</details>
-
-## 22. p-groupe, p-sous-groupe, p-Sylow
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Groupes
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Un **p-groupe** est un groupe fini tel que : $|G| = p^n$ avec $n \ge 1$ et $p$ premier.
-
-Un **p-sous-groupe** d'un groupe $G$ est un sous-groupe $H$ de $G$ tel que $|H| = p^m$ avec $m \ge 1$ et $p$ premier.
-
-Un **p-sous-groupe de Sylow**, ou **p-Sylow** d'un groupe fini $G$ est un p-sous-groupe maximal de $G$, c'est-à-dire un p-sous-groupe $P$ tel que $|P| = p^n$ avec $p^n$ le plus grand facteur premier de l'ordre de $G$.
-
----
-
-</details>
-
-## 23. Matrices de $O_2(\mathbb{R})$
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Algèbre linéaire
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(E, \langle \cdot, \cdot \rangle)$ un espace euclidien de dimension 2 orienté.
-
-1. Les **rotations** (ou automorphismes orthogonaux directs) de $E$ ont pour matrice dans une base orthonormée directe :
-   $$R_\theta = \begin{pmatrix} \cos(\theta) & -\sin(\theta) \\ \sin(\theta) & \cos(\theta) \end{pmatrix} \quad \text{avec } \theta \in \mathbb{R}$$
-   Elles forment le groupe spécial orthogonal $SO_2(\mathbb{R})$.
-2. Les **symétries orthogonales par rapport à une droite** (ou réflexions) ont pour matrice dans une base orthonormée directe :
-   $$S_\theta = \begin{pmatrix} \cos(\theta) & \sin(\theta) \\ \sin(\theta) & -\cos(\theta) \end{pmatrix} \quad \text{avec } \theta \in \mathbb{R}$$
-   Il s'agit de la symétrie par rapport à la droite vectorielle faisant un angle $\theta/2$ avec le premier vecteur de la base.
-   Elles appartiennent à $O_2(\mathbb{R}) \setminus SO_2(\mathbb{R})$ et sont de déterminant $-1$.
-
----
-
-</details>
-
-## 24. Formule de Taylor avec reste intégral
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse réelle
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $f \in \mathcal{C}^{n+1}(I, E)$. Soient $a, b \in I$.
-Alors :
-$$f(b) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (b-a)^k + \int_a^b \frac{(b-t)^n}{n!} f^{(n+1)}(t) dt$$
-
----
-
-</details>
-
-## 25. Groupe de type fini, monogène, cyclique, simple
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Groupes
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Un groupe $G$ est dit **de type fini** s'il existe un ensemble fini $X \subset G$ tel que $G = \langle X \rangle$.
-
-Un groupe $G$ est dit **monogène** s'il existe un élément $g \in G$ tel que $G = \langle g \rangle$.
-
-Un groupe monogène fini est dit **cyclique**.
-
-Un groupe $G$ est dit **simple** s'il est non trivial et n'admet aucun sous-groupe distingué propre non trivial.<br>
-En particulier, tout groupe abélien simple est isomorphe à $\mathbb{Z}/p\mathbb{Z}$ avec $p$ premier.
-
----
-
-</details>
-
-## 26. Générateurs de $\mathfrak{S}_n$ et $\mathfrak{A}_n$
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Groupes
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-1. Le groupe symétrique $\mathfrak{S}_n$ est engendré par les transpositions $(i, j)$. Il est aussi engendré par les transpositions élémentaires $(i, i+1)$.
-2. Le groupe alterné $\mathfrak{A}_n$ est engendré par les 3-cycles $(i, j, k)$.
-
----
-
-</details>
-
-## 27. Sous-groupe engendré par une partie
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Groupes
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $G$ un groupe et $X \subset G$. Le **sous-groupe engendré par $X$**, noté $\langle X \rangle$, est le plus petit sous-groupe de $G$ contenant $X$.
-
-$$ \langle X \rangle = \bigcap_{\substack{H \le G \\ X \subset H}} H $$
-
-$$\langle X \rangle = \{x_1 \cdot x_2 \cdot \ldots \cdot x_n \mid n \in \mathbb{N}, x_i \in X \cup X^{-1}\}$$
-
----
-
-</details>
-
-## 28. Topologie de $GL_n(\mathbb{K})$
+## 5. Topologie de $GL_n(\mathbb{K})$
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -1682,7 +1134,189 @@ Soit $n \in \mathbb{N}^*$.
 
 </details>
 
-## 29. Symétries orthogonales en dimension $n$
+## 6. Sous-groupe distingué/normal
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Groupes
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Un sous-groupe $N$ d'un groupe $G$ est dit **distingué** (ou **normal**) ie. $N \triangleleft G$ ssi l'une des conditions équivalentes suivantes est vérifiée :
+
+1. $gNg^{-1} = N$ pour tout $g \in G$.
+2. $gN = Ng$ pour tout $g \in G$.
+3. Il existe un morphisme de groupes $f : G \to H$ tel que $N = \operatorname{Ker}(f)$.
+4. Il existe une structure de groupe sur l'ensemble quotient $G/N$ compatible avec la loi de G, ie. la projection canonique $\pi : G \to G/N$ est un morphisme de groupes.
+
+---
+
+</details>
+
+## 7. Caractérisation de l'égalité des idéaux engendrés par deux éléments
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Anneaux
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $A$ un anneau commutatif intègre, $a, b \in A$.
+$$(a) = (b) \iff a \text{ et } b \text{ sont associés (i.e. } \exists u \in A^\times, a = ub)$$ 
+
+---
+
+</details>
+
+## 8. Action de groupe, fidèle, transitive
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Groupes
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $G$ un groupe et $E$ un ensemble. Une action de $G$ sur $E$ est un morphisme de groupes
+$$\rho : G \to \operatorname{Bij}(E)$$
+
+L'action est dite **fidèle** si $\rho$ est injectif, c'est-à-dire si :
+$$\operatorname{Ker}(\rho) = \{e_G\}$$
+
+L'action est dite **transitive** si pour tout $x, y \in E$, il existe $g \in G$ tel que $\rho(g)(x) = y$.
+
+---
+
+</details>
+
+## 9. Sous-groupe engendré par une partie
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Groupes
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $G$ un groupe et $X \subset G$. Le **sous-groupe engendré par $X$**, noté $\langle X \rangle$, est le plus petit sous-groupe de $G$ contenant $X$.
+
+$$ \langle X \rangle = \bigcap_{\substack{H \le G \\ X \subset H}} H $$
+
+$$\langle X \rangle = \{x_1 \cdot x_2 \cdot \ldots \cdot x_n \mid n \in \mathbb{N}, x_i \in X \cup X^{-1}\}$$
+
+---
+
+</details>
+
+## 10. Décomposition d'une permutation
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Groupes
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Toute permutation $\sigma \in \mathfrak{S}_n$ peut s'écrire de manière unique (à l'ordre des cycles près) comme un produit de cycles disjoints :
+$$\sigma = c_1 c_2 \dots c_k$$
+
+---
+
+</details>
+
+## 11. Simplicité de $\mathfrak{A}_n$
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Groupes
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+$\forall n \ge 5$, le groupe alterné $\mathfrak{A}_n$ est un groupe simple (il n'admet aucun sous-groupe distingué propre non trivial).
+
+Ainsi, pour $n \ge 5$, le groupe symétrique $\mathfrak{S}_n$ n'admet aucun sous-groupe distingué propre non trivial autre que $\mathfrak{A}_n$.
+
+---
+
+</details>
+
+## 12. Produit semi-direct
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Groupes
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soient $N$ et $H$ deux groupes et $\rho : H \to \text{Aut}(N)$ un morphisme de groupes. Le produit semi-direct $N \rtimes_\rho H$ est le groupe dont l'ensemble sous-jacent est $N \times H$ muni de la loi :
+$$ (n, h) \cdot (n', h') = (n \rho(h)(n'), hh') $$
+
+---
+
+</details>
+
+## 13. Théorème de structure des groupes abéliens finis
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Groupes
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Tout groupe abélien fini $G$ est isomorphe à un produit direct de groupes cycliques :
+$$G \cong \mathbb{Z}/n_1\mathbb{Z} \times \mathbb{Z}/n_2\mathbb{Z} \times \dots \times \mathbb{Z}/n_k\mathbb{Z}$$
+où $n_1 | n_2 | \dots | n_k$. La suite d'entiers $(n_1, \dots, n_k)$ est unique et ses éléments sont appelés les facteurs invariants de $G$.
+
+---
+
+</details>
+
+## 14. Symétries orthogonales en dimension $n$
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -1709,7 +1343,7 @@ On a alors la décomposition : $E = \operatorname{Ker}(u - \operatorname{id}_E) 
 
 </details>
 
-## 30. Simplicité de $\mathfrak{A}_n$
+## 15. Théorème de Cauchy
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -1723,15 +1357,251 @@ Groupes
 
 ---
 
-$\forall n \ge 5$, le groupe alterné $\mathfrak{A}_n$ est un groupe simple (il n'admet aucun sous-groupe distingué propre non trivial).
-
-Ainsi, pour $n \ge 5$, le groupe symétrique $\mathfrak{S}_n$ n'admet aucun sous-groupe distingué propre non trivial autre que $\mathfrak{A}_n$.
+Soit $G$ un groupe fini et $p$ un nombre premier divisant l'ordre de $G$.
+Alors il existe un élément de $G$ d'ordre $p$.
 
 ---
 
 </details>
 
-## 31. Théorème de Lagrange
+## 16. Morphisme de groupes
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Groupes
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Un **morphisme de groupes** est une application $f : G \to H$ entre deux groupes $(G, \cdot)$ et $(H, *)$ telle que :
+$$\forall x, y \in G, \quad f(x \cdot y) = f(x) * f(y)$$
+
+De plus, on peut montrer que :
+$$f(e_G) = e_H \quad \text{et} \quad f(x^{-1}) = f(x)^{-1} \quad \text{pour tout } x \in G.$$
+
+On parle d'**isomorphisme**, d'**endomorphisme** ou d'**automorphisme** selon que $f$ est bijective, de $G$ dans lui-même, ou bijective de $G$ dans lui-même.
+
+---
+
+</details>
+
+## 17. p-groupe, p-sous-groupe, p-Sylow
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Groupes
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Un **p-groupe** est un groupe fini tel que : $|G| = p^n$ avec $n \ge 1$ et $p$ premier.
+
+Un **p-sous-groupe** d'un groupe $G$ est un sous-groupe $H$ de $G$ tel que $|H| = p^m$ avec $m \ge 1$ et $p$ premier.
+
+Un **p-sous-groupe de Sylow**, ou **p-Sylow** d'un groupe fini $G$ est un p-sous-groupe maximal de $G$, c'est-à-dire un p-sous-groupe $P$ tel que $|P| = p^n$ avec $p^n$ le plus grand facteur premier de l'ordre de $G$.
+
+---
+
+</details>
+
+## 18. Matrices de $O_2(\mathbb{R})$
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Algèbre linéaire
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(E, \langle \cdot, \cdot \rangle)$ un espace euclidien de dimension 2 orienté.
+
+1. Les **rotations** (ou automorphismes orthogonaux directs) de $E$ ont pour matrice dans une base orthonormée directe :
+   $$R_\theta = \begin{pmatrix} \cos(\theta) & -\sin(\theta) \\ \sin(\theta) & \cos(\theta) \end{pmatrix} \quad \text{avec } \theta \in \mathbb{R}$$
+   Elles forment le groupe spécial orthogonal $SO_2(\mathbb{R})$.
+2. Les **symétries orthogonales par rapport à une droite** (ou réflexions) ont pour matrice dans une base orthonormée directe :
+   $$S_\theta = \begin{pmatrix} \cos(\theta) & \sin(\theta) \\ \sin(\theta) & -\cos(\theta) \end{pmatrix} \quad \text{avec } \theta \in \mathbb{R}$$
+   Il s'agit de la symétrie par rapport à la droite vectorielle faisant un angle $\theta/2$ avec le premier vecteur de la base.
+   Elles appartiennent à $O_2(\mathbb{R}) \setminus SO_2(\mathbb{R})$ et sont de déterminant $-1$.
+
+---
+
+</details>
+
+## 19. Formule des classes
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Groupes
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $G$ un groupe agissant sur un ensemble $E$. Alors l'ensemble des orbites de $E$ sous l'action de $G$ forme une partition de $E$, et on a la formule suivante :
+$$|E| = \sum_{x \in \mathcal{R}} |O_x|$$
+où $\mathcal{R}$ est l'espace quotient, c'est-à-dire un ensemble de représentants des orbites de $E$ sous l'action de $G$.
+
+---
+
+</details>
+
+## 20. Groupe de type fini, monogène, cyclique, simple
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Groupes
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Un groupe $G$ est dit **de type fini** s'il existe un ensemble fini $X \subset G$ tel que $G = \langle X \rangle$.
+
+Un groupe $G$ est dit **monogène** s'il existe un élément $g \in G$ tel que $G = \langle g \rangle$.
+
+Un groupe monogène fini est dit **cyclique**.
+
+Un groupe $G$ est dit **simple** s'il est non trivial et n'admet aucun sous-groupe distingué propre non trivial.<br>
+En particulier, tout groupe abélien simple est isomorphe à $\mathbb{Z}/p\mathbb{Z}$ avec $p$ premier.
+
+---
+
+</details>
+
+## 21. Règle de D'Alembert
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse complexe
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $\sum a_n z^n$ une série entière avec $a_n \neq 0$ pour $n$ assez grand.
+Si $\lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right| = \ell \in [0, +\infty]$, alors le rayon de convergence $R$ de la série est :
+$$R = \frac{1}{\ell}$$
+(avec la convention $1/0 = +\infty$ et $1/\infty = 0$).
+
+---
+
+</details>
+
+## 22. Éléments de torsion et sous-groupe de torsion
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Groupes
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $G$ un groupe. Un élément $g \in G$ est un **élément de torsion** si son ordre est fini, i.e. si $g^n = e$ pour un certain entier $n \ge 1$.
+
+Si $G$ est abélien, l'ensemble des éléments de torsion de $G$ forme un sous-groupe de $G$, appelé le **sous-groupe de torsion** de $G$.
+
+---
+
+</details>
+
+## 23. 1er théorème d'isomorphisme pour les groupes
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Groupes
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soient $G, H$ deux groupes et $\varphi : G \to H$ un morphisme de groupes.
+Alors $\text{Ker}(\varphi) \triangleleft G$, $\text{Im}(\varphi)$ est un sous-groupe de $H$, et $\varphi$ induit un isomorphisme de groupes :
+$$\bar{\varphi} : G/\text{Ker}(\varphi) \xrightarrow{\sim} \text{Im}(\varphi)$$
+
+---
+
+</details>
+
+## 24. Formule de Taylor avec reste intégral
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse réelle
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $f \in \mathcal{C}^{n+1}(I, E)$. Soient $a, b \in I$.
+Alors :
+$$f(b) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (b-a)^k + \int_a^b \frac{(b-t)^n}{n!} f^{(n+1)}(t) dt$$
+
+---
+
+</details>
+
+## 25. Générateurs de $\mathfrak{S}_n$ et $\mathfrak{A}_n$
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Groupes
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+1. Le groupe symétrique $\mathfrak{S}_n$ est engendré par les transpositions $(i, j)$. Il est aussi engendré par les transpositions élémentaires $(i, i+1)$.
+2. Le groupe alterné $\mathfrak{A}_n$ est engendré par les 3-cycles $(i, j, k)$.
+
+---
+
+</details>
+
+## 26. Théorème de Lagrange
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -1754,13 +1624,271 @@ où $[G:H]$ est l'indice de $H$ dans $G$ (le nombre de classes à gauche).
 
 </details>
 
+## 27. Théorème de factorisation dans un groupe
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Groupes
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $\varphi : G \to H$ un morphisme de groupes et $N \triangleleft G$.
+
+$N \subseteq \text{Ker}(\varphi)$ $\iff$ $\exists!$ morphisme de groupes $\bar{\varphi} : G/N \to H$ tel que $\varphi = \bar{\varphi} \circ \pi$, où $\pi : G \to G/N$ est la projection canonique, c'est-à-dire tel que le diagramme suivant commute :
+
+<p align="center">
+  <img src="data/img/dessins théorèmes/diagramme_groupes.png" width="300">
+</p>
+
+En particulier, si $N = \text{Ker}(\varphi)$, alors $\bar{\varphi}$ induit un **isomorphisme** :
+$$G/\text{Ker}(\varphi) \simeq \text{Im}(\varphi)$$
+
+---
+
+</details>
+
+## 28. Théorème de structure des groupes abéliens de type fini
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Groupes
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $G$ un groupe abélien de type fini. Alors il existe un entier $r \ge 0$ et des entiers $n_1, \dots, n_k \ge 2$ tels que :
+$$G \cong \mathbb{Z}^r \times \mathbb{Z}/n_1\mathbb{Z} \times \dots \times \mathbb{/Z}/n_k\mathbb{Z}$$
+où $n_1 | n_2 | \dots | n_k$. La suite d'entiers $(n_1, \dots, n_k)$ est unique et ses éléments sont appelés les facteurs invariants de $G$.
+
+---
+
+</details>
+
+## 29. Orbites, Stabilisateurs, Points fixes et propriétés
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Groupes
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $G$ un groupe agissant sur un ensemble $E$. Pour tout $x \in E$, on définit :
+
+- L'**orbite** de $x$ sous l'action de $G$ :
+  $$O_x = \{\rho(g)(x) \mid g \in G\}$$
+- Le **stabilisateur** de $x$ dans $G$ :
+  $$\operatorname{Stab}_x = \{g \in G \mid \rho(g)(x) = x\}$$
+- L'ensemble des **points fixes** :
+  $$E^G = \{x \in E \mid \forall g \in G, \rho(g)(x) = x\}$$
+
+L'application suivante est une bijection :
+$$\begin{aligned} f : G / \operatorname{Stab}_x &\to O_x \\ g \operatorname{Stab}_x &\mapsto \rho(g)(x) \end{aligned}$$
+En particulier, si $G$ est un groupe fini, on a la relation :
+$$|O_x| = [G : \operatorname{Stab}_x] = \frac{|G|}{|\operatorname{Stab}_x|}$$
+
+Si $G$ est un p-groupe, alors $|E^G| \equiv |E| \mod p$.
+
+---
+
+</details>
+
+## 30. Conjugaison d'un cycle par un élément de $\mathfrak{S}_n$
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Groupes
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $\sigma \in \mathfrak{S}_n$ et $(i_1, i_2, \dots, i_k)$ un cycle de $\mathfrak{S}_n$. Alors :
+$$\sigma (i_1, i_2, \dots, i_k) \sigma^{-1} = (\sigma(i_1), \sigma(i_2), \dots, \sigma(i_k))$$
+
+---
+
+</details>
+
+## 31. Groupe
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Groupes
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Un **groupe** est un ensemble $G$ muni d'une loi de composition interne $\cdot : G \times G \to G$ vérifiant les axiomes suivants :
+
+1. **Associativité** : $\forall x, y, z \in G$, $(x \cdot y) \cdot z = x \cdot (y \cdot z)$.
+2. **Élément neutre** : Il existe un élément $e \in G$ tel que $\forall x \in G$, $e \cdot x = x \cdot e = x$.
+3. **Inverse** : $\forall x \in G$, il existe un élément $x^{-1} \in G$ tel que $x \cdot x^{-1} = x^{-1} \cdot x = e$.
+
+---
+
+</details>
+
 <br>
 
 # 📚 Révisions pour le 09/10/2026
 
 **22** Théorèmes
 
-## 1. Formule de Leibniz
+## 1. Inégalité des accroissements finis
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse réelle
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $f : [a, b] \to \mathbb{R}$ une fonction continue sur le segment $[a, b]$ ($a < b$) et dérivable sur $]a, b[$. On suppose qu'il existe $M \in \mathbb{R}^+$ tel que pour tout $t \in ]a, b[$, $|f'(t)| \le M$. Alors pour tout $x, y \in [a, b]$ :
+
+$$
+|f(x) - f(y)| \leq M |x - y|
+$$
+
+---
+
+</details>
+
+## 2. Théorème des accroissements finis
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse réelle
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $f : [a, b] \to \mathbb{R}$ une fonction continue sur le segment $[a, b]$ ($a < b$) et dérivable sur l'intervalle ouvert $]a, b[$. Alors il existe au moins un point $c \in ]a, b[$ tel que :
+
+$$
+f(b) - f(a) = f'(c)(b - a)
+$$
+
+---
+
+</details>
+
+## 3. Dimension d'un produit et d'un quotient d'espaces vectoriels
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Algèbre linéaire
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soient $E$ et $F$ deux espaces vectoriels sur un corps $\mathbb{k}$. Alors :
+
+- $\dim(E \times F) = \dim(E) + \dim(F)$
+- Si $F$ est un sous-espace vectoriel de $E$, alors $\dim(E/F) = \dim(E) - \dim(F)$.
+
+---
+
+</details>
+
+## 4. Espace vectoriel
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Algèbre linéaire
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $k$ un corps et $(V,+,\cdot)$ un ensemble muni d'une loi de composition interne $+$ et d'une loi de composition externe $\cdot$. On dit que $V$ est un **espace vectoriel** sur $k$ si les conditions suivantes sont satisfaites :
+
+1. $(V,+)$ est un groupe abélien.
+2. Pour tout $v, w \in V$ et tout $\lambda, \mu \in k$, on a :
+   - $\lambda \cdot (v + w) = \lambda \cdot v + \lambda \cdot w$
+   - $(\lambda + \mu) \cdot v = \lambda \cdot v + \mu \cdot v$
+   - $(\lambda \cdot \mu) \cdot v = \lambda \cdot (\mu \cdot v)$
+   - $1 \cdot v = v$
+
+---
+
+</details>
+
+## 5. Intégration des relations de comparaison
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse réelle
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soient $f : [a, b[ \to \mathbb{R}$ et $g : [a, b[ \to \mathbb{R}^+$ deux fonctions continues par morceaux, où $b \in \mathbb{R} \cup \{+\infty\}$.
+
+- **Si $g$ est intégrable sur $[a, b[$** :
+  - Si $f(x) = O(g(x))$ au voisinage de $b$, alors $\int_x^b f(t) \, dt = O\left(\int_x^b g(t) \, dt\right)$.
+  - Si $f(x) = o(g(x))$ au voisinage de $b$, alors $\int_x^b f(t) \, dt = o\left(\int_x^b g(t) \, dt\right)$.
+  - Si $f(x) \sim g(x)$ au voisinage de $b$, alors $\int_x^b f(t) \, dt \sim \int_x^b g(t) \, dt$.
+
+- **Si $g$ n'est pas intégrable sur $[a, b[$** :
+  - Si $f(x) = O(g(x))$ au voisinage de $b$, alors $\int_a^x f(t) \, dt = O\left(\int_a^x g(t) \, dt\right)$.
+  - Si $f(x) = o(g(x))$ au voisinage de $b$, alors $\int_a^x f(t) \, dt = o\left(\int_a^x g(t) \, dt\right)$.
+  - Si $f(x) \sim g(x)$ au voisinage de $b$, alors $\int_a^x f(t) \, dt \sim \int_a^x g(t) \, dt$.
+
+---
+
+</details>
+
+## 6. Formule de Leibniz
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -1784,7 +1912,136 @@ $$
 
 </details>
 
-## 2. Comparaison série-intégrale
+## 7. Théorème de la bijection
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse réelle
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $f : I \to \mathbb{R}$ une fonction continue et strictement monotone sur un intervalle $I$ de $\mathbb{R}$. Alors :
+
+1. $f$ réalise une bijection de $I$ sur l'intervalle $J = f(I)$.
+2. La fonction réciproque $f^{-1} : J \to I$ est continue et possède le même sens de variation que $f$.
+
+---
+
+</details>
+
+## 8. Formule de changement de variable
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Fonctions vectorielles
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $f : [a, b] \to \mathbb{R}^n$ une fonction continue, et soit $\varphi : [\alpha, \beta] \to [a, b]$ une fonction $C^1$. Alors :
+$$\int_{\alpha}^{\beta} f(\varphi(t)) \varphi'(t) dt = \int_{\varphi(\alpha)}^{\varphi(\beta)} f(u) du$$
+
+---
+
+</details>
+
+## 9. Inégalité de la norme
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Fonctions vectorielles
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $f : [a, b] \to \mathbb{R}^n$ une fonction continue par morceaux. Alors :
+$$\left\|\int_a^b f(t) dt\right\| \leq \int_a^b \|f(t)\| dt$$
+
+<details>
+<summary>Idée de preuve</summary>
+Toute fonction continue sur un segment est limite uniforme de fonctions en escaliers.
+</details>
+
+---
+
+</details>
+
+## 10. Limites supérieure et inférieure
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse réelle
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(u_n)_{n \in \mathbb{N}}$ une suite réelle bornée. On définit :
+
+- La **limite supérieure** de la suite $(u_n)$ par :
+
+  $$
+  \limsup_{n \to \infty} u_n = \lim_{n \to \infty} \left( \sup_{k \ge n} u_k \right)
+  $$
+
+- La **limite inférieure** de la suite $(u_n)$ par :
+  $$
+  \liminf_{n \to \infty} u_n = \lim_{n \to \infty} \left( \inf_{k \ge n} u_k \right)
+  $$
+
+On les note respectivement $\overline{\lim}_{n \to \infty} u_n$ et $\underline{\lim}_{n \to \infty} u_n$.
+
+La suite $(u_n)$ converge dans $\mathbb{R}$ si et seulement si $\limsup_{n \to \infty} u_n = \liminf_{n \to \infty} u_n$.
+
+---
+
+</details>
+
+## 11. Théorème de Weierstrass
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse réelle
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $f : [a, b] \to \mathbb{R}$ une fonction continue sur le segment $[a, b]$. Alors $f$ est limite uniforme sur $[a, b]$ d'une suite de fonctions polynomiales. Autrement dit, pour tout $\varepsilon > 0$, il existe un polynôme $P \in \mathbb{R}[X]$ tel que :
+
+$$
+\sup_{x \in [a, b]} |f(x) - P(x)| \le \varepsilon
+$$
+
+---
+
+</details>
+
+## 12. Comparaison série-intégrale
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -1811,7 +2068,7 @@ Soit $f : [0, +\infty[ \to \mathbb{R}$ une fonction continue, positive et décro
 
 </details>
 
-## 3. Théorème de la bijection
+## 13. Théorème de Rolle
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -1825,16 +2082,36 @@ Analyse réelle
 
 ---
 
-Soit $f : I \to \mathbb{R}$ une fonction continue et strictement monotone sur un intervalle $I$ de $\mathbb{R}$. Alors :
-
-1. $f$ réalise une bijection de $I$ sur l'intervalle $J = f(I)$.
-2. La fonction réciproque $f^{-1} : J \to I$ est continue et possède le même sens de variation que $f$.
+Soit $f : [a, b] \to \mathbb{R}$ une fonction continue sur le segment $[a, b]$ ($a < b$) et dérivable sur l'intervalle ouvert $]a, b[$. Si $f(a) = f(b)$, alors il existe au moins un point $c \in ]a, b[$ tel que $f'(c) = 0$.
 
 ---
 
 </details>
 
-## 4. Variation et signe de la dérivée
+## 14. Caractérisation des sous-groupes de $(\mathbb{R}, +)$
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse réelle
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $G$ un sous-groupe de $(\mathbb{R}, +)$. Alors :
+
+- Soit il existe $\alpha \in \mathbb{R}^+$ tel que $G = \alpha \mathbb{Z}$ ($G$ est alors dit discret).
+- Soit $G$ est dense dans $\mathbb{R}$.
+
+---
+
+</details>
+
+## 15. Variation et signe de la dérivée
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -1858,7 +2135,153 @@ Soit $f : I \to \mathbb{R}$ une fonction dérivable sur un intervalle $I$ de $\m
 
 </details>
 
-## 5. Inégalité de Cauchy-Schwarz
+## 16. Sous-espace vectoriel
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Algèbre linéaire
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $V$ un espace vectoriel sur $k$. Un sous-ensemble $W$ de $V$ est un **sous-espace vectoriel** de $V$ si les conditions suivantes sont satisfaites :
+
+1. $W$ est non vide.
+2. Pour tout $v, w \in W$, on a $v + w \in W$.
+3. Pour tout $v \in W$ et tout $\lambda \in k$, on a $\lambda \cdot v \in W$.
+
+Ceci équivaut à :
+
+1. $0 \in W$.
+2. $\forall \lambda \in k, \forall v, w \in W, \lambda v + w \in W$.
+
+---
+
+</details>
+
+## 17. Critère d'Abel
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse réelle
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soient $(a_n)_{n \in \mathbb{N}}$ et $(b_n)_{n \in \mathbb{N}}$ deux suites réelles. On suppose que :
+
+1. La suite $(a_n)$ est à termes positifs et décroissante vers $0$.
+2. La suite des sommes partielles $\left(\sum\limits_{k=0}^n b_k\right)_{n \in \mathbb{N}}$ est bornée.
+
+Alors la série $\sum a_n b_n$ converge.
+
+Pour les fonctions : soient $f : [0, +\infty[ \to \mathbb{R}$ une fonction de classe $\mathcal{C}^1$ décroissante vers $0$ et $g : [0, +\infty[ \to \mathbb{R}$ une fonction continue telle que la fonction $G : x \mapsto \int_0^x g(t) \, dt$ soit bornée sur $[0, +\infty[$.
+
+Alors l'intégrale $\int_0^{+\infty} f(t) g(t) \, dt$ converge.
+
+---
+
+</details>
+
+## 18. Théorème fondamental de l'analyse
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse réelle
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $f : [a, b] \to \mathbb{R}$ une fonction continue sur le segment $[a, b]$. Soit $x_0 \in [a, b]$. La fonction $F : [a, b] \to \mathbb{R}$ définie par :
+
+$$
+F(x) = \int_{x_0}^x f(t) \, dt
+$$
+
+est l'unique primitive de $f$ sur $[a, b]$ qui s'annule en $x_0$. Elle est de classe $\mathcal{C}^1$ sur $[a, b]$ et pour tout $x \in [a, b]$, $F'(x) = f(x)$.
+
+---
+
+</details>
+
+## 19. Approximation uniforme de fonctions continues par des fonctions en escaliers
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Fonctions vectorielles
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $E$ un $\mathbb{R}$-espace vectoriel normé. Soit $f : [a, b] \to E$ une fonction continue. Alors, $f$ peut être approchée uniformément par des fonctions en escaliers.
+
+Autrement dit, pour tout $\epsilon > 0$, il existe une fonction en escaliers $g : [a, b] \to E$ telle que :
+$$\sup_{t \in [a, b]} \|f(t) - g(t)\| < \epsilon$$
+
+<details>
+<summary>Idée de preuve</summary>
+
+---
+
+Théorème de Heine : toute fonction continue sur un segment est uniformément continue.
+
+</details>
+
+---
+
+</details>
+
+## 20. Sommation des relations de comparaison
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse réelle
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soient $(u_n)$ une suite réelle et $(v_n)$ une suite de réels positifs.
+
+- **Cas où la série $\sum v_n$ converge** :
+  - Si $u_n = O(v_n)$, alors $\sum\limits_{k=n+1}^{\infty} u_k = O\left(\sum\limits_{k=n+1}^{\infty} v_k\right)$.
+  - Si $u_n = o(v_n)$, alors $\sum\limits_{k=n+1}^{\infty} u_k = o\left(\sum\limits_{k=n+1}^{\infty} v_k\right)$.
+  - Si $u_n \sim v_n$, alors $\sum\limits_{k=n+1}^{\infty} u_k \sim \sum\limits_{k=n+1}^{\infty} v_k$.
+
+- **Cas où la série $\sum v_n$ diverge** :
+  - Si $u_n = O(v_n)$, alors $\sum\limits_{k=0}^{n} u_k = O\left(\sum\limits_{k=0}^{n} v_k\right)$.
+  - Si $u_n = o(v_n)$, alors $\sum\limits_{k=0}^{n} u_k = o\left(\sum\limits_{k=0}^{n} v_k\right)$.
+  - Si $u_n \sim v_n$, alors $\sum\limits_{k=0}^{n} u_k \sim \sum\limits_{k=0}^{n} v_k$.
+
+---
+
+</details>
+
+## 21. Inégalité de Cauchy-Schwarz
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -1895,84 +2318,7 @@ avec égalité si et seulement si les familles $(u_i)$ et $(v_i)$ sont proportio
 
 </details>
 
-## 6. Formule de changement de variable
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Fonctions vectorielles
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $f : [a, b] \to \mathbb{R}^n$ une fonction continue, et soit $\varphi : [\alpha, \beta] \to [a, b]$ une fonction $C^1$. Alors :
-$$\int_{\alpha}^{\beta} f(\varphi(t)) \varphi'(t) dt = \int_{\varphi(\alpha)}^{\varphi(\beta)} f(u) du$$
-
----
-
-</details>
-
-## 7. Sommation des relations de comparaison
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse réelle
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soient $(u_n)$ une suite réelle et $(v_n)$ une suite de réels positifs.
-
-- **Cas où la série $\sum v_n$ converge** :
-  - Si $u_n = O(v_n)$, alors $\sum\limits_{k=n+1}^{\infty} u_k = O\left(\sum\limits_{k=n+1}^{\infty} v_k\right)$.
-  - Si $u_n = o(v_n)$, alors $\sum\limits_{k=n+1}^{\infty} u_k = o\left(\sum\limits_{k=n+1}^{\infty} v_k\right)$.
-  - Si $u_n \sim v_n$, alors $\sum\limits_{k=n+1}^{\infty} u_k \sim \sum\limits_{k=n+1}^{\infty} v_k$.
-
-- **Cas où la série $\sum v_n$ diverge** :
-  - Si $u_n = O(v_n)$, alors $\sum\limits_{k=0}^{n} u_k = O\left(\sum\limits_{k=0}^{n} v_k\right)$.
-  - Si $u_n = o(v_n)$, alors $\sum\limits_{k=0}^{n} u_k = o\left(\sum\limits_{k=0}^{n} v_k\right)$.
-  - Si $u_n \sim v_n$, alors $\sum\limits_{k=0}^{n} u_k \sim \sum\limits_{k=0}^{n} v_k$.
-
----
-
-</details>
-
-## 8. Théorème fondamental de l'analyse
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse réelle
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $f : [a, b] \to \mathbb{R}$ une fonction continue sur le segment $[a, b]$. Soit $x_0 \in [a, b]$. La fonction $F : [a, b] \to \mathbb{R}$ définie par :
-
-$$
-F(x) = \int_{x_0}^x f(t) \, dt
-$$
-
-est l'unique primitive de $f$ sur $[a, b]$ qui s'annule en $x_0$. Elle est de classe $\mathcal{C}^1$ sur $[a, b]$ et pour tout $x \in [a, b]$, $F'(x) = f(x)$.
-
----
-
-</details>
-
-## 9. Inégalité des accroissements finis
+## 22. Inégalité des accroissements finis
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -1993,359 +2339,13 @@ $$\|f(b) - f(a)\| \le g(b) - g(a)$$
 
 </details>
 
-## 10. Sous-espace vectoriel
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Algèbre linéaire
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $V$ un espace vectoriel sur $k$. Un sous-ensemble $W$ de $V$ est un **sous-espace vectoriel** de $V$ si les conditions suivantes sont satisfaites :
-
-1. $W$ est non vide.
-2. Pour tout $v, w \in W$, on a $v + w \in W$.
-3. Pour tout $v \in W$ et tout $\lambda \in k$, on a $\lambda \cdot v \in W$.
-
-Ceci équivaut à :
-
-1. $0 \in W$.
-2. $\forall \lambda \in k, \forall v, w \in W, \lambda v + w \in W$.
-
----
-
-</details>
-
-## 11. Espace vectoriel
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Algèbre linéaire
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $k$ un corps et $(V,+,\cdot)$ un ensemble muni d'une loi de composition interne $+$ et d'une loi de composition externe $\cdot$. On dit que $V$ est un **espace vectoriel** sur $k$ si les conditions suivantes sont satisfaites :
-
-1. $(V,+)$ est un groupe abélien.
-2. Pour tout $v, w \in V$ et tout $\lambda, \mu \in k$, on a :
-   - $\lambda \cdot (v + w) = \lambda \cdot v + \lambda \cdot w$
-   - $(\lambda + \mu) \cdot v = \lambda \cdot v + \mu \cdot v$
-   - $(\lambda \cdot \mu) \cdot v = \lambda \cdot (\mu \cdot v)$
-   - $1 \cdot v = v$
-
----
-
-</details>
-
-## 12. Théorème des accroissements finis
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse réelle
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $f : [a, b] \to \mathbb{R}$ une fonction continue sur le segment $[a, b]$ ($a < b$) et dérivable sur l'intervalle ouvert $]a, b[$. Alors il existe au moins un point $c \in ]a, b[$ tel que :
-
-$$
-f(b) - f(a) = f'(c)(b - a)
-$$
-
----
-
-</details>
-
-## 13. Caractérisation des sous-groupes de $(\mathbb{R}, +)$
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse réelle
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $G$ un sous-groupe de $(\mathbb{R}, +)$. Alors :
-
-- Soit il existe $\alpha \in \mathbb{R}^+$ tel que $G = \alpha \mathbb{Z}$ ($G$ est alors dit discret).
-- Soit $G$ est dense dans $\mathbb{R}$.
-
----
-
-</details>
-
-## 14. Dimension d'un produit et d'un quotient d'espaces vectoriels
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Algèbre linéaire
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soient $E$ et $F$ deux espaces vectoriels sur un corps $\mathbb{k}$. Alors :
-
-- $\dim(E \times F) = \dim(E) + \dim(F)$
-- Si $F$ est un sous-espace vectoriel de $E$, alors $\dim(E/F) = \dim(E) - \dim(F)$.
-
----
-
-</details>
-
-## 15. Inégalité de la norme
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Fonctions vectorielles
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $f : [a, b] \to \mathbb{R}^n$ une fonction continue par morceaux. Alors :
-$$\left\|\int_a^b f(t) dt\right\| \leq \int_a^b \|f(t)\| dt$$
-
-<details>
-<summary>Idée de preuve</summary>
-Toute fonction continue sur un segment est limite uniforme de fonctions en escaliers.
-</details>
-
----
-
-</details>
-
-## 16. Théorème de Rolle
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse réelle
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $f : [a, b] \to \mathbb{R}$ une fonction continue sur le segment $[a, b]$ ($a < b$) et dérivable sur l'intervalle ouvert $]a, b[$. Si $f(a) = f(b)$, alors il existe au moins un point $c \in ]a, b[$ tel que $f'(c) = 0$.
-
----
-
-</details>
-
-## 17. Limites supérieure et inférieure
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse réelle
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(u_n)_{n \in \mathbb{N}}$ une suite réelle bornée. On définit :
-
-- La **limite supérieure** de la suite $(u_n)$ par :
-
-  $$
-  \limsup_{n \to \infty} u_n = \lim_{n \to \infty} \left( \sup_{k \ge n} u_k \right)
-  $$
-
-- La **limite inférieure** de la suite $(u_n)$ par :
-  $$
-  \liminf_{n \to \infty} u_n = \lim_{n \to \infty} \left( \inf_{k \ge n} u_k \right)
-  $$
-
-On les note respectivement $\overline{\lim}_{n \to \infty} u_n$ et $\underline{\lim}_{n \to \infty} u_n$.
-
-La suite $(u_n)$ converge dans $\mathbb{R}$ si et seulement si $\limsup_{n \to \infty} u_n = \liminf_{n \to \infty} u_n$.
-
----
-
-</details>
-
-## 18. Inégalité des accroissements finis
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse réelle
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $f : [a, b] \to \mathbb{R}$ une fonction continue sur le segment $[a, b]$ ($a < b$) et dérivable sur $]a, b[$. On suppose qu'il existe $M \in \mathbb{R}^+$ tel que pour tout $t \in ]a, b[$, $|f'(t)| \le M$. Alors pour tout $x, y \in [a, b]$ :
-
-$$
-|f(x) - f(y)| \leq M |x - y|
-$$
-
----
-
-</details>
-
-## 19. Théorème de Weierstrass
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse réelle
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $f : [a, b] \to \mathbb{R}$ une fonction continue sur le segment $[a, b]$. Alors $f$ est limite uniforme sur $[a, b]$ d'une suite de fonctions polynomiales. Autrement dit, pour tout $\varepsilon > 0$, il existe un polynôme $P \in \mathbb{R}[X]$ tel que :
-
-$$
-\sup_{x \in [a, b]} |f(x) - P(x)| \le \varepsilon
-$$
-
----
-
-</details>
-
-## 20. Approximation uniforme de fonctions continues par des fonctions en escaliers
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Fonctions vectorielles
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $E$ un $\mathbb{R}$-espace vectoriel normé. Soit $f : [a, b] \to E$ une fonction continue. Alors, $f$ peut être approchée uniformément par des fonctions en escaliers.
-
-Autrement dit, pour tout $\epsilon > 0$, il existe une fonction en escaliers $g : [a, b] \to E$ telle que :
-$$\sup_{t \in [a, b]} \|f(t) - g(t)\| < \epsilon$$
-
-<details>
-<summary>Idée de preuve</summary>
-
----
-
-Théorème de Heine : toute fonction continue sur un segment est uniformément continue.
-
-</details>
-
----
-
-</details>
-
-## 21. Critère d'Abel
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse réelle
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soient $(a_n)_{n \in \mathbb{N}}$ et $(b_n)_{n \in \mathbb{N}}$ deux suites réelles. On suppose que :
-
-1. La suite $(a_n)$ est à termes positifs et décroissante vers $0$.
-2. La suite des sommes partielles $\left(\sum\limits_{k=0}^n b_k\right)_{n \in \mathbb{N}}$ est bornée.
-
-Alors la série $\sum a_n b_n$ converge.
-
-Pour les fonctions : soient $f : [0, +\infty[ \to \mathbb{R}$ une fonction de classe $\mathcal{C}^1$ décroissante vers $0$ et $g : [0, +\infty[ \to \mathbb{R}$ une fonction continue telle que la fonction $G : x \mapsto \int_0^x g(t) \, dt$ soit bornée sur $[0, +\infty[$.
-
-Alors l'intégrale $\int_0^{+\infty} f(t) g(t) \, dt$ converge.
-
----
-
-</details>
-
-## 22. Intégration des relations de comparaison
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse réelle
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soient $f : [a, b[ \to \mathbb{R}$ et $g : [a, b[ \to \mathbb{R}^+$ deux fonctions continues par morceaux, où $b \in \mathbb{R} \cup \{+\infty\}$.
-
-- **Si $g$ est intégrable sur $[a, b[$** :
-  - Si $f(x) = O(g(x))$ au voisinage de $b$, alors $\int_x^b f(t) \, dt = O\left(\int_x^b g(t) \, dt\right)$.
-  - Si $f(x) = o(g(x))$ au voisinage de $b$, alors $\int_x^b f(t) \, dt = o\left(\int_x^b g(t) \, dt\right)$.
-  - Si $f(x) \sim g(x)$ au voisinage de $b$, alors $\int_x^b f(t) \, dt \sim \int_x^b g(t) \, dt$.
-
-- **Si $g$ n'est pas intégrable sur $[a, b[$** :
-  - Si $f(x) = O(g(x))$ au voisinage de $b$, alors $\int_a^x f(t) \, dt = O\left(\int_a^x g(t) \, dt\right)$.
-  - Si $f(x) = o(g(x))$ au voisinage de $b$, alors $\int_a^x f(t) \, dt = o\left(\int_a^x g(t) \, dt\right)$.
-  - Si $f(x) \sim g(x)$ au voisinage de $b$, alors $\int_a^x f(t) \, dt \sim \int_a^x g(t) \, dt$.
-
----
-
-</details>
-
 <br>
 
 # 📚 Révisions pour le 15/10/2026
 
 **25** Théorèmes
 
-## 1. Adjoint d'un endomorphisme
+## 1. Espace préhilbertien
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -2359,29 +2359,144 @@ Espaces vectoriels normés
 
 ---
 
-Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien et $u \in \mathcal{L}(E)$. Il existe un unique endomorphisme $u^* \in \mathcal{L}(E)$ tel que pour tous $x, y \in E$, on ait :
-$$ \langle u(x), y \rangle = \langle x, u^*(y) \rangle $$
-On dit que $u^*$ est l'adjoint de $u$.
-
-De plus, si A est la matrice de $u$ dans une base orthonormée, alors la matrice de $u^*$ dans cette même base est $A^T$.
-
-1. $u$ est symétrique $\iff$ $u = u^*$.
-2. $u$ est anti-symétrique $\iff$ $u = -u^*$.
-3. $u$ est un projecteur orthogonal $\iff$ $u = u^*$ et $u^2 = u$.
-4. $u$ est une isométrie vectorielle (automorphisme orthogonal) $\iff$ $u^* u = \operatorname{Id}_E$.
-
-On a les propriétés suivantes :
-1. $u \mapsto u^*$ est linéaire involutive.
-2. $(u \circ v)^* = v^* \circ u^*$.
-3. $\operatorname{Ker}(u^*) = \operatorname{Im}(u)^{\perp}$ et $\operatorname{Im}(u^*) = \operatorname{Ker}(u)^{\perp}$.
-4. Si $u$ est inversible, alors $u^*$ est inversible et $(u^{-1})^* = (u^*)^{-1}$.
-5. Si un sous-espace vectoriel $F$ de $E$ est stable par $u$, alors $F^{\perp}$ est stable par $u^*$.
+Un espace préhilbertien est un espace vectoriel sur $\mathbb{R}$ muni d'un produit scalaire. Il est noté $(E, \langle \cdot, \cdot \rangle)$.
 
 ---
 
 </details>
 
-## 2. Isométries vectorielles et caractérisations
+## 2. Inégalités de Minkowski
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Espaces vectoriels normés
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien. Pour tous $x, y \in E$ :
+$$ \|x+y\| \le \|x\| + \|y\| $$
+Avec égalité si et seulement si $x$ et $y$ sont colinéaires de même sens (positivement liés).
+
+---
+
+</details>
+
+## 3. Inégalité de Bessel
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Espaces vectoriels normés
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien et $(e_i)_{i \in \mathbb{N}}$ une famille orthonormée de $E$. Alors pour tout $x \in E$, la série $\sum |\langle x, e_i \rangle|^2$ converge et on a :
+$$\sum_{i=0}^{\infty} |\langle x, e_i \rangle|^2 \le \|x\|^2$$
+
+Une telle famille orthonormale est dite totale ssi $\overline{\operatorname{Vect}(e_i)_{i \in \mathbb{N}}} = E$.
+
+La famille $(e_i)_{i \in \mathbb{N}}$ est totale ssi pour tout $x \in E$, on a l'égalité :
+$$\sum_{i=0}^{\infty} |\langle x, e_i \rangle|^2 = \|x\|^2$$
+
+<details>
+<summary>Idée de preuve</summary>
+
+---
+
+Le membre de gauche est la limite de la norme au carré du projeté orthogonal de $x$ sur $\operatorname{Vect}(e_1, \ldots, e_n)$.
+
+</details>
+
+---
+
+</details>
+
+## 4. Forme réduite des endomorphismes anti-symétriques
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Espaces vectoriels normés
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(E, \langle \cdot, \cdot \rangle)$ un espace euclidien et $u \in \mathcal{L}(E)$ un endomorphisme anti-symétrique.
+On note $J = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$.
+
+Il existe une base orthonormée de $E$ dans laquelle la matrice de $u$ est une matrice diagonale par blocs de la forme :
+
+$$ \operatorname{Mat}(u) = \begin{pmatrix}
+\lambda_1 J & & & (0) \\
+& \ddots & & \\
+& & \lambda_p J & \\
+(0) & & & 0_{n-2p}
+\end{pmatrix} $$
+
+où $p \in \mathbb{N}$ tel que $2p \leq \dim(E)$, $\lambda_1, \dots, \lambda_p$ sont des réels strictement positifs, et $0_{n-2p}$ désigne le bloc carré nul de taille $(n-2p) \times (n-2p)$.
+
+---
+
+</details>
+
+## 5. Formule de changement de base
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Algèbre linéaire
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $u in \mathcal{L}(E,F)$ et soient $B$ et $B'$ deux bases de $E$, et $C$ et $C'$ deux bases de $F$. Alors, on a la formule de changement de base suivante :
+
+$$\operatorname{Mat}_{C',B'}(u) = P_{C \to C'} \operatorname{Mat}_{C,B}(u) P_{B' \to B} = P_{C',C} \operatorname{Mat}_{C,B}(u) P_{B,B'}$$
+
+---
+
+</details>
+
+## 6. Matrices semblables
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Algèbre linéaire
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Deux matrices $A$ et $B \in \mathcal{M}_n(\mathbb{K})$ sont dites semblables si et seulement s'il existe une matrice inversible $P \in \operatorname{GL}_n(\mathbb{K})$ telle que $B = P^{-1}AP$.
+
+---
+
+</details>
+
+## 7. Isométries vectorielles et caractérisations
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -2419,7 +2534,158 @@ On note $O(E)$ l'ensemble des isométries vectorielles de $E$. C'est un groupe p
 
 </details>
 
-## 3. Orthogonal de la somme, somme des orthogonaux
+## 8. Injection canonique de bidualité
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Algèbre linéaire
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $E$ un $\mathbb{K}$-espace vectoriel. L'application canonique de bidualité est l'application linéaire $\varphi : E \to E^{**}$ définie par :
+$$\varphi(x)(f) = f(x) \quad \text{pour tout } x \in E \text{ et } f \in E^*$$
+C'est un morphisme de $\mathbb{K}$-espaces vectoriels.<br>De plus, si $E$ est de dimension finie, alors $\varphi$ est un isomorphisme.
+
+---
+
+</details>
+
+## 9. Théorème spectral pour les endomorphismes symétriques
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Espaces vectoriels normés
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(E, \langle \cdot, \cdot \rangle)$ un espace euclidien et $u \in \mathcal{L}(E)$ un endomorphisme symétrique.
+
+Alors toutes les valeurs propres de $u$ sont réelles, et il existe une base orthonormée de $E$ formée de vecteurs propres de $u$.
+
+Application : Soit $A \in \mathcal{S}^+_n(\mathbb{R})$. Alors il existe une unique matrice $B \in \mathcal{S}^+_n(\mathbb{R})$ telle que $A = B^2$. On note $B = \sqrt{A}$.
+
+---
+
+</details>
+
+## 10. Adjoint d'un endomorphisme
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Espaces vectoriels normés
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien et $u \in \mathcal{L}(E)$. Il existe un unique endomorphisme $u^* \in \mathcal{L}(E)$ tel que pour tous $x, y \in E$, on ait :
+$$ \langle u(x), y \rangle = \langle x, u^*(y) \rangle $$
+On dit que $u^*$ est l'adjoint de $u$.
+
+De plus, si A est la matrice de $u$ dans une base orthonormée, alors la matrice de $u^*$ dans cette même base est $A^T$.
+
+1. $u$ est symétrique $\iff$ $u = u^*$.
+2. $u$ est anti-symétrique $\iff$ $u = -u^*$.
+3. $u$ est un projecteur orthogonal $\iff$ $u = u^*$ et $u^2 = u$.
+4. $u$ est une isométrie vectorielle (automorphisme orthogonal) $\iff$ $u^* u = \operatorname{Id}_E$.
+
+On a les propriétés suivantes :
+1. $u \mapsto u^*$ est linéaire involutive.
+2. $(u \circ v)^* = v^* \circ u^*$.
+3. $\operatorname{Ker}(u^*) = \operatorname{Im}(u)^{\perp}$ et $\operatorname{Im}(u^*) = \operatorname{Ker}(u)^{\perp}$.
+4. Si $u$ est inversible, alors $u^*$ est inversible et $(u^{-1})^* = (u^*)^{-1}$.
+5. Si un sous-espace vectoriel $F$ de $E$ est stable par $u$, alors $F^{\perp}$ est stable par $u^*$.
+
+---
+
+</details>
+
+## 11. Produit scalaire
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Espaces vectoriels normés
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Un produit scalaire sur un espace vectoriel $E$ sur le corps $\mathbb{K}$ est une forme bilinéaire (ou sesquilinéraire si $\mathbb{K} = \mathbb{C}$) qui associe à chaque paire de vecteurs $(x, y) \in E \times E$ un scalaire $\langle x, y \rangle \in \mathbb{K}$, et qui satisfait les propriétés suivantes :
+
+1. **Bilinéaire/Sesquilinéaire** : $\langle \alpha x + y, z \rangle = \alpha \langle x, z \rangle + \langle y, z \rangle$ pour tous $x, y, z \in E$ et $\alpha \in \mathbb{K}$.
+2. **Symétrique** : $\langle x, y \rangle = \overline{\langle y, x \rangle}$ pour tous $x, y \in E$.
+3. **Définie** : $\langle x, x \rangle = 0$ si et seulement si $x = 0$.
+4. **Positive** : $\langle x, x \rangle \geq 0$.
+
+---
+
+</details>
+
+## 12. Base duale
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Algèbre linéaire
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie et soit $B = (e_1, e_2, \ldots, e_n)$ une base de $E$. La base duale de $B$ est la base $B^* = (e_1^*, e_2^*, \ldots, e_n^*)$ de $E^*$ définie par :
+$$e_i^*(e_j) = \delta_{ij} \quad \text{pour tout } i,j \in \{1,2,\ldots,n\}$$
+En particulier, si $B$ est une base de $E$, alors $B^*$ est une base de $E^*$ et $\dim(E^*) = \dim(E)$.
+
+---
+
+</details>
+
+## 13. Application linéaire duale / transposée
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Algèbre linéaire
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $E$ et $F$ deux $\mathbb{K}$-espaces vectoriels et soit $u \in \mathcal{L}(E,F)$. L'application linéaire duale (ou transposée) de $u$ est l'application linéaire $u^* := {}^{\mathcal{t}}u \in \mathcal{L}(F^*,E^*)$ définie par :
+$$u^*(g) = g \circ u \quad \text{pour tout }g \in F^*$$
+C'est un morphisme de $\mathbb{K}$-espaces vectoriels. De plus, si $E$ et $F$ sont de dimension finie, alors $\operatorname{Mat}_{B^*,C^*}(u^*) = \operatorname{Mat}_{C,B}(u)^T$ pour toutes bases $B$ de $E$ et $C$ de $F$.
+
+---
+
+</details>
+
+## 14. Orthogonal de la somme, somme des orthogonaux
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -2442,29 +2708,7 @@ Si $E$ est de dimension finie, on a l'égalité $F^{\perp} + G^{\perp} = (F \cap
 
 </details>
 
-## 4. Injection canonique de bidualité
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Algèbre linéaire
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $E$ un $\mathbb{K}$-espace vectoriel. L'application canonique de bidualité est l'application linéaire $\varphi : E \to E^{**}$ définie par :
-$$\varphi(x)(f) = f(x) \quad \text{pour tout } x \in E \text{ et } f \in E^*$$
-C'est un morphisme de $\mathbb{K}$-espaces vectoriels.<br>De plus, si $E$ est de dimension finie, alors $\varphi$ est un isomorphisme.
-
----
-
-</details>
-
-## 5. Inégalité de Bessel
+## 15. Mise en dualité
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -2478,28 +2722,15 @@ Espaces vectoriels normés
 
 ---
 
-Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien et $(e_i)_{i \in \mathbb{N}}$ une famille orthonormée de $E$. Alors pour tout $x \in E$, la série $\sum |\langle x, e_i \rangle|^2$ converge et on a :
-$$\sum_{i=0}^{\infty} |\langle x, e_i \rangle|^2 \le \|x\|^2$$
-
-Une telle famille orthonormale est dite totale ssi $\overline{\operatorname{Vect}(e_i)_{i \in \mathbb{N}}} = E$.
-
-La famille $(e_i)_{i \in \mathbb{N}}$ est totale ssi pour tout $x \in E$, on a l'égalité :
-$$\sum_{i=0}^{\infty} |\langle x, e_i \rangle|^2 = \|x\|^2$$
-
-<details>
-<summary>Idée de preuve</summary>
-
----
-
-Le membre de gauche est la limite de la norme au carré du projeté orthogonal de $x$ sur $\operatorname{Vect}(e_1, \ldots, e_n)$.
-
-</details>
+Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien. On définit l'application linéaire $f : E \to E^*$ par :
+$$ f(x) = \langle x, \cdot \rangle $$
+f est injective. Si $E$ est de dimension finie, $f$ est un isomorphisme.
 
 ---
 
 </details>
 
-## 6. Endomorphismes / Matrices symétriques (définis) positifs
+## 16. Endomorphismes / Matrices symétriques (définis) positifs
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -2537,308 +2768,7 @@ Cet ensemble est noté $\mathcal{S}^{++}_n(\mathbb{R})$.
 
 </details>
 
-## 7. Produit scalaire
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Espaces vectoriels normés
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Un produit scalaire sur un espace vectoriel $E$ sur le corps $\mathbb{K}$ est une forme bilinéaire (ou sesquilinéraire si $\mathbb{K} = \mathbb{C}$) qui associe à chaque paire de vecteurs $(x, y) \in E \times E$ un scalaire $\langle x, y \rangle \in \mathbb{K}$, et qui satisfait les propriétés suivantes :
-
-1. **Bilinéaire/Sesquilinéaire** : $\langle \alpha x + y, z \rangle = \alpha \langle x, z \rangle + \langle y, z \rangle$ pour tous $x, y, z \in E$ et $\alpha \in \mathbb{K}$.
-2. **Symétrique** : $\langle x, y \rangle = \overline{\langle y, x \rangle}$ pour tous $x, y \in E$.
-3. **Définie** : $\langle x, x \rangle = 0$ si et seulement si $x = 0$.
-4. **Positive** : $\langle x, x \rangle \geq 0$.
-
----
-
-</details>
-
-## 8. Mise en dualité
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Espaces vectoriels normés
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien. On définit l'application linéaire $f : E \to E^*$ par :
-$$ f(x) = \langle x, \cdot \rangle $$
-f est injective. Si $E$ est de dimension finie, $f$ est un isomorphisme.
-
----
-
-</details>
-
-## 9. Matrices équivalentes et caractérisation du rang
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Algèbre linéaire
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Deux matrices $A$ et $B \in \mathcal{M}_{n,p}(\mathbb{K})$ sont dites équivalentes si et seulement s'il existe deux matrices inversibles $P \in \operatorname{GL}_n(\mathbb{K})$ et $Q \in \operatorname{GL}_p(\mathbb{K})$ telles que $B = PAQ$.
-
-Autrement dit, deux matrices sont équivalentes si elles représentent la même application linéaire dans des bases différentes.
-
-Caractérisation du rang : Les matrices $A \in \mathcal{M}_{n,p}(\mathbb{K})$ de rang r sont exactement les matrices équivalentes à la matrice suivante :
-
-$$
-J_r =
-\begin{pmatrix}
-I_r & 0_{r,p-r} \\
-0_{n-r,r} & 0_{n-r,p-r}
-\end{pmatrix}
-$$
-
----
-
-</details>
-
-## 10. Théorème de projection orthogonale
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Espaces vectoriels normés
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien et $F$ un sous-espace vectoriel de dimension finie de $E$. Alors pour tout $x \in E$, il existe un unique couple $(y, z) \in F \times F^{\perp}$ tel que :
-$$ x = y + z $$
-Autrement dit, $E = F \oplus F^{\perp}$.
-De plus, $F^{\perp^{\perp}} = F$.
-
-Si de plus $E$ est de dimension finie, on a :
-$$ \dim E = \dim F + \dim F^{\perp} $$
-
----
-
-</details>
-
-## 11. Matrice de passage
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Algèbre linéaire
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie et soient $B = (e_1, e_2, \ldots, e_n)$ et $B' = (e'_1, e'_2, \ldots, e'_n)$ deux bases de $E$.
-
-La matrice de passage de la base $B$ à la base $B'$ est la matrice $P_{B \to B'} := P_{B', B} := \operatorname{Mat}_{B',B}(\operatorname{id_E})$<br>
-Cette matrice est l'écriture en colonnes des vecteurs de la base $B$ dans la base $B'$ :
-
-$$P_{B \to B'} = \begin{pmatrix} [e_1]_{B'} & [e_2]_{B'} & \cdots & [e_n]_{B'} \end{pmatrix}$$
-
-De plus, $P_{B', B}^{-1} = P_{B, B'}$.
-
-
----
-
-</details>
-
-## 12. Inégalités de Minkowski
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Espaces vectoriels normés
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien. Pour tous $x, y \in E$ :
-$$ \|x+y\| \le \|x\| + \|y\| $$
-Avec égalité si et seulement si $x$ et $y$ sont colinéaires de même sens (positivement liés).
-
----
-
-</details>
-
-## 13. Forme réduite des endomorphismes anti-symétriques
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Espaces vectoriels normés
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(E, \langle \cdot, \cdot \rangle)$ un espace euclidien et $u \in \mathcal{L}(E)$ un endomorphisme anti-symétrique.
-On note $J = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$.
-
-Il existe une base orthonormée de $E$ dans laquelle la matrice de $u$ est une matrice diagonale par blocs de la forme :
-
-$$ \operatorname{Mat}(u) = \begin{pmatrix}
-\lambda_1 J & & & (0) \\
-& \ddots & & \\
-& & \lambda_p J & \\
-(0) & & & 0_{n-2p}
-\end{pmatrix} $$
-
-où $p \in \mathbb{N}$ tel que $2p \leq \dim(E)$, $\lambda_1, \dots, \lambda_p$ sont des réels strictement positifs, et $0_{n-2p}$ désigne le bloc carré nul de taille $(n-2p) \times (n-2p)$.
-
----
-
-</details>
-
-## 14. Distance à un sous-espace vectoriel de dimension finie
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Espaces vectoriels normés
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien et $F$ un sous-espace vectoriel de dimension finie de $E$. Alors pour tout $x \in E$, on a :
-$$ d(x, F) = \|x - P_F(x)\| $$
-où $P_F(x)$ est le projeté orthogonal de $x$ sur $F$.
-
-De plus, on a l'égalité :
-$$\|x\|^2 = \|P_F(x)\|^2 + \|x - P_F(x)\|^2$$
-
----
-
-</details>
-
-## 15. Théorème spectral pour les endomorphismes symétriques
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Espaces vectoriels normés
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(E, \langle \cdot, \cdot \rangle)$ un espace euclidien et $u \in \mathcal{L}(E)$ un endomorphisme symétrique.
-
-Alors toutes les valeurs propres de $u$ sont réelles, et il existe une base orthonormée de $E$ formée de vecteurs propres de $u$.
-
-Application : Soit $A \in \mathcal{S}^+_n(\mathbb{R})$. Alors il existe une unique matrice $B \in \mathcal{S}^+_n(\mathbb{R})$ telle que $A = B^2$. On note $B = \sqrt{A}$.
-
----
-
-</details>
-
-## 16. Espace euclidien
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Espaces vectoriels normés
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Un espace euclidien est un espace préhilbertien de dimension finie.
-
-Rappel : un espace préhilbertien est un espace vectoriel sur $\mathbb{R}$ muni d'un produit scalaire. Il est noté $(E, \langle \cdot, \cdot \rangle)$.
-
----
-
-</details>
-
-## 17. Formules de polarisation
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Espaces vectoriels normés
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien réel. Pour tous $x, y \in E$ :
-$$ \langle x, y \rangle = \frac{1}{2} (\|x+y\|^2 - \|x\|^2 - \|y\|^2) $$
-$$ \langle x, y \rangle = \frac{1}{2} (\|x\|^2 + \|y\|^2 - \|x-y\|^2) $$
-$$ \langle x, y \rangle = \frac{1}{4} (\|x+y\|^2 - \|x-y\|^2) $$
-
----
-
-</details>
-
-## 18. Matrices semblables
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Algèbre linéaire
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Deux matrices $A$ et $B \in \mathcal{M}_n(\mathbb{K})$ sont dites semblables si et seulement s'il existe une matrice inversible $P \in \operatorname{GL}_n(\mathbb{K})$ telle que $B = P^{-1}AP$.
-
----
-
-</details>
-
-## 19. Endomorphismes anti-symétriques et matrices anti-symétriques
+## 17. Endomorphismes anti-symétriques et matrices anti-symétriques
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -2870,51 +2800,7 @@ $$\mathcal{M}_n(\mathbb{R}) = \mathcal{S}_n(\mathbb{R}) \oplus \mathcal{A}_n(\ma
 
 </details>
 
-## 20. Formule de changement de base
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Algèbre linéaire
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $u in \mathcal{L}(E,F)$ et soient $B$ et $B'$ deux bases de $E$, et $C$ et $C'$ deux bases de $F$. Alors, on a la formule de changement de base suivante :
-
-$$\operatorname{Mat}_{C',B'}(u) = P_{C \to C'} \operatorname{Mat}_{C,B}(u) P_{B' \to B} = P_{C',C} \operatorname{Mat}_{C,B}(u) P_{B,B'}$$
-
----
-
-</details>
-
-## 21. Base duale
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Algèbre linéaire
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie et soit $B = (e_1, e_2, \ldots, e_n)$ une base de $E$. La base duale de $B$ est la base $B^* = (e_1^*, e_2^*, \ldots, e_n^*)$ de $E^*$ définie par :
-$$e_i^*(e_j) = \delta_{ij} \quad \text{pour tout } i,j \in \{1,2,\ldots,n\}$$
-En particulier, si $B$ est une base de $E$, alors $B^*$ est une base de $E^*$ et $\dim(E^*) = \dim(E)$.
-
----
-
-</details>
-
-## 22. Espace préhilbertien
+## 18. Espace euclidien
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -2928,13 +2814,94 @@ Espaces vectoriels normés
 
 ---
 
-Un espace préhilbertien est un espace vectoriel sur $\mathbb{R}$ muni d'un produit scalaire. Il est noté $(E, \langle \cdot, \cdot \rangle)$.
+Un espace euclidien est un espace préhilbertien de dimension finie.
+
+Rappel : un espace préhilbertien est un espace vectoriel sur $\mathbb{R}$ muni d'un produit scalaire. Il est noté $(E, \langle \cdot, \cdot \rangle)$.
 
 ---
 
 </details>
 
-## 23. Calcul du produit scalaire dans une base, matrice de Gram
+## 19. Matrice de passage
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Algèbre linéaire
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie et soient $B = (e_1, e_2, \ldots, e_n)$ et $B' = (e'_1, e'_2, \ldots, e'_n)$ deux bases de $E$.
+
+La matrice de passage de la base $B$ à la base $B'$ est la matrice $P_{B \to B'} := P_{B', B} := \operatorname{Mat}_{B',B}(\operatorname{id_E})$<br>
+Cette matrice est l'écriture en colonnes des vecteurs de la base $B$ dans la base $B'$ :
+
+$$P_{B \to B'} = \begin{pmatrix} [e_1]_{B'} & [e_2]_{B'} & \cdots & [e_n]_{B'} \end{pmatrix}$$
+
+De plus, $P_{B', B}^{-1} = P_{B, B'}$.
+
+
+---
+
+</details>
+
+## 20. Distance à un sous-espace vectoriel de dimension finie
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Espaces vectoriels normés
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien et $F$ un sous-espace vectoriel de dimension finie de $E$. Alors pour tout $x \in E$, on a :
+$$ d(x, F) = \|x - P_F(x)\| $$
+où $P_F(x)$ est le projeté orthogonal de $x$ sur $F$.
+
+De plus, on a l'égalité :
+$$\|x\|^2 = \|P_F(x)\|^2 + \|x - P_F(x)\|^2$$
+
+---
+
+</details>
+
+## 21. Théorème de projection orthogonale
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Espaces vectoriels normés
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien et $F$ un sous-espace vectoriel de dimension finie de $E$. Alors pour tout $x \in E$, il existe un unique couple $(y, z) \in F \times F^{\perp}$ tel que :
+$$ x = y + z $$
+Autrement dit, $E = F \oplus F^{\perp}$.
+De plus, $F^{\perp^{\perp}} = F$.
+
+Si de plus $E$ est de dimension finie, on a :
+$$ \dim E = \dim F + \dim F^{\perp} $$
+
+---
+
+</details>
+
+## 22. Calcul du produit scalaire dans une base, matrice de Gram
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -2963,7 +2930,7 @@ où $G$ est la matrice de Gram de la base $(e_1, \ldots, e_n)$, c'est-à-dire $G
 
 </details>
 
-## 24. Application linéaire duale / transposée
+## 23. Matrices équivalentes et caractérisation du rang
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -2977,15 +2944,25 @@ Algèbre linéaire
 
 ---
 
-Soit $E$ et $F$ deux $\mathbb{K}$-espaces vectoriels et soit $u \in \mathcal{L}(E,F)$. L'application linéaire duale (ou transposée) de $u$ est l'application linéaire $u^* := {}^{\mathcal{t}}u \in \mathcal{L}(F^*,E^*)$ définie par :
-$$u^*(g) = g \circ u \quad \text{pour tout }g \in F^*$$
-C'est un morphisme de $\mathbb{K}$-espaces vectoriels. De plus, si $E$ et $F$ sont de dimension finie, alors $\operatorname{Mat}_{B^*,C^*}(u^*) = \operatorname{Mat}_{C,B}(u)^T$ pour toutes bases $B$ de $E$ et $C$ de $F$.
+Deux matrices $A$ et $B \in \mathcal{M}_{n,p}(\mathbb{K})$ sont dites équivalentes si et seulement s'il existe deux matrices inversibles $P \in \operatorname{GL}_n(\mathbb{K})$ et $Q \in \operatorname{GL}_p(\mathbb{K})$ telles que $B = PAQ$.
+
+Autrement dit, deux matrices sont équivalentes si elles représentent la même application linéaire dans des bases différentes.
+
+Caractérisation du rang : Les matrices $A \in \mathcal{M}_{n,p}(\mathbb{K})$ de rang r sont exactement les matrices équivalentes à la matrice suivante :
+
+$$
+J_r =
+\begin{pmatrix}
+I_r & 0_{r,p-r} \\
+0_{n-r,r} & 0_{n-r,p-r}
+\end{pmatrix}
+$$
 
 ---
 
 </details>
 
-## 25. Endomorphismes auto-adjoints et propriétés
+## 24. Endomorphismes auto-adjoints et propriétés
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -3007,6 +2984,29 @@ De plus, on a les propriétés suivantes :
 1. Si $F$ est un sous-espace vectoriel de $E$ stable par $u$, alors $F^{\perp}$ est également stable par $u$.
 2. $\operatorname{Ker}(u) = \operatorname{Im}(u)^{\perp}$ et $\operatorname{Im}(u) = \operatorname{Ker}(u)^{\perp}$.
 3. Soit $p$ un projecteur. $p$ est un projecteur orthogonal $\iff$ $p$ est auto-adjoint.
+
+---
+
+</details>
+
+## 25. Formules de polarisation
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Espaces vectoriels normés
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien réel. Pour tous $x, y \in E$ :
+$$ \langle x, y \rangle = \frac{1}{2} (\|x+y\|^2 - \|x\|^2 - \|y\|^2) $$
+$$ \langle x, y \rangle = \frac{1}{2} (\|x\|^2 + \|y\|^2 - \|x-y\|^2) $$
+$$ \langle x, y \rangle = \frac{1}{4} (\|x+y\|^2 - \|x-y\|^2) $$
 
 ---
 
@@ -3041,7 +3041,7 @@ Le premier est un isomorphisme, le second un morphisme injectif. De plus, si $E$
 
 </details>
 
-## 2. Correspondance matricielle de l'application linéaire et de son dual
+## 2. Morphisme entre un espace vectoriel de dimension finie et son dual
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -3055,61 +3055,17 @@ Algèbre linéaire
 
 ---
 
-Soit $u \in \mathcal{L}(E,F)$ et soient $\mathcal{B} = (e_1, \ldots, e_n)$ et $\mathcal{C} = (f_1, \ldots, f_m)$ des bases respectives de $E$ et $F$. On note $\mathcal{B}^* = (e_1^*, \ldots, e_n^*)$ et $\mathcal{C}^* = (f_1^*, \ldots, f_m^*)$ les bases duales correspondantes. Alors, on a l'epression matricielle suivante pour l'application linéaire $u$ et son dual $u^*$ :
+Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie. La donnée d'un morphisme $\varphi : E \to E^*$ équivaut à la donnée d'une forme bilinéaire $\psi : E \times E \to \mathbb{K}$ définie par :
+$$\psi(x,y) = \varphi(x)(y), \quad \forall x,y \in E$$
 
-$$\text{Mat}_{\mathcal{C}^*, \mathcal{B}^*}(u^*) = \text{Mat}_{\mathcal{B}, \mathcal{C}}(u)^T$$
-
----
-
-</details>
-
-## 3. Ouvert connexe
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Topologie
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(E, \|\cdot\|)$ un espace vectoriel normé et $U \subset E$ un ouvert. $U$ est connexe si et seulement si $U$ est connexe par arcs.
+De plus, $\varphi$ est un isomorphisme si et seulement si $\psi$ est non dégénérée.<br>
+Par exemple, $\psi : (A,B) \in \mathcal{M}_n(\mathbb{K}) \times \mathcal{M}_n(\mathbb{K}) \mapsto \text{tr}(AB)$ est une forme bilinéaire non dégénérée sur $\mathcal{M}_n(\mathbb{K})$ et l'application $\varphi : A \in \mathcal{M}_n(\mathbb{K}) \mapsto \operatorname{tr}(A,.) \in \mathcal{M}_n(\mathbb{K})^*$ est un isomorphisme.
 
 ---
 
 </details>
 
-## 4. Algèbre
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Anneaux
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $R$ un anneau commutatif. Une $R$-**algèbre** est un anneau $A$ muni d'un morphisme d'anneaux $f : R \to A$ tel que $f(R) \subseteq Z(A)$.
-
-Autrement dit, une $R$-algèbre est un ensemble $(A, +, \times, \cdot)$ muni de deux lois de composition interne $+$ et $\times$ et d'une loi de composition externe $\cdot : R \times A \to A$ telle que :
-
-1. $(A, +, \times)$ est un anneau.
-2. $(A, +, \cdot)$ est un $R$-espace vectoriel.
-3. $\forall r \in R, \forall x, y \in A, r \cdot (xy) = (r \cdot x)y = x(r \cdot y)$.
-
----
-
-</details>
-
-## 5. Orthogonal
+## 3. Orthogonal
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -3132,7 +3088,98 @@ $$G^\circ = \{ x \in E \mid f(x) = 0, \forall f \in G \}$$
 
 </details>
 
-## 6. Condition suffisante pour que $\mathcal{L}(E, F)$ soit un espace de Banach
+## 4. Comparaison des normes en dimension finie
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Topologie
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $E$ un espace vectoriel de dimension finie sur $\mathbb{K}$. Toutes les normes sur $E$ sont équivalentes.
+C'est-à-dire que pour toutes normes $\|\cdot\|_1$ et $\|\cdot\|_2$ sur $E$, il existe deux réels $\alpha, \beta > 0$ tels que :
+$$\forall x \in E, \quad \alpha \|x\|_1 \le \|x\|_2 \le \beta \|x\|_1$$
+
+---
+
+</details>
+
+## 5. Norme d'une application linéaire
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Topologie
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $T : E \to F$ une application linéaire continue entre deux espaces vectoriels normés. La **norme** de $T$ est définie par :
+$$\|T\| = \inf \{ M > 0 : \forall x \in E, \|T(x)\|_F \le M \|x\|_E \} = \max_{\|x\|_E = 1} \|T(x)\|_F$$
+Cette norme est également appelée **norme d'opérateur** ou **norme subordonnée** et plus rarement **norme triple**.
+
+---
+
+</details>
+
+## 6. Orthogonaux et opérations ensemblistes
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Algèbre linéaire
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie et soient $F_1, F_2 \subset E$ et $G_1, G_2 \subset E^*$. Alors, on a les propriétés suivantes :
+
+1. $(F_1 \cup F_2)^\perp = F_1^\perp \cap F_2^\perp$
+2. $F_1^\perp + F_2^\perp \subset (F_1 \cap F_2)^\perp$
+3. $(G_1 \cup G_2)^\circ = G_1^\circ \cap G_2^\circ$
+4. $G_1^\circ + G_2^\circ \subset (G_1 \cap G_2)^\circ$
+
+---
+
+</details>
+
+## 7. Continuité d'une application linéaire entre deux espaces vectoriels normés
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Topologie
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soient $E$ et $F$ deux espaces vectoriels normés sur le corps $\mathbb{K}$.<br>
+Une application linéaire $T : E \to F$ est **continue** si et seulement si elle est bornée, c'est-à-dire si et seulement si :
+$$\exists M > 0, \forall x \in E, \quad \|T(x)\|_F \le M \|x\|_E$$
+
+---
+
+</details>
+
+## 8. Condition suffisante pour que $\mathcal{L}(E, F)$ soit un espace de Banach
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -3161,7 +3208,7 @@ Soit $(T_n)_{n \in \mathbb{N}}$ une suite de Cauchy dans $\mathcal{L}(E, F)$. Po
 
 </details>
 
-## 7. Continuité d'une application linéaire entre deux espaces vectoriels normés
+## 9. Ouvert connexe
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -3175,40 +3222,13 @@ Topologie
 
 ---
 
-Soient $E$ et $F$ deux espaces vectoriels normés sur le corps $\mathbb{K}$.<br>
-Une application linéaire $T : E \to F$ est **continue** si et seulement si elle est bornée, c'est-à-dire si et seulement si :
-$$\exists M > 0, \forall x \in E, \quad \|T(x)\|_F \le M \|x\|_E$$
+Soit $(E, \|\cdot\|)$ un espace vectoriel normé et $U \subset E$ un ouvert. $U$ est connexe si et seulement si $U$ est connexe par arcs.
 
 ---
 
 </details>
 
-## 8. Orthogonaux et opérations ensemblistes
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Algèbre linéaire
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie et soient $F_1, F_2 \subset E$ et $G_1, G_2 \subset E^*$. Alors, on a les propriétés suivantes :
-
-1. $(F_1 \cup F_2)^\perp = F_1^\perp \cap F_2^\perp$
-2. $F_1^\perp + F_2^\perp \subset (F_1 \cap F_2)^\perp$
-3. $(G_1 \cup G_2)^\circ = G_1^\circ \cap G_2^\circ$
-4. $G_1^\circ + G_2^\circ \subset (G_1 \cap G_2)^\circ$
-
----
-
-</details>
-
-## 9. Continuité de la norme sur une espace vectoriel normé
+## 10. Prolongement d'une application linéaire continue sur un sous-espace vectoriel dense
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -3222,20 +3242,19 @@ Topologie
 
 ---
 
-Soit $E$ un espace vectoriel normé. La norme $\|\cdot\| : E \to \mathbb{R}$ est une application continue. En effet, pour tout $x, y \in E$, on a :
-$$|\|x\| - \|y\|| \le \|x - y\|$$
-Cette inégalité anti-triangulaire montre que la norme est Lipschitzienne avec une constante de Lipschitz égale à 1, ce qui implique sa continuité.
+Soit $E$ un espace vectoriel normé et $F$ un espace de Banach. Soit $G$ un sous-espace vectoriel dense de $E$ et soit $T : G \to F$ une application linéaire continue. Alors, il existe une unique application linéaire continue $\tilde{T} : E \to F$ qui prolonge $T$, c'est-à-dire telle que $\tilde{T}|_G = T$. De plus, on a :
+$$\|\tilde{T}\| = \|T\|$$
 
 ---
 
 </details>
 
-## 10. Topologie d'un espace vectoriel de dimension finie
+## 11. Algèbre
 
 <details>
 <summary><b>Chapitre</b></summary>
 <blockquote>
-Topologie
+Anneaux
 </blockquote>
 </details>
 
@@ -3244,14 +3263,19 @@ Topologie
 
 ---
 
-1. Tout espace vectoriel normé de dimension finie est complet.
-2. Tout sous-espace vectoriel de dimension finie d'un espace vectoriel normé est fermé.
+Soit $R$ un anneau commutatif. Une $R$-**algèbre** est un anneau $A$ muni d'un morphisme d'anneaux $f : R \to A$ tel que $f(R) \subseteq Z(A)$.
+
+Autrement dit, une $R$-algèbre est un ensemble $(A, +, \times, \cdot)$ muni de deux lois de composition interne $+$ et $\times$ et d'une loi de composition externe $\cdot : R \times A \to A$ telle que :
+
+1. $(A, +, \times)$ est un anneau.
+2. $(A, +, \cdot)$ est un $R$-espace vectoriel.
+3. $\forall r \in R, \forall x, y \in A, r \cdot (xy) = (r \cdot x)y = x(r \cdot y)$.
 
 ---
 
 </details>
 
-## 11. Isomorphismes canoniques de dualité : noyaux et images
+## 12. Isomorphismes canoniques de dualité : noyaux et images
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -3274,47 +3298,7 @@ Soit $(E, F)$ deux $\mathbb{K}$-espaces vectoriels de dimension finie et soit $u
 
 </details>
 
-## 12. Espace de Banach
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Topologie
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(E, \|\cdot\|)$ un espace vectoriel normé sur $\mathbb{K}$. On dit que $E$ est un espace de Banach si $(E, \|\cdot\|)$ est complet pour la distance induite par la norme.
-
----
-
-</details>
-
-## 13. Théorème de Riesz
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Topologie
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(E, \|\cdot\|)$ un espace vectoriel normé sur $\mathbb{K}$. La boule unité fermée $B^f(0,1)$ est compacte si et seulement si $E$ est de dimension finie.
-
----
-
-</details>
-
-## 14. Morphisme entre un espace vectoriel de dimension finie et son dual
+## 13. Correspondance matricielle de l'application linéaire et de son dual
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -3328,17 +3312,15 @@ Algèbre linéaire
 
 ---
 
-Soit $E$ un $\mathbb{K}$-espace vectoriel de dimension finie. La donnée d'un morphisme $\varphi : E \to E^*$ équivaut à la donnée d'une forme bilinéaire $\psi : E \times E \to \mathbb{K}$ définie par :
-$$\psi(x,y) = \varphi(x)(y), \quad \forall x,y \in E$$
+Soit $u \in \mathcal{L}(E,F)$ et soient $\mathcal{B} = (e_1, \ldots, e_n)$ et $\mathcal{C} = (f_1, \ldots, f_m)$ des bases respectives de $E$ et $F$. On note $\mathcal{B}^* = (e_1^*, \ldots, e_n^*)$ et $\mathcal{C}^* = (f_1^*, \ldots, f_m^*)$ les bases duales correspondantes. Alors, on a l'epression matricielle suivante pour l'application linéaire $u$ et son dual $u^*$ :
 
-De plus, $\varphi$ est un isomorphisme si et seulement si $\psi$ est non dégénérée.<br>
-Par exemple, $\psi : (A,B) \in \mathcal{M}_n(\mathbb{K}) \times \mathcal{M}_n(\mathbb{K}) \mapsto \text{tr}(AB)$ est une forme bilinéaire non dégénérée sur $\mathcal{M}_n(\mathbb{K})$ et l'application $\varphi : A \in \mathcal{M}_n(\mathbb{K}) \mapsto \operatorname{tr}(A,.) \in \mathcal{M}_n(\mathbb{K})^*$ est un isomorphisme.
+$$\text{Mat}_{\mathcal{C}^*, \mathcal{B}^*}(u^*) = \text{Mat}_{\mathcal{B}, \mathcal{C}}(u)^T$$
 
 ---
 
 </details>
 
-## 15. Comparaison des normes en dimension finie
+## 14. Théorème de Riesz
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -3352,15 +3334,77 @@ Topologie
 
 ---
 
-Soit $E$ un espace vectoriel de dimension finie sur $\mathbb{K}$. Toutes les normes sur $E$ sont équivalentes.
-C'est-à-dire que pour toutes normes $\|\cdot\|_1$ et $\|\cdot\|_2$ sur $E$, il existe deux réels $\alpha, \beta > 0$ tels que :
-$$\forall x \in E, \quad \alpha \|x\|_1 \le \|x\|_2 \le \beta \|x\|_1$$
+Soit $(E, \|\cdot\|)$ un espace vectoriel normé sur $\mathbb{K} = \mathbb{R}$ ou $\mathbb{C}$. La boule unité fermée $B^f(0,1)$ est compacte si et seulement si $E$ est de dimension finie.
 
 ---
 
 </details>
 
-## 16. Rang de la transposée
+## 15. Caractérisation de la complétude par les séries absolument convergentes
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Topologie
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(E, \|\cdot\|)$ un espace vectoriel normé. $E$ est complet si et seulement si toute série absolument convergente d'éléments de $E$ est convergente dans $E$.
+C'est-à-dire, si pour toute suite $(u_n) \in E^{\mathbb{N}}$, la condition $\sum\limits_{n=0}^{\infty} \|u_n\| < \infty$ implique que la série $\sum u_n$ converge dans $E$.
+
+---
+
+</details>
+
+## 16. Continuité de la norme sur une espace vectoriel normé
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Topologie
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $E$ un espace vectoriel normé. La norme $\|\cdot\| : E \to \mathbb{R}$ est une application continue. En effet, pour tout $x, y \in E$, on a :
+$$|\|x\| - \|y\|| \le \|x - y\|$$
+Cette inégalité anti-triangulaire montre que la norme est Lipschitzienne avec une constante de Lipschitz égale à 1, ce qui implique sa continuité.
+
+---
+
+</details>
+
+## 17. Topologie d'un espace vectoriel de dimension finie
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Topologie
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+1. Tout espace vectoriel normé de dimension finie est complet.
+2. Tout sous-espace vectoriel de dimension finie d'un espace vectoriel normé est fermé.
+
+---
+
+</details>
+
+## 18. Rang de la transposée
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -3384,29 +3428,7 @@ $$\text{rg}(A) = \text{rg}(A^T)$$
 
 </details>
 
-## 17. Norme d'une application linéaire
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Topologie
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $T : E \to F$ une application linéaire continue entre deux espaces vectoriels normés. La **norme** de $T$ est définie par :
-$$\|T\| = \inf \{ M > 0 : \forall x \in E, \|T(x)\|_F \le M \|x\|_E \} = \max_{\|x\|_E = 1} \|T(x)\|_F$$
-Cette norme est également appelée **norme d'opérateur** ou **norme subordonnée** et plus rarement **norme triple**.
-
----
-
-</details>
-
-## 18. Sous-multiplicativité de la norme d'opérateur
+## 19. Sous-multiplicativité de la norme d'opérateur
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -3427,7 +3449,7 @@ $$\|S \circ T\| \le \|S\| \cdot \|T\|$$
 
 </details>
 
-## 19. Caractérisation de la complétude par les séries absolument convergentes
+## 20. Espace de Banach
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -3441,29 +3463,7 @@ Topologie
 
 ---
 
-Soit $(E, \|\cdot\|)$ un espace vectoriel normé. $E$ est complet si et seulement si toute série absolument convergente d'éléments de $E$ est convergente dans $E$.
-C'est-à-dire, si pour toute suite $(u_n) \in E^{\mathbb{N}}$, la condition $\sum\limits_{n=0}^{\infty} \|u_n\| < \infty$ implique que la série $\sum u_n$ converge dans $E$.
-
----
-
-</details>
-
-## 20. Prolongement d'une application linéaire continue sur un sous-espace vectoriel dense
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Topologie
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $E$ un espace vectoriel normé et $F$ un espace de Banach. Soit $G$ un sous-espace vectoriel dense de $E$ et soit $T : G \to F$ une application linéaire continue. Alors, il existe une unique application linéaire continue $\tilde{T} : E \to F$ qui prolonge $T$, c'est-à-dire telle que $\tilde{T}|_G = T$. De plus, on a :
-$$\|\tilde{T}\| = \|T\|$$
+Soit $(E, \|\cdot\|)$ un espace vectoriel normé sur $\mathbb{K}$. On dit que $E$ est un espace de Banach si $(E, \|\cdot\|)$ est complet pour la distance induite par la norme.
 
 ---
 
@@ -3475,7 +3475,28 @@ $$\|\tilde{T}\| = \|T\|$$
 
 **4** Théorèmes
 
-## 1. Théorème de limite de la dérivée
+## 1. Lemme de Gauss
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Groupes
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soient $a, b, c \in \mathbb{Z}$. Si $a \mid bc$ et si $a$ est premier avec $b$, c'est-à-dire si $\operatorname{pgcd}(a,b)=1$, alors :
+$$a \mid c.$$
+
+---
+
+</details>
+
+## 2. Théorème de limite de la dérivée
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -3497,7 +3518,7 @@ La fonction $f'$ est alors continue en $a$.
 
 </details>
 
-## 2. Théorème de dérivation d'une suite de fonctions
+## 3. Théorème de dérivation d'une suite de fonctions
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -3525,7 +3546,7 @@ Alors :
 
 </details>
 
-## 3. Anneau euclidien
+## 4. Anneau euclidien
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -3561,12 +3582,18 @@ L'algorithme de la division euclidienne fonctionne dans $A[X]$ pour tout anneau 
 
 </details>
 
-## 4. Lemme de Gauss
+<br>
+
+# 📚 Révisions pour le 18/10/2026
+
+**9** Théorèmes
+
+## 1. Diamètre
 
 <details>
 <summary><b>Chapitre</b></summary>
 <blockquote>
-Groupes
+Topologie
 </blockquote>
 </details>
 
@@ -3575,20 +3602,64 @@ Groupes
 
 ---
 
-Soient $a, b, c \in \mathbb{Z}$. Si $a \mid bc$ et si $a$ est premier avec $b$, c'est-à-dire si $\operatorname{pgcd}(a,b)=1$, alors :
-$$a \mid c.$$
+Soit $(E, d)$ un espace métrique et $A \subseteq E$. Le diamètre de $A$ est défini par :
+$$\text{diam}(A) = \sup\{d(x, y) : x, y \in A\}$$
+
+A est borné ssi $\text{diam}(A) < +\infty$
+$$\iff \exists x_0 \in E, r > 0, \text{ tel que } A \subseteq B(x_0, r)$$
+$$\iff \forall x_0 \in E, \exists r > 0, \text{ tel que } A \subseteq B(x_0, r)$$
 
 ---
 
 </details>
 
-<br>
+## 2. Factorisation de $a^n - b^n$
 
-# 📚 Révisions pour le 18/10/2026
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse réelle
+</blockquote>
+</details>
 
-**9** Théorèmes
+<details>
+<summary><b>Énoncé</b></summary>
 
-## 1. Théorème de Heine
+---
+
+Soient $a, b \in \mathbb{C}$ et $n \in \mathbb{N}^*$. On a :
+$$a^n - b^n = (a-b) \sum_{k=0}^{n-1} a^{n-1-k} b^k$$
+
+---
+
+</details>
+
+## 3. Applications lipschitziennes et isométries
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Topologie
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soient $(E, d_E)$ et $(F, d_F)$ deux espaces métriques. Une application $f : E \to F$ est dite $L$-lipschitzienne, où $L \ge 0$, si
+$$\forall x, y \in E, \quad d_F(f(x), f(y)) \le L d_E(x, y).$$
+
+Une application $f : E \to F$ est une isométrie si elle préserve les distances, c'est-à-dire si
+$$\forall x, y \in E, \quad d_F(f(x), f(y)) = d_E(x, y).$$
+Toute isométrie est injective et $1$-lipschitzienne. Si elle est bijective, on parle d'une isométrie de $E$ sur $F$.
+
+---
+
+</details>
+
+## 4. Théorème de Heine
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -3610,7 +3681,7 @@ $$\forall \varepsilon > 0, \exists \delta > 0, \forall x, y \in E, d_E(x, y) < \
 
 </details>
 
-## 2. Intérieur et adhérence des opérations ensemblistes
+## 5. Ensemble connexe
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -3624,19 +3695,17 @@ Topologie
 
 ---
 
-Soit $(E, d)$ un espace métrique. Pour toutes parties $A, B \subseteq E$ :
-$$\mathring{E \setminus A} = E \setminus \overline{A}, \qquad \overline{E \setminus A} = E \setminus \mathring{A}$$
-$$\mathring{A \setminus B} = \mathring{A} \setminus \overline{B}, \qquad \overline{A \setminus B} \subseteq \overline{A} \setminus \mathring{B}$$
+Un espace métrique $E$ est connexe ssi :
 
-De plus :
-$$\mathring{A} \cup \mathring{B} \subseteq \mathring{A \cup B}, \qquad \overline{A \cup B} = \overline{A} \cup \overline{B}$$
-$$\mathring{A \cap B} = \mathring{A} \cap \mathring{B}, \qquad \overline{A \cap B} \subseteq \overline{A} \cap \overline{B}$$
+- $\nexists (U, V) \in \mathcal{P}(E)^2, \quad U, V \text{ ouverts non-vides}, \quad E = U \sqcup V$
+- $\forall A \subseteq E, \quad (A \text{ ouvert et fermé}) \implies A \in \{\emptyset, E\}$
+- $f \in \mathcal{C}(E, \{0, 1\}) \implies f \text{ est constante}$
 
 ---
 
 </details>
 
-## 3. Homéomorphisme
+## 6. Homéomorphisme
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -3662,28 +3731,7 @@ $(iii)$ $f^{-1}$ est continue
 
 </details>
 
-## 4. Factorisation de $a^n - b^n$
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse réelle
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soient $a, b \in \mathbb{C}$ et $n \in \mathbb{N}^*$. On a :
-$$a^n - b^n = (a-b) \sum_{k=0}^{n-1} a^{n-1-k} b^k$$
-
----
-
-</details>
-
-## 5. Points intérieurs, adhérents, isolés et d'accumulation
+## 7. Points intérieurs, adhérents, isolés et d'accumulation
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -3717,7 +3765,7 @@ $$\overline{A} = \text{Acc}(A) \sqcup \text{Isol}(A)$$
 
 </details>
 
-## 6. Diamètre
+## 8. Intérieur et adhérence des opérations ensemblistes
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -3731,18 +3779,19 @@ Topologie
 
 ---
 
-Soit $(E, d)$ un espace métrique et $A \subseteq E$. Le diamètre de $A$ est défini par :
-$$\text{diam}(A) = \sup\{d(x, y) : x, y \in A\}$$
+Soit $(E, d)$ un espace métrique. Pour toutes parties $A, B \subseteq E$ :
+$$\mathring{E \setminus A} = E \setminus \overline{A}, \qquad \overline{E \setminus A} = E \setminus \mathring{A}$$
+$$\mathring{A \setminus B} = \mathring{A} \setminus \overline{B}, \qquad \overline{A \setminus B} \subseteq \overline{A} \setminus \mathring{B}$$
 
-A est borné ssi $\text{diam}(A) < +\infty$
-$$\iff \exists x_0 \in E, r > 0, \text{ tel que } A \subseteq B(x_0, r)$$
-$$\iff \forall x_0 \in E, \exists r > 0, \text{ tel que } A \subseteq B(x_0, r)$$
+De plus :
+$$\mathring{A} \cup \mathring{B} \subseteq \mathring{A \cup B}, \qquad \overline{A \cup B} = \overline{A} \cup \overline{B}$$
+$$\mathring{A \cap B} = \mathring{A} \cap \mathring{B}, \qquad \overline{A \cap B} \subseteq \overline{A} \cap \overline{B}$$
 
 ---
 
 </details>
 
-## 7. Distance
+## 9. Distance
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -3785,67 +3834,18 @@ Soit $E$ un ensemble. Une distance sur $E$ est une application $d : E \times E \
 
 </details>
 
-## 8. Applications lipschitziennes et isométries
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Topologie
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soient $(E, d_E)$ et $(F, d_F)$ deux espaces métriques. Une application $f : E \to F$ est dite $L$-lipschitzienne, où $L \ge 0$, si
-$$\forall x, y \in E, \quad d_F(f(x), f(y)) \le L d_E(x, y).$$
-
-Une application $f : E \to F$ est une isométrie si elle préserve les distances, c'est-à-dire si
-$$\forall x, y \in E, \quad d_F(f(x), f(y)) = d_E(x, y).$$
-Toute isométrie est injective et $1$-lipschitzienne. Si elle est bijective, on parle d'une isométrie de $E$ sur $F$.
-
----
-
-</details>
-
-## 9. Ensemble connexe
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Topologie
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Un espace métrique $E$ est connexe ssi :
-
-- $\nexists (U, V) \in \mathcal{P}(E)^2, \quad U, V \text{ ouverts non-vides}, \quad E = U \sqcup V$
-- $\forall A \subseteq E, \quad (A \text{ ouvert et fermé}) \implies A \in \{\emptyset, E\}$
-- $f \in \mathcal{C}(E, \{0, 1\}) \implies f \text{ est constante}$
-
----
-
-</details>
-
 <br>
 
 # 📚 Révisions pour le 20/10/2026
 
 **5** Théorèmes
 
-## 1. Théorème de continuité d'une intégrale à paramètre
+## 1. Théorème du rang
 
 <details>
 <summary><b>Chapitre</b></summary>
 <blockquote>
-Intégration sur un intervalle quelconque
+Algèbre linéaire
 </blockquote>
 </details>
 
@@ -3854,13 +3854,12 @@ Intégration sur un intervalle quelconque
 
 ---
 
-Soit $X\subset E$ un espace vectoriel normé de dimension finie et $I$ un intervalle de $\mathbb{R}$. Soit $f : X \times I \to \mathbb{C}$ telle que :
+Soient $E$ et $F$ deux espaces vectoriels sur un corps $\mathbb{k}$. Soit $u \in \mathcal{L}(E, F)$. Alors :
+$$u \text{ induit un isomorphisme } \bar{u} :{E}/{\text{Ker}(u)} \cong \text{Im}(u)$$
 
-1. Pour tout $x \in X$, la fonction $t \mapsto f(x, t)$ est continue par morceaux sur $I$.
-2. Pour tout $t \in I$, la fonction $x \mapsto f(x, t)$ est continue sur $X$.
-3. Il existe $\varphi \in \mathcal{C}_{m}(I, \mathbb{R}^+)$ intégrable sur $I$ telle que pour tout $(x, t) \in X \times I$, $|f(x, t)| \le \varphi(t)$ (hypothèse de domination).
-
-Alors la fonction $F : x \mapsto \int_I f(x, t) dt$ est définie et continue sur $X$.
+Si de plus $E$ et $F$ sont de dimension finie, alors :
+$$\dim(E) = \dim(\text{Ker}(u)) + \text{rg}(u)$$
+où $\text{Ker}(u)$ est le noyau de $u$ et $\text{rg}(u) = \dim(\text{Im}(u))$ est le rang de $u$.
 
 ---
 
@@ -3901,12 +3900,12 @@ $$x \mapsto (x \pmod{I_1}, \dots, x \pmod{I_n})$$
 
 </details>
 
-## 3. Théorème du rang
+## 3. Théorème de continuité d'une intégrale à paramètre
 
 <details>
 <summary><b>Chapitre</b></summary>
 <blockquote>
-Algèbre linéaire
+Intégration sur un intervalle quelconque
 </blockquote>
 </details>
 
@@ -3915,12 +3914,13 @@ Algèbre linéaire
 
 ---
 
-Soient $E$ et $F$ deux espaces vectoriels sur un corps $\mathbb{k}$. Soit $u \in \mathcal{L}(E, F)$. Alors :
-$$u \text{ induit un isomorphisme } \bar{u} :{E}/{\text{Ker}(u)} \cong \text{Im}(u)$$
+Soit $X\subset E$ un espace vectoriel normé de dimension finie et $I$ un intervalle de $\mathbb{R}$. Soit $f : X \times I \to \mathbb{C}$ telle que :
 
-Si de plus $E$ et $F$ sont de dimension finie, alors :
-$$\dim(E) = \dim(\text{Ker}(u)) + \text{rg}(u)$$
-où $\text{Ker}(u)$ est le noyau de $u$ et $\text{rg}(u) = \dim(\text{Im}(u))$ est le rang de $u$.
+1. Pour tout $x \in X$, la fonction $t \mapsto f(x, t)$ est continue par morceaux sur $I$.
+2. Pour tout $t \in I$, la fonction $x \mapsto f(x, t)$ est continue sur $X$.
+3. Il existe $\varphi \in \mathcal{C}_{m}(I, \mathbb{R}^+)$ intégrable sur $I$ telle que pour tout $(x, t) \in X \times I$, $|f(x, t)| \le \varphi(t)$ (hypothèse de domination).
+
+Alors la fonction $F : x \mapsto \int_I f(x, t) dt$ est définie et continue sur $X$.
 
 ---
 
@@ -4011,29 +4011,7 @@ Soit $A$ un anneau commutatif. Alors $A$ est un corps ssi les seuls idéaux de $
 
 </details>
 
-## 2. Inégalité de Taylor-Lagrange
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse réelle
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $f \in \mathcal{C}^n([a, b], E)$ telle que $f^{(n)}$ soit dérivable sur $]a, b[$.
-Alors :
-$$\left\| f(b) - \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (b-a)^k \right\| \le \frac{(b-a)^{n+1}}{(n+1)!} \sup_{t \in ]a, b[} \|f^{(n+1)}(t)\|$$
-
----
-
-</details>
-
-## 3. Formule de Cauchy
+## 2. Formule de Cauchy
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -4057,18 +4035,12 @@ Soit $U$ un ouvert étoilé autour de $z_0$ dans $\mathbb{C}$ et $f : U \to \mat
 
 </details>
 
-<br>
-
-# 📚 Révisions pour le 24/10/2026
-
-**5** Théorèmes
-
-## 1. Sous-anneau
+## 3. Inégalité de Taylor-Lagrange
 
 <details>
 <summary><b>Chapitre</b></summary>
 <blockquote>
-Anneaux
+Analyse réelle
 </blockquote>
 </details>
 
@@ -4077,17 +4049,21 @@ Anneaux
 
 ---
 
-Une partie $S$ d'un anneau $A$ est un **sous-anneau** ssi :
-
-- $(i)$ $(S, +)$ est un sous-groupe de $(A, +)$
-- $(ii)$ $S$ est stable par $\times$
-- $(iii)$ $1_A \in S$
+Soit $f \in \mathcal{C}^n([a, b], E)$ telle que $f^{(n)}$ soit dérivable sur $]a, b[$.
+Alors :
+$$\left\| f(b) - \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (b-a)^k \right\| \le \frac{(b-a)^{n+1}}{(n+1)!} \sup_{t \in ]a, b[} \|f^{(n+1)}(t)\|$$
 
 ---
 
 </details>
 
-## 2. Convergence normale d'une série de fonctions
+<br>
+
+# 📚 Révisions pour le 24/10/2026
+
+**5** Théorèmes
+
+## 1. Convergence normale d'une série de fonctions
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -4107,7 +4083,7 @@ Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $\sum 
 
 </details>
 
-## 3. Image continue d'un compact
+## 2. Image continue d'un compact
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -4128,7 +4104,7 @@ Si $K$ est un sous-ensemble compact de $E$, alors son image $f(K)$ est un sous-e
 
 </details>
 
-## 4. Convergence uniforme d'une suite de fonctions
+## 3. Convergence uniforme d'une suite de fonctions
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -4145,6 +4121,30 @@ Fonctions vectorielles
 Soit $X$ un ensemble et $(E, d)$ un espace métrique. Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de $X$ vers $E$. On dit que la suite $(f_n)$ converge uniformément vers une fonction $f : X \to E$ si :
 $$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall n \ge N, \forall x \in X, d(f_n(x), f(x)) < \varepsilon$$
 Ceci est équivalent à dire que $\sup_{x \in X} d(f_n(x), f(x)) \xrightarrow[n \to \infty]{} 0$.
+
+---
+
+</details>
+
+## 4. Sous-anneau
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Anneaux
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Une partie $S$ d'un anneau $A$ est un **sous-anneau** ssi :
+
+- $(i)$ $(S, +)$ est un sous-groupe de $(A, +)$
+- $(ii)$ $S$ est stable par $\times$
+- $(iii)$ $1_A \in S$
 
 ---
 
@@ -4257,7 +4257,7 @@ Toute suite de Cauchy $(f_n)_{n \in \mathbb{N}}$ dans cet espace vérifie le cri
 
 </details>
 
-## 2. Partie relativement compacte et précompacte
+## 2. Théorème de Weierstrass
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -4271,13 +4271,7 @@ Topologie
 
 ---
 
-Soit $(X,d)$ un espace métrique. $A \subset X$ est relativement compacte ssi $\overline{A}$ est compact.
-
-Soit $(X,d)$ un espace métrique. $A \subset X$ est précompacte ssi $\forall \epsilon > 0, \exists x_1, \ldots, x_n \in X$ tels que $A \subset \bigcup_{i=1}^n B(x_i, \epsilon)$.
-
-Compact $\implies$ Relativement compact $\implies$ Précompact
-
-De plus, $X$ est compact $\iff$ $X$ est précompact et complet.
+$\forall f \in \mathcal{C}^0([a,b]), \exists (P_n)_{n \in \mathbb{N}}$ une suite de polynômes telle que $P_n \to f$ uniformément sur $[a,b]$
 
 ---
 
@@ -4305,7 +4299,7 @@ Réciproquement, si $(f_n) \in \mathcal{C}^0([a,b])^\mathbb{N}$ converge uniform
 
 </details>
 
-## 4. Théorème de Weierstrass
+## 4. Partie relativement compacte et précompacte
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -4319,7 +4313,13 @@ Topologie
 
 ---
 
-$\forall f \in \mathcal{C}^0([a,b]), \exists (P_n)_{n \in \mathbb{N}}$ une suite de polynômes telle que $P_n \to f$ uniformément sur $[a,b]$
+Soit $(X,d)$ un espace métrique. $A \subset X$ est relativement compacte ssi $\overline{A}$ est compact.
+
+Soit $(X,d)$ un espace métrique. $A \subset X$ est précompacte ssi $\forall \epsilon > 0, \exists x_1, \ldots, x_n \in X$ tels que $A \subset \bigcup_{i=1}^n B(x_i, \epsilon)$.
+
+Compact $\implies$ Relativement compact $\implies$ Précompact
+
+De plus, $X$ est compact $\iff$ $X$ est précompact et complet.
 
 ---
 
@@ -4331,7 +4331,7 @@ $\forall f \in \mathcal{C}^0([a,b]), \exists (P_n)_{n \in \mathbb{N}}$ une suite
 
 **15** Théorèmes
 
-## 1. Fonctions boréliennes
+## 1. Trace d'une classe de parties de E sur une partie X de E
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -4345,203 +4345,16 @@ Intégration de Lebesgue
 
 ---
 
-Soit $(E, d)$ et $(F, d')$ deux espaces métriques. Une application $f : E \to F$ est dite borélienne si elle est mesurable par rapport aux tribus boréliennes de $E$ et $F$, c'est-à-dire si pour tout ouvert $O \subset F$, on a $f^{-1}(O) \in \mathcal{B}(E)$.
+Soit $\mathcal{C}$ une classe de parties de $E$ et $X \subset E$. La trace de $\mathcal{C}$ sur $X$ est la classe de parties de $X$ définie par :
+$$\mathcal{C}|_X = \{A \cap X : A \in \mathcal{C}\}$$
 
-De plus, si $f$ est continue, alors elle est borélienne.
-
----
-
-</details>
-
-## 2. Tribu engendrée par une classe de parties de E
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Intégration de Lebesgue
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-La tribu engendrée par une classe $\mathcal{C}$ de parties de $E$ est la plus petite tribu contenant $\mathcal{C}$, notée $\sigma(\mathcal{C})$.
-
-$\sigma(\mathcal{C}) = \bigcap_{\mathcal{A} \text{ tribu sur } E, \mathcal{C} \subset \mathcal{A}} \mathcal{A}$
+Si $\mathcal{A}$ est une tribu sur $E$, alors $\mathcal{A}|_X$ est une tribu sur $X$.
 
 ---
 
 </details>
 
-## 3. Définition et formule de la comatrice
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Algèbre linéaire
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $A \in \operatorname{M}_n(\mathbb{K})$. $\operatorname{Com}(A) = (C_{ij})_{1 \leq i,j \leq n}$ où $C_{ij}$ est le cofacteur de $A$ d'indice $(i,j)$.
-
-C'est à dire que $\operatorname{Com}(A)_{ij} = (-1)^{i+j} \det(A_{ij})$, où $A_{ij}$ est la matrice obtenue en supprimant la $i$-ème ligne et la $j$-ème colonne de $A$.
-
-On a la formule suivante : $\det(A)I_n = A \cdot \operatorname{Com}(A)^T$ = $\operatorname{Com}(A)^T \cdot A$.
-
----
-
-</details>
-
-## 4. Tribu réciproque et lemme de transport
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Intégration de Lebesgue
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(E, \mathcal{A})$ et $(F, \mathcal{B})$ deux espaces mesurables et $f : E \to F$ une application. La tribu réciproque de $\mathcal{B}$ par $f$ est la tribu sur $E$ définie par :
-$$f^{-1}(\mathcal{B}) = \{f^{-1}(B) : B \in \mathcal{B}\}$$
-
-### Lemme de transport
-
-Soit $f : E \to F$ une application, et $\mathcal{C}$ une classe de parties de $F$. Alors $f^{-1}(\sigma(\mathcal{C})) = \sigma(f^{-1}(\mathcal{C}))$.
-
----
-
-</details>
-
-## 5. Groupe spécial linéaire et générateurs
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Algèbre linéaire
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-$SL_n(\mathbb{K}) = \{ A \in \operatorname{GL}_n(\mathbb{K}) \mid \det(A) = 1 \} = \operatorname{ker}(\det : \operatorname{GL}_n(\mathbb{K}) \to \mathbb{K}^*)$.
-
-$SL(E) = \{ f \in \mathcal{GL}(E) \mid \det(f) = 1 \} = \operatorname{ker}(\det : \mathcal{GL}(E) \to \mathbb{K}^*)$.
-
-$SL(E) \lhd \mathcal{GL}(E)$ et $GL(E) / SL(E) \simeq \mathbb{K}^*$.
-
-$SL_n(\mathbb{K})$ est engendré par les transvections $T_{ij}(\lambda) = I_n + \lambda E_{ij}$, où $i \neq j$ et $\lambda \in \mathbb{K}$.
-
-De plus, le groupe dérivé $D(SL_n(\mathbb{K})) := [SL_n(\mathbb{K}), SL_n(\mathbb{K})] = SL_n(\mathbb{K})$.
-
-Et enfin, le groupe dérivé $D(GL_n(\mathbb{K})) := [GL_n(\mathbb{K}), GL_n(\mathbb{K})] = SL_n(\mathbb{K})$.
-
----
-
-</details>
-
-## 6. Réunion dénombrable d'ensembles dénombrables
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Intégration de Lebesgue
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Une réunion dénombrable d'ensembles dénombrables est dénombrable.
-
----
-
-</details>
-
-## 7. Fonctions mesurables
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Intégration de Lebesgue
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(E, \mathcal{A})$ et $(F, \mathcal{B})$ deux espaces mesurables. Une application $f : E \to F$ est dite mesurable si et seulement si pour tout $B \in \mathcal{B}$, on a $f^{-1}(B) \in \mathcal{A}$.
-
-### Critère de mesurabilité
-
-Soit $(E, \mathcal{A})$ et $(F, \sigma(\mathcal{C}))$ deux espaces mesurables, et $f : E \to F$ une application. Alors $f$ est mesurable si et seulement si pour tout $C \in \mathcal{C}$, on a $f^{-1}(C) \in \mathcal{A}$.
-
----
-
-</details>
-
-## 8. Tribu borélienne
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Intégration de Lebesgue
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(E, d)$ un espace métrique. La tribu borélienne sur $E$, notée $\mathcal{B}(E)$, est la tribu engendrée par les ouverts de $E$ :
-$$\mathcal{B}(E) = \sigma(\{O \subset E : O \text{ ouvert}\})$$
-
-Sur $\mathbb{R}$, la tribu borélienne est engendrée par les intervalles ouverts.
-
----
-
-</details>
-
-## 9. Classe de parties de E
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Intégration de Lebesgue
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Une classe $\mathcal{C}$ de parties de $E$ est une famille de parties de $E$, autrement dit $\mathcal{C} \subset \mathcal{P}(E)$.
-
----
-
-</details>
-
-## 10. Tribu / $\sigma$-algèbre
+## 2. Tribu / $\sigma$-algèbre
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -4572,7 +4385,37 @@ De plus, les propriétés suivantes sont vérifiées :
 
 </details>
 
-## 11. Intersection de tribus
+## 3. Groupe spécial linéaire et générateurs
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Algèbre linéaire
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+$SL_n(\mathbb{K}) = \{ A \in \operatorname{GL}_n(\mathbb{K}) \mid \det(A) = 1 \} = \operatorname{ker}(\det : \operatorname{GL}_n(\mathbb{K}) \to \mathbb{K}^*)$.
+
+$SL(E) = \{ f \in \mathcal{GL}(E) \mid \det(f) = 1 \} = \operatorname{ker}(\det : \mathcal{GL}(E) \to \mathbb{K}^*)$.
+
+$SL(E) \lhd \mathcal{GL}(E)$ et $GL(E) / SL(E) \simeq \mathbb{K}^*$.
+
+$SL_n(\mathbb{K})$ est engendré par les transvections $T_{ij}(\lambda) = I_n + \lambda E_{ij}$, où $i \neq j$ et $\lambda \in \mathbb{K}$.
+
+De plus, le groupe dérivé $D(SL_n(\mathbb{K})) := [SL_n(\mathbb{K}), SL_n(\mathbb{K})] = SL_n(\mathbb{K})$.
+
+Et enfin, le groupe dérivé $D(GL_n(\mathbb{K})) := [GL_n(\mathbb{K}), GL_n(\mathbb{K})] = SL_n(\mathbb{K})$.
+
+---
+
+</details>
+
+## 4. Fonctions mesurables
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -4586,33 +4429,17 @@ Intégration de Lebesgue
 
 ---
 
-L'intersection d'une famille quelconque de tribus sur un ensemble $E$ est une tribu sur $E$.
+Soit $(E, \mathcal{A})$ et $(F, \mathcal{B})$ deux espaces mesurables. Une application $f : E \to F$ est dite mesurable si et seulement si pour tout $B \in \mathcal{B}$, on a $f^{-1}(B) \in \mathcal{A}$.
+
+### Critère de mesurabilité
+
+Soit $(E, \mathcal{A})$ et $(F, \sigma(\mathcal{C}))$ deux espaces mesurables, et $f : E \to F$ une application. Alors $f$ est mesurable si et seulement si pour tout $C \in \mathcal{C}$, on a $f^{-1}(C) \in \mathcal{A}$.
 
 ---
 
 </details>
 
-## 12. Produit fini d'ensembles dénombrables
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Intégration de Lebesgue
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Un produit cartésien fini d'ensembles dénombrables est dénombrable.
-
----
-
-</details>
-
-## 13. Calcul du déterminant en développant par rapport à une ligne ou une colonne
+## 5. Calcul du déterminant en développant par rapport à une ligne ou une colonne
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -4636,7 +4463,7 @@ $C_{ij} = (-1)^{i+j} \det(A_{ij})$, où $A_{ij}$ est la matrice obtenue en suppr
 
 </details>
 
-## 14. Trace d'une classe de parties de E sur une partie X de E
+## 6. Produit fini d'ensembles dénombrables
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -4650,16 +4477,143 @@ Intégration de Lebesgue
 
 ---
 
-Soit $\mathcal{C}$ une classe de parties de $E$ et $X \subset E$. La trace de $\mathcal{C}$ sur $X$ est la classe de parties de $X$ définie par :
-$$\mathcal{C}|_X = \{A \cap X : A \in \mathcal{C}\}$$
-
-Si $\mathcal{A}$ est une tribu sur $E$, alors $\mathcal{A}|_X$ est une tribu sur $X$.
+Un produit cartésien fini d'ensembles dénombrables est dénombrable.
 
 ---
 
 </details>
 
-## 15. Dénombrabilité
+## 7. Tribu borélienne
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Intégration de Lebesgue
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(E, d)$ un espace métrique. La tribu borélienne sur $E$, notée $\mathcal{B}(E)$, est la tribu engendrée par les ouverts de $E$ :
+$$\mathcal{B}(E) = \sigma(\{O \subset E : O \text{ ouvert}\})$$
+
+Sur $\mathbb{R}$, la tribu borélienne est engendrée par les intervalles ouverts.
+
+---
+
+</details>
+
+## 8. Tribu engendrée par une classe de parties de E
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Intégration de Lebesgue
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+La tribu engendrée par une classe $\mathcal{C}$ de parties de $E$ est la plus petite tribu contenant $\mathcal{C}$, notée $\sigma(\mathcal{C})$.
+
+$\sigma(\mathcal{C}) = \bigcap_{\mathcal{A} \text{ tribu sur } E, \mathcal{C} \subset \mathcal{A}} \mathcal{A}$
+
+---
+
+</details>
+
+## 9. Intersection de tribus
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Intégration de Lebesgue
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+L'intersection d'une famille quelconque de tribus sur un ensemble $E$ est une tribu sur $E$.
+
+---
+
+</details>
+
+## 10. Réunion dénombrable d'ensembles dénombrables
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Intégration de Lebesgue
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Une réunion dénombrable d'ensembles dénombrables est dénombrable.
+
+---
+
+</details>
+
+## 11. Tribu réciproque et lemme de transport
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Intégration de Lebesgue
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(E, \mathcal{A})$ et $(F, \mathcal{B})$ deux espaces mesurables et $f : E \to F$ une application. La tribu réciproque de $\mathcal{B}$ par $f$ est la tribu sur $E$ définie par :
+$$f^{-1}(\mathcal{B}) = \{f^{-1}(B) : B \in \mathcal{B}\}$$
+
+### Lemme de transport
+
+Soit $f : E \to F$ une application, et $\mathcal{C}$ une classe de parties de $F$. Alors $f^{-1}(\sigma(\mathcal{C})) = \sigma(f^{-1}(\mathcal{C}))$.
+
+---
+
+</details>
+
+## 12. Classe de parties de E
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Intégration de Lebesgue
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Une classe $\mathcal{C}$ de parties de $E$ est une famille de parties de $E$, autrement dit $\mathcal{C} \subset \mathcal{P}(E)$.
+
+---
+
+</details>
+
+## 13. Dénombrabilité
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -4674,6 +4628,52 @@ Intégration de Lebesgue
 ---
 
 Un ensemble $E$ est dit dénombrable s'il existe une injection de $E$ dans $\mathbb{N} \iff$ il existe une surjection de $\mathbb{N}$ dans $E$.
+
+---
+
+</details>
+
+## 14. Définition et formule de la comatrice
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Algèbre linéaire
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $A \in \operatorname{M}_n(\mathbb{K})$. $\operatorname{Com}(A) = (C_{ij})_{1 \leq i,j \leq n}$ où $C_{ij}$ est le cofacteur de $A$ d'indice $(i,j)$.
+
+C'est à dire que $\operatorname{Com}(A)_{ij} = (-1)^{i+j} \det(A_{ij})$, où $A_{ij}$ est la matrice obtenue en supprimant la $i$-ème ligne et la $j$-ème colonne de $A$.
+
+On a la formule suivante : $\det(A)I_n = A \cdot \operatorname{Com}(A)^T$ = $\operatorname{Com}(A)^T \cdot A$.
+
+---
+
+</details>
+
+## 15. Fonctions boréliennes
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Intégration de Lebesgue
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(E, d)$ et $(F, d')$ deux espaces métriques. Une application $f : E \to F$ est dite borélienne si elle est mesurable par rapport aux tribus boréliennes de $E$ et $F$, c'est-à-dire si pour tout ouvert $O \subset F$, on a $f^{-1}(O) \in \mathcal{B}(E)$.
+
+De plus, si $f$ est continue, alors elle est borélienne.
 
 ---
 
@@ -4705,54 +4705,7 @@ Soit $(E,\mathcal{T})$ un espace topologique et $A \subset E$. La topologie indu
 
 </details>
 
-## 2. Croissance et décroissance séquentielle
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Probabilités
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(\varOmega,\mathcal{F},\mathbb{P})$ un espace de probabilité.
-
-Soit $(A_n)_{n \in \mathbb{N}}$ une suite d'événements telle que $A_n \subset A_{n+1}$ pour tout $n \in \mathbb{N}$. Alors, on a :
-$$\mathbb{P}\left(\bigcup_{n=1}^{\infty} A_n\right) = \lim_{n \to \infty} \mathbb{P}(A_n)$$
-
-Soit $(A_n)_{n \in \mathbb{N}}$ une suite d'événements telle que $A_{n+1} \subset A_n$ pour tout $n \in \mathbb{N}$. Alors, on a :
-$$\mathbb{P}\left(\bigcap_{n=1}^{\infty} A_n\right) = \lim_{n \to \infty} \mathbb{P}(A_n)$$
-
----
-
-</details>
-
-## 3. Formule de Bayes
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Probabilités
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(\varOmega,\mathcal{F},\mathbb{P})$ un espace de probabilité et $A,B \in \mathcal{F}$ des événements tels que $\mathbb{P}(A), \mathbb{P}(B) > 0$. Alors, on a :
-$$\mathbb{P}(A \mid B) = \frac{\mathbb{P}(B \mid A) \mathbb{P}(A)}{\mathbb{P}(B)}$$
-
----
-
-</details>
-
-## 4. Formule du crible
+## 2. Formule du crible
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -4775,12 +4728,12 @@ $$\mathbb{P}\left(\bigcup_{i=1}^{n} A_i\right) = \sum_{k=1}^{n} (-1)^{k+1} \sum_
 
 </details>
 
-## 5. Topologie
+## 3. Espace de probabilité
 
 <details>
 <summary><b>Chapitre</b></summary>
 <blockquote>
-Topologie
+Probabilités
 </blockquote>
 </details>
 
@@ -4789,11 +4742,54 @@ Topologie
 
 ---
 
-Soit $E$ un ensemble et $\mathcal{T} \subset \mathcal{P}(E)$ une famille de parties de $E$. $\mathcal{T}$ est une topologie sur $E$ si elle satisfait les conditions suivantes :
+Soit $(\varOmega,\mathcal{F},\mathbb{P})$ un espace mesuré. C'est un espace de probabilité si $\mathbb{P}(\varOmega) = 1$.
 
-1. $\varnothing,E \in \mathcal{T}$
-2. $\mathcal{T}$ est stable par intersection finie (ou simple)
-3. $\mathcal{T}$ est stable par union quelconque
+---
+
+</details>
+
+## 4. Sous-$\sigma$-additivité
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Probabilités
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(\varOmega,\mathcal{F},\mathbb{P})$ un espace de probabilité et $(A_n)_{n \in \mathbb{N}}$ une suite d'événements. Alors, on a :
+$$\mathbb{P}\left(\bigcup_{n=1}^{\infty} A_n\right) \leq \sum_{n=1}^{\infty} \mathbb{P}(A_n)$$
+
+---
+
+</details>
+
+## 5. Croissance et décroissance séquentielle
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Probabilités
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(\varOmega,\mathcal{F},\mathbb{P})$ un espace de probabilité.
+
+Soit $(A_n)_{n \in \mathbb{N}}$ une suite d'événements telle que $A_n \subset A_{n+1}$ pour tout $n \in \mathbb{N}$. Alors, on a :
+$$\mathbb{P}\left(\bigcup_{n=1}^{\infty} A_n\right) = \lim_{n \to \infty} \mathbb{P}(A_n)$$
+
+Soit $(A_n)_{n \in \mathbb{N}}$ une suite d'événements telle que $A_{n+1} \subset A_n$ pour tout $n \in \mathbb{N}$. Alors, on a :
+$$\mathbb{P}\left(\bigcap_{n=1}^{\infty} A_n\right) = \lim_{n \to \infty} \mathbb{P}(A_n)$$
 
 ---
 
@@ -4820,7 +4816,31 @@ $$\mathbb{P}(B) = \sum_{i=1}^{n} \mathbb{P}(B \mid A_i) \mathbb{P}(A_i)$$
 
 </details>
 
-## 7. Espace de probabilité
+## 7. Topologie
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Topologie
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $E$ un ensemble et $\mathcal{T} \subset \mathcal{P}(E)$ une famille de parties de $E$. $\mathcal{T}$ est une topologie sur $E$ si elle satisfait les conditions suivantes :
+
+1. $\varnothing,E \in \mathcal{T}$
+2. $\mathcal{T}$ est stable par intersection finie (ou simple)
+3. $\mathcal{T}$ est stable par union quelconque
+
+---
+
+</details>
+
+## 8. Formule de Bayes
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -4834,28 +4854,8 @@ Probabilités
 
 ---
 
-Soit $(\varOmega,\mathcal{F},\mathbb{P})$ un espace mesuré. C'est un espace de probabilité si $\mathbb{P}(\varOmega) = 1$.
-
----
-
-</details>
-
-## 8. Sous-$\sigma$-additivité
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Probabilités
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(\varOmega,\mathcal{F},\mathbb{P})$ un espace de probabilité et $(A_n)_{n \in \mathbb{N}}$ une suite d'événements. Alors, on a :
-$$\mathbb{P}\left(\bigcup_{n=1}^{\infty} A_n\right) \leq \sum_{n=1}^{\infty} \mathbb{P}(A_n)$$
+Soit $(\varOmega,\mathcal{F},\mathbb{P})$ un espace de probabilité et $A,B \in \mathcal{F}$ des événements tels que $\mathbb{P}(A), \mathbb{P}(B) > 0$. Alors, on a :
+$$\mathbb{P}(A \mid B) = \frac{\mathbb{P}(B \mid A) \mathbb{P}(A)}{\mathbb{P}(B)}$$
 
 ---
 
@@ -4867,7 +4867,142 @@ $$\mathbb{P}\left(\bigcup_{n=1}^{\infty} A_n\right) \leq \sum_{n=1}^{\infty} \ma
 
 **5** Théorèmes
 
-## 1. Pivot de Gauss
+## 1. Boules ouvertes, fermées, intérieur et adhérence
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Topologie
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(E, d)$ un espace métrique, $x \in E$ et $r > 0$. La boule ouverte de centre $x$ et de rayon $r$ est
+$$B(x,r) = \{y \in E : d(x,y) < r\},$$
+et la boule fermée est notée
+$$B^f(x,r) = \{y \in E : d(x,y) \le r\}.$$
+On a
+$$B(x,r) \subseteq B^f(x,r), \qquad \overline{B(x,r)} \subseteq B^f(x,r), \qquad B(x,r) \subseteq \mathring{B^f(x,r)}.$$
+Dans un espace métrique quelconque, ces inclusions peuvent être strictes. Par exemple, soit $E = \{a,b\}$ muni de la distance discrète $d(a,b)=1$, et prenons $r=1$. Alors
+$$B(a,1)=\{a\}, \qquad B^f(a,1)=E.$$
+Comme toute partie d'un espace métrique fini est ouverte et fermée, on obtient
+$$\overline{B(a,1)}=\{a\} \subsetneq E=B^f(a,1),$$
+et
+$$B(a,1)=\{a\} \subsetneq E=\mathring{B^f(a,1)}.$$
+Dans un espace vectoriel normé, les deux dernières inclusions sont des égalités : l'adhérence de la boule ouverte est la boule fermée et l'intérieur de la boule fermée est la boule ouverte.
+
+---
+
+</details>
+
+## 2. Mesure
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Intégration de Lebesgue
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(E, \mathcal{A})$ un espace mesurable. On dit que $\mu : \mathcal{A} \to [0, +\infty]$ est une mesure sur $(E, \mathcal{A})$ si elle satisfait les conditions suivantes :
+
+1. $\mu(\emptyset) = 0$.
+2. $\mu$ est $\sigma$-additive, c'est-à-dire que pour toute famille dénombrable $(A_n)_{n \in \mathbb{N}}$ d'ensembles disjoints de $\mathcal{A}$,
+
+$$
+\mu\left(\bigcup_{n=0}^{\infty} A_n\right) = \sum_{n=0}^{\infty} \mu(A_n).
+$$
+
+De plus, on dit que $\mu$ est finie si $\mu(E) < +\infty$ et $\sigma$-finie si $E$ peut être écrit comme une union dénombrable disjointe d'ensembles de mesure finie.
+
+Enfin, une mesure est sous-$\sigma$-additive : pour toute famille dénombrable $(A_n)_{n \in \mathbb{N}}$ d'ensembles de $\mathcal{A}$,
+
+$$
+\mu\left(\bigcup_{n=0}^{\infty} A_n\right) \leq \sum_{n=0}^{\infty} \mu(A_n).
+$$
+
+---
+
+</details>
+
+## 3. Structure de l'ensemble des fonctions mesurables à valeurs dans $(\mathbb{K},\mathcal{B}(\mathbb{K}))$
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Intégration de Lebesgue
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+L'ensemble des fonctions mesurables à valeurs dans $\mathbb{K} = \mathbb{R}$ ou $\mathbb{C}$ sur un espace mesurable $(E, \mathcal{A})$ est une algèbre, munie des lois de composition internes $+$ et $\cdot$ définies par :
+
+$$
+(f + g)(x) = f(x) + g(x) \quad \text{et} \quad (f \cdot g)(x) = f(x) \cdot g(x)
+$$
+
+pour toutes fonctions $f$ et $g$ mesurables et tout $x \in E$.
+
+et de la loi de composition externe définie par :
+
+$$
+(\alpha \cdot f)(x) = \alpha \cdot f(x)
+$$
+
+De plus, si $f$ et $g$ sont à valeurs dans $\overline{\mathbb{R}}$ ou $\mathbb{C}$ et mesurables, alors $f^+$, $f^-$, $|f|$, $\max(f,g)$ et $\min(f,g)$ sont mesurables.
+
+Si $f_n$ est une suite de fonctions mesurables à valeurs dans $\overline{\mathbb{R}}$, alors $\sup f_n$, $\inf f_n$, $\limsup f_n$ et $\liminf f_n$ sont mesurables. Si de plus $f_n$ converge simplement vers une fonction $f$, alors $f$ est mesurable.
+
+---
+
+</details>
+
+## 4. Théorème de la limite monotone
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Intégration de Lebesgue
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(E, \mathcal{A}, \mu)$ un espace mesuré. Soit $(A_n)_{n \in \mathbb{N}}$ une suite de $\mathcal{A}$.
+
+Si $(A_n)_{n \in \mathbb{N}}$ est croissante, c'est-à-dire que $A_n \subseteq A_{n+1}$ pour tout $n \in \mathbb{N}$, alors :
+
+$$
+\mu\left(\bigcup_{n=0}^{\infty} A_n\right) = \lim_{n \to \infty} \mu(A_n).
+$$
+
+Si $(A_n)_{n \in \mathbb{N}}$ est décroissante, c'est-à-dire que $A_n \supseteq A_{n+1}$ pour tout $n \in \mathbb{N}$, et si $\mu(A_N) < +\infty$ APCR, alors :
+
+$$
+\mu\left(\bigcap_{n=0}^{\infty} A_n\right) = \lim_{n \to \infty} \mu(A_n).
+$$
+
+---
+
+</details>
+
+## 5. Pivot de Gauss
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -5061,141 +5196,6 @@ Calculer le rang de $A$, déterminer une base de son image et une base de son no
 
 </details>
 
-## 2. Théorème de la limite monotone
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Intégration de Lebesgue
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(E, \mathcal{A}, \mu)$ un espace mesuré. Soit $(A_n)_{n \in \mathbb{N}}$ une suite de $\mathcal{A}$.
-
-Si $(A_n)_{n \in \mathbb{N}}$ est croissante, c'est-à-dire que $A_n \subseteq A_{n+1}$ pour tout $n \in \mathbb{N}$, alors :
-
-$$
-\mu\left(\bigcup_{n=0}^{\infty} A_n\right) = \lim_{n \to \infty} \mu(A_n).
-$$
-
-Si $(A_n)_{n \in \mathbb{N}}$ est décroissante, c'est-à-dire que $A_n \supseteq A_{n+1}$ pour tout $n \in \mathbb{N}$, et si $\mu(A_N) < +\infty$ APCR, alors :
-
-$$
-\mu\left(\bigcap_{n=0}^{\infty} A_n\right) = \lim_{n \to \infty} \mu(A_n).
-$$
-
----
-
-</details>
-
-## 3. Mesure
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Intégration de Lebesgue
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(E, \mathcal{A})$ un espace mesurable. On dit que $\mu : \mathcal{A} \to [0, +\infty]$ est une mesure sur $(E, \mathcal{A})$ si elle satisfait les conditions suivantes :
-
-1. $\mu(\emptyset) = 0$.
-2. $\mu$ est $\sigma$-additive, c'est-à-dire que pour toute famille dénombrable $(A_n)_{n \in \mathbb{N}}$ d'ensembles disjoints de $\mathcal{A}$,
-
-$$
-\mu\left(\bigcup_{n=0}^{\infty} A_n\right) = \sum_{n=0}^{\infty} \mu(A_n).
-$$
-
-De plus, on dit que $\mu$ est finie si $\mu(E) < +\infty$ et $\sigma$-finie si $E$ peut être écrit comme une union dénombrable disjointe d'ensembles de mesure finie.
-
-Enfin, une mesure est sous-$\sigma$-additive : pour toute famille dénombrable $(A_n)_{n \in \mathbb{N}}$ d'ensembles de $\mathcal{A}$,
-
-$$
-\mu\left(\bigcup_{n=0}^{\infty} A_n\right) \leq \sum_{n=0}^{\infty} \mu(A_n).
-$$
-
----
-
-</details>
-
-## 4. Boules ouvertes, fermées, intérieur et adhérence
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Topologie
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(E, d)$ un espace métrique, $x \in E$ et $r > 0$. La boule ouverte de centre $x$ et de rayon $r$ est
-$$B(x,r) = \{y \in E : d(x,y) < r\},$$
-et la boule fermée est notée
-$$B^f(x,r) = \{y \in E : d(x,y) \le r\}.$$
-On a
-$$B(x,r) \subseteq B^f(x,r), \qquad \overline{B(x,r)} \subseteq B^f(x,r), \qquad B(x,r) \subseteq \mathring{B^f(x,r)}.$$
-Dans un espace métrique quelconque, ces inclusions peuvent être strictes. Par exemple, soit $E = \{a,b\}$ muni de la distance discrète $d(a,b)=1$, et prenons $r=1$. Alors
-$$B(a,1)=\{a\}, \qquad B^f(a,1)=E.$$
-Comme toute partie d'un espace métrique fini est ouverte et fermée, on obtient
-$$\overline{B(a,1)}=\{a\} \subsetneq E=B^f(a,1),$$
-et
-$$B(a,1)=\{a\} \subsetneq E=\mathring{B^f(a,1)}.$$
-Dans un espace vectoriel normé, les deux dernières inclusions sont des égalités : l'adhérence de la boule ouverte est la boule fermée et l'intérieur de la boule fermée est la boule ouverte.
-
----
-
-</details>
-
-## 5. Structure de l'ensemble des fonctions mesurables à valeurs dans $(\mathbb{K},\mathcal{B}(\mathbb{K}))$
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Intégration de Lebesgue
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-L'ensemble des fonctions mesurables à valeurs dans $\mathbb{K} = \mathbb{R}$ ou $\mathbb{C}$ sur un espace mesurable $(E, \mathcal{A})$ est une algèbre, munie des lois de composition internes $+$ et $\cdot$ définies par :
-
-$$
-(f + g)(x) = f(x) + g(x) \quad \text{et} \quad (f \cdot g)(x) = f(x) \cdot g(x)
-$$
-
-pour toutes fonctions $f$ et $g$ mesurables et tout $x \in E$.
-
-et de la loi de composition externe définie par :
-
-$$
-(\alpha \cdot f)(x) = \alpha \cdot f(x)
-$$
-
-De plus, si $f$ et $g$ sont à valeurs dans $\overline{\mathbb{R}}$ ou $\mathbb{C}$ et mesurables, alors $f^+$, $f^-$, $|f|$, $\max(f,g)$ et $\min(f,g)$ sont mesurables.
-
-Si $f_n$ est une suite de fonctions mesurables à valeurs dans $\overline{\mathbb{R}}$, alors $\sup f_n$, $\inf f_n$, $\limsup f_n$ et $\liminf f_n$ sont mesurables. Si de plus $f_n$ converge simplement vers une fonction $f$, alors $f$ est mesurable.
-
----
-
-</details>
-
 <br>
 
 # 📚 Révisions pour le 11/11/2026
@@ -5245,135 +5245,7 @@ L'inégalité triangulaire $\|x+y\|_p \le \|x\|_p + \|y\|_p$ peut se démontrer 
 
 **14** Théorèmes
 
-## 1. Loi du 0-1 de Kolmogorov
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Probabilités
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $(\mathcal{G}_n)_{n \in \mathbb{N}}$ une suite de sous-tribus mutuellement indépendantes sous $\mathbb{P}$ de $\mathcal{F}$. Alors la tribu asymptotique $\mathcal{G}_\infty$ est $\mathbb{P}$-triviale.
-
----
-
-</details>
-
-## 2. Sous-tribu $\mathcal{P}$-triviale
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Probabilités
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $\mathcal{P} \subset \mathcal{F}$ une sous-tribu de $\mathcal{F}$. On dit que $\mathcal{P}$ est $\mathbb{P}$-triviale si pour tout $A \in \mathcal{P}$, $\mathbb{P}(A) = 0$ ou $\mathbb{P}(A) = 1$.
-
----
-
-</details>
-
-## 3. Éléments associés, irréductibles, nilpotents d'un anneau
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Anneaux
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-- **Élément associé** : $a, b \in A$ sont associés s'il existe $u \in A^\times$ tel que $a = ub$.
-- **Élément irréductible** : $p \in A \setminus A^\times$ est irréductible si ses seuls diviseurs sont les éléments inversibles et les associés de $p$ (i.e. $p=ab \implies a \in A^\times$ ou $b \in A^\times$).
-- **Élément nilpotent** : $x \in A$ est nilpotent s'il existe $n \in \mathbb{N}^*$ tel que $x^n = 0$.
-
-Un anneau est dit **réduit** si seul $0$ est nilpotent.
-
----
-
-</details>
-
-## 4. Indépendance d'événements $\implies$ indépendance des tribus engendrées
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Probabilités
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $(A_i)_{i \in I}$ une famille d'événements. Les deux propositions suivantes sont équivalentes :
-
-1. Les événements $(A_i)_{i \in I}$ sont mutuellement indépendants sous $\mathbb{P}$.
-2. Les tribus $(\sigma(A_i))_{i \in I}$ sont mutuellement indépendantes sous $\mathbb{P}$.
-
----
-
-</details>
-
-## 5. Adhérence d'un connexe
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Topologie
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $E$ un espace métrique et $A$ une partie connexe de $E$.
-Si $B$ est une partie telle que $A \subseteq B \subseteq \bar{A}$, alors $B$ est connexe. En particulier, l'adhérence $\bar{A}$ d'un connexe est connexe.
-
----
-
-</details>
-
-## 6. Bon ordre
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Divers
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Un ordre sur un ensemble $E$ est dit **bon** si toute partie non vide de $E$ possède un minimum.
-
----
-
-</details>
-
-## 7. Indépendance par paquets
+## 1. Indépendance par paquets
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -5395,7 +5267,7 @@ Si les sous-tribus $(\mathcal{F}_i)_{i \in I}$ sont mutuellement indépendantes 
 
 </details>
 
-## 8. Lemmes de Borel-Cantelli
+## 2. Lemmes de Borel-Cantelli
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -5419,6 +5291,140 @@ $$\mathbf{1}_{A^*} = \limsup_{n \to +\infty} \mathbf{1}_{A_n}.$$
 Si $\sum_{n \in \mathbb{N}} \mathbb{P}(A_n) < +\infty$, alors $\mathbb{P}(\limsup_{n \to +\infty} A_n) = 0$.
 
 Si $\sum_{n \in \mathbb{N}} \mathbb{P}(A_n) = +\infty$ et que les événements $(A_n)_{n \in \mathbb{N}}$ sont mutuellement indépendants sous $\mathbb{P}$, alors $\mathbb{P}(\limsup_{n \to +\infty} A_n) = 1$.
+
+---
+
+</details>
+
+## 3. Indépendance des $pi$-systèmes $\implies$ indépendance des tribus engendrées
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Probabilités
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $(\mathcal{P}_i)_{i \in I}$ une famille de $\pi$-systèmes de $\mathcal{F}$. Soit $(\mathcal{F}_i)_{i \in I}$ la famille des tribus engendrées par les $\pi$-systèmes $(\mathcal{P}_i)_{i \in I}$, c'est-à-dire pour tout $i \in I$, $\mathcal{F}_i = \sigma(\mathcal{P}_i)$.
+
+Si les $\pi$-systèmes $(\mathcal{P}_i)_{i \in I}$ sont mutuellement indépendants sous $\mathbb{P}$, alors les tribus $(\mathcal{F}_i)_{i \in I}$ sont mutuellement indépendantes sous $\mathbb{P}$.
+
+---
+
+</details>
+
+## 4. Indépendance de classes d'événements
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Probabilités
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $(\mathcal{C}_i)_{i \in I}$ une famille de classes d'événements ($\mathcal{C}_i \subset \mathcal{F}$ pour tout $i \in I$).
+
+On dit que les classes d'événements $(\mathcal{C}_i)_{i \in I}$ sont mutuellement indépendantes sous $\mathbb{P}$ si pour tout $n \in \mathbb{N}^*$, pour tout $i_1, \dots, i_n \in I$ distincts, pour tout $A_1 \in \mathcal{C}_{i_1}, \dots, A_n \in \mathcal{C}_{i_n}$, on a :
+$$\mathbb{P}(A_1 \cap \dots \cap A_n) = \mathbb{P}(A_1) \cdots \mathbb{P}(A_n).$$
+
+Si de plus $I = \{1, \dots, n\}$ et pour tout $i \in I$, $\Omega \in \mathcal{C}_i$, alors la condition suivante suffit pour que les classes d'événements $(\mathcal{C}_i)_{i \in I}$ soient mutuellement indépendantes sous $\mathbb{P}$ :
+$$\forall (A_1, \dots, A_n) \in \mathcal{C}_1 \times \dots \times \mathcal{C}_n, \quad \mathbb{P}(A_1 \cap \dots \cap A_n) = \mathbb{P}(A_1) \cdots \mathbb{P}(A_n).$$
+
+---
+
+</details>
+
+## 5. Sous-tribu $\mathcal{P}$-triviale
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Probabilités
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $\mathcal{P} \subset \mathcal{F}$ une sous-tribu de $\mathcal{F}$. On dit que $\mathcal{P}$ est $\mathbb{P}$-triviale si pour tout $A \in \mathcal{P}$, $\mathbb{P}(A) = 0$ ou $\mathbb{P}(A) = 1$.
+
+---
+
+</details>
+
+## 6. Indépendance d'événements $\implies$ indépendance des tribus engendrées
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Probabilités
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $(A_i)_{i \in I}$ une famille d'événements. Les deux propositions suivantes sont équivalentes :
+
+1. Les événements $(A_i)_{i \in I}$ sont mutuellement indépendants sous $\mathbb{P}$.
+2. Les tribus $(\sigma(A_i))_{i \in I}$ sont mutuellement indépendantes sous $\mathbb{P}$.
+
+---
+
+</details>
+
+## 7. Adhérence d'un connexe
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Topologie
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $E$ un espace métrique et $A$ une partie connexe de $E$.
+Si $B$ est une partie telle que $A \subseteq B \subseteq \bar{A}$, alors $B$ est connexe. En particulier, l'adhérence $\bar{A}$ d'un connexe est connexe.
+
+---
+
+</details>
+
+## 8. Tribu asymptotique
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Probabilités
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $(\mathcal{G}_n)_{n \in \mathbb{N}}$ une suite de sous-tribus de $\mathcal{F}$. On définit la tribu asymptotique $(\mathcal{G}_\infty)_{n \in \mathbb{N}}$ par :
+
+$$\mathcal{G}_\infty = \bigcap_{n \in \mathbb{N}} \sigma(\bigcup_{k \geq n} \mathcal{G}_k).$$
 
 ---
 
@@ -5453,7 +5459,7 @@ $$T_n(T_m(x)) = T_{nm}(x)$$
 
 </details>
 
-## 10. Tribu asymptotique
+## 10. Loi du 0-1 de Kolmogorov
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -5467,9 +5473,7 @@ Probabilités
 
 ---
 
-Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $(\mathcal{G}_n)_{n \in \mathbb{N}}$ une suite de sous-tribus de $\mathcal{F}$. On définit la tribu asymptotique $(\mathcal{G}_\infty)_{n \in \mathbb{N}}$ par :
-
-$$\mathcal{G}_\infty = \bigcap_{n \in \mathbb{N}} \sigma(\bigcup_{k \geq n} \mathcal{G}_k).$$
+Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $(\mathcal{G}_n)_{n \in \mathbb{N}}$ une suite de sous-tribus mutuellement indépendantes sous $\mathbb{P}$ de $\mathcal{F}$. Alors la tribu asymptotique $\mathcal{G}_\infty$ est $\mathbb{P}$-triviale.
 
 ---
 
@@ -5503,12 +5507,12 @@ Alors :
 
 </details>
 
-## 12. Indépendance de classes d'événements
+## 12. Éléments associés, irréductibles, nilpotents d'un anneau
 
 <details>
 <summary><b>Chapitre</b></summary>
 <blockquote>
-Probabilités
+Anneaux
 </blockquote>
 </details>
 
@@ -5517,24 +5521,22 @@ Probabilités
 
 ---
 
-Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $(\mathcal{C}_i)_{i \in I}$ une famille de classes d'événements ($\mathcal{C}_i \subset \mathcal{F}$ pour tout $i \in I$).
+- **Élément associé** : $a, b \in A$ sont associés s'il existe $u \in A^\times$ tel que $a = ub$.
+- **Élément irréductible** : $p \in A \setminus A^\times$ est irréductible si ses seuls diviseurs sont les éléments inversibles et les associés de $p$ (i.e. $p=ab \implies a \in A^\times$ ou $b \in A^\times$).
+- **Élément nilpotent** : $x \in A$ est nilpotent s'il existe $n \in \mathbb{N}^*$ tel que $x^n = 0$.
 
-On dit que les classes d'événements $(\mathcal{C}_i)_{i \in I}$ sont mutuellement indépendantes sous $\mathbb{P}$ si pour tout $n \in \mathbb{N}^*$, pour tout $i_1, \dots, i_n \in I$ distincts, pour tout $A_1 \in \mathcal{C}_{i_1}, \dots, A_n \in \mathcal{C}_{i_n}$, on a :
-$$\mathbb{P}(A_1 \cap \dots \cap A_n) = \mathbb{P}(A_1) \cdots \mathbb{P}(A_n).$$
-
-Si de plus $I = \{1, \dots, n\}$ et pour tout $i \in I$, $\Omega \in \mathcal{C}_i$, alors la condition suivante suffit pour que les classes d'événements $(\mathcal{C}_i)_{i \in I}$ soient mutuellement indépendantes sous $\mathbb{P}$ :
-$$\forall (A_1, \dots, A_n) \in \mathcal{C}_1 \times \dots \times \mathcal{C}_n, \quad \mathbb{P}(A_1 \cap \dots \cap A_n) = \mathbb{P}(A_1) \cdots \mathbb{P}(A_n).$$
+Un anneau est dit **réduit** si seul $0$ est nilpotent.
 
 ---
 
 </details>
 
-## 13. Indépendance des $pi$-systèmes $\implies$ indépendance des tribus engendrées
+## 13. Bon ordre
 
 <details>
 <summary><b>Chapitre</b></summary>
 <blockquote>
-Probabilités
+Divers
 </blockquote>
 </details>
 
@@ -5543,9 +5545,7 @@ Probabilités
 
 ---
 
-Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité. Soit $(\mathcal{P}_i)_{i \in I}$ une famille de $\pi$-systèmes de $\mathcal{F}$. Soit $(\mathcal{F}_i)_{i \in I}$ la famille des tribus engendrées par les $\pi$-systèmes $(\mathcal{P}_i)_{i \in I}$, c'est-à-dire pour tout $i \in I$, $\mathcal{F}_i = \sigma(\mathcal{P}_i)$.
-
-Si les $\pi$-systèmes $(\mathcal{P}_i)_{i \in I}$ sont mutuellement indépendants sous $\mathbb{P}$, alors les tribus $(\mathcal{F}_i)_{i \in I}$ sont mutuellement indépendantes sous $\mathbb{P}$.
+Un ordre sur un ensemble $E$ est dit **bon** si toute partie non vide de $E$ possède un minimum.
 
 ---
 
@@ -5583,7 +5583,27 @@ Alors :
 
 **4** Théorèmes
 
-## 1. Règles de bioche
+## 1. Théorème de la classe monotone
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Probabilités
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $E$ un ensemble, $P$ un $\pi$-système de parties de $E$ et $\mathcal{M}$ une classe monotone de parties de $E$ contenant $P$. Alors la tribu engendrée par $P$ est incluse dans $\mathcal{M}$, c'est-à-dire $\sigma(P) \subset \mathcal{M}$.
+
+---
+
+</details>
+
+## 2. Règles de bioche
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -5613,7 +5633,27 @@ $$\sin(x) = \frac{2u}{1+u^2}, \quad \cos(x) = \frac{1-u^2}{1+u^2}, \quad dx = \f
 
 </details>
 
-## 2. Primitives de $\frac{1}{cos^2(x)}$, $\frac{1}{sin^2(x)}$, $\frac{1}{cos(x)}$, $\frac{1}{sin(x)}$, $\frac{1}{\sqrt{1-x^2}}$
+## 3. Tribu = $\pi$-système + classe monotone
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Probabilités
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Une classe de parties d'un ensemble $E$ qui est à la fois un $\pi$-système et une classe monotone est une tribu sur $E$.
+
+---
+
+</details>
+
+## 4. Primitives de $\frac{1}{cos^2(x)}$, $\frac{1}{sin^2(x)}$, $\frac{1}{cos(x)}$, $\frac{1}{sin(x)}$, $\frac{1}{\sqrt{1-x^2}}$
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -5639,123 +5679,13 @@ On a les primitives suivantes :
 
 </details>
 
-## 3. Tribu = $\pi$-système + classe monotone
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Probabilités
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Une classe de parties d'un ensemble $E$ qui est à la fois un $\pi$-système et une classe monotone est une tribu sur $E$.
-
----
-
-</details>
-
-## 4. Théorème de la classe monotone
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Probabilités
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $E$ un ensemble, $P$ un $\pi$-système de parties de $E$ et $\mathcal{M}$ une classe monotone de parties de $E$ contenant $P$. Alors la tribu engendrée par $P$ est incluse dans $\mathcal{M}$, c'est-à-dire $\sigma(P) \subset \mathcal{M}$.
-
----
-
-</details>
-
 <br>
 
 # 📚 Révisions pour le 14/11/2026
 
 **5** Théorèmes
 
-## 1. Formule de Grassmann
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Algèbre linéaire
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soient $E$ un espace vectoriel et $F, G$ deux sous-espaces vectoriels de $E$. Alors :
-$$\dim(F + G) = \dim(F) + \dim(G) - \dim(F \cap G)$$
-
----
-
-</details>
-
-## 2. Endomorphismes qui commutent, sous-espaces stables
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Algèbre linéaire
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soient $u, v \in \mathcal{L}(E)$ deux endomorphismes d'un espace vectoriel $E$ tels que $u \circ v = v \circ u$.
-
-Alors les sous-espaces propres de $u$, $\text{Ker}(u)$ et $\text{Im}(u)$ sont stables par $v$.
-
----
-
-</details>
-
-## 3. Valeurs d'adhérence et caractérisations
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Topologie
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(x_n)_{n \in \mathbb{N}}$ une suite d'éléments d'un espace métrique $(E, d)$. Un point $l \in E$ est une valeur d'adhérence de la suite $(x_n)$ si :
-$$\forall \varepsilon > 0, \quad \{n \in \mathbb{N} : x_n \in B(l, \varepsilon)\} \text{ est infini}$$
-
-**Caractérisation par les ensembles de restes** :
-$$\text{Adh}(x_n) = \bigcap\limits_{n \in \mathbb{N}} \overline{\{x_m : m \ge n\}} \text{ est donc fermé}$$
-
-**Caractérisation séquentielle** :
-$$l \in \text{Adh}(x_n) \iff \exists \varphi \text{ extractrice telle que } x_{\varphi(n)} \to l$$
-
----
-
-</details>
-
-## 4. Continuité et caractérisations
+## 1. Continuité et caractérisations
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -5785,7 +5715,29 @@ On dit que $f$ est continue sur $E$ ssi :
 
 </details>
 
-## 5. Théorème d'intégration d'une suite de fonctions
+## 2. Endomorphismes qui commutent, sous-espaces stables
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Algèbre linéaire
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soient $u, v \in \mathcal{L}(E)$ deux endomorphismes d'un espace vectoriel $E$ tels que $u \circ v = v \circ u$.
+
+Alors les sous-espaces propres de $u$, $\text{Ker}(u)$ et $\text{Im}(u)$ sont stables par $v$.
+
+---
+
+</details>
+
+## 3. Théorème d'intégration d'une suite de fonctions
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -5813,13 +5765,204 @@ $$\int_a^b f_n(t) dt \xrightarrow[n \to \infty]{} \int_a^b f(t) dt$$
 
 </details>
 
+## 4. Valeurs d'adhérence et caractérisations
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Topologie
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(x_n)_{n \in \mathbb{N}}$ une suite d'éléments d'un espace métrique $(E, d)$. Un point $l \in E$ est une valeur d'adhérence de la suite $(x_n)$ si :
+$$\forall \varepsilon > 0, \quad \{n \in \mathbb{N} : x_n \in B(l, \varepsilon)\} \text{ est infini}$$
+
+**Caractérisation par les ensembles de restes** :
+$$\text{Adh}(x_n) = \bigcap\limits_{n \in \mathbb{N}} \overline{\{x_m : m \ge n\}} \text{ est donc fermé}$$
+
+**Caractérisation séquentielle** :
+$$l \in \text{Adh}(x_n) \iff \exists \varphi \text{ extractrice telle que } x_{\varphi(n)} \to l$$
+
+---
+
+</details>
+
+## 5. Formule de Grassmann
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Algèbre linéaire
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soient $E$ un espace vectoriel et $F, G$ deux sous-espaces vectoriels de $E$. Alors :
+$$\dim(F + G) = \dim(F) + \dim(G) - \dim(F \cap G)$$
+
+---
+
+</details>
+
 <br>
 
 # 📚 Révisions pour le 15/11/2026
 
 **10** Théorèmes
 
-## 1. Théorème de convergence dominée
+## 1. Idéal principal / Anneau principal
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Anneaux
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Un idéal $I$ d'un anneau $A$ est dit **principal** s'il existe un élément $a \in A$ tel que $I = (a) = \{ax : x \in A\}$.
+
+Un anneau unitaire commutatif intègre $A$ est dit **principal** si tout idéal de $A$ est principal.
+
+---
+
+</details>
+
+## 2. Lemme d'Euclide
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Anneaux
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $A$ un anneau principal. Soit $p \in A$ un élément irréductible. Soient $a, b \in A$.
+Si $p | ab$, alors $p | a$ ou $p | b$.
+
+---
+
+</details>
+
+## 3. Théorème d'intégration terme à terme d'une série de fonctions
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Fonctions vectorielles
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $I$ un intervalle de $\mathbb{R}$ et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $\sum f_n$ une série de fonctions continues de $I$ vers $E$. On suppose que la série $\sum f_n$ converge uniformément sur tout segment de $I$ vers une fonction $S : I \to E$.
+
+Alors $S$ est continue sur $I$, et pour tout $x_0 \in I$, la suite des sommes partielles des primitives $(\sum\limits_{k=0}^n \int_{x_0}^x f_k(t) dt)_{n \in \mathbb{N}}$ converge simplement et uniformément sur tout segment de $I$ vers la fonction $x \mapsto \int_{x_0}^x S(t) dt$.
+
+On a notamment pour tout $[a, b] \subseteq I$ :
+$$\int_a^b \left( \sum\limits_{n=0}^\infty f_n(t) \right) dt = \sum\limits_{n=0}^\infty \int_a^b f_n(t) dt$$
+
+---
+
+</details>
+
+## 4. Suite de Cauchy
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Topologie
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(E, d)$ un espace métrique. Une suite $(u_n)_{n \in \mathbb{N}}$ d'éléments de $E$ est dite de Cauchy si :
+$$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall p, q \ge N, d(u_p, u_q) < \varepsilon$$
+
+---
+
+</details>
+
+## 5. Théorème de la double limite pour les séries de fonctions
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Fonctions vectorielles
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(E,d)$ un espace métrique et $(F, \|\cdot\|)$ un espace de Banach (espace vectoriel normé complet). Soit $a$ un point adhérent à $E$ (avec $a \in \overline{\mathbb{R}}$ si $E = \mathbb{R}$). Soit $\sum f_n$ une série de fonctions de $E$ vers $F$.
+Supposons que :
+
+1. Pour tout $n \in \mathbb{N}$, $f_n(x) \xrightarrow[x \to a]{} \lambda_n$ existe dans $F$.
+2. La série de fonctions $\sum f_n$ converge uniformément sur $E$ vers une fonction $S : E \to F$.
+
+Alors :
+
+- La série numérique $\sum\limits_{n \in \mathbb{N}} \lambda_n$ converge vers une limite $\lambda \in F$.
+- La fonction $S$ admet une limite en $a$ qui est égale à $\lambda$.
+
+On a alors l'égalité : $\sum\limits_{n=0}^\infty f_n(x) \xrightarrow[x \to a]{} \sum\limits_{n=0}^\infty \lambda_n$.
+
+---
+
+</details>
+
+## 6. Formule de Taylor-Young
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse réelle
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $f \in \mathcal{C}^n(I, E)$ où $E$ est un espace vectoriel normé de dimension finie. Soit $a \in I$.
+
+Alors, au voisinage de $h=0$ tel que $a+h \in I$ :
+$$f(a+h) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} h^k + o(h^n)$$
+
+---
+
+</details>
+
+## 7. Théorème de convergence dominée
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -5846,29 +5989,7 @@ $$\int_I f_n(t) dt \xrightarrow[n \to \infty]{} \int_I f(t) dt$$
 
 </details>
 
-## 2. Idéal principal / Anneau principal
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Anneaux
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Un idéal $I$ d'un anneau $A$ est dit **principal** s'il existe un élément $a \in A$ tel que $I = (a) = \{ax : x \in A\}$.
-
-Un anneau unitaire commutatif intègre $A$ est dit **principal** si tout idéal de $A$ est principal.
-
----
-
-</details>
-
-## 3. Convergence uniforme d'une série de fonctions
+## 8. Convergence uniforme d'une série de fonctions
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -5888,7 +6009,27 @@ Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $\sum 
 
 </details>
 
-## 4. Idéal, premier, maximal et caractérisations
+## 9. Convergence absolue d'une série de fonctions
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Fonctions vectorielles
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $\sum f_n$ une série de fonctions de $X$ vers $E$. On dit que la série $\sum f_n$ converge absolument si pour tout $x \in X$, la série numérique $\sum\limits_{n=0}^{\infty} \|f_n(x)\|$ converge.
+
+---
+
+</details>
+
+## 10. Idéal, premier, maximal et caractérisations
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -5927,154 +6068,40 @@ _Propriétés_ :
 
 </details>
 
-## 5. Formule de Taylor-Young
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse réelle
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $f \in \mathcal{C}^n(I, E)$ où $E$ est un espace vectoriel normé de dimension finie. Soit $a \in I$.
-
-Alors, au voisinage de $h=0$ tel que $a+h \in I$ :
-$$f(a+h) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} h^k + o(h^n)$$
-
----
-
-</details>
-
-## 6. Théorème de la double limite pour les séries de fonctions
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Fonctions vectorielles
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(E,d)$ un espace métrique et $(F, \|\cdot\|)$ un espace de Banach (espace vectoriel normé complet). Soit $a$ un point adhérent à $E$ (avec $a \in \overline{\mathbb{R}}$ si $E = \mathbb{R}$). Soit $\sum f_n$ une série de fonctions de $E$ vers $F$.
-Supposons que :
-
-1. Pour tout $n \in \mathbb{N}$, $f_n(x) \xrightarrow[x \to a]{} \lambda_n$ existe dans $F$.
-2. La série de fonctions $\sum f_n$ converge uniformément sur $E$ vers une fonction $S : E \to F$.
-
-Alors :
-
-- La série numérique $\sum\limits_{n \in \mathbb{N}} \lambda_n$ converge vers une limite $\lambda \in F$.
-- La fonction $S$ admet une limite en $a$ qui est égale à $\lambda$.
-
-On a alors l'égalité : $\sum\limits_{n=0}^\infty f_n(x) \xrightarrow[x \to a]{} \sum\limits_{n=0}^\infty \lambda_n$.
-
----
-
-</details>
-
-## 7. Convergence absolue d'une série de fonctions
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Fonctions vectorielles
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $\sum f_n$ une série de fonctions de $X$ vers $E$. On dit que la série $\sum f_n$ converge absolument si pour tout $x \in X$, la série numérique $\sum\limits_{n=0}^{\infty} \|f_n(x)\|$ converge.
-
----
-
-</details>
-
-## 8. Théorème d'intégration terme à terme d'une série de fonctions
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Fonctions vectorielles
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $I$ un intervalle de $\mathbb{R}$ et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $\sum f_n$ une série de fonctions continues de $I$ vers $E$. On suppose que la série $\sum f_n$ converge uniformément sur tout segment de $I$ vers une fonction $S : I \to E$.
-
-Alors $S$ est continue sur $I$, et pour tout $x_0 \in I$, la suite des sommes partielles des primitives $(\sum\limits_{k=0}^n \int_{x_0}^x f_k(t) dt)_{n \in \mathbb{N}}$ converge simplement et uniformément sur tout segment de $I$ vers la fonction $x \mapsto \int_{x_0}^x S(t) dt$.
-
-On a notamment pour tout $[a, b] \subseteq I$ :
-$$\int_a^b \left( \sum\limits_{n=0}^\infty f_n(t) \right) dt = \sum\limits_{n=0}^\infty \int_a^b f_n(t) dt$$
-
----
-
-</details>
-
-## 9. Suite de Cauchy
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Topologie
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(E, d)$ un espace métrique. Une suite $(u_n)_{n \in \mathbb{N}}$ d'éléments de $E$ est dite de Cauchy si :
-$$\forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall p, q \ge N, d(u_p, u_q) < \varepsilon$$
-
----
-
-</details>
-
-## 10. Lemme d'Euclide
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Anneaux
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $A$ un anneau principal. Soit $p \in A$ un élément irréductible. Soient $a, b \in A$.
-Si $p | ab$, alors $p | a$ ou $p | b$.
-
----
-
-</details>
-
 <br>
 
 # 📚 Révisions pour le 17/11/2026
 
 **12** Théorèmes
 
-## 1. Morphismes d'anneaux, isomorphismes, endomorphismes, automorphismes
+## 1. Théorème de sommation L1
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Intégration sur un intervalle quelconque
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $\sum f_n$ une série de fonctions de $\mathcal{C}_{m}(I, \mathbb{C})$.
+Supposons que :
+
+1. $\sum f_n$ converge simplement vers $S \in \mathcal{C}_{m}(I, \mathbb{C})$.
+2. Chaque $f_n$ est intégrable sur $I$.
+3. $\sum\limits_{n=0}^{\infty} \int_I |f_n| < +\infty$.
+   Alors $S$ est intégrable sur $I$ et :
+   $$\int_I \left( \sum_{n=0}^{\infty} f_n(t) \right) dt = \sum\limits_{n=0}^{\infty} \int_I f_n(t) dt$$
+
+---
+
+</details>
+
+## 2. Morphismes d'anneaux, isomorphismes, endomorphismes, automorphismes
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -6102,12 +6129,12 @@ On parle d'**isomorphisme**, **endomorphisme** ou **automorphisme** selon les pr
 
 </details>
 
-## 2. Théorème de Liouville
+## 3. Théorème de Bolzano-Weierstrass
 
 <details>
 <summary><b>Chapitre</b></summary>
 <blockquote>
-Analyse complexe
+Analyse réelle
 </blockquote>
 </details>
 
@@ -6116,13 +6143,60 @@ Analyse complexe
 
 ---
 
-Toute fonction holomorphe sur $\mathbb{C}$ bornée est constante.
+Toute suite bornée de réels (ou d'éléments de $\mathbb{R}^n$) admet au moins une valeur d'adhérence. Autrement dit, on peut en extraire une sous-suite convergente.
 
 ---
 
 </details>
 
-## 3. Caractéristique
+## 4. Théorème des valeurs intermédiaires
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse réelle
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soient $a, b \in \mathbb{R}$ tels que $a < b$. Soit $f : [a, b] \to \mathbb{R}$ une fonction continue sur le segment $[a, b]$.
+Pour tout réel $y$ compris entre $f(a)$ et $f(b)$, il existe au moins un réel $c \in [a, b]$ tel que :
+$$f(c) = y$$
+Autrement dit, l'image d'un intervalle par une fonction continue est un intervalle.
+
+---
+
+</details>
+
+## 5. Théorème de Fubini-Lebesgue pour les suites
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse réelle
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(a_{n,p})_{(n,p) \in \mathbb{N}^2}$ une famille de nombres complexes.
+On suppose que la famille est sommable, c'est-à-dire que l'une des sommes itérées des modules converge :
+$$\sum\limits_{n=0}^{\infty} \sum\limits_{p=0}^{\infty} |a_{n,p}| < +\infty$$
+Alors les sommes itérées convergent absolument et on a l'égalité :
+$$\sum\limits_{n=0}^{\infty} \sum\limits_{p=0}^{\infty} a_{n,p} = \sum\limits_{p=0}^{\infty} \sum\limits_{n=0}^{\infty} a_{n,p}$$
+
+---
+
+</details>
+
+## 6. Caractéristique
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -6144,7 +6218,7 @@ C'est donc le plus petit entier $n > 0$ tel que $n \cdot 1_A = 0_A$ s'il existe,
 
 </details>
 
-## 4. Dérivée de la fonction réciproque
+## 7. Dérivée de la fonction réciproque
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -6161,78 +6235,6 @@ Analyse réelle
 Soit $f : A \to B$ une bijection dérivable sur $A$. Soit $a \in A$.
 Si $f'(a) \neq 0$ et si $f^{-1}$ est continue en $b = f(a)$, alors $f^{-1}$ est dérivable en $b$ et :
 $$(f^{-1})'(b) = \frac{1}{f'(a)} = \frac{1}{f'(f^{-1}(b))}$$
-
----
-
-</details>
-
-## 5. Théorème de sommation L1
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Intégration sur un intervalle quelconque
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $\sum f_n$ une série de fonctions de $\mathcal{C}_{m}(I, \mathbb{C})$.
-Supposons que :
-
-1. $\sum f_n$ converge simplement vers $S \in \mathcal{C}_{m}(I, \mathbb{C})$.
-2. Chaque $f_n$ est intégrable sur $I$.
-3. $\sum\limits_{n=0}^{\infty} \int_I |f_n| < +\infty$.
-   Alors $S$ est intégrable sur $I$ et :
-   $$\int_I \left( \sum_{n=0}^{\infty} f_n(t) \right) dt = \sum\limits_{n=0}^{\infty} \int_I f_n(t) dt$$
-
----
-
-</details>
-
-## 6. Cosinus de la somme
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse complexe
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soient $a, b \in \mathbb{C}$. On a :
-Moyen mnémotechnique : "sico cosi coco moins sisi"
-
-$$\cos(a+b) = \cos(a)\cos(b) - \sin(a)\sin(b)$$
-En particulier, pour $b=a$ :
-$$\cos(2a) = \cos^2(a) - \sin^2(a)$$
-
----
-
-</details>
-
-## 7. Théorème de Bolzano-Weierstrass
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse réelle
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Toute suite bornée de réels (ou d'éléments de $\mathbb{R}^n$) admet au moins une valeur d'adhérence. Autrement dit, on peut en extraire une sous-suite convergente.
 
 ---
 
@@ -6266,12 +6268,12 @@ $$A/\ker f \simeq \text{Im } f$$
 
 </details>
 
-## 9. Théorème des valeurs intermédiaires
+## 9. Théorème de Liouville
 
 <details>
 <summary><b>Chapitre</b></summary>
 <blockquote>
-Analyse réelle
+Analyse complexe
 </blockquote>
 </details>
 
@@ -6280,10 +6282,7 @@ Analyse réelle
 
 ---
 
-Soient $a, b \in \mathbb{R}$ tels que $a < b$. Soit $f : [a, b] \to \mathbb{R}$ une fonction continue sur le segment $[a, b]$.
-Pour tout réel $y$ compris entre $f(a)$ et $f(b)$, il existe au moins un réel $c \in [a, b]$ tel que :
-$$f(c) = y$$
-Autrement dit, l'image d'un intervalle par une fonction continue est un intervalle.
+Toute fonction holomorphe sur $\mathbb{C}$ bornée est constante.
 
 ---
 
@@ -6334,12 +6333,12 @@ $$\sum\limits_{n=0}^{\infty} \sum\limits_{p=0}^{\infty} a_{n,p} = \sum\limits_{p
 
 </details>
 
-## 12. Théorème de Fubini-Lebesgue pour les suites
+## 12. Cosinus de la somme
 
 <details>
 <summary><b>Chapitre</b></summary>
 <blockquote>
-Analyse réelle
+Analyse complexe
 </blockquote>
 </details>
 
@@ -6348,11 +6347,12 @@ Analyse réelle
 
 ---
 
-Soit $(a_{n,p})_{(n,p) \in \mathbb{N}^2}$ une famille de nombres complexes.
-On suppose que la famille est sommable, c'est-à-dire que l'une des sommes itérées des modules converge :
-$$\sum\limits_{n=0}^{\infty} \sum\limits_{p=0}^{\infty} |a_{n,p}| < +\infty$$
-Alors les sommes itérées convergent absolument et on a l'égalité :
-$$\sum\limits_{n=0}^{\infty} \sum\limits_{p=0}^{\infty} a_{n,p} = \sum\limits_{p=0}^{\infty} \sum\limits_{n=0}^{\infty} a_{n,p}$$
+Soient $a, b \in \mathbb{C}$. On a :
+Moyen mnémotechnique : "sico cosi coco moins sisi"
+
+$$\cos(a+b) = \cos(a)\cos(b) - \sin(a)\sin(b)$$
+En particulier, pour $b=a$ :
+$$\cos(2a) = \cos^2(a) - \sin^2(a)$$
 
 ---
 
@@ -6364,7 +6364,7 @@ $$\sum\limits_{n=0}^{\infty} \sum\limits_{p=0}^{\infty} a_{n,p} = \sum\limits_{p
 
 **8** Théorèmes
 
-## 1. Théorème de convergence monotone / Beppo-Levi
+## 1. Intégrale de Lebesgue d'une fonction mesurable quelconque
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -6378,9 +6378,14 @@ Intégration de Lebesgue
 
 ---
 
-Soit $(f_n)$ une suite croissante de fonctions à valeurs dans $[0, +\infty]$ mesurables sur $(E, \mathcal{A})$, alors $f = \lim_{n \to +\infty} f_n$ est mesurable positive et :
+Soit $f : (E, \mathcal{A}) \to ({\mathbb{R}}, \mathcal{B}({\mathbb{R}}))$ mesurable. On dit que f est intégrable si $\int_E |f| d\lambda < +\infty$. On définit dans ce cas l'intégrale de Lebesgue de $f$ sur $E$ par :
 $$
-\int_E f d\lambda = \lim_{n \to +\infty} \int_E f_n d\lambda
+\int_E f d\lambda = \int_E f^+ d\lambda - \int_E f^- d\lambda
+$$
+
+Si $f$ est à valeurs dans $\mathbb{C}$, on dit que $f$ est intégrable si $\int_E |f| d\lambda < +\infty$. On définit dans ce cas l'intégrale de Lebesgue de $f$ sur $E$ par :
+$$
+\int_E f d\lambda = \int_E \Re(f) d\lambda + i \int_E \Im(f) d\lambda
 $$
 
 ---
@@ -6431,7 +6436,7 @@ Pour tout $f : (E, \mathcal{A}) \to (\mathbb{R}, {\mathcal{B(\mathbb{R})}})$ mes
 
 </details>
 
-## 4. Intégrale de Lebesgue d'une fonction mesurable quelconque
+## 4. Théorème de convergence monotone / Beppo-Levi
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -6445,14 +6450,9 @@ Intégration de Lebesgue
 
 ---
 
-Soit $f : (E, \mathcal{A}) \to ({\mathbb{R}}, \mathcal{B}({\mathbb{R}}))$ mesurable. On dit que f est intégrable si $\int_E |f| d\lambda < +\infty$. On définit dans ce cas l'intégrale de Lebesgue de $f$ sur $E$ par :
+Soit $(f_n)$ une suite croissante de fonctions à valeurs dans $[0, +\infty]$ mesurables sur $(E, \mathcal{A})$, alors $f = \lim_{n \to +\infty} f_n$ est mesurable positive et :
 $$
-\int_E f d\lambda = \int_E f^+ d\lambda - \int_E f^- d\lambda
-$$
-
-Si $f$ est à valeurs dans $\mathbb{C}$, on dit que $f$ est intégrable si $\int_E |f| d\lambda < +\infty$. On définit dans ce cas l'intégrale de Lebesgue de $f$ sur $E$ par :
-$$
-\int_E f d\lambda = \int_E \Re(f) d\lambda + i \int_E \Im(f) d\lambda
+\int_E f d\lambda = \lim_{n \to +\infty} \int_E f_n d\lambda
 $$
 
 ---
@@ -6488,53 +6488,7 @@ $$
 
 </details>
 
-## 6. Mesure de Lebesgue $\lambda$ sur $\mathbb{R}^d$
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Intégration de Lebesgue
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Il existe une unique mesure $\lambda$ sur $(\mathbb{R}^d, \mathcal{B}(\mathbb{R}^d))$ telle que $\lambda(]a_1, b_1[ \times \cdots \times ]a_d, b_d[) = \prod_{i=1}^d (b_i - a_i)$ pour tout $a_i < b_i$.
-
-De plus, $\lambda$ est $\sigma$-finie et invariante par translation.
-
----
-
-</details>
-
-## 7. Inégalité de Markov
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Intégration de Lebesgue
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $f : (E, \mathcal{A}) \to ([0, +\infty], \mathcal{B}([0, +\infty]))$ une fonction mesurable. Alors pour tout $\alpha > 0$ :
-
-$$
-\lambda(\{x \in E : f(x) \geq \alpha\}) \leq \frac{1}{\alpha} \int_E f d\lambda
-$$
-
----
-
-</details>
-
-## 8. Propriétés de l'intégrale de Lebesgue
+## 6. Propriétés de l'intégrale de Lebesgue
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -6564,18 +6518,12 @@ $$
 
 </details>
 
-<br>
-
-# 📚 Révisions pour le 21/11/2026
-
-**13** Théorèmes
-
-## 1. Propriété de Borel-Lebesgue
+## 7. Mesure de Lebesgue $\lambda$ sur $\mathbb{R}^d$
 
 <details>
 <summary><b>Chapitre</b></summary>
 <blockquote>
-Topologie
+Intégration de Lebesgue
 </blockquote>
 </details>
 
@@ -6584,15 +6532,45 @@ Topologie
 
 ---
 
-Soit $(E,d)$ un espace métrique, $A \subseteq E$. Alors $A$ est compact si et seulement si toute famille d'ouverts de $E$ qui recouvre $A$ admet un sous-recouvrement fini.
+Il existe une unique mesure $\lambda$ sur $(\mathbb{R}^d, \mathcal{B}(\mathbb{R}^d))$ telle que $\lambda(]a_1, b_1[ \times \cdots \times ]a_d, b_d[) = \prod_{i=1}^d (b_i - a_i)$ pour tout $a_i < b_i$.
 
-Ceci équivaut à : de toute famille de fermés de $E$ dont l'intersection est vide dans $A$, on peut extraire une sous-famille finie dont l'intersection est vide dans $A$.
+De plus, $\lambda$ est $\sigma$-finie et invariante par translation.
 
 ---
 
 </details>
 
-## 2. Théorème de Cayley-Hamilton
+## 8. Inégalité de Markov
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Intégration de Lebesgue
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $f : (E, \mathcal{A}) \to ([0, +\infty], \mathcal{B}([0, +\infty]))$ une fonction mesurable. Alors pour tout $\alpha > 0$ :
+
+$$
+\lambda(\{x \in E : f(x) \geq \alpha\}) \leq \frac{1}{\alpha} \int_E f d\lambda
+$$
+
+---
+
+</details>
+
+<br>
+
+# 📚 Révisions pour le 21/11/2026
+
+**13** Théorèmes
+
+## 1. Caractérisation des matrices diagonalisables
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -6606,14 +6584,66 @@ Algèbre linéaire
 
 ---
 
-Soit $E$ un espace vectoriel de dimension finie $n$. Pour tout endomorphisme $u \in \mathcal{L}(E)$, son polynôme caractéristique $\chi_u$ est un polynôme annulateur de $u$ :
-$$\chi_u(u) = 0_{\mathcal{L}(E)}$$
+Une matrice $A \in \mathcal{M}_n(\mathbb{K})$ est diagonalisable sur $\mathbb{K}$ si et seulement si l'une des conditions suivantes est vérifiée :
+
+1. $\chi_A$ est scindé (ie. u est scindé) sur $\mathbb{K}$ et la dimension de chaque sous-espace propre est égale à la multiplicité de la valeur propre correspondante.
+2. Son polynôme minimal $\pi_A$ est scindé à racines simples sur $\mathbb{K}$.
 
 ---
 
 </details>
 
-## 3. Endomorphismes cycliques
+## 2. Théorème spectral
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Algèbre linéaire
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $E$ un espace euclidien (espace vectoriel réel muni d'un produit scalaire). Soit $u \in \mathcal{L}(E)$ un endomorphisme symétrique.
+
+Alors il existe une base orthonormée de $E$ composée de vecteurs propres de $u$. En particulier, $u$ est diagonalisable.
+
+Version matricielle :
+Soit $A \in \mathcal{M}_n(\mathbb{R})$ une matrice symétrique. Alors il existe $P \in \mathcal{O}_n(\mathbb{R}), D \in \mathcal{D}_n(\mathbb{R})$ telles que :
+$$ A = P^T D P$$
+
+---
+
+</details>
+
+## 3. Théorème des zéros isolés
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse complexe
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $U$ un ouvert connexe de $\mathbb{C}$ et soit $f : U \to \mathbb{C}$ une fonction holomorphe. Si l'ensemble
+$$
+f^{-1}(\{0\}) = \{z \in U \mid f(z) = 0\}
+$$
+admet un point d'accumulation dans $U$, alors $f$ est identiquement nulle sur $U$.
+
+---
+
+</details>
+
+## 4. Endomorphismes cycliques
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -6640,7 +6670,56 @@ Si $u \in \mathcal{L}(E)$ est diagonalisable, on a même les équivalences suiva
 
 </details>
 
-## 4. Théorème de Heine-Borel
+## 5. Décomposition de Dunford
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Algèbre linéaire
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $E$ un espace vectoriel de dimension finie sur $\mathbb{K}$. Soit $u \in \mathcal{L}(E)$ un endomorphisme dont le polynôme caractéristique est scindé sur $\mathbb{K}$.
+Alors il existe un unique couple $(d, n) \in \mathcal{L}(E)^2$ tel que :
+
+1. $u = d + n$
+2. $d$ est diagonalisable et $n$ est nilpotent
+3. $d$ et $n$ commutent ($d \circ n = n \circ d$)
+
+De plus, $d$ et $n$ sont des polynômes en $u$.
+
+---
+
+</details>
+
+## 6. Théorème de prolongement d'une fonction uniformément continue
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Topologie
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(E,d)$ et $(F, \delta)$ deux espaces métriques et $A \subseteq E$. On suppose que $F$ est complet. Soit $f : A \to F$ une fonction uniformément continue.
+
+Alors il existe une unique fonction continue $\tilde{f} : \overline{A} \to F$ telle que $\tilde{f}_{|A} = f$. De plus, $\tilde{f}$ est uniformément continue.
+
+---
+
+</details>
+
+## 7. Théorème de Heine-Borel
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -6662,27 +6741,7 @@ Propriété de Borel-Lebesgue $\iff$ Propriété de Bolzano-Weierstrass
 
 </details>
 
-## 5. Propriété de Bolzano-Weierstrass
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Topologie
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $(E, d)$ un espace métrique. Alors une partie $A \subseteq E$ est séquentiellement compacte si et seulement si toute suite d'éléments de $A$ admet une sous-suite convergente vers un élément de $A$.
-
----
-
-</details>
-
-## 6. Théorème du prolongement analytique
+## 8. Théorème du prolongement analytique
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -6704,81 +6763,7 @@ $$\left[\forall n \in \mathbb{N},\ f^{(n)}(z_0)=0\right] \Longleftrightarrow f \
 
 </details>
 
-## 7. Caractérisation des matrices trigonalisables
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Algèbre linéaire
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $A \in \mathcal{M}_n(\mathbb{K})$. Les propositions suivantes sont équivalentes :
-
-1. $A$ est trigonalisable sur $\mathbb{K}$.
-2. $\chi_A$ est scindé sur $\mathbb{K}$.
-3. $\pi_A$ est scindé sur $\mathbb{K}$.
-
----
-
-</details>
-
-## 8. Théorème spectral
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Algèbre linéaire
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $E$ un espace euclidien (espace vectoriel réel muni d'un produit scalaire). Soit $u \in \mathcal{L}(E)$ un endomorphisme symétrique.
-
-Alors il existe une base orthonormée de $E$ composée de vecteurs propres de $u$. En particulier, $u$ est diagonalisable.
-
-Version matricielle :
-Soit $A \in \mathcal{M}_n(\mathbb{R})$ une matrice symétrique. Alors il existe $P \in \mathcal{O}_n(\mathbb{R}), D \in \mathcal{D}_n(\mathbb{R})$ telles que :
-$$ A = P^T D P$$
-
----
-
-</details>
-
-## 9. Théorème des zéros isolés
-
-<details>
-<summary><b>Chapitre</b></summary>
-<blockquote>
-Analyse complexe
-</blockquote>
-</details>
-
-<details>
-<summary><b>Énoncé</b></summary>
-
----
-
-Soit $U$ un ouvert connexe de $\mathbb{C}$ et soit $f : U \to \mathbb{C}$ une fonction holomorphe. Si l'ensemble
-$$
-f^{-1}(\{0\}) = \{z \in U \mid f(z) = 0\}
-$$
-admet un point d'accumulation dans $U$, alors $f$ est identiquement nulle sur $U$.
-
----
-
-</details>
-
-## 10. Commutant d'un endomorphisme
+## 9. Commutant d'un endomorphisme
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -6810,7 +6795,7 @@ $$C_2(u) = \mathbb{K}[u]$$
 
 </details>
 
-## 11. Théorème de prolongement d'une fonction uniformément continue
+## 10. Propriété de Borel-Lebesgue
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -6824,15 +6809,15 @@ Topologie
 
 ---
 
-Soit $(E,d)$ et $(F, \delta)$ deux espaces métriques et $A \subseteq E$. On suppose que $F$ est complet. Soit $f : A \to F$ une fonction uniformément continue.
+Soit $(E,d)$ un espace métrique, $A \subseteq E$. Alors $A$ est compact si et seulement si toute famille d'ouverts de $E$ qui recouvre $A$ admet un sous-recouvrement fini.
 
-Alors il existe une unique fonction continue $\tilde{f} : \overline{A} \to F$ telle que $\tilde{f}_{|A} = f$. De plus, $\tilde{f}$ est uniformément continue.
+Ceci équivaut à : de toute famille de fermés de $E$ dont l'intersection est vide dans $A$, on peut extraire une sous-famille finie dont l'intersection est vide dans $A$.
 
 ---
 
 </details>
 
-## 12. Décomposition de Dunford
+## 11. Caractérisation des matrices trigonalisables
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -6846,20 +6831,17 @@ Algèbre linéaire
 
 ---
 
-Soit $E$ un espace vectoriel de dimension finie sur $\mathbb{K}$. Soit $u \in \mathcal{L}(E)$ un endomorphisme dont le polynôme caractéristique est scindé sur $\mathbb{K}$.
-Alors il existe un unique couple $(d, n) \in \mathcal{L}(E)^2$ tel que :
+Soit $A \in \mathcal{M}_n(\mathbb{K})$. Les propositions suivantes sont équivalentes :
 
-1. $u = d + n$
-2. $d$ est diagonalisable et $n$ est nilpotent
-3. $d$ et $n$ commutent ($d \circ n = n \circ d$)
-
-De plus, $d$ et $n$ sont des polynômes en $u$.
+1. $A$ est trigonalisable sur $\mathbb{K}$.
+2. $\chi_A$ est scindé sur $\mathbb{K}$.
+3. $\pi_A$ est scindé sur $\mathbb{K}$.
 
 ---
 
 </details>
 
-## 13. Caractérisation des matrices diagonalisables
+## 12. Théorème de Cayley-Hamilton
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -6873,10 +6855,28 @@ Algèbre linéaire
 
 ---
 
-Une matrice $A \in \mathcal{M}_n(\mathbb{K})$ est diagonalisable sur $\mathbb{K}$ si et seulement si l'une des conditions suivantes est vérifiée :
+Soit $E$ un espace vectoriel de dimension finie $n$. Pour tout endomorphisme $u \in \mathcal{L}(E)$, son polynôme caractéristique $\chi_u$ est un polynôme annulateur de $u$ :
+$$\chi_u(u) = 0_{\mathcal{L}(E)}$$
 
-1. $\chi_A$ est scindé (ie. u est scindé) sur $\mathbb{K}$ et la dimension de chaque sous-espace propre est égale à la multiplicité de la valeur propre correspondante.
-2. Son polynôme minimal $\pi_A$ est scindé à racines simples sur $\mathbb{K}$.
+---
+
+</details>
+
+## 13. Propriété de Bolzano-Weierstrass
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Topologie
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(E, d)$ un espace métrique. Alors une partie $A \subseteq E$ est séquentiellement compacte si et seulement si toute suite d'éléments de $A$ admet une sous-suite convergente vers un élément de $A$.
 
 ---
 
@@ -6888,7 +6888,47 @@ Une matrice $A \in \mathcal{M}_n(\mathbb{K})$ est diagonalisable sur $\mathbb{K}
 
 **7** Théorèmes
 
-## 1. Caractérisation racine d'un polynôme, lien nombre de racines / degré, degré d'un produit de polynômes
+## 1. Limite uniforme de fonctions bornées
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Fonctions vectorielles
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions bornées de $X$ vers $E$. Si la suite $(f_n)$ converge uniformément vers une fonction $f : X \to E$, alors $f$ est bornée sur $X$.
+
+---
+
+</details>
+
+## 2. Espace métrique séparable
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Topologie
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Un espace métrique $(E, d)$ est dit **séparable** s'il existe une partie de $E$ dénombrable dense.
+
+---
+
+</details>
+
+## 3. Caractérisation racine d'un polynôme, lien nombre de racines / degré, degré d'un produit de polynômes
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -6914,7 +6954,27 @@ Si $A$ est intègre, alors $\deg(PQ) = \deg(P) + \deg(Q)$.
 
 </details>
 
-## 2. $1^{\text{er}}$ théorème d'isomorphisme pour les anneaux
+## 4. Limite uniforme de fonctions continues
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Fonctions vectorielles
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $X$ un espace métrique et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de $X$ vers $E$. Si chaque fonction $f_n$ est continue sur $X$ et si la suite $(f_n)$ converge uniformément vers une fonction $f : X \to E$, alors $f$ est continue sur $X$.
+
+---
+
+</details>
+
+## 5. $1^{\text{er}}$ théorème d'isomorphisme pour les anneaux
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -6936,7 +6996,7 @@ $$\bar{\varphi} : A/\text{Ker}(\varphi) \xrightarrow{\sim} \text{Im}(\varphi)$$
 
 </details>
 
-## 3. Espace métrique séparable
+## 6. Compacts en dimension finie
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -6950,13 +7010,13 @@ Topologie
 
 ---
 
-Un espace métrique $(E, d)$ est dit **séparable** s'il existe une partie de $E$ dénombrable dense.
+Dans un espace vectoriel normé de dimension finie, les fermés bornés sont compacts.
 
 ---
 
 </details>
 
-## 4. Polynôme
+## 7. Polynôme
 
 <details>
 <summary><b>Chapitre</b></summary>
@@ -6977,12 +7037,18 @@ $$A[X] = \left\{ \sum_{i=0}^n a_i X^i : n \in \mathbb{N}, a_i \in A \right\}$$
 
 </details>
 
-## 5. Compacts en dimension finie
+<br>
+
+# 📚 Révisions pour le 23/11/2026
+
+**20** Théorèmes
+
+## 1. Décomposition de Frobenius
 
 <details>
 <summary><b>Chapitre</b></summary>
 <blockquote>
-Topologie
+Algèbre linéaire
 </blockquote>
 </details>
 
@@ -6991,18 +7057,29 @@ Topologie
 
 ---
 
-Dans un espace vectoriel normé de dimension finie, les fermés bornés sont compacts.
+Soit $u \in \mathcal{L}(E)$. Il existe $B$ une base de $E$, et des polynômes $P_1 | P_2 | \ldots | P_r$ unitaires de degré $\geq 1$ tels que la matrice de $u$ dans la base $B$ soit de la forme :
+
+$$
+\begin{pmatrix}
+C(P_1) & 0 & \ldots & 0 \\
+0 & C(P_2) & \ldots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \ldots & C(P_r)
+\end{pmatrix}
+$$
+
+De plus, les polynômes $P_1, \ldots, P_r$ sont uniques.
 
 ---
 
 </details>
 
-## 6. Limite uniforme de fonctions continues
+## 2. Tribu engendrée par une famille de variables aléatoires
 
 <details>
 <summary><b>Chapitre</b></summary>
 <blockquote>
-Fonctions vectorielles
+Probabilités
 </blockquote>
 </details>
 
@@ -7011,18 +7088,23 @@ Fonctions vectorielles
 
 ---
 
-Soit $X$ un espace métrique et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions de $X$ vers $E$. Si chaque fonction $f_n$ est continue sur $X$ et si la suite $(f_n)$ converge uniformément vers une fonction $f : X \to E$, alors $f$ est continue sur $X$.
+Soit $(X_i)_{i \in I}$ une famille de variables aléatoires définies sur $(\Omega, \mathcal{F}, \mathbb{P})$ et à valeurs dans des espaces mesurables $(E_i, \mathcal{E}_i)$. 
+
+La tribu engendrée par cette famille est la plus petite tribu $\sigma(X_i, i \in I)$ sur $\Omega$ telle que chaque $X_i$ soit mesurable. Elle est donnée par :
+$$
+\sigma(X_i, i \in I) = \sigma(\{X_i^{-1}(A) : A \in \mathcal{E}_i, i \in I\})
+$$
 
 ---
 
 </details>
 
-## 7. Limite uniforme de fonctions bornées
+## 3. Inégalité de Bienaymé-Tchebychev
 
 <details>
 <summary><b>Chapitre</b></summary>
 <blockquote>
-Fonctions vectorielles
+Probabilités
 </blockquote>
 </details>
 
@@ -7031,7 +7113,580 @@ Fonctions vectorielles
 
 ---
 
-Soit $X$ un ensemble et $(E, \|\cdot\|)$ un espace vectoriel normé. Soit $(f_n)_{n \in \mathbb{N}}$ une suite de fonctions bornées de $X$ vers $E$. Si la suite $(f_n)$ converge uniformément vers une fonction $f : X \to E$, alors $f$ est bornée sur $X$.
+Soit $X$ une variable aléatoire réelle qui admet un moment d'ordre 2, et $a > 0$. Alors :
+$$
+\mathbb{P}(|X - \mathbb{E}[X]| \geq a) \leq \frac{\text{Var}(X)}{a^2}
+$$
+
+---
+
+</details>
+
+## 4. Groupe parfait
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Groupes
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Un groupe $G$ est dit parfait si $D(G) := [G,G] = G$.
+
+---
+
+</details>
+
+## 5. Inégalité de Hölder pour l'espérance
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Probabilités
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $X$ et $Y$ deux variables aléatoires à valeurs dans $[0, +\infty)$, et $p, q > 1$ tels que $\frac{1}{p} + \frac{1}{q} = 1$. Alors :
+$$
+\mathbb{E}[|XY|] \leq \mathbb{E}[|X|^p]^{1/p} \mathbb{E}[|Y|^q]^{1/q}
+$$
+
+Ainsi, si $X$ et $Y$ sont complexes, que $X$ est $p$-intégrable et $Y$ est $q$-intégrable, alors $XY$ est intégrable et on a :
+$$
+\mathbb{E}[XY] \leq \mathbb{E}[|X|^p]^{1/p} \mathbb{E}[|Y|^q]^{1/q}
+$$
+
+---
+
+</details>
+
+## 6. Théorème d'interversion somme et espérance
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Probabilités
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(X_n)_{n \geq 1}$ une suite de variables aléatoires réelles positives, et soit $X = \sum_{n=1}^{+\infty} X_n$.
+Alors $X$ est une variable aléatoire réelle positive, et on a :
+$$
+\mathbb{E}[X] = \sum_{n=1}^{+\infty} \mathbb{E}[X_n]
+$$
+
+<details>
+<summary>Idée de preuve</summary>
+
+---
+
+Vérifier que $X$ est bien une variable aléatoire, puis appliquer le théorème de convergence monotone à la suite $(S_n)_{n \geq 1}$ définie par $S_n = \sum_{k=1}^{n} X_k$.
+
+</details>
+
+---
+
+</details>
+
+## 7. Inégalité de Markov
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Probabilités
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $X$ une variable aléatoire réelle positive, $a > 0$, et $\varphi$ une fonction croissante de $\mathbb{R}_+$ dans $\mathbb{R}_+$ éventuellement nulle en 0 mais nulle part ailleurs. Alors :
+$$
+\mathbb{P}(X \geq a) \leq \frac{\mathbb{E}[\varphi(X)]}{\varphi(a)}
+$$
+
+---
+
+</details>
+
+## 8. Théorème de convergence monotone pour l'espérance
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Probabilités
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(X_n)_{n \geq 1}$ une suite de variables aléatoires réelles positives croissantes presque sûrement, et soit $X = \lim_{n \to +\infty} X_n$.
+
+Alors $X$ est une variable aléatoire réelle positive, et on a :
+$$
+\mathbb{E}[X] = \lim_{n \to +\infty} \mathbb{E}[X_n]
+$$
+
+---
+
+</details>
+
+## 9. Adhérence des matrices diagonalisables
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Algèbre linéaire
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+$$
+\overline{D_n(\mathbb{C})} = M_n(\mathbb{C})
+$$
+
+$$
+\overline{D_n(\mathbb{R})} = T_n(\mathbb{R})
+$$
+
+---
+
+</details>
+
+## 10. Caractérisation des endomorphismes nilpotents
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Algèbre linéaire
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $u \in \mathcal{L}(E)$. Les propositions suivantes sont équivalentes :
+1. $u$ est nilpotent
+2. $\pi_u(X) = X^m$, $m \in \mathbb{N}^*$
+3. $\chi_u(X) = X^n$
+4. $u$ est trigonalisable et $\mathrm{Sp}(u) = \{0\}$
+5. La matrice de $u$ dans une base convenable est triangulaire supérieure stricte.
+
+---
+
+</details>
+
+## 11. Théorème de représentation de Doob
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Probabilités
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité, $(E, \mathcal{E})$ un espace mesurable, et $X : \Omega \to E$ une variable aléatoire. Soit $Y : \Omega \to \mathbb{R}$ $\sigma(X)$-mesurable.
+
+Alors il existe une fonction mesurable $\varphi : E \to \mathbb{R}$ telle que :
+$$
+Y = \varphi(X)
+$$
+
+Cas général : Soit $(X_i)_{1 \leq i \leq n}$ une famille de variables aléatoires définies sur $(\Omega, \mathcal{F}, \mathbb{P})$ et à valeurs dans des espaces mesurables $(E_i, \mathcal{E}_i)$. Soit $Y : \Omega \to \mathbb{R}$ $\sigma(X_i, 1 \leq i \leq n)$-mesurable.
+
+Alors il existe une fonction mesurable $\varphi : E_1 \times \cdots \times E_n \to \mathbb{R}$ telle que :
+$$
+Y = \varphi(X_1, \ldots, X_n)
+$$
+
+---
+
+</details>
+
+## 12. Lemme de Fatou
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Probabilités
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(X_n)_{n \geq 1}$ une suite de variables aléatoires réelles à valeurs dans $[0, +\infty]$, et soit $X = \liminf_{n \to +\infty} X_n$.
+
+Alors $X$ est une variable aléatoire réelle positive, et on a :
+$$
+\mathbb{E}[X] \leq \liminf_{n \to +\infty} \mathbb{E}[X_n]
+$$
+C'est-à-dire :
+$$
+\mathbb{E}[\liminf_{n \to +\infty} X_n] \leq \liminf_{n \to +\infty} \mathbb{E}[X_n]
+$$
+
+---
+
+</details>
+
+## 13. Moment absolu d'ordre $p$ d'une variable aléatoire
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Probabilités
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $X$ une variable aléatoire complexe, et $p > 0$. On définit le moment absolu d'ordre $p$ de $X$ par :
+$$
+\mathbb{E}[|X|^p] = \int_\Omega |X(\omega)|^p \, d\mathbb{P}(\omega)
+$$
+
+Si $\mathbb{E}[|X|^p] < +\infty$, on dit que $X$ est $p$-intégrable. et on définit son moment d'ordre $p$ par :
+$$
+\mathbb{E}[X^p] = \int_\Omega X(\omega)^p \, d\mathbb{P}(\omega)
+$$
+
+Pour $0<p<q$, si $X$ est $q$-intégrable, alors $X$ est $p$-intégrable et on a :
+$$
+\mathbb{E}[|X|^p]^{1/p} \leq \mathbb{E}[|X|^q]^{1/q}
+$$
+
+---
+
+</details>
+
+## 14. Espérance et variable aléatoire intégrable
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Probabilités
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité, et $X : \Omega \to [0, +\infty]$ une variable aléatoire.
+
+$$
+\mathbb{E}[X] = \int_\Omega X \, d\mathbb{P} = \int_\Omega X(\omega) \, d\mathbb{P}(\omega)
+$$
+
+Si $X : \Omega \to \mathbb{C}$ variable aléatoire, on dit que $X$ est $\mathbb{P}$-intégrable si $\mathbb{E}[|X|] < +\infty$. Dans ce cas, on définit l'espérance de $X$ par :
+
+$$
+\mathbb{E}[X] = \int_\Omega X \, d\mathbb{P} = \int_\Omega X(\omega) \, d\mathbb{P}(\omega)
+$$
+
+Propriétés de l'espérance :
+
+1. Linéarité : Pour toutes variables aléatoires intégrables $X$ et $Y$, et pour tous scalaires $a, b \in \mathbb{C}$, on a :
+   $$
+   \mathbb{E}[aX + bY] = a\mathbb{E}[X] + b\mathbb{E}[Y]
+   $$
+
+2. Positivité : Si $X \geq Y$ presque sûrement, alors $\mathbb{E}[X] \geq \mathbb{E}[Y]$ où X et Y sont réelles.
+3. Inégalité triangulaire : Pour toute variable aléatoire intégrable $X$, on a :
+   $$
+   |\mathbb{E}[X]| \leq \mathbb{E}[|X|]
+   $$
+4. Définie : Si $X$ : $\Omega \to [0, +\infty]$, alors $\mathbb{E}[X] = 0$ si et seulement si $X = 0$ presque sûrement.
+5. Si $X$ : $\Omega \to [0, +\infty]$, $\mathbb{E}[X] < +\infty$ alors $X < +\infty$ presque sûrement.
+6. Si $X$ : $\Omega \to \mathbb{C}$ $\mathbb{P}$-intégrable, $\mathbb{E}[|X|] = |\mathbb{E}[X]|$ alors $X = e^{i\theta} |X|$ presque sûrement pour un certain $\theta \in \mathbb{R}$.
+7. Si $X$ : $\Omega \to [0, +\infty]$ bornée par $M > 0$ presque sûrement, alors $\mathbb{E}[X] \leq M$.
+
+---
+
+</details>
+
+## 15. Liminf et Limsup d'une suite d'événements
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Probabilités
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(A_n)_{n \geq 1}$ une suite d'événements.
+
+$$
+\liminf_{n \to +\infty} A_n = \bigcup_{n=1}^{\infty} \bigcap_{k=n}^{\infty} A_k
+$$
+$$
+\limsup_{n \to +\infty} A_n = \bigcap_{n=1}^{\infty} \bigcup_{k=n}^{\infty} A_k
+$$
+
+On peut retrouver ces formules à l'aide des fonctions indicatrices. En effet, on a :
+$$
+\mathbf{1}_{\liminf_{n \to +\infty} A_n} = \liminf_{n \to +\infty} \mathbf{1}_{A_n}
+$$
+$$
+\mathbf{1}_{\limsup_{n \to +\infty} A_n} = \limsup_{n \to +\infty} \mathbf{1}_{A_n}
+$$
+
+$\limsup_{n \to +\infty} A_n$ correspond à l'événement "Une infinité de $A_n$ sont réalisés"
+
+$\liminf_{n \to +\infty} A_n$ correspond à l'événement "Tous les $A_n$ sont réalisés à partir d'un certain rang".
+
+---
+
+</details>
+
+## 16. Variable aléatoire
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Probabilités
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(\Omega, \mathcal{F}, \mathbb{P})$ un espace de probabilité, et $(E, \mathcal{E})$ un espace mesurable. Une variable aléatoire est une fonction mesurable $X : \Omega \to E$.
+
+---
+
+</details>
+
+## 17. Théorème d'interversion somme et espérance $l^1$
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Probabilités
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $(X_n)_{n \geq 1}$ une suite de variables aléatoires complexes telles que $\sum_{n=1}^{+\infty} \mathbb{E}[|X_n|] < +\infty$.
+
+Alors :
+1. presque sûrement, la série $\sum_{n=1}^{+\infty} |X_n|$ converge
+2. Il existe une variable aléatoire complexe $Y$ telle que $Y = \sum_{n=1}^{+\infty} X_n$ presque sûrement
+3. $\mathbb{E}[Y] = \sum_{n=1}^{+\infty} \mathbb{E}[X_n]$
+4. $\mathbb{E}[|Y - \sum_{k=1}^{n} X_k|] \to 0$ lorsque $n \to +\infty$.
+
+On écrira malgré un léger abus de notation : 
+$$
+\mathbb{E}\left[\sum_{n=1}^{+\infty} X_n\right] = \sum_{n=1}^{+\infty} \mathbb{E}[X_n]
+$$
+
+---
+
+</details>
+
+## 18. Variance, lemme de König-Huygens et écart-type
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Probabilités
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $X$ une variable aléatoire réelle qui admet un moment d'ordre 2. On définit la variance de $X$ par :
+$$
+\text{Var}(X) = \mathbb{E}[(X - \mathbb{E}[X])^2]
+$$
+
+Le lemme de König-Huygens permet d'exprimer la variance en fonction du moment d'ordre 2 et de l'espérance :
+$$
+\text{Var}(X) = \mathbb{E}[X^2] - \mathbb{E}[X]^2
+$$
+
+L'écart-type de $X$ est défini par :
+$$
+\sigma(X) = \sqrt{\text{Var}(X)}
+$$
+
+---
+
+</details>
+
+## 19. Théorème de convergence dominée
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Probabilités
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $X$ et $(X_n)_{n \geq 1}$ des variables aléatoires complexes. On suppose :
+1. $X_n \to X$ presque sûrement.
+2. Il existe une variable aléatoire positive intégrable $Z$ telle que pour tout $n \geq 1$, $|X_n| \leq Z$ presque sûrement.
+
+Alors les $X_n$ et $X$ sont intégrables, et on a :
+1. $\mathbb{E}[X_n] \to \mathbb{E}[X]$
+2. $\mathbb{E}[|X_n - X|] \to 0$.
+
+---
+
+</details>
+
+## 20. Inégalité de Jensen pour l'espérance
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Probabilités
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $X$ une variable aléatoire réelle intégrable, et $\varphi : \mathbb{R} \to \mathbb{R}$ une fonction convexe.
+
+Si $\mathbb{E}[|\varphi(X)|] < +\infty$, alors :
+$$    
+\varphi(\mathbb{E}[X]) \leq \mathbb{E}[\varphi(X)]
+$$
+
+---
+
+</details>
+
+<br>
+
+# 📚 Révisions pour le 24/11/2026
+
+**3** Théorèmes
+
+## 1. Développement limité du cosinus
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse réelle
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Pour tout $x \in \mathbb{R}$ :
+$$ \cos(x) = \sum\limits_{k=0}^{\infty} (-1)^k \frac{x^{2k}}{(2k)!}$$
+
+---
+
+</details>
+
+## 2. Théorème chinois dans un anneau principal
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Anneaux
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $A$ un anneau principal, et $a, b \in A$ deux éléments premiers entre eux (i.e. tels que $\text{pgcd}(a, b) = 1$).
+Alors le morphisme naturel
+$$ \varphi : A/(ab) \to A/(a) \times A/(b) $$
+est un isomorphisme d'anneaux, dont on peut expliciter la réciproque à l'aide d'une relation de Bézout entre $a$ et $b$ : si $au + bv = 1$, l'antécédent de $(\bar{x}, \bar{y}) \in A/(a) \times A/(b)$ par ce morphisme est la classe de $auy + bvx$ dans $A/(ab)$.
+
+Par récurrence, on peut étendre ce résultat à $a_1, \dots, a_n$ deux-à-deux premiers entre eux.
+
+---
+
+</details>
+
+## 3. Résidus
+
+<details>
+<summary><b>Chapitre</b></summary>
+<blockquote>
+Analyse complexe
+</blockquote>
+</details>
+
+<details>
+<summary><b>Énoncé</b></summary>
+
+---
+
+Soit $U$ un ouvert de $\mathbb{C}$, $z_0 \in U$, et $f : U \setminus \{z_0\} \to \mathbb{C}$ holomorphe. On note
+$$f(z) = \sum\limits_{n=-\infty}^{+\infty} a_n(z - z_0)^n$$
+le développement en série de Laurent de $f$ en $z_0$. On définit le **résidu** de $f$ en $z_0$ par :
+$$\text{Res}(f, z_0) = a_{-1}$$
 
 ---
 
