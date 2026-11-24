@@ -45,6 +45,7 @@ Vous êtes un assistant spécialisé dans la gestion et le développement d'un o
     - **Espaces Métriques** : Ne jamais utiliser la notion d'espace topologique. Toujours privilégier la notion d'espace métrique ou d'espace vectoriel normé (evn).
     - **Développements limités** : Toujours utiliser la notation grand $O$ (ex: $O(x^n)$) plutôt que petit $o$ pour plus de précision.
     - Signature d'une permutation : $\epsilon(\sigma)$.
+    - **Produit vectoriel** : $u \wedge v$.
 5.  **Formatage LaTeX & CSV**: 
     - Utiliser `$ ... $` pour l'inline et `$$ ... $$` pour les blocs.
     - Dans `liste_theoremes.csv`, les expressions LaTeX peuvent contenir de vrais sauts de ligne (gérés par des guillemets doubles `"..."`).

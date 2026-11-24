@@ -38,6 +38,25 @@ $C_{ij} = (-1)^{i+j} \det(A_{ij})$, où $A_{ij}$ est la matrice obtenue en suppr
 
 ---
 
+## Caractérisation de la liberté d'une famille avec les mineurs
+
+Une famille de vecteurs $(v_1, \ldots, v_m)$ dans un espace vectoriel $E$ de dimension $n$ est libre si et seulement si la matrice formée par les vecteurs $v_1, \ldots, v_m$ (considérés comme colonnes, dans une base de $E$) possède un mineur d'ordre $m$ non nul. En particulier, si $m > n$, la famille est forcément liée.
+
+Exemple : produit vectoriel de deux vecteurs dans $\mathbb{R}^3$ :
+
+Soit $u = (u_1, u_2, u_3)$ et $v = (v_1, v_2, v_3)$ deux vecteurs de $\mathbb{R}^3$. Le produit vectoriel $u \wedge v$ est défini par :
+$$
+u \wedge v = \left( 
+\begin{vmatrix} u_2 & v_2 \\ u_3 & v_3 \end{vmatrix}, 
+-\begin{vmatrix} u_1 & v_1 \\ u_3 & v_3 \end{vmatrix}, 
+\begin{vmatrix} u_1 & v_1 \\ u_2 & v_2 \end{vmatrix} 
+\right).
+$$
+
+$(u,v)$ forme une famille libre si et seulement si $u \wedge v \neq 0$, c'est-à-dire si et seulement si une coordonnée de $u \wedge v$ est non nulle, qui sont les mineurs d'ordre 2 de la matrice formée par $u$ et $v$.
+
+---
+
 ## Caractérisation des endomorphismes nilpotents
 
 Soit $u \in \mathcal{L}(E)$. Les propositions suivantes sont équivalentes :
@@ -1653,6 +1672,87 @@ Un élément $x \in A$ est **inversible** s'il existe $y \in A$ tel que $xy = yx
 
 ---
 
+# Corps
+
+## Caractéristique d'un corps
+
+Soit $K$ un corps. La caractéristique de $K$ est le plus petit entier $n \in \mathbb{N}$ tel que $n \cdot 1 = 0$ dans $K$, si un tel entier existe, et $0$ sinon.
+
+Autrement dit, en considérant l'unique morphisme d'anneaux $\varphi : \mathbb{Z} \to K$ tel que $\varphi(1) = 1$, son noyau est un idéal de $\mathbb{Z}$, donc de la forme $n \mathbb{Z}$ pour un certain $n \in \mathbb{N}$. La caractéristique de $K$ est alors définie comme étant cet entier $n$.
+
+Si $n \geq 1$, alors $n \geq 2$ car $\varphi(1) = 1_{K} \neq 0_{K}$, et $Z/n\mathbb{Z}$ est un sous-corps de $K$, donc $n$ est premier. On a donc $\text{car}(K) = 0$ ou $\text{car}(K) = p$ pour un certain nombre premier $p$.
+
+---
+
+## Corps
+
+Soit $A$ un anneau commutatif intègre unitaire. A est un corps si et seulement si $A^\times = A \setminus \{0\}$.
+
+En particulier, il est intègre donc différent de $\{0\}$, ce qui impose $1 \neq 0$.
+
+---
+
+## Corps parfait
+
+Un corps $K$ de caractéristique $p > 0$ est parfait si et seulement si le morphisme de Frobenius $\text{Frob} : K \to K$ est surjectif.
+
+En particulier, un corps fini est parfait.
+
+---
+
+## Extension de corps
+
+Soit $K, L$ deux corps. On dit que $L$ est une extension du corps $K$, ou $L/K$ est une extension de corps ssi :
+$$
+\exist \varphi : K \to L \text{ morphisme de corps injectif.}
+$$ 
+
+Dans ce cas, $L$ est un $K$-espace vectoriel, et on note $[L : K] = \dim_K L$ le degré de l'extension.
+
+Si $[L : K] < +\infty$, on parle d'extension finie et si $[L : K] = +\infty$, on parle d'extension infinie.
+
+---
+
+## Morphisme de Frobenius
+
+Soit $K$ un corps de caractéristique $p > 0$. Le morphisme de Frobenius est le morphisme d'anneaux $\text{Frob} : K \to K$ défini par $\text{Frob}(x) = x^p$.
+
+Ce morphisme est injectif, car si $x^p = 0$, alors $x = 0$. S'il est surjectif, on dit que $K$ est parfait.
+
+---
+
+## Morphisme de corps
+
+Soit $K$ et $L$ deux corps. Un morphisme de corps est un morphisme d'anneaux $f : K \to L$.
+
+Un tel morphisme est injectif, car si $f(x) = 0$ pour un certain $x \in K$, alors $f(x)$ n'est pas inversible dans $L$, donc $x$ n'est pas inversible dans $K$, ce qui implique que $x = 0$.
+
+---
+
+## Sous-corps
+
+Soit $K$ un corps. Un sous-corps de $K$ est un sous-anneau $L \subset K$ qui est lui-même un corps.
+
+Autrement dit $L \in \mathcal{P}(K)$ est un sous-corps de $K$ si :
+1. $1 \in L$
+2. $\forall x, y \in L, x - y \in L$
+3. $\forall x, y \in L^{\times}, x y^{-1} \in L$
+
+---
+
+## Théorèmes de la base téléscopique
+
+Soit $K \subset L \subset M$ trois corps. Alors :
+
+Si $B$ est une base de $L$ sur $K$ et $C$ une base de $M$ sur $L$, alors $B C = \{b c : b \in B, c \in C\}$ est une base de $M$ sur $K$. (en identifiant les élements des corps à isomorphisme près).
+
+Dans $\mathbb{N} \cup \{+\infty\}$, on a :
+$$
+[M : K] = [M : L] [L : K].
+$$
+
+---
+
 # Divers
 
 ## Bon ordre
@@ -1843,7 +1943,7 @@ Le membre de gauche est la limite de la norme au carré du projeté orthogonal d
 
 ---
 
-## Inégalités de Minkowski
+## Inégalité de Minkowski (espace préhilbertien)
 
 Soit $(E, \langle \cdot, \cdot \rangle)$ un espace préhilbertien. Pour tous $x, y \in E$ :
 $$ \|x+y\| \le \|x\| + \|y\| $$
@@ -2493,6 +2593,28 @@ $$
 
 ---
 
+## Inégalité de Hölder
+
+Soit $(E, \mathcal{A}, \mu)$ un espace mesuré et $p, q \in [1, +\infty]$ tels que $\frac{1}{p} + \frac{1}{q} = 1$. Alors pour toutes fonctions mesurables $f, g : E \to \mathbb{C}$, on a l'inégalité suivante :
+
+$$
+\int_E |f g| \, d\mu \leq \left( \int_E |f|^p \, d\mu \right)^{1/p} \left( \int_E |g|^q \, d\mu \right)^{1/q}.
+$$
+
+<details>
+<summary>Idée de preuve</summary>
+
+---
+
+Commencer par le cas où f et g sont normalisées, et prouver par convexité que pour tous $a, b \in \mathbb{R}_+$ :
+$$
+a b \leq \frac{a^p}{p} + \frac{b^q}{q}.
+$$
+
+</details>
+
+---
+
 ## Inégalité de Markov
 
 Soit $f : (E, \mathcal{A}) \to ([0, +\infty], \mathcal{B}([0, +\infty]))$ une fonction mesurable. Alors pour tout $\alpha > 0$ :
@@ -2500,6 +2622,28 @@ Soit $f : (E, \mathcal{A}) \to ([0, +\infty], \mathcal{B}([0, +\infty]))$ une fo
 $$
 \lambda(\{x \in E : f(x) \geq \alpha\}) \leq \frac{1}{\alpha} \int_E f d\lambda
 $$
+
+---
+
+## Inégalité de Minkowski
+
+Soit $(E, \mathcal{A}, \mu)$ un espace mesuré et $p \in [1, +\infty]$. Alors pour toutes fonctions $f, g \in L^p(E, \mu)$ (à valeurs dans $\mathbb{R}$ ou $\mathbb{C}$), on a l'inégalité suivante :
+$$
+\left( \int_E |f + g|^p \, d\mu \right)^{1/p} \leq \left( \int_E |f|^p \, d\mu \right)^{1/p} + \left( \int_E |g|^p \, d\mu \right)^{1/p}.
+$$
+qu'on peut réécrire :
+$$
+\|f + g\|_p \leq \|f\|_p + \|g\|_p.
+$$
+
+<details>
+<summary>Idée de preuve</summary>
+
+---
+
+Utiliser l'inégalité $|f + g|^p \leq (|f| + |g|)(|f + g|)^{p-1}$ pour $p \geq 1$ et l'inégalité de Hölder aux deux termes de la somme de droite développée.
+
+</details>
 
 ---
 
@@ -3156,6 +3300,16 @@ Dans un espace vectoriel normé, les deux dernières inclusions sont des égalit
 
 Soit $(E, \|\cdot\|)$ un espace vectoriel normé. $E$ est complet si et seulement si toute série absolument convergente d'éléments de $E$ est convergente dans $E$.
 C'est-à-dire, si pour toute suite $(u_n) \in E^{\mathbb{N}}$, la condition $\sum\limits_{n=0}^{\infty} \|u_n\| < \infty$ implique que la série $\sum u_n$ converge dans $E$.
+
+---
+
+## Caractérisation des composantes connexes
+
+Soit $X$ un espace topologique. Soit $(U_i)_{i \in I}$ une une partition de $X$. 
+
+Si les $U_i$ sont ouverts, alors les composantes connexes de $X$ sont exactement les $U_i$.
+
+Si les $U_i$ sont fermés et que $I$ est fini, alors les composantes connexes de $X$ sont exactement les $U_i$.
 
 ---
 
